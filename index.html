@@ -1,0 +1,1328 @@
+<!-- 
+웹 사이트의 정보, 폰트 콘텐츠를 제외한 모든 콘텐츠는 [dong_campus]에 의해 소유되며, 무단 복제 및 배포를 금지합니다.
+
+이 웹 사이트의 소스 코드 및 디자인에 대한 모든 권리는 [dong_campus]에 속하며, 라이선스에 따라 사용이 허가됩니다.
+라이선스를 위반하는 경우 저작권법 및 민형사상의 처벌을 받을 수 있습니다.
+
+본 웹 사이트 정보 출처 [동서울대학교](https://www.du.ac.kr)
+-->
+
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="icon" href="./favicon.png" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="./appleicon.png">
+  <meta name="description" content="동서울대학교 학생을 위한 동서울대 정보 플랫폼 동캠퍼스">
+  <meta name="keywords" content="동서울대학교, 동캠퍼스, 동캠, 동서울대학교학식, 동서울대학교버스">
+  <meta property="og:title" content="동캠퍼스" />
+  <meta property="og:type" content="website" />
+
+
+  <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUITE/fonts/static/woff2/SUITE.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <title>동캠퍼스</title>
+  <style>
+
+    html{
+      -webkit-touch-callout:none;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    button:focus{
+      outline: none;
+    }
+
+    @font-face {
+        font-family: 'LINESeedKR-Bd';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    * {
+      font-family: 'LINESeedKR-Bd';
+    }
+
+    body {
+      background: linear-gradient(to bottom, #0a0613, #120f39, #241a4d, #12062a);
+      margin: 0;
+      padding: 0;
+    }
+
+    .no-drag {
+        -webkit-touch-callout: none; 
+        -webkit-user-select: none; 
+        -khtml-user-select: none; 
+        -moz-user-select: none; 
+        -ms-user-select: none; 
+        user-select: none; 
+
+        opacity: 0; 
+        animation: fadeIn 1s ease; 
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    header {
+      font-family: 'TTHakgyoansimSamulhamR';
+      border: none;
+      padding: 20px 0px 10px 0px;
+      text-align: center;
+      width: 600px; 
+      margin: 0 auto; 
+      display: flex;
+      justify-content: space-between; 
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+    }
+
+    .header-content img {
+      width: 40px;
+      margin-left: 10px;
+      margin-right: 5px; 
+      user-select: none; 
+      -webkit-user-drag: none;
+    }
+
+    .other-elements {
+      margin-right: 7px;
+      color: white;
+    }
+
+    .gradient-text {
+      margin-top: 8px;
+      margin-bottom: 5px;
+        background: linear-gradient(to right, #a47dfb, #c19af4, #e6cbfc, #f9eac6);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .container {
+      width: 500px; 
+      margin: 0 auto; 
+      padding: 0px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; 
+    }
+
+    .container > div {
+      padding: 0px;
+      border: 0px solid #ddd;
+    }
+
+    h2 {
+      color: #e9e9e9;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .Categoryarea ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content:center;
+    }
+
+    .Categoryarea li {
+      margin-right: 7px;
+      
+    }
+
+    .Categoryarea li:last-child {
+      margin-right: 0;
+    }
+
+    .Categoryarea li button {
+      font-size: 17px;
+      color: white;
+      background-color: rgba(43, 39, 102, 0.2);
+      border: 1px solid #a47dfb; 
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
+      padding: 8px 12px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease; 
+    }
+
+    .Categoryarea li button:hover {
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+      background-color:#a47dfb; 
+      color: rgb(255, 255, 255);
+    }
+
+    .link_button{
+      font-size: 17px;
+      color: white;
+      background-color: rgba(43, 39, 102, 0.2);
+      border: 1px solid #a47dfb; 
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
+      padding: 8px 12px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .link_button:hover {
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+      background-color:#a47dfb; 
+      color: rgb(255, 255, 255);
+    }
+
+
+    .sectionarea1, .sectionarea2 {
+      display: flex;
+      justify-content: space-between;
+    }
+
+
+    .sectionarea1, .sectionarea2 {
+      width: 100%; 
+    }
+
+    .sectionarea3 {
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap; 
+      justify-content: center; 
+    }
+
+    .sectionarea3 p {
+      margin: 3px;
+    }
+
+    .sectionarea3 > .busarea {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px; 
+    }
+
+    .sectionarea3 > .busarea > div {
+      padding: 15px; 
+    }
+
+    .sectionarea3 > div:nth-child(3n) {
+      margin-right: 0; 
+    }
+
+    .webreload img{
+      width: 25px;
+    }
+
+    .station_name {
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .busarea{
+      padding-left: 0px;
+      height: 90px;
+      background-color: rgba(43, 39, 102, 0.2);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+      color: #e9e9e9;
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .busicon {
+      padding: none;
+      font-size: 35px;
+    }
+
+    .Bokjeong_time1{
+      width: 100%;
+    }
+
+    .Bokjeong_time2{
+      font-size: 21px;
+      font-weight: bold;
+      width: 100%;
+      text-align: right;
+    }
+
+    .Namyangju_time1{
+      width: 100%;
+    }
+
+    .Namyangju_time2{
+      font-size: 21px;
+      font-weight: bold;
+      width: 100%;
+      text-align: right;
+    }
+
+
+    .Guri_time1{
+      width: 100%;
+    }
+
+    .Guri_time2{
+      font-size: 21px;
+      font-weight: bold;
+      width: 100%;
+      text-align: right;
+    }
+
+
+    .Hanam_time1{
+      width: 100%;
+    }
+
+    .Hanam_time2{
+      font-size: 21px;
+      font-weight: bold;
+      width: 100%;
+      text-align: right;
+    }
+
+
+
+    .content-box {
+      font-size: 17px;
+      height: 190px;
+      width: 190px;
+      border: none;
+      background-color: rgba(43, 39, 102, 0.2);
+      border-radius: 15px;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
+      padding: 20px; 
+      color: #e9e9e9;
+    }
+
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      background-color: none;
+      color: #e9e9e9;
+      bottom: 0;
+      width: 100%;
+      margin: 0 auto;
+      padding: 7px 0 7px 0;
+
+    }
+
+
+
+.modal {
+    display: none;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    color: #ffffff;
+    background: linear-gradient(to bottom, #0a0613, #120f39, #12062a);
+    z-index: 9999;
+}
+
+.modal-content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 5px;
+    background-color: none;
+}
+
+#closeBtn {
+    color: #ffffff;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+table {
+    width: 70%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+thead {
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 50px;
+    color: white;
+}
+
+thead th {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+#menuTable {
+    margin: 0 auto;
+}
+
+.menuname{
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+}
+
+.hak_container {
+  display: flex;
+  justify-content: center; 
+}
+
+.hak_info {
+  width: 600px;
+  padding: 20px;
+  max-width: 600px;
+  text-align: left; 
+}
+
+img.rotate {
+  margin-top: 6px;
+  margin-left: 5px;
+    width: 20px;
+    transition: transform 1s ease-in-out;
+}
+
+
+.calendar_modal_title{
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+  padding: 20px;
+}
+
+
+#calendarModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background: linear-gradient(to bottom, #0a0613, #120f39, #12062a);
+    z-index: 9999;
+}
+
+#closeCalendarBtn {
+    color: #ffffff;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff00;
+    padding: 0;
+}
+
+.calendar_content {
+    padding: 20px;
+}
+
+
+.cmap-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: linear-gradient(to bottom, #0a0613, #120f39, #12062a);
+    padding: 0px;
+}
+
+
+.cmap-modal-content {
+  text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    height: 100%;
+}
+
+
+.cmap-close {
+  color: #ffffff;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.cmap-close:hover,
+.cmap-close:focus {
+    color: rgb(177, 177, 177);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.cmap-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #ddd;
+    color: white;
+}
+
+.cmap-table th, .cmap-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.cmap-table th {
+    background-color: #ffffff00;
+    color: white;
+}
+
+
+
+
+.bread_modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #933F00
+}
+
+.bread_modal-content {
+  background-color: #933F00;
+  color: white;
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.bread_close {
+    color: #ffffff;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.bread_close:hover,
+.bread_close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+.info_modal {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: linear-gradient(to bottom, #0a0613, #120f39, #12062a);
+    padding: 0px;
+  }
+  
+
+  .info_modal_content {
+    color: white;
+    text-align: left;
+    padding-top: 30px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+
+.close_button {
+    color: #ffffff;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.bus_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .info_section2{
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+
+
+
+
+  .attendance-modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); 
+  }
+
+  .attendance-modal-content {
+      border-radius: 15px;
+      background: linear-gradient(to bottom, #0a0613, #12062a);
+      color: white;
+      margin: auto; 
+      padding: 20px;
+      border: 1px solid #a47dfb;
+      width: 80%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+  }
+
+  .attendance-close {
+      color: white;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+  }
+
+  .attendance-close:hover,
+  .attendance-close:focus {
+      color: rgb(136, 136, 136);
+      text-decoration: none;
+      cursor: pointer;
+  }
+
+  .attendance-button{
+      font-size: 17px;
+      color: white;
+      background-color: rgba(43, 39, 102, 0.2);
+      border: 1px solid #a47dfb; 
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+      padding: 8px 12px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease; 
+  }
+
+  .attendance-button:hover {
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    background-color:#a47dfb; 
+    color: rgb(255, 255, 255);
+  }
+
+
+
+@media only screen and (max-width: 600px) {
+  body{
+    padding: 9px;
+  }
+
+  header{
+    font-size: 15px;
+    width: 100%;
+  }
+
+  header img {
+    width: 35px;
+    margin-left: 10px;
+    margin-right: 7px; 
+  }
+
+  .Categoryarea{
+    align-items: center;
+  }
+
+  .Categoryarea li button {
+    align-items: center;
+    font-size: 17px;
+    padding: 7px 11px;
+    margin-top: 3px;
+  }
+
+  .container {
+    width: 100%;
+    align-items: center;
+  }
+
+  .container > div {
+    align-items: center;
+  }
+
+  .sectionarea1{
+    width: 100%;
+    align-items: center;
+  }
+  .sectionarea2{
+    width: 100%;
+    align-items: center;
+  }
+
+  .section1{
+    text-align: center;
+    align-items: center;
+    width: 50%;
+  }
+  .section2{
+    text-align: center;
+    width: 50%;
+  }
+
+  .sectionarea3{
+    margin: 10px;
+  }
+
+  .sectionarea3 > .busarea {
+    height: auto;
+  }
+
+  .content-box {
+    width: 90%;
+    height: 175px;
+    font-size: 15px;
+    padding: 0px;
+    margin: 0 auto;
+    align-items: center;
+    padding-top: 10px;
+  }
+
+  .busicon{
+    font-size: 25px;
+  }
+
+  .Bokjeong_time1{
+    width: 100%;
+  }
+
+  .Bokjeong_time2{
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    text-align: right;
+  }
+
+  .Namyangju_time1{
+    width: 100%;
+  }
+
+  .Namyangju_time2{
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    text-align: right;
+  }
+
+
+  .Guri_time1{
+    width: 100%;
+  }
+
+  .Guri_time2{
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    text-align: right;
+  }
+
+
+  .Hanam_time1{
+    width: 100%;
+  }
+
+  .Hanam_time2{
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    text-align: right;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 0px;
+  }
+
+  table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0 auto;
+  }
+
+  .hak_info {
+    width: 100%;
+    padding: 0px;
+    text-align: left; 
+  }
+
+  .hak_container {
+    padding: 0px;
+  }
+
+  .calendar_content {
+      padding: 0px;
+  }
+
+
+
+
+
+
+
+
+
+  #closeBtn {
+    color: #ffffff;
+    position: absolute;
+    top: 18px;
+    left: auto;
+    right: 10px;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  #closeCalendarBtn {
+    color: #ffffff;
+    position: absolute;
+    top: 18px;
+    left: auto;
+    right: 10px;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close_button {
+      color: #ffffff;
+      position: absolute;
+      top: 20px;
+      left: auto;
+      right: 25px;
+      cursor: pointer;
+      font-size: 28px;
+      font-weight: bold;
+  }
+
+  .bread_close {
+      color: #ffffff;
+      position: absolute;
+      top: 20px;
+      left: auto;
+      right: 27px;
+      cursor: pointer;
+      font-size: 28px;
+      font-weight: bold;
+  }
+
+  .cmap-close {
+      color: #ffffff;
+      position: absolute;
+      top: 20px;
+      left: auto;
+      right: 25px;
+      cursor: pointer;
+      font-size: 28px;
+      font-weight: bold;
+  }
+
+  .info_modal_content{
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .Categoryarea li button {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .Categoryarea li button {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 370px) {
+  .Categoryarea li button {
+    font-size: 14px;
+  }
+}
+
+
+  </style>
+</head>
+<body class="no-drag">
+  <header>
+    <div class="header-content">
+        <img id="logo" src="./logo.png" alt="동캠퍼스">
+        <h1 class="gradient-text">동캠퍼스</h1>
+    </div>
+    <div class="other-elements">
+        <p id="weather-info"></p>
+    </div>
+</header>
+
+  <div class="container">
+
+    <div class="Categoryarea">
+      <ul>
+        <li><button class="btn1">#학식</button></li>
+        <li><button class="btn2">#버스</button></li>
+        <li><button class="btn3">#학사일정</button></li>
+        <li><button class="btn4">#강의실</button></li>
+
+        <li><button class="btn6">#출결조회</button></li>
+        <li><button class="btn7">#정보</button></li>
+      </ul>
+    </div>
+
+    
+    <div class="sectionarea1">
+      <div class="section1">
+        <h2>🍱오늘학식</h2>
+        <div class="content-box box1">
+          <p class="hak_title">학식 정보가 없습니다.</p>
+        </div>
+      </div>
+      <div class="section2">
+        <h2>📆학사일정</h2>
+        <div class="content-box box2">
+          <p class="calendar_title">일정 정보가 없습니다.</p>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="bus_container">
+      <div>
+        <h2 class="webreload">🚍통학버스</h2>
+      </div>
+      <div>
+        <img class="rotate" src="./reicon.gif" onclick="rotateImage(this)">
+      </div>
+    </div>
+
+    <div class="sectionarea3">
+
+      <div class="busarea">
+        <div class ="busicon">
+          <p>🚌</p>
+        </div>
+        <div class="Bokjeong_time1">
+          <p class="station_name">복정역</p>
+          <p>00:00</p>
+        </div>
+        <div class="Bokjeong_time2">
+          <p>정보없음</p>
+        </div>
+      </div>
+
+      <div class="busarea">
+        <div class ="busicon">
+          <p>🚌</p>
+        </div>
+        <div class="Namyangju_time1">
+          <p class="station_name">남양주</p>
+          <p>08:00</p>
+        </div>
+        <div class="Namyangju_time2">
+          <p>정보없음</p>
+        </div>
+      </div>
+
+      <div class="busarea">
+        <div class ="busicon">
+          <p>🚌</p>
+        </div>
+        <div class="Guri_time1">
+          <p class="station_name">구리</p>
+          <p>08:30</p>
+        </div>
+        <div class="Guri_time2">
+          <p>정보없음</p>
+        </div>
+      </div>
+
+      <div class="busarea">
+        <div class ="busicon">
+          <p>🚌</p>
+        </div>
+        <div class="Hanam_time1">
+          <p class="station_name">하남</p>
+          <p>09:00</p>
+        </div>
+        <div class="Hanam_time2">
+          <p>정보없음</p>
+        </div>
+      </div>
+    </div>
+    <footer>© 2024 DONG_CAMPUS</footer>
+  </div>
+
+
+
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <div class="menuname">🍱학식</div>
+        <span id="closeBtn">&times;</span>
+        <div id="menuTable"></div>
+        <div class="hak_container">
+          <div class="hak_info">
+            <p>학식가격: 5000원</p>
+            <p>식당위치: 2호관 1층</p>
+            <p>운영시간: 11:00~14:00(학기중)</p>
+            <p>전화번호: (031) 720 - 2188</p>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
+  <div id="calendarModal" class="modal">
+    <div class="modal-content">
+        <div class="calendar_modal_title">📅학사일정</div>
+        <span id="closeCalendarBtn" class="close">&times;</span>
+        <div class="calendar_content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>날짜</th>
+                        <th>일정</th>
+                    </tr>
+                </thead>
+                <tbody id="calendarBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="cmap-myModal" class="cmap-modal">
+
+  <div class="cmap-modal-content">
+
+    <span class="cmap-close">&times;</span>
+
+    <h2>🗺️강의실</h2>
+
+    <table class="cmap-table">
+      <tr>
+        <th>호관</th>
+        <th>층</th>
+        <th>강의실</th>
+      </tr>
+      <tr>
+        <td rowspan="4">1호관</td>
+        <td>1층</td>
+        <td>1101 ~ 1113</td>
+      </tr>
+      <tr>
+        <td>2층</td>
+        <td>1201 ~ 1217</td>
+      </tr>
+      <tr>
+        <td>3층</td>
+        <td>1301 ~ 1313</td>
+      </tr>
+      <tr>
+        <td>4층</td>
+        <td>1401 ~ 1410</td>
+      </tr>
+      <tr>
+        <td rowspan="4">2호관</td>
+        <td>1층</td>
+        <td>학생식당</td>
+      </tr>
+      <tr>
+        <td>2층</td>
+        <td>2201 ~ 2213</td>
+      </tr>
+      <tr>
+        <td>3층</td>
+        <td>2301 ~ 2312</td>
+      </tr>
+      <tr>
+        <td>4층</td>
+        <td>2401 ~ 2413</td>
+      </tr>
+      <tr>
+        <td rowspan="3">3호관</td>
+        <td>1층</td>
+        <td>3101 ~ 3110</td>
+      </tr>
+      <tr>
+        <td>2층</td>
+        <td>3201 ~ 3210</td>
+      </tr>
+      <tr>
+        <td>3층</td>
+        <td>3301 ~ 3311</td>
+      </tr>
+      <tr>
+        <td rowspan="4">5호관</td>
+        <td>1층</td>
+        <td>업데이트 예정</td>
+      </tr>
+      <tr>
+        <td>2층</td>
+        <td>5201 ~ 5212</td>
+      </tr>
+      <tr>
+        <td>3층</td>
+        <td>5301 ~ 5314</td>
+      </tr>
+      <tr>
+        <td>4층</td>
+        <td>5401 ~ 5416</td>
+      </tr>
+      <tr>
+        <td rowspan="4">6호관</td>
+        <td>1층</td>
+        <td>6101 ~ 6102</td>
+      </tr>
+      <tr>
+        <td>2층</td>
+        <td>6200 ~ 6210</td>
+      </tr>
+      <tr>
+        <td>3층</td>
+        <td>6301 ~ 6308</td>
+      </tr>
+      <tr>
+        <td>4층</td>
+        <td>6401 ~ 6409</td>
+      </tr>
+      <tr>
+        <td rowspan="4">학생회관(7호관)</td>
+        <td>지하 1층</td>
+        <td>업데이트 예정</td>
+      </tr>
+      <tr>
+        <td>1층</td>
+        <td>7101 ~ 7109</td>
+      </tr>
+      <tr>
+        <td>2층</td>
+        <td>7202 ~ 7211</td>
+      </tr>
+      <tr>
+        <td>3층</td>
+        <td>7302 ~ 7310</td>
+      </tr>
+      <tr>
+        <td rowspan="4">8호관</td>
+        <td>1층</td>
+        <td>8100 ~ 8106</td>
+      </tr>
+      <tr>
+        <td>2층</td>
+        <td>8201 ~ 8219</td>
+      </tr>
+      <tr>
+        <td>3층</td>
+        <td>8301 ~ 8321</td>
+      </tr>
+      <tr>
+        <td>4층</td>
+        <td>8400 ~ 8420</td>
+      </tr>
+      <tr>
+        <td rowspan="4">9호관</td>
+        <td>2층</td>
+        <td>9201 ~ 9215</td>
+      </tr>
+      <tr>
+        <td>3층</td>
+        <td>9301 ~ 9313</td>
+      </tr>
+      <tr>
+        <td>4층</td>
+        <td>9401 ~ 9416</td>
+      </tr>
+      <tr>
+        <td>5층</td>
+        <td>9501 ~ 9514</td>
+      </tr>
+      <tr>
+        <td rowspan="4">10호관</td>
+        <td>지하 1층</td>
+        <td>10B101 ~ 10B106</td>
+      </tr>
+      <tr>
+        <td>1층</td>
+        <td>10101 ~ 10108</td>
+      </tr>
+      <tr>
+        <td>2층</td>
+        <td>10201 ~ 10211</td>
+      </tr>
+      <tr>
+        <td>3층</td>
+        <td>10301 ~ 10308</td>
+      </tr>
+      <tr>
+        <td rowspan="4">9호관</td>
+        <td>2층</td>
+        <td>9201 ~ 9215</td>
+      </tr>
+      <tr>
+        <td>3층</td>
+        <td>9301 ~ 9313</td>
+      </tr>
+      <tr>
+        <td>4층</td>
+        <td>9401 ~ 9416</td>
+      </tr>
+      <tr>
+        <td>5층</td>
+        <td>9501 ~ 9514</td>
+      </tr>
+      <tr>
+        <td rowspan="11">국제교류센터</td>
+        <td>지하 1층</td>
+        <td>주차장</td>
+      </tr>
+      <tr>
+        <td>1층</td>
+        <td>연회장1</td>
+      </tr>
+      <tr>
+        <td>2층</td>
+        <td>연회장2</td>
+      </tr>
+      <tr>
+        <td>3층</td>
+        <td>130301 ~ 130304</td>
+      </tr>
+      <tr>
+        <td>4층</td>
+        <td>130401 ~ 130411</td>
+      </tr>
+      <tr>
+        <td>5층</td>
+        <td>130501 ~ 130513</td>
+      </tr>
+      <tr>
+        <td>6층</td>
+        <td>130601 ~ 130613</td>
+      </tr>
+      <tr>
+        <td>7층</td>
+        <td>기숙사(남)</td>
+      </tr>
+      <tr>
+        <td>8층</td>
+        <td>기숙사(여)</td>
+      </tr>
+      <tr>
+        <td>9층</td>
+        <td>기숙사(남)</td>
+      </tr>
+      <tr>
+        <td>10층</td>
+        <td>기숙사(여)</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+
+
+ <div id="bread_myModal" class="bread_modal">
+  <div class="bread_modal-content">
+    <span class="bread_close" onclick="closeModal()">&times;</span>
+    <img src="./bread.jpg" alt="직사각형 이미지" style="max-width: 100%; border-radius: 10px;">
+    <p>기간: 2024. 03. 11 ~ 추후 공지</p>
+    <p>장소: 1호관 정문 앞</p>
+    <p>시간: 8시 30분 ~ 소진시까지</p>
+    <p>메뉴: 빵 + 우유 제공</p>
+  </div>
+</div>
+
+
+<div id="attendanceModal" class="attendance-modal">
+  <div class="attendance-modal-content">
+    <span class="attendance-close" onclick="closeAttendanceModal()">&times;</span>
+    <p>포털시스템(portal.du.ac.kr) 접속하여 학번/비밀번호를 입력하여 로그인</p>
+    <p>출석조회 메뉴 선택 [ 좌측상단 메뉴바 ⇒ 대학모바일 ⇒ 출석조회 ]</p>
+    <button class="attendance-button">포털시스템 바로가기</button>
+  </div>
+</div>
+
+  
+  <script src="./str.js"></script>
+  <script src="./scripts.js"></script>
+  <script>
+
+
+var _0x366ab8=_0x51f3;(function(_0x2f4830,_0x2f84b3){var _0x42d787=_0x51f3,_0x417a6c=_0x2f4830();while(!![]){try{var _0x1ce314=-parseInt(_0x42d787(0x192))/0x1*(parseInt(_0x42d787(0x16d))/0x2)+parseInt(_0x42d787(0x195))/0x3+parseInt(_0x42d787(0x14f))/0x4+parseInt(_0x42d787(0x151))/0x5+parseInt(_0x42d787(0x168))/0x6*(-parseInt(_0x42d787(0x14e))/0x7)+parseInt(_0x42d787(0x13e))/0x8+parseInt(_0x42d787(0x180))/0x9;if(_0x1ce314===_0x2f84b3)break;else _0x417a6c['push'](_0x417a6c['shift']());}catch(_0x2a3ae5){_0x417a6c['push'](_0x417a6c['shift']());}}}(_0x3010,0xdefa8));var hak_modal=document['getElementById'](_0x366ab8(0x16c)),hak_btn1=document['querySelector']('.box1');function _0x3010(){var _0x3d066c=['https://portal.du.ac.kr','.btn4','floor','https://forms.gle/JDP3A9xQJPA5tdCz6','border','09:00','textContent','제안하기','.Namyangju_time1\x20p:nth-child(2)','.box2','862673WzbCiq','703612ushxae','.Namyangju_time2\x20p','4614585VhCJsG','onclick','button','<h2>제안하기</h2><p>동캠퍼스팀은\x20항상\x20발전하기\x20위해\x20여러분의\x20의견을\x20기다립니다!<p><p>추가\x20정보나\x20기능을\x20요청하시는\x20분들께서는\x20언제든지\x20의견을\x20남겨주세요.<p>동캠퍼스\x20사용\x20중\x20발견하신\x20버그나\x20오류에\x20대해서도\x20알려주시면\x20신속히\x20수정하도록\x20하겠습니다.<p>여러분의\x20소중한\x20의견이\x20동캠퍼스의\x20발전에\x20큰\x20도움이\x20됩니다!</p>','scrollTo','.btn2','.cmap-close','calendarModal','rotate(','body','split','.Bokjeong_time1\x20p:last-child','location','remove','findIndex','link_button','none','attendance-button','deg)','getHours','open','className','reload','30RnvzHN','.Bokjeong_time2\x20p:last-child','attendanceModal','createElement','myModal','2018FhwAmA','\x0a\x20\x20\x20\x20<h2>통학버스\x20운행\x20구간\x20및\x20시간표</h2>\x0a\x0a\x20\x20\x20\x20<p>운행\x20기간\x20:\x20학기\x20중\x20월\x20~\x20금요일</p>\x0a\x20\x20\x20\x20<p>운행\x20제외\x20:\x20주말\x20및\x20공휴일,\x20근로자의\x20날(5/1),\x20개교기념일(10/2),\x20축제,\x20체육대회</p>\x0a\x20\x20\x20\x20<p>운행\x20대상\x20:\x20동서울대학교\x20학생\x20및\x20교직원에\x20한하여\x20전\x20구간\x20무료,\x20외부인\x20탑승\x20불가</p>\x0a\x20\x20\x20\x20<p>운행\x20노선\x20:\x20복정셔틀(오전08:30\x20~\x2010:30),\x20남양주-구리-하남\x20노선\x201대</p>\x0a\x20\x20\x20\x20<p>출발\x20시간\x20전\x20탑승\x20인원을\x20초과할\x20경우,\x20조기\x20출발할\x20수\x20있고\x20교통상황에\x20따라\x20지연될\x20수\x20있으니\x20양해바랍니다.</p>\x0a\x20\x20\x20\x20<br>\x0a\x20\x20\x20\x20<h2>통학버스\x20탑승\x20장소</h2>\x0a\x0a\x20\x20\x20\x20<p>[복정역]\x20지하철\x20복정역\x202번출구(횡단보도)<br>건너편\x20성남방향\x20버스정류장</p>\x0a\x20\x20\x20\x20<img\x20src=\x22https://github.com/jaehyundev/jaehyundev.github.io/blob/main/map1.jpg?raw=true\x22\x20alt=\x22복정역\x20이미지\x22\x20style=\x22max-width:\x20500px;\x20width:\x20100%;\x22>\x0a\x20\x20\x20\x20<p>[남양주]\x20평내호평역\x202번\x20출구\x20앞\x20버스정류장</p>\x0a\x20\x20\x20\x20<img\x20src=\x22https://github.com/jaehyundev/jaehyundev.github.io/blob/main/map2.jpg?raw=true\x22\x20alt=\x22남양주\x20이미지\x22\x20style=\x22max-width:\x20500px;\x20width:\x20100%;\x22>\x0a\x20\x20\x20\x20<p>[구리]\x20구리\x20롯데백화점\x20앞\x20택시승강장</p>\x0a\x20\x20\x20\x20<img\x20src=\x22https://github.com/jaehyundev/jaehyundev.github.io/blob/main/map3.jpg?raw=true\x22\x20alt=\x22구리\x20이미지\x22\x20style=\x22max-width:\x20500px;\x20width:\x20100%;\x22>\x0a\x20\x20\x20\x20<p>[하남]\x20하남\x20두산우브파크\x20홈플러스\x20상가\x20버스정류장\x20앞</p>\x0a\x20\x20\x20\x20<img\x20src=\x22https://github.com/jaehyundev/jaehyundev.github.io/blob/main/map4.jpg?raw=true\x22\x20alt=\x22하남\x20이미지\x22\x20style=\x22max-width:\x20500px;\x20width:\x20100%;\x22>\x0a\x20\x20\x20\x20<br>\x0a\x20\x20\x20\x20\x0a\x20\x20\x20\x20<p>-\x20운행\x20문의\x20-</p>\x0a\x20\x20\x20\x20<p>운행\x20관련\x20및\x20분실물\x20:\x20(주)뉴제로쿨투어\x2002-572-5522</p>\x0a\x20\x20\x20\x20<p>기타\x20문의\x20:\x20동서울대학교\x20관리과\x20031-720-2024</p>\x0a\x20\x20\x20\x20<br>\x0a\x20\x20\x20\x20','getDay','.btn1','info_modal_content','closeBtn','.btn3','click','getElementsByClassName','scrollHeight','opacity','.Hanam_time2\x20p','style','getElementById','href','slice','08:30','div','info_modal','2393226wuyYGB','운행\x20종료','cmap-myModal','background','.Guri_time2\x20p','touchstart','block','display','addEventListener','.Guri_time1\x20p:nth-child(2)','&times;','target','appendChild','push','getMinutes','DOMContentLoaded','querySelector','innerHTML','1051hnLPYy','시간\x20','.Hanam_time1\x20p:nth-child(2)','1664916VPvvFu','5362144vHsTUI','close_button','곧\x20도착','closeCalendarBtn','length','08:00'];_0x3010=function(){return _0x3d066c;};return _0x3010();}hak_btn1[_0x366ab8(0x152)]=function(){var _0x467978=_0x366ab8;hak_modal['style'][_0x467978(0x187)]=_0x467978(0x186);};var hak_btn2=document[_0x366ab8(0x190)](_0x366ab8(0x170));hak_btn2[_0x366ab8(0x152)]=function(){var _0x4d7d63=_0x366ab8;hak_modal[_0x4d7d63(0x179)]['display']=_0x4d7d63(0x186);};var closeBtn=document[_0x366ab8(0x17a)](_0x366ab8(0x172));closeBtn[_0x366ab8(0x152)]=function(){var _0x354af3=_0x366ab8;hak_modal[_0x354af3(0x179)][_0x354af3(0x187)]='none';},window['onclick']=function(_0x27b5bf){var _0x576d0c=_0x366ab8;_0x27b5bf[_0x576d0c(0x18b)]==hak_modal&&(hak_modal[_0x576d0c(0x179)][_0x576d0c(0x187)]=_0x576d0c(0x161));};var calendarModal=document[_0x366ab8(0x17a)](_0x366ab8(0x158)),calendarTitle=document[_0x366ab8(0x190)](_0x366ab8(0x14d));calendarTitle[_0x366ab8(0x152)]=function(){var _0x244bc9=_0x366ab8;calendarModal['style'][_0x244bc9(0x187)]=_0x244bc9(0x186);};var btn2=document[_0x366ab8(0x190)](_0x366ab8(0x173));btn2['onclick']=function(){var _0x31b543=_0x366ab8;calendarModal['style'][_0x31b543(0x187)]=_0x31b543(0x186);};var closeCalendarBtn=document[_0x366ab8(0x17a)](_0x366ab8(0x141));closeCalendarBtn[_0x366ab8(0x152)]=function(){var _0x499862=_0x366ab8;calendarModal[_0x499862(0x179)][_0x499862(0x187)]=_0x499862(0x161);},window['onclick']=function(_0x3ec110){var _0x24cc60=_0x366ab8;_0x3ec110[_0x24cc60(0x18b)]==calendarModal&&(calendarModal[_0x24cc60(0x179)][_0x24cc60(0x187)]=_0x24cc60(0x161));};function getCurrentTime(){var _0x22b3e9=_0x366ab8,_0xcb5828=new Date(),_0x5381f2=_0xcb5828[_0x22b3e9(0x164)](),_0x43724f=_0xcb5828[_0x22b3e9(0x18e)]();return _0x5381f2*0x3c+_0x43724f;}function isWeekend(){var _0x4b02f9=_0x366ab8,_0x5719e2=new Date(),_0x2e8a9c=_0x5719e2[_0x4b02f9(0x16f)]();return _0x2e8a9c===0x0||_0x2e8a9c===0x6;}function calculateBusTime(){var _0x5eb88c=_0x366ab8,_0x323af6=getCurrentTime(),_0x133000=[];for(var _0xeb8d14=0x1fe;_0xeb8d14<=0x276;_0xeb8d14+=0xa){_0x133000[_0x5eb88c(0x18d)](_0xeb8d14);}var _0x59c6e4=_0x133000[_0x5eb88c(0x15f)](_0x49ca59=>_0x49ca59>_0x323af6),_0x191fee=_0x133000[_0x59c6e4],_0x2f5e7b=Math['floor'](_0x191fee/0x3c),_0x5b933c=_0x191fee%0x3c,_0x4b2b32=document['querySelector'](_0x5eb88c(0x15c)),_0x2b06a2=document[_0x5eb88c(0x190)](_0x5eb88c(0x169));if(_0x59c6e4===-0x1||_0x191fee>0x276||isWeekend())_0x4b2b32[_0x5eb88c(0x14a)]=_0x5eb88c(0x17d),_0x2b06a2['textContent']=_0x5eb88c(0x181);else{_0x4b2b32[_0x5eb88c(0x14a)]=('0'+_0x2f5e7b)['slice'](-0x2)+':'+('0'+_0x5b933c)[_0x5eb88c(0x17c)](-0x2);if(_0x323af6>_0x191fee)_0x2b06a2[_0x5eb88c(0x14a)]='운행\x20종료';else{var _0x4ce87c=_0x191fee-_0x323af6;if(_0x4ce87c>0x0){var _0x2f5e7b=Math[_0x5eb88c(0x146)](_0x4ce87c/0x3c),_0x5b933c=_0x4ce87c%0x3c,_0x437528='';_0x2f5e7b>0x0&&(_0x437528+=_0x2f5e7b+_0x5eb88c(0x193)),_0x5b933c>0x0&&(_0x437528+=_0x5b933c+'분\x20'),_0x2b06a2[_0x5eb88c(0x14a)]=_0x437528+'';}else _0x2b06a2[_0x5eb88c(0x14a)]=_0x5eb88c(0x140);}}}calculateBusTime(),document['addEventListener'](_0x366ab8(0x18f),function(){var _0x50b955=_0x366ab8,_0x393e07=new Date(),_0x346983=_0x393e07[_0x50b955(0x16f)](),_0x4d74bb=_0x346983===0x0||_0x346983===0x6;if(_0x4d74bb){document[_0x50b955(0x190)](_0x50b955(0x14c))[_0x50b955(0x14a)]=_0x50b955(0x143),document[_0x50b955(0x190)](_0x50b955(0x189))[_0x50b955(0x14a)]=_0x50b955(0x17d),document[_0x50b955(0x190)](_0x50b955(0x194))['textContent']=_0x50b955(0x149),document['querySelector'](_0x50b955(0x150))[_0x50b955(0x14a)]=_0x50b955(0x181),document[_0x50b955(0x190)](_0x50b955(0x184))[_0x50b955(0x14a)]=_0x50b955(0x181),document['querySelector']('.Hanam_time2\x20p')[_0x50b955(0x14a)]=_0x50b955(0x181);return;}var _0x3e8669=_0x393e07['getHours'](),_0x4e7697=_0x393e07['getMinutes'](),_0x3cb476=_0x3e8669*0x3c+_0x4e7697,_0x162895=document['querySelector'](_0x50b955(0x14c))[_0x50b955(0x14a)][_0x50b955(0x15b)](':'),_0x117f6e=parseInt(_0x162895[0x0]),_0x4d21da=parseInt(_0x162895[0x1]),_0x579351=_0x117f6e*0x3c+_0x4d21da,_0x33b7f0=document[_0x50b955(0x190)](_0x50b955(0x189))['textContent']['split'](':'),_0x331664=parseInt(_0x33b7f0[0x0]),_0x2ae80f=parseInt(_0x33b7f0[0x1]),_0x21b15f=_0x331664*0x3c+_0x2ae80f,_0x1e23b1=document[_0x50b955(0x190)]('.Hanam_time1\x20p:nth-child(2)')['textContent'][_0x50b955(0x15b)](':'),_0x5a5d88=parseInt(_0x1e23b1[0x0]),_0x2652d3=parseInt(_0x1e23b1[0x1]),_0x1a6cb0=_0x5a5d88*0x3c+_0x2652d3;if(_0x3cb476<_0x579351){var _0x5ee893=_0x579351-_0x3cb476,_0x5648d8=Math[_0x50b955(0x146)](_0x5ee893/0x3c),_0x2547e2=_0x5ee893%0x3c;_0x5648d8>0x0?document[_0x50b955(0x190)]('.Namyangju_time2\x20p')[_0x50b955(0x14a)]=_0x5648d8+_0x50b955(0x193)+_0x2547e2+'분':document[_0x50b955(0x190)](_0x50b955(0x150))[_0x50b955(0x14a)]=_0x2547e2+'분';}else document[_0x50b955(0x190)](_0x50b955(0x150))[_0x50b955(0x14a)]=_0x50b955(0x181);if(_0x3cb476<_0x21b15f){var _0x5ee893=_0x21b15f-_0x3cb476,_0x5648d8=Math[_0x50b955(0x146)](_0x5ee893/0x3c),_0x2547e2=_0x5ee893%0x3c;_0x5648d8>0x0?document[_0x50b955(0x190)](_0x50b955(0x184))[_0x50b955(0x14a)]=_0x5648d8+_0x50b955(0x193)+_0x2547e2+'분':document[_0x50b955(0x190)]('.Guri_time2\x20p')['textContent']=_0x2547e2+'분';}else document[_0x50b955(0x190)](_0x50b955(0x184))[_0x50b955(0x14a)]=_0x50b955(0x181);if(_0x3cb476<_0x1a6cb0){var _0x5ee893=_0x1a6cb0-_0x3cb476,_0x5648d8=Math['floor'](_0x5ee893/0x3c),_0x2547e2=_0x5ee893%0x3c;_0x5648d8>0x0?document[_0x50b955(0x190)](_0x50b955(0x178))[_0x50b955(0x14a)]=_0x5648d8+_0x50b955(0x193)+_0x2547e2+'분':document[_0x50b955(0x190)](_0x50b955(0x178))[_0x50b955(0x14a)]=_0x2547e2+'분';}else document[_0x50b955(0x190)](_0x50b955(0x178))['textContent']=_0x50b955(0x181);});var scrollToBottomButton=document[_0x366ab8(0x190)](_0x366ab8(0x156));scrollToBottomButton[_0x366ab8(0x188)](_0x366ab8(0x174),function(){var _0x48937a=_0x366ab8;window[_0x48937a(0x155)](0x0,document['body'][_0x48937a(0x176)]);}),document['querySelector'](_0x366ab8(0x145))[_0x366ab8(0x152)]=function(){var _0x2c6054=_0x366ab8;document[_0x2c6054(0x17a)](_0x2c6054(0x182))['style'][_0x2c6054(0x187)]=_0x2c6054(0x186);},document[_0x366ab8(0x190)](_0x366ab8(0x157))[_0x366ab8(0x152)]=function(){var _0xcab191=_0x366ab8;document[_0xcab191(0x17a)](_0xcab191(0x182))[_0xcab191(0x179)][_0xcab191(0x187)]='none';},window[_0x366ab8(0x152)]=function(_0x170cba){var _0x4c6965=_0x366ab8;_0x170cba['target']==document['getElementById'](_0x4c6965(0x16c))&&(document[_0x4c6965(0x17a)](_0x4c6965(0x182))[_0x4c6965(0x179)][_0x4c6965(0x187)]=_0x4c6965(0x161));};const btn=document[_0x366ab8(0x190)]('.btn7');btn[_0x366ab8(0x188)](_0x366ab8(0x174),function(){var _0x588aab=_0x366ab8;const _0x1c9c85=document['createElement'](_0x588aab(0x17e));_0x1c9c85[_0x588aab(0x166)]=_0x588aab(0x17f);const _0x1e9e86=document[_0x588aab(0x16b)]('div');_0x1e9e86['className']=_0x588aab(0x171);const _0xbbe148=document[_0x588aab(0x16b)](_0x588aab(0x17e));_0xbbe148[_0x588aab(0x166)]=_0x588aab(0x171),_0xbbe148['innerHTML']=_0x588aab(0x16e),_0x1e9e86[_0x588aab(0x18c)](_0xbbe148);const _0x20e96f=document[_0x588aab(0x16b)]('div');_0x20e96f[_0x588aab(0x166)]='info_section2',_0x20e96f[_0x588aab(0x191)]=_0x588aab(0x154),_0x1e9e86['appendChild'](_0x20e96f);const _0x2d663b=document[_0x588aab(0x16b)](_0x588aab(0x153));_0x2d663b['textContent']=_0x588aab(0x14b),_0x2d663b[_0x588aab(0x166)]=_0x588aab(0x160),_0x2d663b[_0x588aab(0x188)]('click',function(){var _0x467d12=_0x588aab;window[_0x467d12(0x15d)][_0x467d12(0x17b)]=_0x467d12(0x147);}),_0x20e96f[_0x588aab(0x18c)](_0x2d663b),_0x1e9e86[_0x588aab(0x18c)](_0x20e96f),_0x1c9c85[_0x588aab(0x18c)](_0x1e9e86);const _0x955739=document[_0x588aab(0x16b)](_0x588aab(0x153));_0x955739[_0x588aab(0x191)]=_0x588aab(0x18a),_0x955739[_0x588aab(0x166)]=_0x588aab(0x13f),_0x955739[_0x588aab(0x179)][_0x588aab(0x148)]=_0x588aab(0x161),_0x955739[_0x588aab(0x179)][_0x588aab(0x183)]=_0x588aab(0x161),_0x955739[_0x588aab(0x188)](_0x588aab(0x174),function(){var _0x42cfdf=_0x588aab;_0x1c9c85[_0x42cfdf(0x15e)]();}),_0x1e9e86['appendChild'](_0x955739),document[_0x588aab(0x15a)][_0x588aab(0x18c)](_0x1c9c85);});let currentRotation=0x0;function rotateImage(_0x442369){var _0x4a914a=_0x366ab8;currentRotation+=0x168,_0x442369[_0x4a914a(0x179)]['transform']=_0x4a914a(0x159)+currentRotation+_0x4a914a(0x163),setTimeout(function(){var _0x30ebca=_0x4a914a;location[_0x30ebca(0x167)]();},0x2bc);}document[_0x366ab8(0x188)](_0x366ab8(0x18f),function(){var _0x35587d=_0x366ab8,_0x4aa1de=document[_0x35587d(0x17a)]('logo');_0x4aa1de[_0x35587d(0x188)](_0x35587d(0x185),function(_0x4e3f52){_0x4e3f52['preventDefault']();});}),window['onload']=function(){var _0x5fbd10=_0x366ab8;document[_0x5fbd10(0x15a)][_0x5fbd10(0x179)][_0x5fbd10(0x177)]=0x0,setTimeout(function(){var _0x2c8fad=_0x5fbd10;document[_0x2c8fad(0x15a)][_0x2c8fad(0x179)][_0x2c8fad(0x177)]=0x1;},0x64);};var btn6Elements=document['getElementsByClassName']('btn6');for(var i=0x0;i<btn6Elements['length'];i++){btn6Elements[i][_0x366ab8(0x188)](_0x366ab8(0x174),openAttendanceModal);}function openAttendanceModal(){var _0x7837e5=_0x366ab8;document[_0x7837e5(0x17a)](_0x7837e5(0x16a))[_0x7837e5(0x179)][_0x7837e5(0x187)]='block';}function _0x51f3(_0x363a1a,_0x8ef967){var _0x3010d1=_0x3010();return _0x51f3=function(_0x51f3c1,_0x3990cd){_0x51f3c1=_0x51f3c1-0x13e;var _0x5943c0=_0x3010d1[_0x51f3c1];return _0x5943c0;},_0x51f3(_0x363a1a,_0x8ef967);}function closeAttendanceModal(){var _0x14fdd2=_0x366ab8;document[_0x14fdd2(0x17a)](_0x14fdd2(0x16a))[_0x14fdd2(0x179)][_0x14fdd2(0x187)]=_0x14fdd2(0x161);}window['onclick']=function(_0x130a74){var _0x59b3ab=_0x366ab8;_0x130a74[_0x59b3ab(0x18b)]==document['getElementById'](_0x59b3ab(0x16a))&&closeAttendanceModal();};const attendanceButtons=document[_0x366ab8(0x175)](_0x366ab8(0x162));for(let i=0x0;i<attendanceButtons[_0x366ab8(0x142)];i++){attendanceButtons[i]['addEventListener'](_0x366ab8(0x174),function(){var _0x1825d2=_0x366ab8;window[_0x1825d2(0x165)](_0x1825d2(0x144));});}
+
+
+const _0x59f45e=_0x1992;function _0x169d(){const _0x45ea51=['few\x20clouds','강한\x20비\x20🌧','thunderstorm\x20with\x20rain','error','구름\x20낌\x20⛅️','sleet','thunderstorm\x20with\x20light\x20rain','main','9hsCyCH','broken\x20clouds','93peXGYL','천둥번개와\x20비\x20🌩','구름\x20많음\x20☁️','5818356chNrXK','얼음비\x20❄️','에러\x20발생:','5200780JKyicE','27e61cc63f22b9a35ef5585ac5252d3a','very\x20heavy\x20rain','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p>','폭설\x20❄️','구름\x20조금\x20🌤','2908gWmtIb','getElementById','1454356eprKej','2DWnbtc','7581535ytsMtD','7458506FQdijR','heavy\x20snow','천둥번개\x20🌩','&units=metric','538391HPhRDh','112gUPwbt','then','heavy\x20intensity\x20rain','네트워크\x20상태가\x20좋지\x20않습니다.','innerHTML','extreme\x20rain','약한\x20천둥번개와\x20비\x20🌩','흐림\x20☁️','light\x20snow','temp','light\x20rain','&appid=','127.1270589','극심한\x20비\x20🌧','scattered\x20clouds','weather','동서울대학교','37.4599522','catch','소나기\x20🌧','overcast\x20clouds','&lon=','https://api.openweathermap.org/data/2.5/weather?lat=','weather-info','description'];_0x169d=function(){return _0x45ea51;};return _0x169d();}(function(_0x21823f,_0x3cc9d7){const _0x5f54be=_0x1992,_0x5f1233=_0x21823f();while(!![]){try{const _0x317662=parseInt(_0x5f54be(0x148))/0x1*(-parseInt(_0x5f54be(0x149))/0x2)+parseInt(_0x5f54be(0x13a))/0x3*(parseInt(_0x5f54be(0x146))/0x4)+parseInt(_0x5f54be(0x14a))/0x5+parseInt(_0x5f54be(0x13d))/0x6+parseInt(_0x5f54be(0x116))/0x7*(parseInt(_0x5f54be(0x117))/0x8)+parseInt(_0x5f54be(0x138))/0x9*(-parseInt(_0x5f54be(0x140))/0xa)+-parseInt(_0x5f54be(0x112))/0xb;if(_0x317662===_0x3cc9d7)break;else _0x5f1233['push'](_0x5f1233['shift']());}catch(_0x4e09c2){_0x5f1233['push'](_0x5f1233['shift']());}}}(_0x169d,0xe3c08));function _0x1992(_0xb76e8d,_0x256449){const _0x169de2=_0x169d();return _0x1992=function(_0x1992f7,_0x23e473){_0x1992f7=_0x1992f7-0x112;let _0x3ce412=_0x169de2[_0x1992f7];return _0x3ce412;},_0x1992(_0xb76e8d,_0x256449);}const apiKey=_0x59f45e(0x141),latitude=_0x59f45e(0x128),longitude=_0x59f45e(0x123),apiUrl=_0x59f45e(0x12d)+latitude+_0x59f45e(0x12c)+longitude+_0x59f45e(0x122)+apiKey+_0x59f45e(0x115),weatherInfo=document[_0x59f45e(0x147)](_0x59f45e(0x12e));fetch(apiUrl)[_0x59f45e(0x118)](_0x254f66=>{const _0x22ae72=_0x59f45e;if(!_0x254f66['ok'])throw new Error(_0x22ae72(0x11a));return _0x254f66['json']();})['then'](_0x50a99a=>{const _0x400839=_0x59f45e,_0x2ed095=_0x400839(0x127),_0x199efa=_0x50a99a[_0x400839(0x137)][_0x400839(0x120)]['toFixed'](0x1),_0x38e1df=translateWeatherDescription(_0x50a99a[_0x400839(0x126)][0x0][_0x400839(0x12f)]);weatherInfo[_0x400839(0x11b)]=_0x400839(0x143)+_0x38e1df+'\x20'+_0x199efa+'℃\x20';})[_0x59f45e(0x129)](_0xfe3929=>{const _0x3ff8ba=_0x59f45e;console[_0x3ff8ba(0x133)](_0x3ff8ba(0x13f),_0xfe3929),weatherInfo['innerHTML']='<p>날씨\x20정보를\x20불러오지\x20못했습니다.</p>';});function translateWeatherDescription(_0x279355){const _0x3402e3=_0x59f45e;switch(_0x279355){case'clear\x20sky':return'맑음\x20☀️';case _0x3402e3(0x130):return _0x3402e3(0x145);case _0x3402e3(0x125):return _0x3402e3(0x134);case _0x3402e3(0x139):return _0x3402e3(0x13c);case _0x3402e3(0x12b):return _0x3402e3(0x11e);case _0x3402e3(0x121):return'약간의\x20비\x20🌧';case'moderate\x20rain':return'보통\x20비\x20🌧';case _0x3402e3(0x119):return _0x3402e3(0x131);case _0x3402e3(0x142):return'매우\x20강한\x20비\x20🌧';case _0x3402e3(0x11c):return _0x3402e3(0x124);case'freezing\x20rain':return _0x3402e3(0x13e);case _0x3402e3(0x11f):return'약간의\x20눈\x20❄️';case'moderate\x20snow':return'보통\x20눈\x20❄️';case _0x3402e3(0x113):return _0x3402e3(0x144);case _0x3402e3(0x135):return'진눈깨비\x20❄️';case'shower\x20rain':return _0x3402e3(0x12a);case _0x3402e3(0x136):return _0x3402e3(0x11d);case _0x3402e3(0x132):return _0x3402e3(0x13b);case'thunderstorm\x20with\x20heavy\x20rain':return'강한\x20천둥번개와\x20비\x20🌩';case'thunderstorm':return _0x3402e3(0x114);default:return _0x279355;}}
+
+  </script>
+</body>
+
+</html>
