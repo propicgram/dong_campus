@@ -2,7 +2,7 @@ name: Run Python Code
 
 on:
   schedule:
-    - cron: '1 0 * * *' # 매일 0시 01분에 실행
+    - cron: '1 15 * * 0' # 한국 시간 기준으로 월요일 자정 00시 01분에 실행
   workflow_dispatch:
 
 jobs:
