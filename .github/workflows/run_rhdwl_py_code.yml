@@ -34,8 +34,8 @@ jobs:
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add rhdwl.py
-          git commit -m "Update rhdwl.py with scraped text"
+          git add web_content.js
+          git commit -m "Update web_content.js with scraped text"
           git push https://github.com/propicgram/dong_campus.git HEAD:main
         env:
           JHDEV_TOKEN: ${{ secrets.DONG_TOKEN }}
