@@ -1,0 +1,40 @@
+name: Run rhdwl Python Code
+
+on:
+  schedule:
+    - cron: '0 16,18,20,22,0 * * *' 
+
+jobs:
+  run-code:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update && sudo apt-get install -y build-essential libffi-dev
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Python script
+        run: python rhdwl.py
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add rhdwl.py
+          git commit -m "Update rhdwl.py with scraped text"
+          git push https://github.com/propicgram/dong_campus.git HEAD:main
+        env:
+          JHDEV_TOKEN: ${{ secrets.DONG_TOKEN }}
