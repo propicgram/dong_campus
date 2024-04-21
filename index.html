@@ -688,6 +688,18 @@ img.rotate {
     color: rgb(255, 255, 255);
   }
 
+  .rhdwl{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    color: white;
+    font-size: 15px;
+  }
+  .rhdwl th{
+    font-size: 25px;
+    text-align: center;
+  }
+
 
 
 @media only screen and (max-width: 600px) {
@@ -967,6 +979,16 @@ img.rotate {
       </div>
     </div>
     
+
+    <table class="rhdwl">
+        <thead>
+            <tr>
+                <th>📢공지사항</th>
+            </tr>
+        </thead>
+        <tbody id="content"></tbody>
+    </table>
+
 
     <div class="bus_container">
       <div>
@@ -1319,7 +1341,26 @@ img.rotate {
   
   <script src="./str.js"></script>
   <script src="./scripts.js"></script>
+  <script src="web_content.js"></script>
   <script>
+
+
+  var contentArray = webContent.split('\n');
+  var contentHTML = '';
+
+  for (var i = 1; i < contentArray.length - 1; i++) {
+      var line = contentArray[i];
+
+      var truncatedLine = line.substring(0, line.length - 2);
+      contentHTML += '<tr><td>' + truncatedLine + '</td></tr>';
+  }
+  document.getElementById("content").innerHTML = contentHTML;
+
+  document.getElementById("content").addEventListener("click", function() {
+      window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=VYlDwaWjKSwAGszRXT2bcg%3d%3d&";
+  });
+
+
 
 
   var hak_modal = document.getElementById("myModal");
