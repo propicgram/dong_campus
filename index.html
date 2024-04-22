@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-  
+
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VK2S94GSH0"></script>
 <script>
@@ -181,6 +181,10 @@
       box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
       background-color:#a47dfb; 
       color: rgb(255, 255, 255);
+    }
+
+    .btn8 {
+      background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00) !important;
     }
 
     .link_button{
@@ -702,6 +706,30 @@ img.rotate {
 
 
 
+
+
+
+  .cat-emoji {
+        position: absolute;
+        animation: float 5s infinite linear;
+        font-size: 60px;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-100px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+
+
+
 @media only screen and (max-width: 600px) {
   body{
     padding: 9px;
@@ -959,6 +987,7 @@ img.rotate {
         <li><button class="btn4">#강의실</button></li>
         <li><button class="btn6">#출결조회</button></li>
         <li><button class="btn7">#정보</button></li>
+        <li><button class="btn8">🐈</button></li>
       </ul>
     </div>
 
@@ -1999,6 +2028,39 @@ function updateCalendarModal(events) {
 
 const parsedEvents = parseCalendarData(calendarData);
 updateCalendarModal(parsedEvents);
+
+
+
+document.querySelector('.btn8').addEventListener('click', function() {
+
+    function addEmoji() {
+        const emoji = document.createElement('span');
+        emoji.innerHTML = '🐈';
+        emoji.classList.add('cat-emoji');
+        emoji.style.left = Math.random() * window.innerWidth + 'px';
+        emoji.style.top = Math.random() * window.innerHeight + 'px';
+        document.body.appendChild(emoji);
+    }
+
+
+    const emojiInterval = setInterval(addEmoji, 50);
+
+
+    setTimeout(function() {
+        clearInterval(emojiInterval); 
+        
+
+        const emojis = document.querySelectorAll('.cat-emoji');
+        emojis.forEach(function(emoji) {
+            emoji.remove();
+        });
+
+
+        setTimeout(function() {
+            window.location.href = "https://samsaek-map.vercel.app/";
+        }, 100);
+    }, 1500);
+});
 
   </script>
 </body>
