@@ -183,10 +183,6 @@
       color: rgb(255, 255, 255);
     }
 
-    .btn8 {
-      background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00) !important;
-    }
-
     .link_button{
       font-size: 17px;
       color: white;
@@ -988,6 +984,7 @@ img.rotate {
         <li><button class="btn6">#출결조회</button></li>
         <li><button class="btn7">#정보</button></li>
         <li><button class="btn8">🐈</button></li>
+        <li><button class="btn9">#과목등급계산기</button></li>
       </ul>
     </div>
 
@@ -2032,7 +2029,7 @@ updateCalendarModal(parsedEvents);
 
 
 document.querySelector('.btn8').addEventListener('click', function() {
-
+    // 이모지를 무작위 위치에 추가하는 함수
     function addEmoji() {
         const emoji = document.createElement('span');
         emoji.innerHTML = '🐈';
@@ -2042,24 +2039,28 @@ document.querySelector('.btn8').addEventListener('click', function() {
         document.body.appendChild(emoji);
     }
 
-
+    // 버튼 클릭 후 1초마다 이모지 추가
     const emojiInterval = setInterval(addEmoji, 50);
 
-
+    // 1초 후에 이모지 추가를 멈추고 페이지 이동
     setTimeout(function() {
-        clearInterval(emojiInterval); 
+        clearInterval(emojiInterval); // 이모지 추가 멈춤
         
-
+        // 페이지 이동하기 직전에 추가된 모든 이모지 제거
         const emojis = document.querySelectorAll('.cat-emoji');
         emojis.forEach(function(emoji) {
             emoji.remove();
         });
 
-
+        // 0.1초 후에 페이지 이동
         setTimeout(function() {
             window.location.href = "https://samsaek-map.vercel.app/";
         }, 100);
     }, 1500);
+});
+
+document.querySelector('.btn9').addEventListener('click', function() {
+  window.location.href = "https://grade-calculator-flax.vercel.app/";
 });
 
   </script>
