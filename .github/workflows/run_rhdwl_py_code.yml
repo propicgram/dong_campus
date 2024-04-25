@@ -2,7 +2,7 @@ name: Run rhdwl Python Code
 
 on:
   schedule:
-    - cron: '0 16,18,20,22,0 * * *'
+    - cron: '0 9 * * *' # Runs at 6 PM Korean time
   workflow_dispatch:
 
 jobs:
