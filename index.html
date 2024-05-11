@@ -35,6 +35,10 @@
   <!-- <meta property="og:image" content="" />
   <meta property="og:description" content=""> -->
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+
 
   <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUITE/fonts/static/woff2/SUITE.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="./web_img/favicon.png">
@@ -49,6 +53,7 @@
     button:focus{
       outline: none;
     }
+    
 
     @font-face {
         font-family: 'LINESeedKR-Bd';
@@ -57,9 +62,35 @@
         font-style: normal;
     }
 
-    * {
-      font-family: 'LINESeedKR-Bd';
+    .sriracha-regular {
+      font-family: "Sriracha", cursive;
+      font-weight: 400;
+      font-style: normal;
     }
+
+
+    body, button {
+  font-family: 'LINESeedKR-Bd';
+}
+
+header {
+  font-family: 'Sriracha';
+  border: none;
+  text-align: center;
+  width: 100%; 
+  margin: 0 auto;
+  display: flex;
+  justify-content: center; 
+  padding-bottom: 10px;
+  align-items: center;
+  max-width: 600px;
+}
+
+.other-elements {
+  margin-top: 5px;
+  position: absolute;
+  right: 0;
+}
 
     body {
       background: linear-gradient(to bottom, #0a0613, #120f39, #12062a);
@@ -88,18 +119,8 @@
       }
     }
 
-    header {
-      font-family: 'TTHakgyoansimSamulhamR';
-      border: none;
-      padding: 20px 0px 10px 0px;
-      text-align: center;
-      width: 600px; 
-      margin: 0 auto; 
-      display: flex;
-      justify-content: space-between; 
-    }
 
-    .header-content {
+/*     .header-content {
       display: flex;
       align-items: center;
     }
@@ -110,53 +131,12 @@
       margin-right: 5px; 
       user-select: none; 
       -webkit-user-drag: none;
-    }
+    } */
 
-    .other-elements {
-      margin-right: 7px;
-      color: white;
-    }
 
-    .announcement {
-          padding: 50px;
-          max-width: 1000px;
-          margin: 0 auto;
-          border-radius: 30px; 
-          margin-bottom: 20px;
-
-      }
-
-      .announcement-content {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-      }
-
-      .announcement-text {
-          max-width: 60%;
-      }
-
-      .announcement h2 {
-          margin: 5px 0px 5px 0px;
-      }
-
-      .announcement-text p {
-          color: rgb(172, 172, 172);
-          margin: 5px 0px 5px 0px;
-      }
-
-      .announcement-heading {
-          font-size: 20px;
-          color: #333;
-      }
-
-      .announcement-image img {
-          width: 100px;
-          height: auto;
-      }
 
     .gradient-text {
-      margin-top: 8px;
+      margin-top: 0px;
       margin-bottom: 5px;
         background: linear-gradient(to right, #a47dfb, #c19af4, #e6cbfc, #f9eac6);
         -webkit-background-clip: text;
@@ -441,12 +421,12 @@ thead {
 thead th {
     padding: 10px;
     text-align: left;
-    border-bottom: 1px solid #a47dfb;
+    border-bottom: 1px solid #a57dfb62;
 }
 
 tbody td {
     padding: 10px;
-    border-bottom: 1px solid #a47dfb;
+    border-bottom: 1px solid #a57dfb62;
 }
 
 ul {
@@ -748,12 +728,89 @@ img.rotate {
     margin-bottom: 20px;
     width: 100%;
     color: white;
-    font-size: 15px;
+    font-size: 13px;
   }
   .rhdwl th{
     font-size: 25px;
     text-align: center;
   }
+
+
+
+
+
+
+
+
+
+
+
+  .animated-text{
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  font-size: 17px;
+  color: white;
+  height: 20px;
+  overflow: hidden;
+  max-width: 600px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+
+.line{
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.line:first-child{
+  animation: anim 8s infinite;
+}
+
+@keyframes anim {
+  0%{
+    margin-top : 0;
+  }
+  25%{
+    margin-top : -17px;
+  }
+  50%{
+    margin-top : -37px;
+  }
+  75%{
+    margin-top : -56px;
+  }
+  100%{
+    margin-top : 0;
+  }
+}
+
+.ani_container{
+  color: white;
+  max-width: 600px;
+  display: flex; /* 인기와 텍스트 슬라이더를 수평으로 배치하기 위해 flex 사용 */
+
+  margin: 0 auto;
+}
+
+.amitext{
+  font-size: 10px;
+  color: white;
+  background-color: rgba(43, 39, 102, 0.2);
+  border: 1px solid #a47dfb; 
+  padding: 4px 8px;
+  border-radius: 25px;
+  margin-bottom: 5px;
+}
+
+
+
+
+
+
+  
 
 
 
@@ -802,6 +859,179 @@ img.rotate {
         .arrivalTime {
             white-space: pre;
         }
+
+
+
+
+
+
+
+        .icon-button-container {
+          display: flex;
+          justify-content: space-between;
+          max-width: 500px;
+          padding-top: 15px;
+          margin: 0 auto;
+        }
+
+        .icon-button {
+          border: none;
+          width: 50px;
+          height: 50px;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #00000000;
+          color: white;
+          font-size: 10px;
+        }
+        
+        .icon-button > div > img {
+          padding: 5px;
+          background-color: rgba(43, 39, 102, 0.2);
+          border-radius: 12px;
+          border: 1px solid #a47dfb; 
+          width: 30px;
+        }
+
+
+
+
+
+
+
+
+        .slide {
+  /* layout */
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0 auto;
+  /* 컨테이너의 내용물이 컨테이너 크기(width, height)를 넘어설 때 보이지 않도록 하기 위해 hidden을 준다. */
+  overflow: hidden;
+  max-width: 600px;
+
+  /* position */
+  /* slide_button의 position absolute가 컨테이너 안쪽에서 top, left, right offset이 적용될 수 있도록 relative를 준다. (기본값이 static인데, static인 경우 그 상위 컨테이너로 나가면서 현재 코드에선 html을 기준으로 offset을 적용시키기 때문) */
+  position: relative;
+
+  /* size */
+  width: 100%;
+
+  /* slide drag를 위해 DOM요소가 드래그로 선택되는것을 방지 */
+  user-select: none;
+  border-radius: 5px;
+}
+.slide_item {
+  /* layout */
+  color: white;
+  display: flex;
+  align-items:end;
+  justify-content: center;
+
+  /* position - 버튼 클릭시 left offset값을 적용시키기 위해 */
+  position: relative;
+  left: 0px;
+
+  /* size */
+  width: 100%;
+  height: 400px;
+  /* flex item의 flex-shrink는 기본값이 1이므로 컨테이너 크기에 맞게 줄어드는데, 슬라이드를 구현할 것이므로 줄어들지 않도록 0을 준다. */
+  flex-shrink: 0;
+
+  /* transition */
+  transition: left 0.15s;
+}
+
+.slide_item > h3 {
+  color: #ffffff;
+  width: 100%;
+  padding-left: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.slide_button {
+  /* layout */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* position */
+  position: absolute;
+  /* 버튼이 중앙에 위치하게 하기위해 계산 */
+  top: calc(50% - 16px);
+
+  /* style */
+  font-weight: bold;
+  color: rgb(32, 32, 32);
+  cursor: pointer;
+}
+
+.slide_prev_button {
+  left: 10px;
+}
+.slide_next_button {
+  right: 10px;
+}
+
+/* 각 슬라이드가 변경되는 것을 시각적으로 확인하기 쉽도록 각 슬라이드별 색상 적용 */
+.slide_item:nth-child(1) {
+  background-image: url(./web_img/banner1.jpg);
+  background-size: cover; /* 이미지가 요소에 맞게 확대/축소됩니다. */
+}
+.slide_item:nth-child(2) {
+  background-image: url(./web_img/banner2.jpg);
+  background-size: cover; /* 이미지가 요소에 맞게 확대/축소됩니다. */
+}
+.slide_item:nth-child(3) {
+  background-image: url(./web_img/banner3.jpg);
+  background-size: cover; /* 이미지가 요소에 맞게 확대/축소됩니다. */
+}
+
+/* 페이지네이션 스타일 */
+ul,
+li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.slide_pagination {
+  /* layout */
+  display: flex;
+  gap: 5px;
+
+  /* position */
+  position: absolute;
+  bottom: 0;
+  /* left:50%, translateX(-50%)를 하면 가로 가운데로 위치시킬 수 있다. */
+  left: 90%;
+  transform: translateX(-50%);
+}
+.slide_pagination > li {
+  /* 현재 슬라이드가 아닌 것은 투명도 부여 */
+  color: #d287fd7a;
+  cursor: pointer;
+  font-size: 35px;
+}
+.slide_pagination > li.active {
+  /* 현재 슬라이드 색상은 투명도 없이 */
+  color: #c86aff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -865,6 +1095,10 @@ img.rotate {
     padding: 7px 11px;
     margin-top: 3px;
   }
+
+  .slide_item {
+  height: 210px;
+}
 
   .container {
     width: 100%;
@@ -1078,33 +1312,73 @@ img.rotate {
 <body class="no-drag">
   <header>
     <div class="header-content">
-        <img id="logo" src="./web_img/logo.png" alt="동캠퍼스">
-        <h1 class="gradient-text">동캠퍼스</h1>
+        <h1 class="gradient-text">DongCampus</h1>
     </div>
     <div class="other-elements">
-        <p id="weather-info"></p>
+      <img src="./web_img/menu.png" width="30px">
     </div>
-</header>
+  </header>
+
+  <div class="ani_container">
+    <div class="amitext">인기</div>
+    <div class="animated-text">
+        <div class="line">출결조회</div>
+        <div class="line">학식</div>
+        <div class="line">학사일정</div>
+        <div class="line">과목등급계산기</div>
+    </div>
+</div>
+
+  <div class="slide slide_wrap">
+    <div class="slide_item">
+      <h3>안드로이드 앱 출시!</h3>
+    </div>
+    <div class="slide_item">
+      <h3>과목등급계산기beta</h3>
+    </div>
+    <div class="slide_item">
+      <h3>삼색이맵</h3>
+    </div>
+    <div class="slide_prev_button slide_button">&#60;</div>
+    <div class="slide_next_button slide_button">&#62;</div>
+    <ul class="slide_pagination"></ul>
+  </div>
+
+  <div class="icon-button-container">
+    <button class="icon-button" id="icon-button1">
+      <div>
+        <img src="./web_img/icon1.png" alt="icon1">
+        <span>버스</span>
+      </div>
+    </button>
+    <button class="icon-button" id="icon-button2">
+      <div>
+        <img src="./web_img/icon2.png" alt="icon2">
+        <span>LMS</span>
+      </div>
+    </button>
+    <button class="icon-button" id="icon-button3">
+      <div>
+        <img src="./web_img/icon3.png" alt="icon3">
+        <span>출결조회</span>
+      </div>
+    </button>
+    <button class="icon-button" id="icon-button4">
+      <div>
+        <img src="./web_img/icon4.png" alt="icon4">
+        <span>등급계산</span>
+      </div>
+    </button>
+    <button class="icon-button" id="icon-button5">
+      <div>
+        <img src="./web_img/icon5.png" alt="icon5">
+        <span>캠퍼스맵</span>
+      </div>
+    </button>
+  </div>
+  
 
   <div class="container">
-
-    <div class="Categoryarea">
-      <ul>
-        <li><button class="btn1">#학식</button></li>
-        <li><button class="btn2">#버스</button></li>
-        <li><button class="btn3">#학사일정</button></li>
-        <li><button class="btn22">#캠퍼스맵</button></li>
-        <li><button class="btn4">#강의실</button></li>
-        <li><button class="btn7">#정보</button></li>
-        <li><button class="btn8">🐈</button></li>
-        <li><button class="btn9">#과목등급계산기</button></li>
-        <li><button class="btn6">#출결조회</button></li>
-        <li><button class="btn10">#포털시스템</button></li>
-        <li><button class="btn11">#LMS</button></li>
-      </ul>
-    </div>
-
-    
     <div class="sectionarea1">
       <div class="section1">
         <h2>🍱오늘학식</h2>
@@ -1216,6 +1490,17 @@ img.rotate {
     <div class="area2">
       <div class="Categoryarea">
         <ul>
+          <li><button class="btn1">#학식</button></li>
+          <li><button class="btn2">#버스</button></li>
+          <li><button class="btn3">#학사일정</button></li>
+          <li><button class="btn22">#캠퍼스맵</button></li>
+          <li><button class="btn4">#강의실</button></li>
+          <li><button class="btn7">#정보</button></li>
+          <li><button class="btn8">🐈</button></li>
+          <li><button class="btn9">#과목등급계산기</button></li>
+          <li><button class="btn6">#출결조회</button></li>
+          <li><button class="btn10">#포털시스템</button></li>
+          <li><button class="btn11">#LMS</button></li>
           <li><button class="btn12">#웹메일</button></li>
           <li><button class="btn13">#휴학/복학/전과</button></li>
           <li><button class="btn14">#복학신청</button></li>
@@ -1234,19 +1519,6 @@ img.rotate {
 
 
 
-    <div class="announcement element">
-      <div class="announcement-content">
-          <div class="announcement-text">
-              <h2 class="announcement-heading gradient-text">DongCampus Now Available on Android!</h2>
-              
-              <p>We are thrilled to share the exciting news that DongCampus is officially live on the Android platform!</p>
-              <button class="btn100" onclick="redirectToDownload()">Download Now</button>
-          </div>
-          <div class="announcement-image">
-              <img src="./web_img/logo.png" alt="dong_campus Logo">
-          </div>
-      </div>
-  </div>
 
     <footer>© 2024 DONG_CAMPUS</footer>
   </div>
@@ -1773,10 +2045,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     var scrollToBottomButton = document.querySelector('.btn2');
-
-
     scrollToBottomButton.addEventListener('click', function() {
+        window.scrollTo(0, document.body.scrollHeight);
+    });
 
+    var scrollToBottomButton2 = document.querySelector('.other-elements');
+    scrollToBottomButton2.addEventListener('click', function() {
+        window.scrollTo(0, document.body.scrollHeight);
+    });
+
+    var scrollToBottomButton3 = document.querySelector('#icon-button1');
+    scrollToBottomButton3.addEventListener('click', function() {
         window.scrollTo(0, document.body.scrollHeight);
     });
 
@@ -1887,12 +2166,7 @@ function rotateImage(img) {
     }, 700); 
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  var logo = document.getElementById('logo');
-  logo.addEventListener('touchstart', function(e) {
-    e.preventDefault();
-  });
-});
+
 
 
 window.onload = function() {
@@ -1940,42 +2214,6 @@ for (let i = 0; i < attendanceButtons.length; i++) {
     window.open('https://portal.du.ac.kr');
 });
 }
-
-
-const _0x49a0f9=_0x9f21;(function(_0x28e464,_0x592ae8){const _0x336e37=_0x9f21,_0x38eb0a=_0x28e464();while(!![]){try{const _0x48399a=parseInt(_0x336e37(0x76))/0x1+-parseInt(_0x336e37(0x73))/0x2*(parseInt(_0x336e37(0x70))/0x3)+parseInt(_0x336e37(0x6f))/0x4*(-parseInt(_0x336e37(0x74))/0x5)+-parseInt(_0x336e37(0x77))/0x6+parseInt(_0x336e37(0x71))/0x7*(parseInt(_0x336e37(0x72))/0x8)+parseInt(_0x336e37(0x78))/0x9+parseInt(_0x336e37(0x79))/0xa;if(_0x48399a===_0x592ae8)break;else _0x38eb0a['push'](_0x38eb0a['shift']());}catch(_0xa19810){_0x38eb0a['push'](_0x38eb0a['shift']());}}}(_0x59e3,0x3ec37));function _0x9f21(_0x1ea143,_0x50b432){const _0x59e376=_0x59e3();return _0x9f21=function(_0x9f2181,_0x774a71){_0x9f2181=_0x9f2181-0x6f;let _0x39a476=_0x59e376[_0x9f2181];return _0x39a476;},_0x9f21(_0x1ea143,_0x50b432);}function _0x59e3(){const _0x3ab8b5=['65dqshoW','27e61cc63f22b9a35ef5585ac5252d3a','296399acWpwu','2280954bIzNhA','74682aDwNJe','5815990BFwCgb','41268PSOCNf','18UELjFV','413WBOxFf','22664UWSyrk','94028WxlBzw'];_0x59e3=function(){return _0x3ab8b5;};return _0x59e3();}const apiKey=_0x49a0f9(0x75);
-
-
-const latitude = '37.300031'; 
-const longitude = '127.121923'; 
-
-
-const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-
-
-const weatherInfo = document.getElementById('weather-info');
-
-
-fetch(apiUrl)
-  .then(response => {
-      if (!response.ok) {
-          throw new Error('네트워크 상태가 좋지 않습니다.');
-      }
-      return response.json();
-  })
-  .then(data => {
-
-      const cityName = data.name;
-      const temperature = data.main.temp.toFixed(1); 
-
-      weatherInfo.innerHTML = `<p>현재 온도 ${temperature}℃</p>`;
-  })
-  .catch(error => {
-      console.error('에러 발생:', error);
-      weatherInfo.innerHTML = '<p></p>';
-  });
-
-
-
 
 
 
@@ -2221,6 +2459,12 @@ document.querySelector('.btn8').addEventListener('click', function() {
     }, 1500);
 });
 
+document.querySelector('#icon-button4').addEventListener('click', function() {
+  window.location.href = "https://grade-calculator-flax.vercel.app/";
+});
+document.querySelector('#icon-button3').addEventListener('click', function() {
+  window.location.href = "https://portal.du.ac.kr";
+});
 document.querySelector('.btn9').addEventListener('click', function() {
   window.location.href = "https://grade-calculator-flax.vercel.app/";
 });
@@ -2228,6 +2472,9 @@ document.querySelector('.btn10').addEventListener('click', function() { // 10
   window.location.href = "https://portal.du.ac.kr/login.jsp";
 });
 document.querySelector('.btn11').addEventListener('click', function() { // 11
+  window.location.href = "https://lms.du.ac.kr/login.php";
+});
+document.querySelector('#icon-button2').addEventListener('click', function() { // 11
   window.location.href = "https://lms.du.ac.kr/login.php";
 });
 document.querySelector('.btn12').addEventListener('click', function() { // 12
@@ -2263,12 +2510,137 @@ document.querySelector('.btn21').addEventListener('click', function() { // 21
 document.querySelector('.btn22').addEventListener('click', function() { // 22
   window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=dbhyu4aXBhM9JSQ9FVFGUg%3d%3d&";
 });
-document.querySelector('.btn100').addEventListener('click', function() { // 100
-  window.location.href = "https://play.google.com/store/apps/details?id=com.dong_campus&pcampaignid=web_share";
+document.querySelector('#icon-button5').addEventListener('click', function() { // 22
+  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=dbhyu4aXBhM9JSQ9FVFGUg%3d%3d&";
 });
 
-(function(_0xb5bf16,_0x3baffa){var _0x39c52d=_0x3a1b,_0x39390c=_0xb5bf16();while(!![]){try{var _0x2687b7=-parseInt(_0x39c52d(0x170))/0x1+-parseInt(_0x39c52d(0x199))/0x2+-parseInt(_0x39c52d(0x18e))/0x3+-parseInt(_0x39c52d(0x169))/0x4+parseInt(_0x39c52d(0x17f))/0x5*(-parseInt(_0x39c52d(0x1a1))/0x6)+-parseInt(_0x39c52d(0x19d))/0x7*(parseInt(_0x39c52d(0x1a3))/0x8)+parseInt(_0x39c52d(0x16a))/0x9;if(_0x2687b7===_0x3baffa)break;else _0x39390c['push'](_0x39390c['shift']());}catch(_0x4cebbe){_0x39390c['push'](_0x39390c['shift']());}}}(_0x1722,0x4bbb0));function getBusArrivalInfo(){var _0x1f7bec=_0x3a1b,_0x2cbbbb=new XMLHttpRequest(),_0x3052e1=_0x1f7bec(0x16f),_0xc2ffbf=_0x1f7bec(0x1a7),_0x4fb2b7=0xc28cb15,_0x4b3a61='?'+encodeURIComponent(_0x1f7bec(0x176))+'='+encodeURIComponent(_0xc2ffbf);_0x4b3a61+='&'+encodeURIComponent(_0x1f7bec(0x17a))+'='+encodeURIComponent(_0x4fb2b7),_0x2cbbbb[_0x1f7bec(0x181)](_0x1f7bec(0x18d),_0x3052e1+_0x4b3a61),_0x2cbbbb[_0x1f7bec(0x17b)]=function(){var _0x1080d7=_0x1f7bec;if(this[_0x1080d7(0x19b)]==0x4&&this[_0x1080d7(0x19e)]==0xc8){var _0x4cd555=this['responseText'];displayBusArrivalTimes(_0x4cd555);}},_0x2cbbbb['send']('');}function displayBusArrivalTimes(_0x1209b4){var _0x14a9da=_0x3a1b,_0x3297c4=new DOMParser()[_0x14a9da(0x171)](_0x1209b4,_0x14a9da(0x19a)),_0x37f456=_0x3297c4[_0x14a9da(0x17e)](_0x14a9da(0x172)),_0xd66e6e=document[_0x14a9da(0x1a6)]('busArrivalInfo');_0xd66e6e[_0x14a9da(0x19f)]='';for(var _0x14b65b=0x0;_0x14b65b<_0x37f456[_0x14a9da(0x17d)];_0x14b65b++){var _0x5dfb9a=_0x37f456[_0x14b65b][_0x14a9da(0x17e)](_0x14a9da(0x1a0))[0x0][_0x14a9da(0x174)],_0x1c2064=_0x37f456[_0x14b65b]['getElementsByTagName'](_0x14a9da(0x191))[0x0][_0x14a9da(0x174)],_0x2392e=parseInt(_0x37f456[_0x14b65b]['getElementsByTagName'](_0x14a9da(0x185))[0x0][_0x14a9da(0x174)]),_0x2cb9a1=formatRouteId(_0x5dfb9a),_0x3c3037=_0x14a9da(0x195)+_0x2cb9a1+'\x20</span>\x20<span\x20class=\x27arrivalTime\x27>'+_0x1c2064+_0x14a9da(0x177);_0x3c3037+=_0x14a9da(0x188)+_0x2392e+_0x14a9da(0x16b);var _0xa62f3e=document[_0x14a9da(0x173)](_0x14a9da(0x16e));_0xa62f3e['classList'][_0x14a9da(0x182)](_0x14a9da(0x16d)),_0xa62f3e[_0x14a9da(0x19f)]=_0x3c3037,_0xd66e6e[_0x14a9da(0x183)](_0xa62f3e);}}function formatRouteId(_0x151b06){var _0x50eb0e=_0x3a1b,_0x16fd5e=_0x151b06;switch(_0x151b06){case _0x50eb0e(0x18b):_0x16fd5e=_0x50eb0e(0x19c);break;case _0x50eb0e(0x175):_0x16fd5e='30';break;case _0x50eb0e(0x192):_0x16fd5e=_0x50eb0e(0x1a2);break;case _0x50eb0e(0x18f):_0x16fd5e=_0x50eb0e(0x196);break;case _0x50eb0e(0x18a):_0x16fd5e=_0x50eb0e(0x186);break;case _0x50eb0e(0x187):_0x16fd5e=_0x50eb0e(0x184);break;case _0x50eb0e(0x17c):_0x16fd5e=_0x50eb0e(0x179);break;case _0x50eb0e(0x1a5):_0x16fd5e=_0x50eb0e(0x194);break;case _0x50eb0e(0x197):_0x16fd5e=_0x50eb0e(0x178);break;case'204000150':_0x16fd5e=_0x50eb0e(0x189);break;case _0x50eb0e(0x18c):_0x16fd5e=_0x50eb0e(0x193);break;case'234000009':_0x16fd5e='32';break;}return _0x16fd5e;}getBusArrivalInfo();function getBusArrivalInfo_2(){var _0x1c9df7=_0x3a1b,_0x224593=new XMLHttpRequest(),_0x51dbb7='https://apis.data.go.kr/6410000/busarrivalservice/getBusArrivalList',_0x17acce='nwaefISD6ee0vv94Hv+1FadsVRGtiqHOGQZlDS6mEPovUFla146hAPT6zLMjmsWR8TV6vfjeRj+irmYtXd5a7g==',_0x482565=0x754d5b9,_0x42df4f='?'+encodeURIComponent(_0x1c9df7(0x176))+'='+encodeURIComponent(_0x17acce);_0x42df4f+='&'+encodeURIComponent(_0x1c9df7(0x17a))+'='+encodeURIComponent(_0x482565),_0x224593['open']('GET',_0x51dbb7+_0x42df4f),_0x224593[_0x1c9df7(0x17b)]=function(){var _0x31f4ed=_0x1c9df7;if(this[_0x31f4ed(0x19b)]==0x4&&this[_0x31f4ed(0x19e)]==0xc8){var _0xec0690=this[_0x31f4ed(0x1a4)];displayBusArrivalTimes_2(_0xec0690);}},_0x224593['send']('');}function displayBusArrivalTimes_2(_0x11f330){var _0x2e99ee=_0x3a1b,_0x2dae75=new DOMParser()['parseFromString'](_0x11f330,_0x2e99ee(0x19a)),_0x5f1f10=_0x2dae75['getElementsByTagName'](_0x2e99ee(0x172)),_0x3995a1=document['getElementById'](_0x2e99ee(0x180));_0x3995a1[_0x2e99ee(0x19f)]='';for(var _0x39a26a=0x0;_0x39a26a<_0x5f1f10[_0x2e99ee(0x17d)];_0x39a26a++){var _0x23722c=_0x5f1f10[_0x39a26a][_0x2e99ee(0x17e)](_0x2e99ee(0x1a0))[0x0][_0x2e99ee(0x174)],_0x4039dd=_0x5f1f10[_0x39a26a]['getElementsByTagName'](_0x2e99ee(0x191))[0x0][_0x2e99ee(0x174)],_0xd291b9=parseInt(_0x5f1f10[_0x39a26a][_0x2e99ee(0x17e)](_0x2e99ee(0x185))[0x0][_0x2e99ee(0x174)]),_0x1403af=formatRouteId_2(_0x23722c),_0x356823=_0x2e99ee(0x195)+_0x1403af+_0x2e99ee(0x190)+_0x4039dd+_0x2e99ee(0x177);_0x356823+=_0x2e99ee(0x188)+_0xd291b9+_0x2e99ee(0x16b);var _0x3dd2fd=document[_0x2e99ee(0x173)]('div');_0x3dd2fd['classList'][_0x2e99ee(0x182)](_0x2e99ee(0x16d)),_0x3dd2fd[_0x2e99ee(0x19f)]=_0x356823,_0x3995a1[_0x2e99ee(0x183)](_0x3dd2fd);}}function formatRouteId_2(_0xc1e3c2){var _0x506127=_0x3a1b,_0x11babf=_0xc1e3c2;switch(_0xc1e3c2){case _0x506127(0x18b):_0x11babf='357';break;case _0x506127(0x175):_0x11babf='30';break;case _0x506127(0x192):_0x11babf=_0x506127(0x1a2);break;case _0x506127(0x18f):_0x11babf='1117';break;case _0x506127(0x18a):_0x11babf=_0x506127(0x186);break;case _0x506127(0x187):_0x11babf=_0x506127(0x184);break;case _0x506127(0x1a5):_0x11babf=_0x506127(0x194);break;case'204000149':_0x11babf=_0x506127(0x178);break;case _0x506127(0x16c):_0x11babf=_0x506127(0x189);break;case _0x506127(0x18c):_0x11babf=_0x506127(0x193);break;case _0x506127(0x198):_0x11babf='32';break;}return _0x11babf;}function _0x3a1b(_0x5390ee,_0x24ff49){var _0x17223d=_0x1722();return _0x3a1b=function(_0x3a1b57,_0x5eabb5){_0x3a1b57=_0x3a1b57-0x169;var _0x4e67e3=_0x17223d[_0x3a1b57];return _0x4e67e3;},_0x3a1b(_0x5390ee,_0x24ff49);}function _0x1722(){var _0x57b770=['500-1A','stationId','onreadystatechange','234001609','length','getElementsByTagName','745Effrrw','busArrivalInfo_2','open','add','appendChild','500-1','locationNo1','500-2','234000079','<span\x20class=\x27arrivalTime_2\x27>(','반디1-1','234000075','204000007','234001738','GET','361650bsYSKj','234000069','\x20</span>\x20<span\x20class=\x27arrivalTime\x27>','predictTime1','234000040','500-2N','100','<span\x20class=\x27routeId\x27>','1117','204000149','234000009','578324QIrEMU','text/xml','readyState','357','21HpHbJB','status','innerHTML','routeId','16314lbIRXw','119','736072upoDlt','responseText','204000018','getElementById','nwaefISD6ee0vv94Hv+1FadsVRGtiqHOGQZlDS6mEPovUFla146hAPT6zLMjmsWR8TV6vfjeRj+irmYtXd5a7g==','1611232sVYWqT','17252532efLZTk','번째\x20전)</span>','204000150','busInfo','div','https://apis.data.go.kr/6410000/busarrivalservice/getBusArrivalList','113078VTSiKr','parseFromString','busArrivalList','createElement','textContent','227000003','serviceKey','분</span>\x20','반디1'];_0x1722=function(){return _0x57b770;};return _0x1722();}getBusArrivalInfo_2();
 
+
+
+(function(_0x44d3d1,_0x223f91){var _0x3336f7=_0x284b,_0x46646b=_0x44d3d1();while(!![]){try{var _0x25898f=parseInt(_0x3336f7(0x167))/0x1*(parseInt(_0x3336f7(0x13e))/0x2)+-parseInt(_0x3336f7(0x165))/0x3*(-parseInt(_0x3336f7(0x164))/0x4)+-parseInt(_0x3336f7(0x17a))/0x5+-parseInt(_0x3336f7(0x17c))/0x6+parseInt(_0x3336f7(0x168))/0x7*(parseInt(_0x3336f7(0x161))/0x8)+parseInt(_0x3336f7(0x17e))/0x9+parseInt(_0x3336f7(0x152))/0xa*(-parseInt(_0x3336f7(0x16b))/0xb);if(_0x25898f===_0x223f91)break;else _0x46646b['push'](_0x46646b['shift']());}catch(_0x5d8aa1){_0x46646b['push'](_0x46646b['shift']());}}}(_0x2057,0x7d743));function _0x284b(_0x4bafc3,_0x307b27){var _0x20576b=_0x2057();return _0x284b=function(_0x284b6f,_0x79ffeb){_0x284b6f=_0x284b6f-0x13c;var _0x1a3c0d=_0x20576b[_0x284b6f];return _0x1a3c0d;},_0x284b(_0x4bafc3,_0x307b27);}function getBusArrivalInfo(){var _0x5b6d94=_0x284b,_0x13d240=new XMLHttpRequest(),_0x39df61=_0x5b6d94(0x16a),_0xd09fd6=_0x5b6d94(0x155),_0x2bcfad=0xc28cb15,_0x13f81d='?'+encodeURIComponent(_0x5b6d94(0x150))+'='+encodeURIComponent(_0xd09fd6);_0x13f81d+='&'+encodeURIComponent(_0x5b6d94(0x166))+'='+encodeURIComponent(_0x2bcfad),_0x13d240['open'](_0x5b6d94(0x178),_0x39df61+_0x13f81d),_0x13d240['onreadystatechange']=function(){var _0x4fc8e5=_0x5b6d94;if(this['readyState']==0x4&&this[_0x4fc8e5(0x174)]==0xc8){var _0x35de58=this['responseText'];displayBusArrivalTimes(_0x35de58);}},_0x13d240['send']('');}function _0x2057(){var _0x517d56=['2676726EUxJGW','500-2N','357','265100GfnAKO','predictTime1','textContent','onreadystatechange','length','234000009','204000007','1117','add','100','234000040','text/xml','500-2','234001738','getElementById','반디1','\x20</span>\x20<span\x20class=\x27arrivalTime\x27>','busArrivalInfo','serviceKey','locationNo1','1006800KBDvdH','div','234000075','nwaefISD6ee0vv94Hv+1FadsVRGtiqHOGQZlDS6mEPovUFla146hAPT6zLMjmsWR8TV6vfjeRj+irmYtXd5a7g==','busArrivalList','busInfo','classList','getElementsByTagName','234000079','routeId','234000069','appendChild','busArrivalInfo_2','분</span>\x20','204000150','52616uNclIz','createElement','open','63032adlzHp','51HAmNCd','stationId','2lurCVA','497kSsSmv','227000003','https://apis.data.go.kr/6410000/busarrivalservice/getBusArrivalList','44vuwyKu','500-1A','번째\x20전)</span>','parseFromString','innerHTML','500-1','responseText','반디1-1','<span\x20class=\x27arrivalTime_2\x27>(','status','204000018','119','send','GET','<span\x20class=\x27routeId\x27>','1502275KqsRZi','readyState','481998NtTrlz','204000149'];_0x2057=function(){return _0x517d56;};return _0x2057();}function displayBusArrivalTimes(_0x4242e0){var _0x266d02=_0x284b,_0x4f10ee=new DOMParser()[_0x266d02(0x16e)](_0x4242e0,_0x266d02(0x149)),_0x24817d=_0x4f10ee['getElementsByTagName'](_0x266d02(0x156)),_0x55778e=document['getElementById'](_0x266d02(0x14f));_0x55778e[_0x266d02(0x16f)]='';for(var _0x3491e4=0x0;_0x3491e4<_0x24817d[_0x266d02(0x142)];_0x3491e4++){var _0x54db4c=_0x24817d[_0x3491e4][_0x266d02(0x159)](_0x266d02(0x15b))[0x0][_0x266d02(0x140)],_0x551d6d=_0x24817d[_0x3491e4][_0x266d02(0x159)](_0x266d02(0x13f))[0x0]['textContent'],_0x5d16ff=parseInt(_0x24817d[_0x3491e4][_0x266d02(0x159)](_0x266d02(0x151))[0x0]['textContent']),_0x45b41b=formatRouteId(_0x54db4c),_0x18b1bc=_0x266d02(0x179)+_0x45b41b+_0x266d02(0x14e)+_0x551d6d+_0x266d02(0x15f);_0x18b1bc+='<span\x20class=\x27arrivalTime_2\x27>('+_0x5d16ff+_0x266d02(0x16d);var _0x4b189f=document[_0x266d02(0x162)](_0x266d02(0x153));_0x4b189f['classList']['add'](_0x266d02(0x157)),_0x4b189f[_0x266d02(0x16f)]=_0x18b1bc,_0x55778e[_0x266d02(0x15d)](_0x4b189f);}}function formatRouteId(_0x272944){var _0x2d1085=_0x284b,_0x554195=_0x272944;switch(_0x272944){case _0x2d1085(0x144):_0x554195=_0x2d1085(0x13d);break;case'227000003':_0x554195='30';break;case _0x2d1085(0x148):_0x554195=_0x2d1085(0x176);break;case _0x2d1085(0x15c):_0x554195=_0x2d1085(0x145);break;case _0x2d1085(0x154):_0x554195=_0x2d1085(0x14a);break;case'234000079':_0x554195='500-1';break;case'234001609':_0x554195=_0x2d1085(0x16c);break;case _0x2d1085(0x175):_0x554195=_0x2d1085(0x147);break;case _0x2d1085(0x17d):_0x554195='반디1';break;case _0x2d1085(0x160):_0x554195=_0x2d1085(0x172);break;case _0x2d1085(0x14b):_0x554195=_0x2d1085(0x13c);break;case _0x2d1085(0x143):_0x554195='32';break;}return _0x554195;}getBusArrivalInfo();function getBusArrivalInfo_2(){var _0x1d0f70=_0x284b,_0x1a0db9=new XMLHttpRequest(),_0x330898=_0x1d0f70(0x16a),_0x243719='nwaefISD6ee0vv94Hv+1FadsVRGtiqHOGQZlDS6mEPovUFla146hAPT6zLMjmsWR8TV6vfjeRj+irmYtXd5a7g==',_0x420587=0x754d5b9,_0x4f0957='?'+encodeURIComponent('serviceKey')+'='+encodeURIComponent(_0x243719);_0x4f0957+='&'+encodeURIComponent(_0x1d0f70(0x166))+'='+encodeURIComponent(_0x420587),_0x1a0db9[_0x1d0f70(0x163)](_0x1d0f70(0x178),_0x330898+_0x4f0957),_0x1a0db9[_0x1d0f70(0x141)]=function(){var _0x195f27=_0x1d0f70;if(this[_0x195f27(0x17b)]==0x4&&this[_0x195f27(0x174)]==0xc8){var _0x4884e9=this[_0x195f27(0x171)];displayBusArrivalTimes_2(_0x4884e9);}},_0x1a0db9[_0x1d0f70(0x177)]('');}function displayBusArrivalTimes_2(_0x1a84a7){var _0x39824b=_0x284b,_0x2dc6be=new DOMParser()[_0x39824b(0x16e)](_0x1a84a7,_0x39824b(0x149)),_0x46cb16=_0x2dc6be['getElementsByTagName'](_0x39824b(0x156)),_0x4f0383=document[_0x39824b(0x14c)](_0x39824b(0x15e));_0x4f0383[_0x39824b(0x16f)]='';for(var _0x44e1e3=0x0;_0x44e1e3<_0x46cb16[_0x39824b(0x142)];_0x44e1e3++){var _0x3116e8=_0x46cb16[_0x44e1e3]['getElementsByTagName'](_0x39824b(0x15b))[0x0][_0x39824b(0x140)],_0x2b6249=_0x46cb16[_0x44e1e3]['getElementsByTagName'](_0x39824b(0x13f))[0x0][_0x39824b(0x140)],_0x4da805=parseInt(_0x46cb16[_0x44e1e3]['getElementsByTagName'](_0x39824b(0x151))[0x0][_0x39824b(0x140)]),_0x356b4c=formatRouteId_2(_0x3116e8),_0x52cb72=_0x39824b(0x179)+_0x356b4c+_0x39824b(0x14e)+_0x2b6249+_0x39824b(0x15f);_0x52cb72+=_0x39824b(0x173)+_0x4da805+_0x39824b(0x16d);var _0x5e0ed5=document['createElement']('div');_0x5e0ed5[_0x39824b(0x158)][_0x39824b(0x146)]('busInfo'),_0x5e0ed5[_0x39824b(0x16f)]=_0x52cb72,_0x4f0383[_0x39824b(0x15d)](_0x5e0ed5);}}function formatRouteId_2(_0x48a456){var _0x5c7af6=_0x284b,_0x8438a9=_0x48a456;switch(_0x48a456){case _0x5c7af6(0x144):_0x8438a9=_0x5c7af6(0x13d);break;case _0x5c7af6(0x169):_0x8438a9='30';break;case _0x5c7af6(0x148):_0x8438a9=_0x5c7af6(0x176);break;case'234000069':_0x8438a9=_0x5c7af6(0x145);break;case _0x5c7af6(0x154):_0x8438a9=_0x5c7af6(0x14a);break;case _0x5c7af6(0x15a):_0x8438a9=_0x5c7af6(0x170);break;case _0x5c7af6(0x175):_0x8438a9='100';break;case _0x5c7af6(0x17d):_0x8438a9=_0x5c7af6(0x14d);break;case _0x5c7af6(0x160):_0x8438a9=_0x5c7af6(0x172);break;case'234001738':_0x8438a9=_0x5c7af6(0x13c);break;case _0x5c7af6(0x143):_0x8438a9='32';break;}return _0x8438a9;}getBusArrivalInfo_2();
+
+
+
+
+
+const slide = document.querySelector(".slide");
+let slideWidth = slide.clientWidth;
+const prevBtn = document.querySelector(".slide_prev_button");
+const nextBtn = document.querySelector(".slide_next_button");
+const slideItems = document.querySelectorAll(".slide_item");
+const maxSlide = slideItems.length;
+let currSlide = 1;
+const pagination = document.querySelector(".slide_pagination");
+for (let i = 0; i < maxSlide; i++) {
+  if (i === 0) pagination.innerHTML += `<li class="active">•</li>`;
+  else pagination.innerHTML += `<li>•</li>`;
+}
+const paginationItems = document.querySelectorAll(".slide_pagination > li");
+
+function nextMove() {
+  currSlide++;
+  if (currSlide <= maxSlide) {
+    const offset = slideWidth * (currSlide - 1);
+    slideItems.forEach((i) => {
+      i.setAttribute("style", `left: ${-offset}px`);
+    });
+    paginationItems.forEach((i) => i.classList.remove("active"));
+    paginationItems[currSlide - 1].classList.add("active");
+  } else {
+    currSlide = 1;
+    slideItems.forEach((i) => {
+      i.setAttribute("style", `left: 0px`);
+    });
+    paginationItems.forEach((i) => i.classList.remove("active"));
+    paginationItems[currSlide - 1].classList.add("active");
+  }
+}
+
+function prevMove() {
+  currSlide--;
+  if (currSlide > 0) {
+    const offset = slideWidth * (currSlide - 1);
+    slideItems.forEach((i) => {
+      i.setAttribute("style", `left: ${-offset}px`);
+    });
+    paginationItems.forEach((i) => i.classList.remove("active"));
+    paginationItems[currSlide - 1].classList.add("active");
+  } else {
+    currSlide = maxSlide;
+    const offset = slideWidth * (currSlide - 1);
+    slideItems.forEach((i) => {
+      i.setAttribute("style", `left: ${-offset}px`);
+    });
+    paginationItems.forEach((i) => i.classList.remove("active"));
+    paginationItems[currSlide - 1].classList.add("active");
+  }
+}
+
+nextBtn.addEventListener("click", () => {
+  nextMove();
+});
+
+prevBtn.addEventListener("click", () => {
+  prevMove();
+});
+
+window.addEventListener("resize", () => {
+  slideWidth = slide.clientWidth;
+});
+
+for (let i = 0; i < maxSlide; i++) {
+  paginationItems[i].addEventListener("click", () => {
+    currSlide = i + 1;
+    const offset = slideWidth * (currSlide - 1);
+    slideItems.forEach((i) => {
+      i.setAttribute("style", `left: ${-offset}px`);
+    });
+    paginationItems.forEach((i) => i.classList.remove("active"));
+    paginationItems[currSlide - 1].classList.add("active");
+  });
+}
+
+let autoSlideInterval;
+
+function startAutoSlide() {
+  autoSlideInterval = setInterval(() => {
+    nextMove();
+  }, 3000);
+}
+
+function stopAutoSlide() {
+  clearInterval(autoSlideInterval);
+}
+
+startAutoSlide();
+
+slide.addEventListener("mouseenter", () => {
+  stopAutoSlide();
+});
+
+slide.addEventListener("mouseleave", () => {
+  startAutoSlide();
+});
+
+let touchStartX;
+let touchEndX;
+
+slide.addEventListener("touchstart", (e) => {
+  touchStartX = e.touches[0].clientX;
+  stopAutoSlide();
+});
+
+slide.addEventListener("touchend", (e) => {
+  touchEndX = e.changedTouches[0].clientX;
+  if (touchStartX - touchEndX > 50) {
+    nextMove();
+  } else if (touchEndX - touchStartX > 50) {
+    prevMove();
+  }
+  setTimeout(() => {
+    startAutoSlide();
+  }, 2000);
+});
   </script>
 </body>
 
