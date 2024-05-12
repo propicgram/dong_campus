@@ -2626,20 +2626,26 @@ slide.addEventListener("mouseleave", () => {
 
 let touchStartX;
 let touchEndX;
+let touchTimer;
 
 slide.addEventListener("touchstart", (e) => {
   touchStartX = e.touches[0].clientX;
   stopAutoSlide();
 });
 
-slide.addEventListener("touchend", (e) => {
-  touchEndX = e.changedTouches[0].clientX;
-  if (touchStartX - touchEndX > 50) {
+slide.addEventListener("touchmove", (e) => {
+  touchEndX = e.touches[0].clientX;
+});
+
+slide.addEventListener("touchend", () => {
+  clearTimeout(touchTimer);
+  const touchDifference = touchStartX - touchEndX;
+  if (touchDifference > 50) {
     nextMove();
-  } else if (touchEndX - touchStartX > 50) {
+  } else if (touchDifference < -50) {
     prevMove();
   }
-  setTimeout(() => {
+  touchTimer = setTimeout(() => {
     startAutoSlide();
   }, 2000);
 });
