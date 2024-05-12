@@ -970,8 +970,6 @@ img.rotate {
   width: 100%;
   height: 200px;
   flex-shrink: 0;
-
-  /* transition */
   transition: left 0.15s;
 }
 
@@ -979,7 +977,7 @@ img.rotate {
   color: #ffffff;
   width: 100%;
   padding-left: 30px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 99;
 }
 .slide_button {
   /* layout */
@@ -1018,6 +1016,22 @@ img.rotate {
   background-image: url(./web_img/banner3.jpg);
   background-size: cover; 
 }
+
+.slide_item {
+  position: relative;
+  background-size: cover;
+}
+
+.slide_item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0));
+}
+
 
 
 ul,
