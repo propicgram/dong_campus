@@ -83,7 +83,7 @@ header {
   justify-content: center; 
   padding-bottom: 10px;
   align-items: center;
-  max-width: 600px;
+  max-width: 500px;
 }
 
 .other-elements {
@@ -439,26 +439,31 @@ li {
 }
 
 #menuTable {
+    max-width: 500px;
     margin: 0 auto;
 }
 
 .menuname{
+  max-width: 500px;
   font-size: 25px;
   font-weight: bold;
   text-align: center;
   padding: 20px;
+  margin: 0 auto;
 }
 
 .hak_container {
+  max-width: 500px;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .hak_info {
-  width: 600px;
+  width: 500px;
   padding: 20px;
-  max-width: 600px; 
-  text-align: left; 
+  max-width: 500px; 
+  text-align: center; 
 }
 
 img.rotate {
@@ -475,6 +480,7 @@ img.rotate {
   font-size: 25px;
   text-align: center;
   padding: 20px;
+  max-width: 0 auto;
 }
 
 
@@ -511,6 +517,8 @@ img.rotate {
 
 .calendar_content {
     padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 
@@ -573,6 +581,14 @@ img.rotate {
 }
 
 
+
+.separator {
+    border-bottom: 1px solid #a57dfb62;
+    /* 원하는 선 스타일 및 두께, 색상을 지정하세요. */
+    padding-top: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
 
 
 
@@ -753,7 +769,7 @@ img.rotate {
   color: white;
   height: 20px;
   overflow: hidden;
-  max-width: 600px;
+  max-width: 500px;
   margin-bottom: 5px;
   margin-left: 5px;
 }
@@ -766,7 +782,7 @@ img.rotate {
 }
 
 .line:first-child{
-  animation: anim 8s infinite;
+  animation: anim 11s infinite;
 }
 
 @keyframes anim {
@@ -780,7 +796,7 @@ img.rotate {
     margin-top : -37px;
   }
   75%{
-    margin-top : -56px;
+    margin-top : -58px;
   }
   100%{
     margin-top : 0;
@@ -789,9 +805,8 @@ img.rotate {
 
 .ani_container{
   color: white;
-  max-width: 600px;
-  display: flex; /* 인기와 텍스트 슬라이더를 수평으로 배치하기 위해 flex 사용 */
-
+  max-width: 500px;
+  display: flex;
   margin: 0 auto;
 }
 
@@ -802,7 +817,7 @@ img.rotate {
   border: 1px solid #a47dfb; 
   padding: 4px 8px;
   border-radius: 25px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 
@@ -870,7 +885,7 @@ img.rotate {
           display: flex;
           justify-content: space-between;
           max-width: 500px;
-          padding-top: 15px;
+          padding-top: 21px;
           margin: 0 auto;
         }
 
@@ -903,40 +918,25 @@ img.rotate {
 
 
         .slide {
-  /* layout */
   display: flex;
   flex-wrap: nowrap;
   margin: 0 auto;
-  /* 컨테이너의 내용물이 컨테이너 크기(width, height)를 넘어설 때 보이지 않도록 하기 위해 hidden을 준다. */
   overflow: hidden;
-  max-width: 600px;
-
-  /* position */
-  /* slide_button의 position absolute가 컨테이너 안쪽에서 top, left, right offset이 적용될 수 있도록 relative를 준다. (기본값이 static인데, static인 경우 그 상위 컨테이너로 나가면서 현재 코드에선 html을 기준으로 offset을 적용시키기 때문) */
+  max-width: 500px;
   position: relative;
-
-  /* size */
   width: 100%;
-
-  /* slide drag를 위해 DOM요소가 드래그로 선택되는것을 방지 */
   user-select: none;
   border-radius: 5px;
 }
 .slide_item {
-  /* layout */
   color: white;
   display: flex;
   align-items:end;
   justify-content: center;
-
-  /* position - 버튼 클릭시 left offset값을 적용시키기 위해 */
   position: relative;
   left: 0px;
-
-  /* size */
   width: 100%;
-  height: 400px;
-  /* flex item의 flex-shrink는 기본값이 1이므로 컨테이너 크기에 맞게 줄어드는데, 슬라이드를 구현할 것이므로 줄어들지 않도록 0을 준다. */
+  height: 300px;
   flex-shrink: 0;
 
   /* transition */
@@ -973,21 +973,21 @@ img.rotate {
   right: 10px;
 }
 
-/* 각 슬라이드가 변경되는 것을 시각적으로 확인하기 쉽도록 각 슬라이드별 색상 적용 */
+
 .slide_item:nth-child(1) {
   background-image: url(./web_img/banner1.jpg);
-  background-size: cover; /* 이미지가 요소에 맞게 확대/축소됩니다. */
+  background-size: cover; 
 }
 .slide_item:nth-child(2) {
   background-image: url(./web_img/banner2.jpg);
-  background-size: cover; /* 이미지가 요소에 맞게 확대/축소됩니다. */
+  background-size: cover; 
 }
 .slide_item:nth-child(3) {
   background-image: url(./web_img/banner3.jpg);
-  background-size: cover; /* 이미지가 요소에 맞게 확대/축소됩니다. */
+  background-size: cover; 
 }
 
-/* 페이지네이션 스타일 */
+
 ul,
 li {
   list-style-type: none;
@@ -995,25 +995,23 @@ li {
   margin: 0;
 }
 .slide_pagination {
-  /* layout */
+
   display: flex;
   gap: 5px;
 
-  /* position */
+
   position: absolute;
   bottom: 0;
-  /* left:50%, translateX(-50%)를 하면 가로 가운데로 위치시킬 수 있다. */
+
   left: 90%;
   transform: translateX(-50%);
 }
 .slide_pagination > li {
-  /* 현재 슬라이드가 아닌 것은 투명도 부여 */
   color: #d287fd7a;
   cursor: pointer;
   font-size: 35px;
 }
 .slide_pagination > li.active {
-  /* 현재 슬라이드 색상은 투명도 없이 */
   color: #c86aff;
 }
 
@@ -1097,7 +1095,7 @@ li {
   }
 
   .slide_item {
-  height: 210px;
+  height: 190px;
 }
 
   .container {
@@ -1320,14 +1318,14 @@ li {
   </header>
 
   <div class="ani_container">
-    <div class="amitext">인기</div>
+    <div class="amitext">인기콘텐츠</div>
     <div class="animated-text">
         <div class="line">출결조회</div>
         <div class="line">학식</div>
         <div class="line">학사일정</div>
         <div class="line">과목등급계산기</div>
     </div>
-</div>
+  </div>
 
   <div class="slide slide_wrap">
     <div class="slide_item">
@@ -1377,6 +1375,7 @@ li {
     </button>
   </div>
   
+  <div class="separator"></div>
 
   <div class="container">
     <div class="sectionarea1">
@@ -2554,7 +2553,10 @@ function nextMove() {
     paginationItems.forEach((i) => i.classList.remove("active"));
     paginationItems[currSlide - 1].classList.add("active");
   }
+  clearInterval(autoSlideInterval);
+  startAutoSlide();
 }
+
 
 function prevMove() {
   currSlide--;
