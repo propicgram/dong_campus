@@ -53,12 +53,11 @@
     button:focus{
       outline: none;
     }
-    
 
     @font-face {
-        font-family: 'LINESeedKR-Bd';
-        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
-        font-weight: 700;
+        font-family: 'LINESeedKR-Rg';
+        src: url('https://cdn.jsdelivr.net/gh/wizfile/font/LINESeedKR-Rg.eot');
+        src:url('https://cdn.jsdelivr.net/gh/wizfile/font/LINESeedKR-Rg.woff') format('woff');
         font-style: normal;
     }
 
@@ -70,7 +69,7 @@
 
 
     body, button {
-  font-family: 'LINESeedKR-Bd';
+  font-family: 'LINESeedKR-Rg';
 }
 
 header {
@@ -855,13 +854,14 @@ img.rotate {
         }
 
         .routeId {
-            font-size: 20px;
-            color: #d287fd;
-            margin-bottom: 5px;
+          font-weight: bold;
+          font-size: 17px;
+          color: #d287fd;
+          margin-bottom: 5px;
         }
 
         .arrivalTime {
-            font-size: 18px;
+            font-size: 14px;
             color: #ffffff;
         }
 
@@ -909,6 +909,79 @@ img.rotate {
           border: 1px solid #a47dfb; 
           width: 30px;
         }
+
+
+
+
+
+
+
+
+        .appdownmodal_modal {
+          display: none; 
+          position: fixed; 
+          z-index: 1; 
+          left: 0;
+          top: 0;
+          width: 100%; 
+          height: 100%; 
+          overflow: auto; 
+          background-color: rgb(0,0,0); 
+          background-color: rgba(0,0,0,0.4); 
+        }
+
+        .appdownmodal_modal-content {
+          margin: 300px auto 0;
+          padding-top: 60px;
+          padding-bottom: 30px;
+          background-color: #fefefe;
+          border-radius: 20px;
+          max-width: 400px;
+          width: 90%;
+          text-align: center; /* 로고 이미지를 중앙에 정렬하기 위해 추가 */
+          position: relative; /* 로고 이미지를 겹치기 위해 추가 */
+        }
+
+        /* 앱 로고 이미지 스타일 */
+        .appdownmodal_app-logo {
+          position: absolute;
+          top: -30px; /* 모달 내부에서 위쪽으로 올려 약간 겹치도록 설정 */
+          left: 50%;
+          transform: translateX(-50%);
+          width: 85px;
+          height: 85px;
+        }
+        .appdownmodal_rkdwh{
+          font-size: 20px;
+          font-weight: bold;
+        }
+
+        #appdownmodal_downloadButton{
+          font-size: 17px;
+          color: white;
+          background-color: #a47dfb;
+          border: 0;
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
+          padding: 8px 20px;
+          border-radius: 25px;
+          cursor: pointer;
+          transition: background-color 0.3s ease, color 0.3s ease;
+          margin-bottom: 20px;
+        }
+
+        .qnfvusgkwlaks{
+          color: #a7a7a7;
+          cursor: pointer;
+        }
+        .qnfvusgkwlaks:hover{
+          color: #444444;
+        }
+
+
+
+
+
+
 
 
 
@@ -1804,6 +1877,18 @@ li {
   </div>
 </div>
 
+
+
+<div id="appdownmodal_Modal" class="appdownmodal_modal">
+  <div class="appdownmodal_modal-content">
+
+    <img src="./web_img/logo.png" alt="앱 로고" class="appdownmodal_app-logo">
+    <p><span class="appdownmodal_rkdwh">동캠퍼스 앱</span>을 설치하시면<br>더 편리하게 이용하실 수 있습니다!</p>
+    <button id="appdownmodal_downloadButton">앱 설치하기</button><br>
+    <span class="qnfvusgkwlaks" onclick="appdownmodal_closeModal()"><u>불편하지만 웹에서 볼게요</u></span>
+  </div>
+</div>
+
   
   <script src="./str.js"></script>
   <script src="./scripts.js"></script>
@@ -2649,6 +2734,46 @@ slide.addEventListener("touchend", () => {
     startAutoSlide();
   }, 2000);
 });
+
+
+
+
+
+
+
+
+
+function appdownmodal_isAndroidApp() {
+  var userAgent = navigator.userAgent.toLowerCase();
+  return userAgent.includes("android") && userAgent.includes("webview");
+}
+
+
+var appdownmodal_modal = document.getElementById("appdownmodal_Modal");
+
+
+function appdownmodal_showModal() {
+  appdownmodal_modal.style.display = "block";
+}
+
+
+function appdownmodal_closeModal() {
+  appdownmodal_modal.style.display = "none";
+  localStorage.setItem("appdownmodal_modalClosed", "true");
+}
+
+
+if (!appdownmodal_isAndroidApp()) {
+  var appdownmodal_modalClosed = localStorage.getItem("appdownmodal_modalClosed");
+  if (!appdownmodal_modalClosed) {
+    setTimeout(appdownmodal_showModal, 1500);
+  }
+}
+
+var appdownmodal_downloadButton = document.getElementById("appdownmodal_downloadButton");
+appdownmodal_downloadButton.onclick = function() {
+  window.location.href = "https://play.google.com/store/apps/details?id=com.dong_campus&pcampaignid=web_share";
+}
   </script>
 </body>
 
