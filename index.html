@@ -875,21 +875,24 @@ img.rotate {
         .appdownmodal_modal {
           display: none; 
           position: fixed; 
-          z-index: 1; 
+          z-index: 9999; 
           left: 0;
           top: 0;
           width: 100%; 
           height: 100%; 
           overflow: auto; 
           background-color: rgb(0,0,0); 
-          background-color: rgba(0,0,0,0.4); 
+          background-color: rgba(0,0,0,0.7); 
         }
 
         .appdownmodal_modal-content {
           margin: 280px auto 0;
-          padding-top: 60px;
+          padding-top: 50px;
           padding-bottom: 30px;
           background-color: #fefefe;
+          border: solid 1px #333333;
+          border-right: 5px solid #333333;
+          border-bottom: 5px solid #333333;
           border-radius: 20px;
           max-width: 400px;
           width: 90%;
@@ -913,6 +916,7 @@ img.rotate {
 
         #appdownmodal_downloadButton{
           font-size: 17px;
+          font-weight: bold;
           color: white;
           background-color: #a47dfb;
           border: 0;
@@ -925,7 +929,7 @@ img.rotate {
         }
 
         .qnfvusgkwlaks{
-          font-size: 12px;
+          font-size: 14px;
           color: #a7a7a7;
           cursor: pointer;
         }
@@ -2743,7 +2747,7 @@ function appdownmodal_closeModal() {
 if (!appdownmodal_isAndroidApp()) {
   var appdownmodal_modalClosed = localStorage.getItem("appdownmodal_modalClosed");
   if (!appdownmodal_modalClosed) {
-    setTimeout(appdownmodal_showModal, 1500);
+    setTimeout(appdownmodal_showModal, 1000);
   }
 }
 
