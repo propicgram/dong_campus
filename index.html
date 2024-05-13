@@ -11,7 +11,6 @@
 <html lang="kr">
 <head>
 
-
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VK2S94GSH0"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -82,7 +81,6 @@
 }
 
 header {
-  padding-top: 40px;
   font-family: 'Sriracha';
   border: none;
   text-align: center;
@@ -284,7 +282,7 @@ header {
     }
 
     .station_name {
-      font-size: 19px;
+      font-size: 17px;
       font-weight: bold;
     }
 
@@ -309,7 +307,7 @@ header {
     }
 
     .Bokjeong_time2{
-      font-size: 21px;
+      font-size: 17px;
       font-weight: bold;
       width: 100%;
       text-align: right;
@@ -320,7 +318,7 @@ header {
     }
 
     .Namyangju_time2{
-      font-size: 21px;
+      font-size: 17px;
       font-weight: bold;
       width: 100%;
       text-align: right;
@@ -332,7 +330,7 @@ header {
     }
 
     .Guri_time2{
-      font-size: 21px;
+      font-size: 17px;
       font-weight: bold;
       width: 100%;
       text-align: right;
@@ -344,7 +342,7 @@ header {
     }
 
     .Hanam_time2{
-      font-size: 21px;
+      font-size: 17px;
       font-weight: bold;
       width: 100%;
       text-align: right;
@@ -659,12 +657,16 @@ img.rotate {
   }
 
   .attendance-modal-content {
+    text-align: center;
+      max-width: 500px;
       border-radius: 15px;
       background: white;
       color: #333333;
       margin: auto; 
       padding: 20px;
-      border: 1px solid #333333;
+      border: solid 1px #333333;
+      border-right: 4px solid #333333;
+      border-bottom: 4px solid #333333;
       width: 80%;
       position: absolute;
       left: 50%;
@@ -689,10 +691,11 @@ img.rotate {
   .attendance-button{
       font-size: 17px;
       color: #333333;
-      border: 1px solid #a47dfb; 
-      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
       padding: 8px 12px;
-      border-radius: 25px;
+      border: solid 1px #333333;
+      border-right: 4px solid #333333;
+      border-bottom: 4px solid #333333;
+      border-radius: 15px;
       cursor: pointer;
       transition: background-color 0.3s ease, color 0.3s ease;
       background-color: white;
@@ -782,18 +785,15 @@ img.rotate {
 }
 
 
-
-
-
-
-
-
-
   #busArrivalInfo {
+            margin: 10px;
+            max-width: 500px;
             width: 100%;
             text-align:center;
         }
   #busArrivalInfo_2 {
+            margin: 10px;
+            max-width: 500px;
             width: 100%;
             text-align:center;
         }
@@ -1099,8 +1099,8 @@ li {
     }
 
   .area2{
-    margin-top: 30px;
-    margin-bottom: 35px;
+    margin-top: 0px;
+    margin-bottom: 10px;
   }
 
     @keyframes float {
@@ -1206,7 +1206,7 @@ li {
   }
 
   .Bokjeong_time2{
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
     width: 100%;
     text-align: right;
@@ -1217,7 +1217,7 @@ li {
   }
 
   .Namyangju_time2{
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
     width: 100%;
     text-align: right;
@@ -1229,7 +1229,7 @@ li {
   }
 
   .Guri_time2{
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
     width: 100%;
     text-align: right;
@@ -1241,7 +1241,7 @@ li {
   }
 
   .Hanam_time2{
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
     width: 100%;
     text-align: right;
@@ -1412,7 +1412,7 @@ li {
         <span>LMS</span>
       </div>
     </button>
-    <button class="icon-button" id="icon-button3">
+    <button class="icon-button btn6" id="icon-button3">
       <div>
         <img src="./web_img/icon3.png" alt="icon3">
         <span>출결조회</span>
@@ -1449,17 +1449,6 @@ li {
         </div>
       </div>
     </div>
-    
-
-    <table class="rhdwl">
-        <thead>
-            <tr>
-                <th>📢공지사항</th>
-            </tr>
-        </thead>
-          <tbody id="content" class="xpenfl"></tbody>
-
-    </table>
 
     <div class="bus_container">
       <div>
@@ -1543,6 +1532,15 @@ li {
         </div>
       </div>
 
+      <table class="rhdwl">
+        <thead>
+            <tr>
+                <th>📢공지사항</th>
+            </tr>
+        </thead>
+          <tbody id="content" class="xpenfl"></tbody>
+    </table>
+
     </div>
     <div class="area2">
       <div class="Categoryarea">
@@ -1552,7 +1550,6 @@ li {
           <li><button class="btn3">#학사일정</button></li>
           <li><button class="btn22">#캠퍼스맵</button></li>
           <li><button class="btn4">#강의실</button></li>
-          <li><button class="btn7">#정보</button></li>
           <li><button class="btn8">🐈</button></li>
           <li><button class="btn9">#과목등급계산기</button></li>
           <li><button class="btn6">#출결조회</button></li>
@@ -1856,8 +1853,8 @@ li {
 <div id="attendanceModal" class="attendance-modal">
   <div class="attendance-modal-content">
     <span class="attendance-close" onclick="closeAttendanceModal()">&times;</span>
-    <p>포털시스템(portal.du.ac.kr) 접속하여 학번/비밀번호를 입력하여 로그인</p>
-    <p>출석조회 메뉴 선택 [ 좌측상단 메뉴바 ⇒ 대학모바일 ⇒ 출석조회 ]</p>
+    <p>포털시스템 접속하여 학번/비밀번호를 입력하여 로그인</p>
+    <p>출석조회 메뉴 선택 <b>[좌측상단 메뉴바 ⇒ 대학모바일 ⇒ 출석조회]</b></p>
     <button class="attendance-button">포털시스템 바로가기</button>
   </div>
 </div>
@@ -2146,83 +2143,6 @@ window.onclick = function(event) {
   }
 }
 
-
-
-const btn = document.querySelector('.btn7');
-
-
-btn.addEventListener('click', function() {
-
-    const modal = document.createElement('div');
-    modal.className = 'info_modal';
-    
-
-    const modalContent = document.createElement('div');
-    modalContent.className = 'info_modal_content';
-
-    const ssection1 = document.createElement('div');
-    ssection1.className = 'info_modal_content';
-    ssection1.innerHTML = `
-    <h2>통학버스 운행 구간 및 시간표</h2>
-
-    <p>운행 기간 : 학기 중 월 ~ 금요일</p>
-    <p>운행 제외 : 주말 및 공휴일, 근로자의 날(5/1), 개교기념일(10/2), 축제, 체육대회</p>
-    <p>운행 대상 : 동서울대학교 학생 및 교직원에 한하여 전 구간 무료, 외부인 탑승 불가</p>
-    <p>운행 노선 : 복정셔틀(오전08:30 ~ 10:30), 남양주-구리-하남 노선 1대</p>
-    <p>출발 시간 전 탑승 인원을 초과할 경우, 조기 출발할 수 있고 교통상황에 따라 지연될 수 있으니 양해바랍니다.</p>
-    <br>
-    <h2>통학버스 탑승 장소</h2>
-
-    <p>[복정역] 지하철 복정역 2번출구(횡단보도)<br>건너편 성남방향 버스정류장</p>
-    <img src="./map_img/map1.jpg" alt="복정역 이미지" style="max-width: 500px; width: 100%;">
-    <p>[남양주] 평내호평역 2번 출구 앞 버스정류장</p>
-    <img src="./map_img/map2.jpg" alt="남양주 이미지" style="max-width: 500px; width: 100%;">
-    <p>[구리] 구리 롯데백화점 앞 택시승강장</p>
-    <img src="./map_img/map3.jpg" alt="구리 이미지" style="max-width: 500px; width: 100%;">
-    <p>[하남] 하남 두산우브파크 홈플러스 상가 버스정류장 앞</p>
-    <img src="./map_img/map4.jpg" alt="하남 이미지" style="max-width: 500px; width: 100%;">
-    <br>
-    
-    <p>- 운행 문의 -</p>
-    <p>운행 관련 및 분실물 : (주)뉴제로쿨투어 02-572-5522</p>
-    <p>기타 문의 : 동서울대학교 관리과 031-720-2024</p>
-    <br>
-    `;
-    modalContent.appendChild(ssection1);
-
-
-    const section2 = document.createElement('div');
-    section2.className = 'info_section2';
-    section2.innerHTML = '<h2>제안하기</h2><p>동캠퍼스팀은 항상 발전하기 위해 여러분의 의견을 기다립니다!<p><p>추가 정보나 기능을 요청하시는 분들께서는 언제든지 의견을 남겨주세요.<p>동캠퍼스 사용 중 발견하신 버그나 오류에 대해서도 알려주시면 신속히 수정하도록 하겠습니다.<p>여러분의 소중한 의견이 동캠퍼스의 발전에 큰 도움이 됩니다!</p>';
-    modalContent.appendChild(section2);
-
-
-    const linkButton = document.createElement('button');
-    linkButton.textContent = '제안하기';
-    linkButton.className = 'link_button';
-    linkButton.addEventListener('click', function() {
-        window.location.href = 'https://forms.gle/JDP3A9xQJPA5tdCz6';
-    });
-    section2.appendChild(linkButton);
-
-    modalContent.appendChild(section2);
-
-    modal.appendChild(modalContent);
-
-
-    const closeButton = document.createElement('button');
-    closeButton.innerHTML = '&times;';
-    closeButton.className = 'close_button'; 
-    closeButton.style.border = 'none'; 
-    closeButton.style.background = 'none'; 
-    closeButton.addEventListener('click', function() {
-        modal.remove(); 
-    });
-    modalContent.appendChild(closeButton);
-
-
-    document.body.appendChild(modal);
-});
 
 
 let currentRotation = 0;
@@ -2530,9 +2450,6 @@ document.querySelector('.btn8').addEventListener('click', function() {
 
 document.querySelector('#icon-button4').addEventListener('click', function() {
   window.location.href = "https://grade-calculator-flax.vercel.app/";
-});
-document.querySelector('#icon-button3').addEventListener('click', function() {
-  window.location.href = "https://portal.du.ac.kr";
 });
 document.querySelector('.btn9').addEventListener('click', function() {
   window.location.href = "https://grade-calculator-flax.vercel.app/";
