@@ -647,7 +647,7 @@ img.rotate {
   .attendance-modal {
     display: none; 
     position: fixed;
-    z-index: 1;
+    z-index: 999;
     left: 0;
     top: 0;
     width: 100%;
@@ -657,21 +657,22 @@ img.rotate {
   }
 
   .attendance-modal-content {
-    text-align: center;
-      max-width: 500px;
-      border-radius: 15px;
-      background: white;
-      color: #333333;
-      margin: auto; 
-      padding: 20px;
-      border: solid 1px #333333;
-      border-right: 4px solid #333333;
-      border-bottom: 4px solid #333333;
-      width: 80%;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
+    text-align: left;
+    max-width: 500px;
+    border-radius: 15px;
+    background: white;
+    color: #333333;
+    margin: auto; 
+    padding: 20px;
+    border: solid 1px #333333;
+    border-right: 4px solid #333333;
+    border-bottom: 4px solid #333333;
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
   }
 
   .attendance-close {
@@ -689,6 +690,7 @@ img.rotate {
   }
 
   .attendance-button{
+    font-weight: bold;
       font-size: 17px;
       color: #333333;
       padding: 8px 12px;
@@ -703,8 +705,7 @@ img.rotate {
 
   .attendance-button:hover {
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
-    background-color:#ffffff; 
-    color: rgb(255, 255, 255);
+    color: #333333;
   }
 
   .rhdwl{
@@ -1546,7 +1547,6 @@ li {
       <div class="Categoryarea">
         <ul>
           <li><button class="btn1">#학식</button></li>
-          <li><button class="btn2">#버스</button></li>
           <li><button class="btn3">#학사일정</button></li>
           <li><button class="btn22">#캠퍼스맵</button></li>
           <li><button class="btn4">#강의실</button></li>
@@ -1853,8 +1853,8 @@ li {
 <div id="attendanceModal" class="attendance-modal">
   <div class="attendance-modal-content">
     <span class="attendance-close" onclick="closeAttendanceModal()">&times;</span>
-    <p>포털시스템 접속하여 학번/비밀번호를 입력하여 로그인</p>
-    <p>출석조회 메뉴 선택 <b>[좌측상단 메뉴바 ⇒ 대학모바일 ⇒ 출석조회]</b></p>
+    포털시스템 로그인 후
+    <p><b>좌측상단 메뉴바 > 대학모바일 > 출석조회</b></p>
     <button class="attendance-button">포털시스템 바로가기</button>
   </div>
 </div>
@@ -2109,15 +2109,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-
-    var scrollToBottomButton = document.querySelector('.btn2');
-    scrollToBottomButton.addEventListener('click', function() {
-        window.scrollTo(0, document.body.scrollHeight);
-    });
-
     var scrollToBottomButton3 = document.querySelector('#icon-button1');
     scrollToBottomButton3.addEventListener('click', function() {
-        window.scrollTo(0, document.body.scrollHeight - 1400);
+        window.scrollTo(0, document.body.scrollHeight - 2000);
     });
 
     var scrollToBottomButton2 = document.querySelector('#icon-button0');
@@ -2418,34 +2412,7 @@ updateCalendarModal(parsedEvents);
 
 
 document.querySelector('.btn8').addEventListener('click', function() {
-    // 이모지를 무작위 위치에 추가하는 함수
-    function addEmoji() {
-        const emoji = document.createElement('span');
-        emoji.innerHTML = '🐈';
-        emoji.classList.add('cat-emoji');
-        emoji.style.left = Math.random() * window.innerWidth + 'px';
-        emoji.style.top = Math.random() * window.innerHeight + 'px';
-        document.body.appendChild(emoji);
-    }
-
-    // 버튼 클릭 후 1초마다 이모지 추가
-    const emojiInterval = setInterval(addEmoji, 50);
-
-    // 1초 후에 이모지 추가를 멈추고 페이지 이동
-    setTimeout(function() {
-        clearInterval(emojiInterval); // 이모지 추가 멈춤
-        
-        // 페이지 이동하기 직전에 추가된 모든 이모지 제거
-        const emojis = document.querySelectorAll('.cat-emoji');
-        emojis.forEach(function(emoji) {
-            emoji.remove();
-        });
-
-        // 0.1초 후에 페이지 이동
-        setTimeout(function() {
-            window.location.href = "https://samsaek-map.vercel.app/";
-        }, 100);
-    }, 1500);
+  window.location.href = "https://samsaek-map.vercel.app/";
 });
 
 document.querySelector('#icon-button4').addEventListener('click', function() {
