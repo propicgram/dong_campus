@@ -61,6 +61,15 @@
         font-style: normal;
     }
 
+    @font-face {
+        font-family: 'Freesentation-9Black';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
+        font-weight: 900;
+        font-style: normal;
+    }
+
+
+
     .sriracha-regular {
       font-family: "Sriracha", cursive;
       font-weight: 400;
@@ -73,6 +82,7 @@
 }
 
 header {
+  padding-top: 40px;
   font-family: 'Sriracha';
   border: none;
   text-align: center;
@@ -776,14 +786,6 @@ img.rotate {
 
 
 
-  
-
-
-
-
-
-
-
 
 
 
@@ -959,12 +961,10 @@ img.rotate {
   position: relative;
   width: 100%;
   user-select: none;
-  border: solid 0px #333333;
-    border-right: 4px solid #333333;
-    border-bottom: 4px solid #333333;
-    border-radius: 15px;
+  border-radius: 15px;
 }
 .slide_item {
+  font-family: 'Freesentation-9Black';
   color: white;
   display: flex;
   align-items:end;
@@ -1020,6 +1020,10 @@ img.rotate {
   background-image: url(./web_img/banner3.jpg);
   background-size: cover; 
 }
+.slide_item:nth-child(4) {
+  background-image: url(./web_img/banner4.jpg);
+  background-size: cover; 
+}
 
 .slide_item {
   position: relative;
@@ -1036,8 +1040,6 @@ img.rotate {
   background: linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0));
 }
 
-
-
 ul,
 li {
   list-style-type: none;
@@ -1048,12 +1050,9 @@ li {
 
   display: flex;
   gap: 5px;
-
-
   position: absolute;
   bottom: 0;
-
-  left: 90%;
+  left: 85%;
   transform: translateX(-50%);
 }
 .slide_pagination > li {
@@ -1068,7 +1067,9 @@ li {
 
 
 
-
+.ghktkfvy{
+  font-size: 14px;
+}
 
 
 
@@ -1376,13 +1377,16 @@ li {
 
   <div class="slide slide_wrap">
     <div class="slide_item">
-      <h3>안드로이드 앱 출시!</h3>
+      <h3><span class="touch_slide1">동서울대학교 정보 플랫폼<span class="ghktkfvy"> > </span></span></h3>
     </div>
     <div class="slide_item">
-      <h3>과목등급계산기beta</h3>
+      <h3><span class="touch_slide2">과목등급계산기<span class="ghktkfvy"> > </span></span></h3>
     </div>
     <div class="slide_item">
-      <h3>삼색이맵</h3>
+      <h3><span class="touch_slide3">삼색이맵<span class="ghktkfvy"> > </span></span></h3>
+    </div>
+    <div class="slide_item">
+      <h3><span class="touch_slide4">성적평가/졸업요건<span class="ghktkfvy"> > </span></span></h3>
     </div>
     <div class="slide_prev_button slide_button">&#60;</div>
     <div class="slide_next_button slide_button">&#62;</div>
@@ -2577,6 +2581,23 @@ document.querySelector('.btn22').addEventListener('click', function() { // 22
 });
 document.querySelector('#icon-button5').addEventListener('click', function() { // 22
   window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=dbhyu4aXBhM9JSQ9FVFGUg%3d%3d&";
+});
+
+
+
+
+
+document.querySelector('.touch_slide1').addEventListener('click', function() { // 슬라이드1
+  window.location.href = "https://play.google.com/store/apps/details?id=com.dong_campus&pcampaignid=web_share";
+});
+document.querySelector('.touch_slide2').addEventListener('click', function() { // 슬라이드2
+  window.location.href = "https://grade-calculator-flax.vercel.app/";
+});
+document.querySelector('.touch_slide3').addEventListener('click', function() { // 슬라이드3
+  window.location.href = "https://samsaek-map.vercel.app/";
+});
+document.querySelector('.touch_slide4').addEventListener('click', function() { // 슬라이드4
+  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=fxlHsjubVTalTZEV27h0FA%3d%3d&";
 });
 
 
