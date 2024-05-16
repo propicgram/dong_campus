@@ -139,6 +139,9 @@ header {
       user-select: none; 
       -webkit-user-drag: none;
     } */
+    .smallfont{
+      font-size: 11px;
+    }
 
 
 
@@ -173,38 +176,6 @@ header {
       margin: 0;
     }
 
-    .Categoryarea ul {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content:center;
-    }
-
-    .Categoryarea li {
-      margin-right: 7px;
-      
-    }
-
-    .Categoryarea li:last-child {
-      margin-right: 0;
-    }
-
-    .Categoryarea li button {
-      font-size: 17px;
-      color: #333333;
-      border: solid 1px #333333;
-      border-right: 4px solid #333333;
-      border-bottom: 4px solid #333333;
-      padding: 8px 12px;
-      border-radius: 25px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease; 
-      background-color: #ffffff;
-    }
-
-    .Categoryarea li button:hover {
-      background-color:#333333; 
-      color: rgb(255, 255, 255);
-    }
     .btn100{
       font-size: 13px;
       color: #333333;
@@ -271,10 +242,6 @@ header {
 
     .sectionarea3 > .busarea > div {
       padding: 15px; 
-    }
-
-    .sectionarea3 > div:nth-child(3n) {
-      margin-right: 0; 
     }
 
     .webreload img{
@@ -373,7 +340,7 @@ header {
       bottom: 0;
       width: 100%;
       margin: 0 auto;
-      padding: 7px 0 7px 0;
+      padding: 50px 0 7px 0;
 
     }
 
@@ -725,6 +692,19 @@ img.rotate {
 
 
 
+
+  .text_center{
+    max-width: 500px;
+    color: #333333;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 35px;
+    padding-bottom: 8px;
+  }
+
+
+
+
   .animated-text{
   color: #333333;
   top: 50%;
@@ -843,6 +823,7 @@ img.rotate {
           max-width: 500px;
           padding-top: 21px;
           margin: 0 auto;
+          margin-bottom: 5px;
         }
 
         .icon-button {
@@ -868,8 +849,24 @@ img.rotate {
           width: 25px;
         }
 
+        .icon-button > div > img:hover {
+          border: solid 1px #333333;
+          border-right: 3px solid #333333;
+          border-bottom: 3px solid #333333;
+          padding: 10px;
+          background-color: #ffffff;
+          border-radius: 15px;
+          width: 25px;
+          /* 추가되는 효과 */
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* 그림자 효과 */
+          transform: scale(1.1); /* 확대 효과 */
+        }
 
 
+
+        .icon_area3{
+          margin-bottom: 20px;
+        }
 
 
 
@@ -1408,6 +1405,12 @@ li {
         <span>버스</span>
       </div>
     </button>
+    <button class="icon-button" id="icon-button4">
+      <div>
+        <img src="./web_img/icon4.png" alt="icon4">
+        <span>포털</span>
+      </div>
+    </button>
     <button class="icon-button" id="icon-button2">
       <div>
         <img src="./web_img/icon2.png" alt="icon2">
@@ -1418,12 +1421,6 @@ li {
       <div>
         <img src="./web_img/icon3.png" alt="icon3">
         <span>출결조회</span>
-      </div>
-    </button>
-    <button class="icon-button" id="icon-button4">
-      <div>
-        <img src="./web_img/icon4.png" alt="icon4">
-        <span>등급계산</span>
       </div>
     </button>
     <button class="icon-button" id="icon-button5">
@@ -1543,41 +1540,245 @@ li {
           <tbody id="content" class="xpenfl"></tbody>
     </table>
 
-    </div>
-    <div class="area2">
-      <div class="Categoryarea">
-        <ul>
-          <li><button class="btn1">#학식</button></li>
-          <li><button class="btn3">#학사일정</button></li>
-          <li><button class="btn22">#캠퍼스맵</button></li>
-          <li><button class="btn4">#강의실</button></li>
-          <li><button class="btn8">🐈</button></li>
-          <li><button class="btn9">#과목등급계산기</button></li>
-          <li><button class="btn6">#출결조회</button></li>
-          <li><button class="btn10">#포털시스템</button></li>
-          <li><button class="btn11">#LMS</button></li>
-          <li><button class="btn12">#웹메일</button></li>
-          <li><button class="btn13">#휴학/복학/전과</button></li>
-          <li><button class="btn14">#복학신청</button></li>
-          <li><button class="btn15">#증명서발급</button></li>
-          <li><button class="btn16">#장학금</button></li>
-          <li><button class="btn17">#기숙사</button></li>
-          <li><button class="btn18">#편의시설</button></li>
-          <li><button class="btn19">#수강신청</button></li>
-          <li><button class="btn20">#출석인정</button></li>
-          <li><button class="btn21">#성적평가/졸업요건</button></li>
-        </ul>
-      </div>
-    </div>
-
-
-
-
-
-
-    <footer>© 2024 DONGCAMPUS</footer>
   </div>
+</div>
 
+  <h3 class="text_center">🎓학사안내</h3>
+<div class="icon-button-container">
+  <button class="icon-button" id="icon-button100">
+    <div>
+      <img src="./web_img/icon100.png" alt="icon0">
+      <span>학사일정</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button101">
+    <div>
+      <img src="./web_img/icon101.png" alt="icon1">
+      <span>수강신청</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button102">
+    <div>
+      <img src="./web_img/icon102.png" alt="icon2">
+      <span>출석인정</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button103">
+    <div>
+      <img src="./web_img/icon103.png" alt="icon3">
+      <span>성적평가</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button104">
+    <div>
+      <img src="./web_img/icon104.png" alt="icon4">
+      <span>졸업요건</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button105">
+    <div>
+      <img src="./web_img/icon105.png" alt="icon5">
+      <span>휴학</span>
+    </div>
+  </button>
+</div>
+<div class="icon-button-container">
+  <button class="icon-button" id="icon-button106">
+    <div>
+      <img src="./web_img/icon106.png" alt="icon0">
+      <span>복학</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button107">
+    <div>
+      <img src="./web_img/icon107.png" alt="icon1">
+      <span>전과</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button108">
+    <div>
+      <img src="./web_img/icon108.png" alt="icon2">
+      <span>재입학</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button109">
+    <div>
+      <img src="./web_img/icon109.png" alt="icon3">
+      <span>자퇴</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button110">
+    <div>
+      <img src="./web_img/icon110.png" alt="icon4">
+      <span>현장실습</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button111">
+    <div>
+      <img src="./web_img/icon111.png" alt="icon5">
+      <span>학사징계</span>
+    </div>
+  </button>
+</div>
+<div class="icon-button-container">
+  <button class="icon-button" id="icon-button112">
+    <div>
+      <img src="./web_img/icon112.png" alt="icon0">
+      <span>장학금</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button113">
+    <div>
+      <img src="./web_img/icon113.png" alt="icon1">
+      <span>학칙</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button114">
+    <div>
+      <img src="./web_img/icon114.png" alt="icon2">
+      <span>증명서</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button115">
+    <div>
+      <img src="./web_img/icon115.png" alt="icon2">
+      <span>병역</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button116">
+    <div>
+      <img src="./web_img/icon116.png" alt="icon2">
+      <span>납입증명</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button117">
+    <div>
+      <img src="./web_img/icon117.png" alt="icon2">
+      <span>FAQ</span>
+    </div>
+  </button>
+</div>
+
+
+<h3 class="text_center">🏫대학생활</h3>
+<div class="icon-button-container">
+  <button class="icon-button" id="icon-button118">
+    <div>
+      <img src="./web_img/icon118.png" alt="icon0">
+      <span>웹메일</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button119">
+    <div>
+      <img src="./web_img/icon119.png" alt="icon1">
+      <span>편의시설</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button120">
+    <div>
+      <img src="./web_img/icon120.png" alt="icon2">
+      <span>학생기구</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button121">
+    <div>
+      <img src="./web_img/icon121.png" alt="icon3">
+      <span>동아리</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button122">
+    <div>
+      <img src="./web_img/icon122.png" alt="icon4">
+      <span>기숙사</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button123">
+    <div>
+      <img src="./web_img/icon123.png" alt="icon5">
+      <span>주차장</span>
+    </div>
+  </button>
+</div>
+<div class="icon-button-container icon_area3">
+  <button class="icon-button" id="icon-button124">
+    <div>
+      <img src="./web_img/icon124.png" alt="icon0">
+      <span class="smallfont">보조배터리</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button125">
+    <div>
+      <img src="./web_img/icon125.png" alt="icon1">
+      <span>킥보드</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button126">
+    <div>
+      <img src="./web_img/icon126.png" alt="icon2">
+      <span class="smallfont">MS오피스</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button127">
+    <div>
+      <img src="./web_img/icon127.png" alt="icon2">
+      <span>경력개발</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button128">
+    <div>
+      <img src="./web_img/icon128.png" alt="icon2">
+      <span>도서관</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button129">
+    <div>
+      <img src="./web_img/icon129.png" alt="icon2">
+      <span>학생상담</span>
+    </div>
+  </button>
+</div>
+
+<h3 class="text_center">🔥꿀팁</h3>
+<div class="icon-button-container">
+  <button class="icon-button" id="icon-button130">
+    <div>
+      <img src="./web_img/icon130.png" alt="icon0">
+      <span class="smallfont">ISIC 국제학생증</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button131">
+    <div>
+      <img src="./web_img/icon131.png" alt="icon1">
+      <span>교육할인스토어</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button132">
+    <div>
+      <img src="./web_img/icon132.png" alt="icon2">
+      <span>업데이트 준비중</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button133">
+    <div>
+      <img src="./web_img/icon133.png" alt="icon3">
+      <span>업데이트 준비중</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button134">
+    <div>
+      <img src="./web_img/icon134.png" alt="icon4">
+      <span>업데이트 준비중</span>
+    </div>
+  </button>
+  <button class="icon-button" id="icon-button135">
+    <div>
+      <img src="./web_img/icon135.png" alt="icon5">
+      <span>업데이트 준비중</span>
+    </div>
+  </button>
+</div>
+
+<footer>© 2024 DONGCAMPUS</footer>
 
 
 
@@ -1596,7 +1797,6 @@ li {
         </div>
     </div>
   </div>
-
 
 
   <div id="calendarModal" class="modal">
@@ -1905,8 +2105,7 @@ li {
     hak_modal.style.display = "block";
   }
 
-
-  var hak_btn2 = document.querySelector(".btn1");
+  var hak_btn2 = document.querySelector("#icon-button100");
   hak_btn2.onclick = function() {
     hak_modal.style.display = "block";
   }
@@ -1930,12 +2129,6 @@ var calendarModal = document.getElementById("calendarModal");
 
 var calendarTitle = document.querySelector(".box2");
 calendarTitle.onclick = function() {
-  calendarModal.style.display = "block";
-}
-
-
-var btn2 = document.querySelector(".btn3");
-btn2.onclick = function() {
   calendarModal.style.display = "block";
 }
 
@@ -2112,19 +2305,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var scrollToBottomButton3 = document.querySelector('#icon-button1');
     scrollToBottomButton3.addEventListener('click', function() {
-        window.scrollTo(0, document.body.scrollHeight - 2000);
+        window.scrollTo(0, document.body.scrollHeight - 2200);
     });
 
     var scrollToBottomButton2 = document.querySelector('#icon-button0');
     scrollToBottomButton2.addEventListener('click', function() {
         window.scrollTo(0, document.body.scrollHeight);
     });
-
-
-
-document.querySelector('.btn4').onclick = function() {
-  document.getElementById('cmap-myModal').style.display = 'block';
-}
 
 
 document.querySelector('.cmap-close').onclick = function() {
@@ -2412,62 +2599,125 @@ updateCalendarModal(parsedEvents);
 
 
 
-document.querySelector('.btn8').addEventListener('click', function() {
-  window.location.href = "https://samsaek-map.vercel.app/";
-});
-
 document.querySelector('#icon-button4').addEventListener('click', function() {
-  window.location.href = "https://grade-calculator-flax.vercel.app/";
-});
-document.querySelector('.btn9').addEventListener('click', function() {
-  window.location.href = "https://grade-calculator-flax.vercel.app/";
-});
-document.querySelector('.btn10').addEventListener('click', function() { // 10
   window.location.href = "https://portal.du.ac.kr/login.jsp";
 });
-document.querySelector('.btn11').addEventListener('click', function() { // 11
+document.querySelector('#icon-button2').addEventListener('click', function() {
   window.location.href = "https://lms.du.ac.kr/login.php";
 });
-document.querySelector('#icon-button2').addEventListener('click', function() { // 11
-  window.location.href = "https://lms.du.ac.kr/login.php";
-});
-document.querySelector('.btn12').addEventListener('click', function() { // 12
-  window.location.href = "https://mail.du.ac.kr/mail/login";
-});
-document.querySelector('.btn13').addEventListener('click', function() { // 13
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=g2jLoGsiMR3n3jBlLbWLpw%3d%3d&";
-});
-document.querySelector('.btn14').addEventListener('click', function() { // 14
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=yui5W1xuikXWArTYXB09Zw%3d%3d&";
-});
-document.querySelector('.btn15').addEventListener('click', function() { // 15
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=3ZqNYgyaL4YCzismnO%2bZ6A%3d%3d&";
-});
-document.querySelector('.btn16').addEventListener('click', function() { // 16
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuord=5&submenuord=13&";
-});
-document.querySelector('.btn17').addEventListener('click', function() { // 17
-  window.location.href = "https://dorm.du.ac.kr/dorm/Main.do";
-});
-document.querySelector('.btn18').addEventListener('click', function() { // 18
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=LDuhG8qKuj0AZL5oCBQUYQ%3d%3d&";
-});
-document.querySelector('.btn19').addEventListener('click', function() { // 19
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=%2bCuO1viNG3oA4OC8CxJYJg%3d%3d&";
-});
-document.querySelector('.btn20').addEventListener('click', function() { // 20
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=aZ%2bCFV3rkCXxn2YmJUm7Qg%3d%3d&";
-});
-document.querySelector('.btn21').addEventListener('click', function() { // 21
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=fxlHsjubVTalTZEV27h0FA%3d%3d&";
-});
-document.querySelector('.btn22').addEventListener('click', function() { // 22
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=dbhyu4aXBhM9JSQ9FVFGUg%3d%3d&";
-});
-document.querySelector('#icon-button5').addEventListener('click', function() { // 22
+document.querySelector('#icon-button5').addEventListener('click', function() {
   window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=dbhyu4aXBhM9JSQ9FVFGUg%3d%3d&";
 });
 
+
+
+document.querySelector('#icon-button101').addEventListener('click', function() {
+  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=%2bCuO1viNG3oA4OC8CxJYJg%3d%3d&";
+});
+document.querySelector('#icon-button102').addEventListener('click', function() {
+  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=aZ%2bCFV3rkCXxn2YmJUm7Qg%3d%3d&";
+});
+document.querySelector('#icon-button103').addEventListener('click', function() {
+  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=fxlHsjubVTalTZEV27h0FA%3d%3d&";
+});
+document.querySelector('#icon-button104').addEventListener('click', function() {
+  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=fxlHsjubVTalTZEV27h0FA%3d%3d&";
+});
+document.querySelector('#icon-button105').addEventListener('click', function() {
+  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=g2jLoGsiMR3n3jBlLbWLpw%3d%3d&";
+});
+
+
+document.querySelector('#icon-button105').addEventListener('click', function() {
+  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=g2jLoGsiMR3n3jBlLbWLpw%3d%3d&";
+});
+document.querySelector('#icon-button106').addEventListener('click', function() {
+  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=g2jLoGsiMR3n3jBlLbWLpw%3d%3d&";
+});
+document.querySelector('#icon-button107').addEventListener('click', function() {
+  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=g2jLoGsiMR3n3jBlLbWLpw%3d%3d&";
+});
+document.querySelector('#icon-button108').addEventListener('click', function() {
+  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=ndTfMlfcorVznwKzBSpK1g%3d%3d&";
+});
+document.querySelector('#icon-button109').addEventListener('click', function() {
+  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=ndTfMlfcorVznwKzBSpK1g%3d%3d&";
+});
+document.querySelector('#icon-button110').addEventListener('click', function() {
+  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=zrUBv6HE%2fuNuCmtgpW4HzA%3d%3d&";
+});
+document.querySelector('#icon-button111').addEventListener('click', function() {
+  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=jGtgkYL3zRdkqwe9jNol2Q%3d%3d&";
+});
+
+
+document.querySelector('#icon-button112').addEventListener('click', function() {
+  window.location.href = "https://www.du.ac.kr/submenu.do?menuord=5&submenuord=13&";
+});
+document.querySelector('#icon-button113').addEventListener('click', function() {
+  window.location.href = "https://www.du.ac.kr/submenu.do?menuord=5&submenuord=17&";
+});
+document.querySelector('#icon-button114').addEventListener('click', function() {
+  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=3ZqNYgyaL4YCzismnO%2bZ6A%3d%3d&";
+});
+document.querySelector('#icon-button115').addEventListener('click', function() {
+  window.location.href = "https://www.du.ac.kr/submenu.do?menuord=5&submenuord=41&";
+});
+document.querySelector('#icon-button116').addEventListener('click', function() {
+  window.location.href = "https://www.du.ac.kr/detail.do?menuUrl=VYlDwaWjKSwAGszRXT2bcg%3D%3D&board_seq=24075&row_num=1&pageNo=1&categoryid=&userpwd=";
+});
+document.querySelector('#icon-button117').addEventListener('click', function() {
+  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=mgephqOMYERCbwCnwyxbrg%3d%3d&";
+});
+
+
+document.querySelector('#icon-button118').addEventListener('click', function() {
+  window.location.href = "https://mail.du.ac.kr/mail/login";
+});
+document.querySelector('#icon-button119').addEventListener('click', function() {
+  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=LDuhG8qKuj0AZL5oCBQUYQ%3d%3d&";
+});
+document.querySelector('#icon-button120').addEventListener('click', function() {
+  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=0C4XuWq%2bb7eTLK7XIpfXOQ%3d%3d&";
+});
+document.querySelector('#icon-button121').addEventListener('click', function() {
+  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=u9%2b5PWy5e%2bP81sj%2fRoRr1Q%3d%3d&";
+});
+document.querySelector('#icon-button122').addEventListener('click', function() {
+  window.location.href = "https://dorm.du.ac.kr/dorm/Main.do";
+});
+document.querySelector('#icon-button123').addEventListener('click', function() {
+  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=sF2VWrsJ3JbYcT8w4SOj7w%3d%3d&";
+});
+
+
+document.querySelector('#icon-button124').addEventListener('click', function() {
+  window.location.href = "https://play.google.com/store/apps/details?id=com.keundoum.powerbox&hl=ko-KR";
+});
+document.querySelector('#icon-button125').addEventListener('click', function() {
+  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=%2bcwxrqXs%2fJtLSsDYJ0367Q%3d%3d&";
+});
+document.querySelector('#icon-button126').addEventListener('click', function() {
+  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=Pq45DK2FRS9f8inD1oNqOA%3d%3d&";
+});
+document.querySelector('#icon-button127').addEventListener('click', function() {
+  window.location.href = "https://dudream.du.ac.kr/";
+});
+document.querySelector('#icon-button128').addEventListener('click', function() {
+  window.location.href = "https://dlibrary.du.ac.kr/";
+});
+document.querySelector('#icon-button129').addEventListener('click', function() {
+  window.location.href = "https://counsel.du.ac.kr/counsel/Main.do";
+});
+
+
+
+document.querySelector('#icon-button130').addEventListener('click', function() {
+  window.location.href = "https://www.isic.co.kr/du/duIndex.jsp";
+});
+document.querySelector('#icon-button131').addEventListener('click', function() {
+  window.location.href = "https://www.ygoon.com/";
+});
 
 
 
@@ -2488,7 +2738,7 @@ document.querySelector('.touch_slide4').addEventListener('click', function() { /
 
 
 
-(function(_0x44d3d1,_0x223f91){var _0x3336f7=_0x284b,_0x46646b=_0x44d3d1();while(!![]){try{var _0x25898f=parseInt(_0x3336f7(0x167))/0x1*(parseInt(_0x3336f7(0x13e))/0x2)+-parseInt(_0x3336f7(0x165))/0x3*(-parseInt(_0x3336f7(0x164))/0x4)+-parseInt(_0x3336f7(0x17a))/0x5+-parseInt(_0x3336f7(0x17c))/0x6+parseInt(_0x3336f7(0x168))/0x7*(parseInt(_0x3336f7(0x161))/0x8)+parseInt(_0x3336f7(0x17e))/0x9+parseInt(_0x3336f7(0x152))/0xa*(-parseInt(_0x3336f7(0x16b))/0xb);if(_0x25898f===_0x223f91)break;else _0x46646b['push'](_0x46646b['shift']());}catch(_0x5d8aa1){_0x46646b['push'](_0x46646b['shift']());}}}(_0x2057,0x7d743));function _0x284b(_0x4bafc3,_0x307b27){var _0x20576b=_0x2057();return _0x284b=function(_0x284b6f,_0x79ffeb){_0x284b6f=_0x284b6f-0x13c;var _0x1a3c0d=_0x20576b[_0x284b6f];return _0x1a3c0d;},_0x284b(_0x4bafc3,_0x307b27);}function getBusArrivalInfo(){var _0x5b6d94=_0x284b,_0x13d240=new XMLHttpRequest(),_0x39df61=_0x5b6d94(0x16a),_0xd09fd6=_0x5b6d94(0x155),_0x2bcfad=0xc28cb15,_0x13f81d='?'+encodeURIComponent(_0x5b6d94(0x150))+'='+encodeURIComponent(_0xd09fd6);_0x13f81d+='&'+encodeURIComponent(_0x5b6d94(0x166))+'='+encodeURIComponent(_0x2bcfad),_0x13d240['open'](_0x5b6d94(0x178),_0x39df61+_0x13f81d),_0x13d240['onreadystatechange']=function(){var _0x4fc8e5=_0x5b6d94;if(this['readyState']==0x4&&this[_0x4fc8e5(0x174)]==0xc8){var _0x35de58=this['responseText'];displayBusArrivalTimes(_0x35de58);}},_0x13d240['send']('');}function _0x2057(){var _0x517d56=['2676726EUxJGW','500-2N','357','265100GfnAKO','predictTime1','textContent','onreadystatechange','length','234000009','204000007','1117','add','100','234000040','text/xml','500-2','234001738','getElementById','반디1','\x20</span>\x20<span\x20class=\x27arrivalTime\x27>','busArrivalInfo','serviceKey','locationNo1','1006800KBDvdH','div','234000075','nwaefISD6ee0vv94Hv+1FadsVRGtiqHOGQZlDS6mEPovUFla146hAPT6zLMjmsWR8TV6vfjeRj+irmYtXd5a7g==','busArrivalList','busInfo','classList','getElementsByTagName','234000079','routeId','234000069','appendChild','busArrivalInfo_2','분</span>\x20','204000150','52616uNclIz','createElement','open','63032adlzHp','51HAmNCd','stationId','2lurCVA','497kSsSmv','227000003','https://apis.data.go.kr/6410000/busarrivalservice/getBusArrivalList','44vuwyKu','500-1A','번째\x20전)</span>','parseFromString','innerHTML','500-1','responseText','반디1-1','<span\x20class=\x27arrivalTime_2\x27>(','status','204000018','119','send','GET','<span\x20class=\x27routeId\x27>','1502275KqsRZi','readyState','481998NtTrlz','204000149'];_0x2057=function(){return _0x517d56;};return _0x2057();}function displayBusArrivalTimes(_0x4242e0){var _0x266d02=_0x284b,_0x4f10ee=new DOMParser()[_0x266d02(0x16e)](_0x4242e0,_0x266d02(0x149)),_0x24817d=_0x4f10ee['getElementsByTagName'](_0x266d02(0x156)),_0x55778e=document['getElementById'](_0x266d02(0x14f));_0x55778e[_0x266d02(0x16f)]='';for(var _0x3491e4=0x0;_0x3491e4<_0x24817d[_0x266d02(0x142)];_0x3491e4++){var _0x54db4c=_0x24817d[_0x3491e4][_0x266d02(0x159)](_0x266d02(0x15b))[0x0][_0x266d02(0x140)],_0x551d6d=_0x24817d[_0x3491e4][_0x266d02(0x159)](_0x266d02(0x13f))[0x0]['textContent'],_0x5d16ff=parseInt(_0x24817d[_0x3491e4][_0x266d02(0x159)](_0x266d02(0x151))[0x0]['textContent']),_0x45b41b=formatRouteId(_0x54db4c),_0x18b1bc=_0x266d02(0x179)+_0x45b41b+_0x266d02(0x14e)+_0x551d6d+_0x266d02(0x15f);_0x18b1bc+='<span\x20class=\x27arrivalTime_2\x27>('+_0x5d16ff+_0x266d02(0x16d);var _0x4b189f=document[_0x266d02(0x162)](_0x266d02(0x153));_0x4b189f['classList']['add'](_0x266d02(0x157)),_0x4b189f[_0x266d02(0x16f)]=_0x18b1bc,_0x55778e[_0x266d02(0x15d)](_0x4b189f);}}function formatRouteId(_0x272944){var _0x2d1085=_0x284b,_0x554195=_0x272944;switch(_0x272944){case _0x2d1085(0x144):_0x554195=_0x2d1085(0x13d);break;case'227000003':_0x554195='30';break;case _0x2d1085(0x148):_0x554195=_0x2d1085(0x176);break;case _0x2d1085(0x15c):_0x554195=_0x2d1085(0x145);break;case _0x2d1085(0x154):_0x554195=_0x2d1085(0x14a);break;case'234000079':_0x554195='500-1';break;case'234001609':_0x554195=_0x2d1085(0x16c);break;case _0x2d1085(0x175):_0x554195=_0x2d1085(0x147);break;case _0x2d1085(0x17d):_0x554195='반디1';break;case _0x2d1085(0x160):_0x554195=_0x2d1085(0x172);break;case _0x2d1085(0x14b):_0x554195=_0x2d1085(0x13c);break;case _0x2d1085(0x143):_0x554195='32';break;}return _0x554195;}getBusArrivalInfo();function getBusArrivalInfo_2(){var _0x1d0f70=_0x284b,_0x1a0db9=new XMLHttpRequest(),_0x330898=_0x1d0f70(0x16a),_0x243719='nwaefISD6ee0vv94Hv+1FadsVRGtiqHOGQZlDS6mEPovUFla146hAPT6zLMjmsWR8TV6vfjeRj+irmYtXd5a7g==',_0x420587=0x754d5b9,_0x4f0957='?'+encodeURIComponent('serviceKey')+'='+encodeURIComponent(_0x243719);_0x4f0957+='&'+encodeURIComponent(_0x1d0f70(0x166))+'='+encodeURIComponent(_0x420587),_0x1a0db9[_0x1d0f70(0x163)](_0x1d0f70(0x178),_0x330898+_0x4f0957),_0x1a0db9[_0x1d0f70(0x141)]=function(){var _0x195f27=_0x1d0f70;if(this[_0x195f27(0x17b)]==0x4&&this[_0x195f27(0x174)]==0xc8){var _0x4884e9=this[_0x195f27(0x171)];displayBusArrivalTimes_2(_0x4884e9);}},_0x1a0db9[_0x1d0f70(0x177)]('');}function displayBusArrivalTimes_2(_0x1a84a7){var _0x39824b=_0x284b,_0x2dc6be=new DOMParser()[_0x39824b(0x16e)](_0x1a84a7,_0x39824b(0x149)),_0x46cb16=_0x2dc6be['getElementsByTagName'](_0x39824b(0x156)),_0x4f0383=document[_0x39824b(0x14c)](_0x39824b(0x15e));_0x4f0383[_0x39824b(0x16f)]='';for(var _0x44e1e3=0x0;_0x44e1e3<_0x46cb16[_0x39824b(0x142)];_0x44e1e3++){var _0x3116e8=_0x46cb16[_0x44e1e3]['getElementsByTagName'](_0x39824b(0x15b))[0x0][_0x39824b(0x140)],_0x2b6249=_0x46cb16[_0x44e1e3]['getElementsByTagName'](_0x39824b(0x13f))[0x0][_0x39824b(0x140)],_0x4da805=parseInt(_0x46cb16[_0x44e1e3]['getElementsByTagName'](_0x39824b(0x151))[0x0][_0x39824b(0x140)]),_0x356b4c=formatRouteId_2(_0x3116e8),_0x52cb72=_0x39824b(0x179)+_0x356b4c+_0x39824b(0x14e)+_0x2b6249+_0x39824b(0x15f);_0x52cb72+=_0x39824b(0x173)+_0x4da805+_0x39824b(0x16d);var _0x5e0ed5=document['createElement']('div');_0x5e0ed5[_0x39824b(0x158)][_0x39824b(0x146)]('busInfo'),_0x5e0ed5[_0x39824b(0x16f)]=_0x52cb72,_0x4f0383[_0x39824b(0x15d)](_0x5e0ed5);}}function formatRouteId_2(_0x48a456){var _0x5c7af6=_0x284b,_0x8438a9=_0x48a456;switch(_0x48a456){case _0x5c7af6(0x144):_0x8438a9=_0x5c7af6(0x13d);break;case _0x5c7af6(0x169):_0x8438a9='30';break;case _0x5c7af6(0x148):_0x8438a9=_0x5c7af6(0x176);break;case'234000069':_0x8438a9=_0x5c7af6(0x145);break;case _0x5c7af6(0x154):_0x8438a9=_0x5c7af6(0x14a);break;case _0x5c7af6(0x15a):_0x8438a9=_0x5c7af6(0x170);break;case _0x5c7af6(0x175):_0x8438a9='100';break;case _0x5c7af6(0x17d):_0x8438a9=_0x5c7af6(0x14d);break;case _0x5c7af6(0x160):_0x8438a9=_0x5c7af6(0x172);break;case'234001738':_0x8438a9=_0x5c7af6(0x13c);break;case _0x5c7af6(0x143):_0x8438a9='32';break;}return _0x8438a9;}getBusArrivalInfo_2();
+(function(_0x3bff94,_0x18f70d){var _0x36e2dd=_0x23f7,_0x3564b6=_0x3bff94();while(!![]){try{var _0x19e3ee=parseInt(_0x36e2dd(0xc1))/0x1+-parseInt(_0x36e2dd(0x91))/0x2+parseInt(_0x36e2dd(0xb8))/0x3*(-parseInt(_0x36e2dd(0xb2))/0x4)+-parseInt(_0x36e2dd(0xab))/0x5*(-parseInt(_0x36e2dd(0x97))/0x6)+parseInt(_0x36e2dd(0xba))/0x7+parseInt(_0x36e2dd(0x9c))/0x8*(-parseInt(_0x36e2dd(0x8f))/0x9)+parseInt(_0x36e2dd(0xaa))/0xa*(parseInt(_0x36e2dd(0xc6))/0xb);if(_0x19e3ee===_0x18f70d)break;else _0x3564b6['push'](_0x3564b6['shift']());}catch(_0x3dfa04){_0x3564b6['push'](_0x3564b6['shift']());}}}(_0x305d,0x9cac7));function getBusArrivalInfo(){var _0x1658b4=_0x23f7,_0x246618=new XMLHttpRequest(),_0x2febfb=_0x1658b4(0xb1),_0x5e2664='nwaefISD6ee0vv94Hv+1FadsVRGtiqHOGQZlDS6mEPovUFla146hAPT6zLMjmsWR8TV6vfjeRj+irmYtXd5a7g==',_0x3bf9d4=0xc28cb15,_0x25ac98='?'+encodeURIComponent(_0x1658b4(0xcb))+'='+encodeURIComponent(_0x5e2664);_0x25ac98+='&'+encodeURIComponent('stationId')+'='+encodeURIComponent(_0x3bf9d4),_0x246618[_0x1658b4(0x93)]('GET',_0x2febfb+_0x25ac98),_0x246618[_0x1658b4(0xa6)]=function(){if(this['readyState']==0x4&&this['status']==0xc8){var _0x3d47e5=this['responseText'];displayBusArrivalTimes(_0x3d47e5);}},_0x246618[_0x1658b4(0xbb)]('');}function displayBusArrivalTimes(_0x150a79){var _0x3b475c=_0x23f7,_0x50296a=new DOMParser()[_0x3b475c(0xa1)](_0x150a79,_0x3b475c(0xa7)),_0xdb4854=_0x50296a[_0x3b475c(0x9a)](_0x3b475c(0xb3)),_0x417223=document[_0x3b475c(0xcc)]('busArrivalInfo');_0x417223[_0x3b475c(0xc5)]='';for(var _0x42de90=0x0;_0x42de90<_0xdb4854[_0x3b475c(0xc4)];_0x42de90++){var _0x527722=_0xdb4854[_0x42de90][_0x3b475c(0x9a)](_0x3b475c(0xb9))[0x0][_0x3b475c(0xa0)],_0x464368=_0xdb4854[_0x42de90][_0x3b475c(0x9a)]('predictTime1')[0x0][_0x3b475c(0xa0)],_0x289b2f=parseInt(_0xdb4854[_0x42de90][_0x3b475c(0x9a)](_0x3b475c(0xd2))[0x0][_0x3b475c(0xa0)]),_0x407e83=formatRouteId(_0x527722),_0x1ada24=_0x3b475c(0xaf)+_0x407e83+_0x3b475c(0xc3)+_0x464368+'분</span>\x20';_0x1ada24+=_0x3b475c(0x99)+_0x289b2f+_0x3b475c(0xc8);var _0x233465=document[_0x3b475c(0xd0)]('div');_0x233465[_0x3b475c(0xa5)]['add'](_0x3b475c(0xcd)),_0x233465[_0x3b475c(0xc5)]=_0x1ada24,_0x417223['appendChild'](_0x233465);}}function formatRouteId(_0xed374f){var _0x469aac=_0x23f7,_0x3bfd60=_0xed374f,_0x4b4324='';switch(_0xed374f){case'204000007':_0x3bfd60=_0x469aac(0x9e),_0x4b4324='green';break;case _0x469aac(0xac):_0x3bfd60='30',_0x4b4324=_0x469aac(0x90);break;case _0x469aac(0xbd):_0x3bfd60=_0x469aac(0x9b),_0x4b4324=_0x469aac(0x90);break;case'234000069':_0x3bfd60='1117',_0x4b4324=_0x469aac(0xc2);break;case _0x469aac(0xce):_0x3bfd60=_0x469aac(0xbe),_0x4b4324=_0x469aac(0xc2);break;case _0x469aac(0xbf):_0x3bfd60='500-1',_0x4b4324=_0x469aac(0xc2);break;case'234001609':_0x3bfd60=_0x469aac(0xb4),_0x4b4324=_0x469aac(0xc2);break;case'204000018':_0x3bfd60=_0x469aac(0xc9),_0x4b4324=_0x469aac(0x90);break;case'204000149':_0x3bfd60='반디1',_0x4b4324='red';break;case _0x469aac(0xae):_0x3bfd60='반디1-1',_0x4b4324=_0x469aac(0xc2);break;case _0x469aac(0xa2):_0x3bfd60=_0x469aac(0xc7),_0x4b4324=_0x469aac(0xc2);break;case'204000083':_0x3bfd60='100\x20(출근)',_0x4b4324=_0x469aac(0x90);break;case _0x469aac(0xcf):_0x3bfd60='32',_0x4b4324='green';break;}return _0x469aac(0x94)+_0x4b4324+'\x27>'+_0x3bfd60+'</span>';}getBusArrivalInfo();function _0x305d(){var _0xd6416a=['text/xml','status','204000018','10lEOMIQ','1066905GIygFm','227000003','204000083','204000150','<span\x20class=\x27routeId\x27>','div','https://apis.data.go.kr/6410000/busarrivalservice/getBusArrivalList','164BXVbsQ','busArrivalList','500-1A','204000149','1117','nwaefISD6ee0vv94Hv+1FadsVRGtiqHOGQZlDS6mEPovUFla146hAPT6zLMjmsWR8TV6vfjeRj+irmYtXd5a7g==','44598GCABuu','routeId','5298335aNsurd','send','appendChild','234000040','500-2','234000079','responseText','77037IqvaDm','red','\x20</span>\x20<span\x20class=\x27arrivalTime\x27>','length','innerHTML','9317473UunefA','500-2N','번째\x20전)</span>','100','234000069','serviceKey','getElementById','busInfo','234000075','234000009','createElement','add','locationNo1','21519dAdyxg','green','681264NeRyaF','predictTime1','open','<span\x20style=\x27color:','500-1','GET','18zoENLS','</span>','<span\x20class=\x27arrivalTime_2\x27>(','getElementsByTagName','119','2440bKMWAf','분</span>\x20','357','반디1-1','textContent','parseFromString','234001738','busArrivalInfo_2','반디1','classList','onreadystatechange'];_0x305d=function(){return _0xd6416a;};return _0x305d();}function getBusArrivalInfo_2(){var _0x14285d=_0x23f7,_0x8064e0=new XMLHttpRequest(),_0x2f775e=_0x14285d(0xb1),_0x4c2d91=_0x14285d(0xb7),_0x382110=0x754d5b9,_0x442caf='?'+encodeURIComponent(_0x14285d(0xcb))+'='+encodeURIComponent(_0x4c2d91);_0x442caf+='&'+encodeURIComponent('stationId')+'='+encodeURIComponent(_0x382110),_0x8064e0[_0x14285d(0x93)](_0x14285d(0x96),_0x2f775e+_0x442caf),_0x8064e0[_0x14285d(0xa6)]=function(){var _0x563eea=_0x14285d;if(this['readyState']==0x4&&this[_0x563eea(0xa8)]==0xc8){var _0x3b40f2=this[_0x563eea(0xc0)];displayBusArrivalTimes_2(_0x3b40f2);}},_0x8064e0[_0x14285d(0xbb)]('');}function _0x23f7(_0x1179c6,_0x2041ca){var _0x305db9=_0x305d();return _0x23f7=function(_0x23f72d,_0x38c9b1){_0x23f72d=_0x23f72d-0x8f;var _0x2f7ce7=_0x305db9[_0x23f72d];return _0x2f7ce7;},_0x23f7(_0x1179c6,_0x2041ca);}function displayBusArrivalTimes_2(_0x146250){var _0x4b0753=_0x23f7,_0x126399=new DOMParser()['parseFromString'](_0x146250,'text/xml'),_0x2c17f4=_0x126399[_0x4b0753(0x9a)]('busArrivalList'),_0x1dc1d9=document[_0x4b0753(0xcc)](_0x4b0753(0xa3));_0x1dc1d9['innerHTML']='';for(var _0x57037d=0x0;_0x57037d<_0x2c17f4['length'];_0x57037d++){var _0x168d32=_0x2c17f4[_0x57037d][_0x4b0753(0x9a)](_0x4b0753(0xb9))[0x0]['textContent'],_0x15d876=_0x2c17f4[_0x57037d][_0x4b0753(0x9a)](_0x4b0753(0x92))[0x0][_0x4b0753(0xa0)],_0xfec3a1=parseInt(_0x2c17f4[_0x57037d][_0x4b0753(0x9a)]('locationNo1')[0x0][_0x4b0753(0xa0)]),_0x6a669d=formatRouteId_2(_0x168d32),_0x302775='<span\x20class=\x27routeId\x27>'+_0x6a669d+'\x20</span>\x20<span\x20class=\x27arrivalTime\x27>'+_0x15d876+_0x4b0753(0x9d);_0x302775+='<span\x20class=\x27arrivalTime_2\x27>('+_0xfec3a1+_0x4b0753(0xc8);var _0x8a1ea2=document['createElement'](_0x4b0753(0xb0));_0x8a1ea2[_0x4b0753(0xa5)][_0x4b0753(0xd1)](_0x4b0753(0xcd)),_0x8a1ea2['innerHTML']=_0x302775,_0x1dc1d9[_0x4b0753(0xbc)](_0x8a1ea2);}}function formatRouteId_2(_0x291484){var _0x1ac44c=_0x23f7,_0x4ca997=_0x291484,_0x5e974b='';switch(_0x291484){case'204000007':_0x4ca997=_0x1ac44c(0x9e),_0x5e974b=_0x1ac44c(0x90);break;case _0x1ac44c(0xac):_0x4ca997='30',_0x5e974b=_0x1ac44c(0x90);break;case'234000040':_0x4ca997=_0x1ac44c(0x9b),_0x5e974b=_0x1ac44c(0x90);break;case _0x1ac44c(0xca):_0x4ca997=_0x1ac44c(0xb6),_0x5e974b=_0x1ac44c(0xc2);break;case _0x1ac44c(0xce):_0x4ca997=_0x1ac44c(0xbe),_0x5e974b='red';break;case _0x1ac44c(0xbf):_0x4ca997=_0x1ac44c(0x95),_0x5e974b='red';break;case _0x1ac44c(0xa9):_0x4ca997=_0x1ac44c(0xc9),_0x5e974b=_0x1ac44c(0x90);break;case _0x1ac44c(0xb5):_0x4ca997=_0x1ac44c(0xa4),_0x5e974b=_0x1ac44c(0xc2);break;case _0x1ac44c(0xae):_0x4ca997=_0x1ac44c(0x9f),_0x5e974b='red';break;case _0x1ac44c(0xa2):_0x4ca997='500-2N',_0x5e974b=_0x1ac44c(0xc2);break;case _0x1ac44c(0xad):_0x4ca997='100\x20(출근)',_0x5e974b=_0x1ac44c(0x90);break;case _0x1ac44c(0xcf):_0x4ca997='32',_0x5e974b=_0x1ac44c(0x90);break;}return _0x1ac44c(0x94)+_0x5e974b+'\x27>'+_0x4ca997+_0x1ac44c(0x98);}getBusArrivalInfo_2();
 
 
 
