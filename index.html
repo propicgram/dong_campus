@@ -318,8 +318,9 @@ header {
 
 
     .content-box {
+      text-align: center;
       font-size: 17px;
-      height: 190px;
+      min-height: 190px;
       width: 190px;
       border: solid 1px #333333;
       border-right: 4px solid #333333;
@@ -340,7 +341,7 @@ header {
       bottom: 0;
       width: 100%;
       margin: 0 auto;
-      padding: 50px 0 7px 0;
+      padding: 3px 0 7px 0;
 
     }
 
@@ -701,6 +702,14 @@ img.rotate {
     padding-top: 35px;
     padding-bottom: 8px;
   }
+  .text_center2{
+    max-width: 500px;
+    color: #333333;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 0px;
+  }
 
 
 
@@ -726,6 +735,24 @@ img.rotate {
 
 .line:first-child{
   animation: anim 9s infinite;
+}
+
+
+.social-section{
+    margin: 0 auto;
+    text-align: center;
+    padding: 8px 0px 0px 0px;
+}
+
+.social-icon {
+    cursor: pointer;
+    display: inline-block;
+    margin: 10px;
+}
+
+.social-icon img {
+    width: 30px; /* 이미지의 크기를 조절할 수 있습니다. */
+    height: 30px; /* 이미지의 크기를 조절할 수 있습니다. */
 }
 
 @keyframes anim {
@@ -1187,7 +1214,6 @@ li {
 
   .content-box {
     width: 90%;
-    height: 175px;
     font-size: 14px;
     padding: 0px;
     margin: 0 auto;
@@ -1776,6 +1802,17 @@ li {
       <span>업데이트 준비중</span>
     </div>
   </button>
+</div>
+
+<h3 class="text_center2">💬공식 SNS</h3>
+<div class="social-section">
+  <div class="social-icon" id="instagramIcon">
+      <img src="./web_img/Instagram.png" alt="Instagram">
+  </div>
+    
+  <div class="social-icon" id="youtubeIcon">
+      <img src="./web_img/youtube.png" alt="youtube">
+  </div>
 </div>
 
 <footer>© 2024 DONGCAMPUS</footer>
@@ -2733,6 +2770,16 @@ document.querySelector('.touch_slide3').addEventListener('click', function() { /
 });
 document.querySelector('.touch_slide4').addEventListener('click', function() { // 슬라이드4
   window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=fxlHsjubVTalTZEV27h0FA%3d%3d&";
+});
+
+
+
+document.getElementById('instagramIcon').addEventListener('click', function() {
+    window.location.href = 'https://www.instagram.com/dongseoul.university/';
+});
+
+document.getElementById('youtubeIcon').addEventListener('click', function() {
+    window.location.href = 'https://www.youtube.com/channel/UCBLac80saErri-wSn2N8JpQ';
 });
 
 
