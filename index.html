@@ -1404,7 +1404,6 @@ li {
         <div class="line">학사일정</div>
         <div class="line">휴학</div>
     </div>
-    <div class="amitext">캠퍼스온도</div><div id="weather-info"></div>
   </div>
 
   <div class="slide slide_wrap">
@@ -2970,50 +2969,6 @@ appdownmodal_downloadButton.onclick = function() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-const _0x49a0f9=_0x9f21;(function(_0x28e464,_0x592ae8){const _0x336e37=_0x9f21,_0x38eb0a=_0x28e464();while(!![]){try{const _0x48399a=parseInt(_0x336e37(0x76))/0x1+-parseInt(_0x336e37(0x73))/0x2*(parseInt(_0x336e37(0x70))/0x3)+parseInt(_0x336e37(0x6f))/0x4*(-parseInt(_0x336e37(0x74))/0x5)+-parseInt(_0x336e37(0x77))/0x6+parseInt(_0x336e37(0x71))/0x7*(parseInt(_0x336e37(0x72))/0x8)+parseInt(_0x336e37(0x78))/0x9+parseInt(_0x336e37(0x79))/0xa;if(_0x48399a===_0x592ae8)break;else _0x38eb0a['push'](_0x38eb0a['shift']());}catch(_0xa19810){_0x38eb0a['push'](_0x38eb0a['shift']());}}}(_0x59e3,0x3ec37));function _0x9f21(_0x1ea143,_0x50b432){const _0x59e376=_0x59e3();return _0x9f21=function(_0x9f2181,_0x774a71){_0x9f2181=_0x9f2181-0x6f;let _0x39a476=_0x59e376[_0x9f2181];return _0x39a476;},_0x9f21(_0x1ea143,_0x50b432);}function _0x59e3(){const _0x3ab8b5=['65dqshoW','27e61cc63f22b9a35ef5585ac5252d3a','296399acWpwu','2280954bIzNhA','74682aDwNJe','5815990BFwCgb','41268PSOCNf','18UELjFV','413WBOxFf','22664UWSyrk','94028WxlBzw'];_0x59e3=function(){return _0x3ab8b5;};return _0x59e3();}const apiKey=_0x49a0f9(0x75);
-
-
-const latitude = '37.300031'; 
-const longitude = '127.121923'; 
-
-
-const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-
-
-const weatherInfo = document.getElementById('weather-info');
-
-
-fetch(apiUrl)
-  .then(response => {
-      if (!response.ok) {
-          throw new Error('네트워크 상태가 좋지 않습니다.');
-      }
-      return response.json();
-  })
-  .then(data => {
-
-      const cityName = data.name;
-      const temperature = data.main.temp.toFixed(1); 
-
-      weatherInfo.innerHTML = `${temperature}℃`;
-  })
-  .catch(error => {
-      console.error('에러 발생:', error);
-      weatherInfo.innerHTML = '';
-  });
   </script>
 </body>
 
