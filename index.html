@@ -11,13 +11,13 @@
 <html lang="kr">
 <head>
 
-<script>
+<!-- <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-VK2S94GSH0');
-</script>
+</script> -->
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -37,6 +37,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+CA&display=swap" rel="stylesheet">
 
   <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUITE/fonts/static/woff2/SUITE.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="./web_img/favicon.png">
@@ -45,8 +48,8 @@
 
     html{
       -webkit-touch-callout:none;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      background-color: #000000;
+      -webkit-tap-highlight-color: #18171D;
+      background-color: #18171D;
     }
 
     button:focus{
@@ -67,6 +70,8 @@
         font-style: normal;
     }
 
+    
+
 
 
     .sriracha-regular {
@@ -81,7 +86,7 @@
 }
 
 header {
-  font-family: 'Sriracha';
+  font-family: 'Playwrite CA';
   border: none;
   text-align: center;
   width: 100%; 
@@ -144,8 +149,8 @@ header {
     }
 
     .gradient-text {
-      margin-top: 0px;
-      margin-bottom: 5px;
+      margin-top: 5px;
+      margin-bottom: 7px;
         background-color: rgb(241, 241, 241);
         -webkit-background-clip: text;
         background-clip: text;
@@ -162,10 +167,17 @@ header {
       color: #303030;
     }
 
+    .container_3{
+
+      width: 100%;
+      align-items: center;
+    }
+
     .container > div {
       padding: 0px;
       border: 0px solid #ddd;
       color: rgb(241, 241, 241);
+      
     }
 
     ul {
@@ -239,7 +251,7 @@ header {
     }
 
     .sectionarea3 > .busarea > div {
-      padding: 15px; 
+      padding: 10px; 
     }
 
     .webreload img{
@@ -254,10 +266,10 @@ header {
     .busarea{
       padding-left: 0px;
       height: 90px;
-      border: solid 1px #333333;
       color: rgb(241, 241, 241);
       width: 100%;
       border-radius: 10px;
+      background-color: #18171D;
     }
 
     .busicon {
@@ -329,9 +341,9 @@ header {
 
 
     footer {
-      font-family: 'Sriracha';
+      font-family: 'Playwrite CA';
       text-align: center;
-      font-size: 12px;
+      font-size: 9px;
       background-color: none;
       color: rgb(241, 241, 241);
       bottom: 0;
@@ -437,7 +449,7 @@ li {
 }
 
 img.rotate {
-  margin-top: 6px;
+  margin-top: 20px;
   margin-left: 5px;
     width: 20px;
     transition: transform 1s ease-in-out;
@@ -489,6 +501,10 @@ img.rotate {
     padding: 20px;
     max-width: 500px;
     margin: 0 auto;
+}
+
+.slide slide_wrap{
+  max-width: 500px;
 }
 
 
@@ -554,9 +570,10 @@ img.rotate {
 
 .separator {
     border-bottom: 1px solid #333333;
-    padding-top: 20px;
-    max-width: 500px;
+    padding-top: 23px;
+    width: 85%;
     margin: 0 auto;
+    max-width: 500px;
 }
 
 .info_modal {
@@ -595,8 +612,9 @@ img.rotate {
 
 .bus_container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
+    width: 90%;
   }
 
   .info_section2{
@@ -676,14 +694,14 @@ img.rotate {
     width: 100%;
     color: rgb(241, 241, 241);
     font-size: 13px;
-    border: solid 1px #333333;
     border-radius: 10px;
     padding: 8px;
+    background-color: #18171D;
   }
 
   .rhdwl th{
     font-size: 20px;
-    text-align: center;
+    text-align: left;
   }
 
 
@@ -691,22 +709,23 @@ img.rotate {
 
 
   .text_center{
-    max-width: 500px;
+    width: 90%;
     color: rgb(241, 241, 241);
-    text-align: center;
+    text-align: left;
     margin: 0 auto;
     padding-top: 35px;
     padding-bottom: 8px;
+    max-width: 500px;
   }
   .text_center2{
-    max-width: 500px;
+    width: 90%;
     color: rgb(241, 241, 241);
-    text-align: center;
+    text-align: left;
     margin: 0 auto;
     padding-top: 40px;
     padding-bottom: 0px;
+    max-width: 500px;
   }
-
 
 
 
@@ -781,25 +800,6 @@ img.rotate {
   max-width: 500px;
 }
 
-.ani_container{
-  max-height: 38px;
-  color: white;
-  max-width: 500px;
-  display: flex;
-  margin: 0 auto;
-}
-
-.amitext{
-  font-size: 11px;
-  color: rgb(241, 241, 241);
-  border: 1px solid #ffb1b1;
-  padding: 4px 8px;
-  border-radius: 25px;
-  margin-bottom: 10px;
-  border: solid 1px rgb(241, 241, 241);
-  border-right: 2px solid rgb(241, 241, 241);
-  border-bottom: 2px solid rgb(241, 241, 241);
-}
 
 
   #busArrivalInfo {
@@ -816,11 +816,12 @@ img.rotate {
         }
 
         .busInfo {
-
-            margin: 5px 0;
-            padding: 10px;
+          background-color: #18171D;
+          text-align: left;
+            margin: 8px 0;
+            padding: 11px;
             padding-left: 20px;
-            border: solid 1px #333333;
+            /* border: solid 1px #333333; */
             border-radius: 10px;
         }
 
@@ -851,10 +852,11 @@ img.rotate {
         .icon-button-container {
           display: flex;
           justify-content: space-between;
-          max-width: 480px;
-          padding-top: 21px;
+          width: 93%;
+          padding-top: 25px;
           margin: 0 auto;
           margin-bottom: 5px;
+          max-width: 500px;
         }
 
         .icon-button {
@@ -871,7 +873,8 @@ img.rotate {
         }
         
         .icon-button > div > img {
-          border: solid 1px #333333;
+          /* border: solid 1px #333333; */
+          background-color: #201f27;
           padding: 10px;
           border-radius: 10px;
           width: 25px;
@@ -884,7 +887,7 @@ img.rotate {
 
 
         .icon_area3{
-          margin-bottom: 20px;
+          margin-bottom: 5px;
         }
 
 
@@ -966,16 +969,16 @@ img.rotate {
 
 
         .slide {
-  display: flex;
-  flex-wrap: nowrap;
-  margin: 0 auto;
-  overflow: hidden;
-  max-width: 500px;
-  position: relative;
-  width: 100%;
-  user-select: none;
-  border-radius: 10px;
-}
+          display: flex;
+          flex-wrap: nowrap;
+          margin: 0 auto;
+          overflow: hidden;
+          width: 92%;
+          position: relative;
+          user-select: none;
+          border-radius: 10px;
+          max-width: 500px;
+        }
 .slide_item {
   font-family: 'Freesentation-9Black';
   color: white;
@@ -985,7 +988,7 @@ img.rotate {
   position: relative;
   left: 0px;
   width: 100%;
-  height: 200px;
+  height: 100px;
   flex-shrink: 0;
   transition: left 0.15s;
 }
@@ -997,17 +1000,16 @@ img.rotate {
   z-index: 99;
 }
 .slide_button {
-  /* layout */
+
   display: flex;
   justify-content: center;
   align-items: center;
 
-  /* position */
+
   position: absolute;
-  /* 버튼이 중앙에 위치하게 하기위해 계산 */
   top: calc(50% - 16px);
 
-  /* style */
+
   font-weight: bold;
   color: rgb(32, 32, 32);
   cursor: pointer;
@@ -1050,7 +1052,7 @@ img.rotate {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0));
+  background: linear-gradient(to right, rgba(32, 31, 31, 0.705), rgba(0,0,0,0));
 }
 
 ul,
@@ -1076,15 +1078,6 @@ li {
 .slide_pagination > li.active {
   color: #202020;
 }
-
-
-
-
-.ghktkfvy{
-  font-size: 14px;
-}
-
-
 
 
   .cat-emoji {
@@ -1119,7 +1112,7 @@ li {
   }
 
   header{
-    font-size: 15px;
+    font-size: 9px;
     width: 100%;
   }
 
@@ -1140,9 +1133,7 @@ li {
     margin-top: 3px;
   }
 
-  .slide_item {
-  height: 170px;
-}
+
 
   .container {
     color: #333333;
@@ -1355,31 +1346,18 @@ li {
     </div>
   </header>
 
-  <div class="ani_container">
-    <div class="amitext">HOT</div>
-    <div class="animated-text">
-        <div class="line">출결조회</div>
-        <div class="line">학식</div>
-        <div class="line">성적평가</div>
-        <div class="line">휴학</div>
-    </div>
-  </div>
+
 
   <div class="slide slide_wrap">
     <div class="slide_item">
-      <h3><span class="touch_slide1">동서울대학교 정보 플랫폼<span class="ghktkfvy"> > </span></span></h3>
+      <h3><span class="touch_slide1">동서울대학교 정보 플랫폼</span></h3>
     </div>
     <div class="slide_item">
-      <h3><span class="touch_slide2">과목등급계산기<span class="ghktkfvy"> > </span></span></h3>
+      <h3><span class="touch_slide2">오늘의 학식</span></span></h3>
     </div>
     <div class="slide_item">
-      <h3><span class="touch_slide3">삼색이맵<span class="ghktkfvy"> > </span></span></h3>
+      <h3><span class="touch_slide3">버스도착정보</span></span></h3>
     </div>
-    <div class="slide_item">
-      <h3><span class="touch_slide4">성적평가/졸업요건<span class="ghktkfvy"> > </span></span></h3>
-    </div>
-    <div class="slide_prev_button slide_button">&#60;</div>
-    <div class="slide_next_button slide_button">&#62;</div>
     <ul class="slide_pagination"></ul>
   </div>
 
@@ -1429,7 +1407,7 @@ li {
 
     <div class="bus_container">
       <div>
-        <h3 class="webreload">🚍가천대역 출발</h3>
+        <h3 class="webreload" style="margin-bottom: 7px;">🚍가천대역 출발</h3>
       </div>
       <div>
         <img class="rotate" src="./web_img/reicon.gif" onclick="rotateImage(this)">
@@ -1439,7 +1417,7 @@ li {
 
     <div class="bus_container">
       <div>
-        <h3 class="webreload">🚍복정역 출발</h3>
+        <h3 class="webreload" style="margin-bottom: 7px;">🚍복정역 출발</h3>
       </div>
       <div>
         <img class="rotate" src="./web_img/reicon.gif" onclick="rotateImage(this)">
@@ -1449,7 +1427,7 @@ li {
 
     <div class="bus_container">
       <div>
-        <h3 class="webreload">🚍통학버스</h3>
+        <h3 class="webreload" style="margin-bottom: 7px;">🚍통학버스</h3>
       </div>
       <div>
         <img class="rotate" src="./web_img/reicon.gif" onclick="rotateImage(this)">
@@ -1521,7 +1499,7 @@ li {
   </div>
 </div>
 
-<div>
+<div class="container_3">
   <h3 class="text_center">🎓학사안내</h3>
 <div class="icon-button-container allMenu">
   <button class="icon-button" id="icon-button100">
@@ -1769,7 +1747,7 @@ li {
   </div>
 </div>
 
-<footer>© 2024 DongCampus 동캠퍼스</footer>
+<footer>© 2025 DongCampus</footer>
 
 
 
@@ -2684,16 +2662,13 @@ document.querySelector('#icon-button131').addEventListener('click', function() {
 
 
 document.querySelector('.touch_slide1').addEventListener('click', function() { // 슬라이드1
-  window.location.href = "https://play.google.com/store/apps/details?id=com.dong_campus&pcampaignid=web_share";
+  window.location.href = "";
 });
 document.querySelector('.touch_slide2').addEventListener('click', function() { // 슬라이드2
-  window.location.href = "https://grade-calculator-flax.vercel.app/";
+  window.location.href = "";
 });
 document.querySelector('.touch_slide3').addEventListener('click', function() { // 슬라이드3
-  window.location.href = "https://samsaek-map.vercel.app/";
-});
-document.querySelector('.touch_slide4').addEventListener('click', function() { // 슬라이드4
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=fxlHsjubVTalTZEV27h0FA%3d%3d&";
+  window.location.href = "";
 });
 
 
@@ -2709,7 +2684,7 @@ document.getElementById('youtubeIcon').addEventListener('click', function() {
 
 
 
-(function(_0x3bff94,_0x18f70d){var _0x36e2dd=_0x23f7,_0x3564b6=_0x3bff94();while(!![]){try{var _0x19e3ee=parseInt(_0x36e2dd(0xc1))/0x1+-parseInt(_0x36e2dd(0x91))/0x2+parseInt(_0x36e2dd(0xb8))/0x3*(-parseInt(_0x36e2dd(0xb2))/0x4)+-parseInt(_0x36e2dd(0xab))/0x5*(-parseInt(_0x36e2dd(0x97))/0x6)+parseInt(_0x36e2dd(0xba))/0x7+parseInt(_0x36e2dd(0x9c))/0x8*(-parseInt(_0x36e2dd(0x8f))/0x9)+parseInt(_0x36e2dd(0xaa))/0xa*(parseInt(_0x36e2dd(0xc6))/0xb);if(_0x19e3ee===_0x18f70d)break;else _0x3564b6['push'](_0x3564b6['shift']());}catch(_0x3dfa04){_0x3564b6['push'](_0x3564b6['shift']());}}}(_0x305d,0x9cac7));function getBusArrivalInfo(){var _0x1658b4=_0x23f7,_0x246618=new XMLHttpRequest(),_0x2febfb=_0x1658b4(0xb1),_0x5e2664='nwaefISD6ee0vv94Hv+1FadsVRGtiqHOGQZlDS6mEPovUFla146hAPT6zLMjmsWR8TV6vfjeRj+irmYtXd5a7g==',_0x3bf9d4=0xc28cb15,_0x25ac98='?'+encodeURIComponent(_0x1658b4(0xcb))+'='+encodeURIComponent(_0x5e2664);_0x25ac98+='&'+encodeURIComponent('stationId')+'='+encodeURIComponent(_0x3bf9d4),_0x246618[_0x1658b4(0x93)]('GET',_0x2febfb+_0x25ac98),_0x246618[_0x1658b4(0xa6)]=function(){if(this['readyState']==0x4&&this['status']==0xc8){var _0x3d47e5=this['responseText'];displayBusArrivalTimes(_0x3d47e5);}},_0x246618[_0x1658b4(0xbb)]('');}function displayBusArrivalTimes(_0x150a79){var _0x3b475c=_0x23f7,_0x50296a=new DOMParser()[_0x3b475c(0xa1)](_0x150a79,_0x3b475c(0xa7)),_0xdb4854=_0x50296a[_0x3b475c(0x9a)](_0x3b475c(0xb3)),_0x417223=document[_0x3b475c(0xcc)]('busArrivalInfo');_0x417223[_0x3b475c(0xc5)]='';for(var _0x42de90=0x0;_0x42de90<_0xdb4854[_0x3b475c(0xc4)];_0x42de90++){var _0x527722=_0xdb4854[_0x42de90][_0x3b475c(0x9a)](_0x3b475c(0xb9))[0x0][_0x3b475c(0xa0)],_0x464368=_0xdb4854[_0x42de90][_0x3b475c(0x9a)]('predictTime1')[0x0][_0x3b475c(0xa0)],_0x289b2f=parseInt(_0xdb4854[_0x42de90][_0x3b475c(0x9a)](_0x3b475c(0xd2))[0x0][_0x3b475c(0xa0)]),_0x407e83=formatRouteId(_0x527722),_0x1ada24=_0x3b475c(0xaf)+_0x407e83+_0x3b475c(0xc3)+_0x464368+'분</span>\x20';_0x1ada24+=_0x3b475c(0x99)+_0x289b2f+_0x3b475c(0xc8);var _0x233465=document[_0x3b475c(0xd0)]('div');_0x233465[_0x3b475c(0xa5)]['add'](_0x3b475c(0xcd)),_0x233465[_0x3b475c(0xc5)]=_0x1ada24,_0x417223['appendChild'](_0x233465);}}function formatRouteId(_0xed374f){var _0x469aac=_0x23f7,_0x3bfd60=_0xed374f,_0x4b4324='';switch(_0xed374f){case'204000007':_0x3bfd60=_0x469aac(0x9e),_0x4b4324='green';break;case _0x469aac(0xac):_0x3bfd60='30',_0x4b4324=_0x469aac(0x90);break;case _0x469aac(0xbd):_0x3bfd60=_0x469aac(0x9b),_0x4b4324=_0x469aac(0x90);break;case'234000069':_0x3bfd60='1117',_0x4b4324=_0x469aac(0xc2);break;case _0x469aac(0xce):_0x3bfd60=_0x469aac(0xbe),_0x4b4324=_0x469aac(0xc2);break;case _0x469aac(0xbf):_0x3bfd60='500-1',_0x4b4324=_0x469aac(0xc2);break;case'234001609':_0x3bfd60=_0x469aac(0xb4),_0x4b4324=_0x469aac(0xc2);break;case'204000018':_0x3bfd60=_0x469aac(0xc9),_0x4b4324=_0x469aac(0x90);break;case'204000149':_0x3bfd60='반디1',_0x4b4324='red';break;case _0x469aac(0xae):_0x3bfd60='반디1-1',_0x4b4324=_0x469aac(0xc2);break;case _0x469aac(0xa2):_0x3bfd60=_0x469aac(0xc7),_0x4b4324=_0x469aac(0xc2);break;case'204000083':_0x3bfd60='100\x20(출근)',_0x4b4324=_0x469aac(0x90);break;case _0x469aac(0xcf):_0x3bfd60='32',_0x4b4324='green';break;}return _0x469aac(0x94)+_0x4b4324+'\x27>'+_0x3bfd60+'</span>';}getBusArrivalInfo();function _0x305d(){var _0xd6416a=['text/xml','status','204000018','10lEOMIQ','1066905GIygFm','227000003','204000083','204000150','<span\x20class=\x27routeId\x27>','div','https://apis.data.go.kr/6410000/busarrivalservice/getBusArrivalList','164BXVbsQ','busArrivalList','500-1A','204000149','1117','nwaefISD6ee0vv94Hv+1FadsVRGtiqHOGQZlDS6mEPovUFla146hAPT6zLMjmsWR8TV6vfjeRj+irmYtXd5a7g==','44598GCABuu','routeId','5298335aNsurd','send','appendChild','234000040','500-2','234000079','responseText','77037IqvaDm','red','\x20</span>\x20<span\x20class=\x27arrivalTime\x27>','length','innerHTML','9317473UunefA','500-2N','번째\x20전)</span>','100','234000069','serviceKey','getElementById','busInfo','234000075','234000009','createElement','add','locationNo1','21519dAdyxg','green','681264NeRyaF','predictTime1','open','<span\x20style=\x27color:','500-1','GET','18zoENLS','</span>','<span\x20class=\x27arrivalTime_2\x27>(','getElementsByTagName','119','2440bKMWAf','분</span>\x20','357','반디1-1','textContent','parseFromString','234001738','busArrivalInfo_2','반디1','classList','onreadystatechange'];_0x305d=function(){return _0xd6416a;};return _0x305d();}function getBusArrivalInfo_2(){var _0x14285d=_0x23f7,_0x8064e0=new XMLHttpRequest(),_0x2f775e=_0x14285d(0xb1),_0x4c2d91=_0x14285d(0xb7),_0x382110=0x754d5b9,_0x442caf='?'+encodeURIComponent(_0x14285d(0xcb))+'='+encodeURIComponent(_0x4c2d91);_0x442caf+='&'+encodeURIComponent('stationId')+'='+encodeURIComponent(_0x382110),_0x8064e0[_0x14285d(0x93)](_0x14285d(0x96),_0x2f775e+_0x442caf),_0x8064e0[_0x14285d(0xa6)]=function(){var _0x563eea=_0x14285d;if(this['readyState']==0x4&&this[_0x563eea(0xa8)]==0xc8){var _0x3b40f2=this[_0x563eea(0xc0)];displayBusArrivalTimes_2(_0x3b40f2);}},_0x8064e0[_0x14285d(0xbb)]('');}function _0x23f7(_0x1179c6,_0x2041ca){var _0x305db9=_0x305d();return _0x23f7=function(_0x23f72d,_0x38c9b1){_0x23f72d=_0x23f72d-0x8f;var _0x2f7ce7=_0x305db9[_0x23f72d];return _0x2f7ce7;},_0x23f7(_0x1179c6,_0x2041ca);}function displayBusArrivalTimes_2(_0x146250){var _0x4b0753=_0x23f7,_0x126399=new DOMParser()['parseFromString'](_0x146250,'text/xml'),_0x2c17f4=_0x126399[_0x4b0753(0x9a)]('busArrivalList'),_0x1dc1d9=document[_0x4b0753(0xcc)](_0x4b0753(0xa3));_0x1dc1d9['innerHTML']='';for(var _0x57037d=0x0;_0x57037d<_0x2c17f4['length'];_0x57037d++){var _0x168d32=_0x2c17f4[_0x57037d][_0x4b0753(0x9a)](_0x4b0753(0xb9))[0x0]['textContent'],_0x15d876=_0x2c17f4[_0x57037d][_0x4b0753(0x9a)](_0x4b0753(0x92))[0x0][_0x4b0753(0xa0)],_0xfec3a1=parseInt(_0x2c17f4[_0x57037d][_0x4b0753(0x9a)]('locationNo1')[0x0][_0x4b0753(0xa0)]),_0x6a669d=formatRouteId_2(_0x168d32),_0x302775='<span\x20class=\x27routeId\x27>'+_0x6a669d+'\x20</span>\x20<span\x20class=\x27arrivalTime\x27>'+_0x15d876+_0x4b0753(0x9d);_0x302775+='<span\x20class=\x27arrivalTime_2\x27>('+_0xfec3a1+_0x4b0753(0xc8);var _0x8a1ea2=document['createElement'](_0x4b0753(0xb0));_0x8a1ea2[_0x4b0753(0xa5)][_0x4b0753(0xd1)](_0x4b0753(0xcd)),_0x8a1ea2['innerHTML']=_0x302775,_0x1dc1d9[_0x4b0753(0xbc)](_0x8a1ea2);}}function formatRouteId_2(_0x291484){var _0x1ac44c=_0x23f7,_0x4ca997=_0x291484,_0x5e974b='';switch(_0x291484){case'204000007':_0x4ca997=_0x1ac44c(0x9e),_0x5e974b=_0x1ac44c(0x90);break;case _0x1ac44c(0xac):_0x4ca997='30',_0x5e974b=_0x1ac44c(0x90);break;case'234000040':_0x4ca997=_0x1ac44c(0x9b),_0x5e974b=_0x1ac44c(0x90);break;case _0x1ac44c(0xca):_0x4ca997=_0x1ac44c(0xb6),_0x5e974b=_0x1ac44c(0xc2);break;case _0x1ac44c(0xce):_0x4ca997=_0x1ac44c(0xbe),_0x5e974b='red';break;case _0x1ac44c(0xbf):_0x4ca997=_0x1ac44c(0x95),_0x5e974b='red';break;case _0x1ac44c(0xa9):_0x4ca997=_0x1ac44c(0xc9),_0x5e974b=_0x1ac44c(0x90);break;case _0x1ac44c(0xb5):_0x4ca997=_0x1ac44c(0xa4),_0x5e974b=_0x1ac44c(0xc2);break;case _0x1ac44c(0xae):_0x4ca997=_0x1ac44c(0x9f),_0x5e974b='red';break;case _0x1ac44c(0xa2):_0x4ca997='500-2N',_0x5e974b=_0x1ac44c(0xc2);break;case _0x1ac44c(0xad):_0x4ca997='100\x20(출근)',_0x5e974b=_0x1ac44c(0x90);break;case _0x1ac44c(0xcf):_0x4ca997='32',_0x5e974b=_0x1ac44c(0x90);break;}return _0x1ac44c(0x94)+_0x5e974b+'\x27>'+_0x4ca997+_0x1ac44c(0x98);}getBusArrivalInfo_2();
+(function(_0x3bff94,_0x18f70d){var _0x36e2dd=_0x23f7,_0x3564b6=_0x3bff94();while(!![]){try{var _0x19e3ee=parseInt(_0x36e2dd(0xc1))/0x1+-parseInt(_0x36e2dd(0x91))/0x2+parseInt(_0x36e2dd(0xb8))/0x3*(-parseInt(_0x36e2dd(0xb2))/0x4)+-parseInt(_0x36e2dd(0xab))/0x5*(-parseInt(_0x36e2dd(0x97))/0x6)+parseInt(_0x36e2dd(0xba))/0x7+parseInt(_0x36e2dd(0x9c))/0x8*(-parseInt(_0x36e2dd(0x8f))/0x9)+parseInt(_0x36e2dd(0xaa))/0xa*(parseInt(_0x36e2dd(0xc6))/0xb);if(_0x19e3ee===_0x18f70d)break;else _0x3564b6['push'](_0x3564b6['shift']());}catch(_0x3dfa04){_0x3564b6['push'](_0x3564b6['shift']());}}}(_0x305d,0x9cac7));function getBusArrivalInfo(){var _0x1658b4=_0x23f7,_0x246618=new XMLHttpRequest(),_0x2febfb=_0x1658b4(0xb1),_0x5e2664='nwaefISD6ee0vv94Hv+1FadsVRGtiqHOGQZlDS6mEPovUFla146hAPT6zLMjmsWR8TV6vfjeRj+irmYtXd5a7g==',_0x3bf9d4=0xc28cb15,_0x25ac98='?'+encodeURIComponent(_0x1658b4(0xcb))+'='+encodeURIComponent(_0x5e2664);_0x25ac98+='&'+encodeURIComponent('stationId')+'='+encodeURIComponent(_0x3bf9d4),_0x246618[_0x1658b4(0x93)]('GET',_0x2febfb+_0x25ac98),_0x246618[_0x1658b4(0xa6)]=function(){if(this['readyState']==0x4&&this['status']==0xc8){var _0x3d47e5=this['responseText'];displayBusArrivalTimes(_0x3d47e5);}},_0x246618[_0x1658b4(0xbb)]('');}function displayBusArrivalTimes(_0x150a79){var _0x3b475c=_0x23f7,_0x50296a=new DOMParser()[_0x3b475c(0xa1)](_0x150a79,_0x3b475c(0xa7)),_0xdb4854=_0x50296a[_0x3b475c(0x9a)](_0x3b475c(0xb3)),_0x417223=document[_0x3b475c(0xcc)]('busArrivalInfo');_0x417223[_0x3b475c(0xc5)]='';for(var _0x42de90=0x0;_0x42de90<_0xdb4854[_0x3b475c(0xc4)];_0x42de90++){var _0x527722=_0xdb4854[_0x42de90][_0x3b475c(0x9a)](_0x3b475c(0xb9))[0x0][_0x3b475c(0xa0)],_0x464368=_0xdb4854[_0x42de90][_0x3b475c(0x9a)]('predictTime1')[0x0][_0x3b475c(0xa0)],_0x289b2f=parseInt(_0xdb4854[_0x42de90][_0x3b475c(0x9a)](_0x3b475c(0xd2))[0x0][_0x3b475c(0xa0)]),_0x407e83=formatRouteId(_0x527722),_0x1ada24=_0x3b475c(0xaf)+_0x407e83+_0x3b475c(0xc3)+_0x464368+'분</span>\x20';_0x1ada24+=_0x3b475c(0x99)+_0x289b2f+_0x3b475c(0xc8);var _0x233465=document[_0x3b475c(0xd0)]('div');_0x233465[_0x3b475c(0xa5)]['add'](_0x3b475c(0xcd)),_0x233465[_0x3b475c(0xc5)]=_0x1ada24,_0x417223['appendChild'](_0x233465);}}function formatRouteId(_0xed374f){var _0x469aac=_0x23f7,_0x3bfd60=_0xed374f,_0x4b4324='';switch(_0xed374f){case'204000007':_0x3bfd60=_0x469aac(0x9e),_0x4b4324='green';break;case _0x469aac(0xac):_0x3bfd60='30',_0x4b4324=_0x469aac(0x90);break;case _0x469aac(0xbd):_0x3bfd60=_0x469aac(0x9b),_0x4b4324=_0x469aac(0x90);break;case'234000069':_0x3bfd60='1117',_0x4b4324=_0x469aac(0xc2);break;case _0x469aac(0xce):_0x3bfd60=_0x469aac(0xbe),_0x4b4324=_0x469aac(0xc2);break;case _0x469aac(0xbf):_0x3bfd60='500-1',_0x4b4324=_0x469aac(0xc2);break;case'234001609':_0x3bfd60=_0x469aac(0xb4),_0x4b4324=_0x469aac(0xc2);break;case'204000018':_0x3bfd60=_0x469aac(0xc9),_0x4b4324=_0x469aac(0x90);break;case'204000149':_0x3bfd60='반디1',_0x4b4324='#A00000';break;case _0x469aac(0xae):_0x3bfd60='반디1-1',_0x4b4324=_0x469aac(0xc2);break;case _0x469aac(0xa2):_0x3bfd60=_0x469aac(0xc7),_0x4b4324=_0x469aac(0xc2);break;case'204000083':_0x3bfd60='100\x20(출근)',_0x4b4324=_0x469aac(0x90);break;case _0x469aac(0xcf):_0x3bfd60='32',_0x4b4324='green';break;}return _0x469aac(0x94)+_0x4b4324+'\x27>'+_0x3bfd60+'</span>';}getBusArrivalInfo();function _0x305d(){var _0xd6416a=['text/xml','status','204000018','10lEOMIQ','1066905GIygFm','227000003','204000083','204000150','<span\x20class=\x27routeId\x27>','div','https://apis.data.go.kr/6410000/busarrivalservice/getBusArrivalList','164BXVbsQ','busArrivalList','500-1A','204000149','1117','nwaefISD6ee0vv94Hv+1FadsVRGtiqHOGQZlDS6mEPovUFla146hAPT6zLMjmsWR8TV6vfjeRj+irmYtXd5a7g==','44598GCABuu','routeId','5298335aNsurd','send','appendChild','234000040','500-2','234000079','responseText','77037IqvaDm','#A00000','\x20</span>\x20<span\x20class=\x27arrivalTime\x27>','length','innerHTML','9317473UunefA','500-2N','번째\x20전)</span>','100','234000069','serviceKey','getElementById','busInfo','234000075','234000009','createElement','add','locationNo1','21519dAdyxg','green','681264NeRyaF','predictTime1','open','<span\x20style=\x27color:','500-1','GET','18zoENLS','</span>','<span\x20class=\x27arrivalTime_2\x27>(','getElementsByTagName','119','2440bKMWAf','분</span>\x20','357','반디1-1','textContent','parseFromString','234001738','busArrivalInfo_2','반디1','classList','onreadystatechange'];_0x305d=function(){return _0xd6416a;};return _0x305d();}function getBusArrivalInfo_2(){var _0x14285d=_0x23f7,_0x8064e0=new XMLHttpRequest(),_0x2f775e=_0x14285d(0xb1),_0x4c2d91=_0x14285d(0xb7),_0x382110=0x754d5b9,_0x442caf='?'+encodeURIComponent(_0x14285d(0xcb))+'='+encodeURIComponent(_0x4c2d91);_0x442caf+='&'+encodeURIComponent('stationId')+'='+encodeURIComponent(_0x382110),_0x8064e0[_0x14285d(0x93)](_0x14285d(0x96),_0x2f775e+_0x442caf),_0x8064e0[_0x14285d(0xa6)]=function(){var _0x563eea=_0x14285d;if(this['readyState']==0x4&&this[_0x563eea(0xa8)]==0xc8){var _0x3b40f2=this[_0x563eea(0xc0)];displayBusArrivalTimes_2(_0x3b40f2);}},_0x8064e0[_0x14285d(0xbb)]('');}function _0x23f7(_0x1179c6,_0x2041ca){var _0x305db9=_0x305d();return _0x23f7=function(_0x23f72d,_0x38c9b1){_0x23f72d=_0x23f72d-0x8f;var _0x2f7ce7=_0x305db9[_0x23f72d];return _0x2f7ce7;},_0x23f7(_0x1179c6,_0x2041ca);}function displayBusArrivalTimes_2(_0x146250){var _0x4b0753=_0x23f7,_0x126399=new DOMParser()['parseFromString'](_0x146250,'text/xml'),_0x2c17f4=_0x126399[_0x4b0753(0x9a)]('busArrivalList'),_0x1dc1d9=document[_0x4b0753(0xcc)](_0x4b0753(0xa3));_0x1dc1d9['innerHTML']='';for(var _0x57037d=0x0;_0x57037d<_0x2c17f4['length'];_0x57037d++){var _0x168d32=_0x2c17f4[_0x57037d][_0x4b0753(0x9a)](_0x4b0753(0xb9))[0x0]['textContent'],_0x15d876=_0x2c17f4[_0x57037d][_0x4b0753(0x9a)](_0x4b0753(0x92))[0x0][_0x4b0753(0xa0)],_0xfec3a1=parseInt(_0x2c17f4[_0x57037d][_0x4b0753(0x9a)]('locationNo1')[0x0][_0x4b0753(0xa0)]),_0x6a669d=formatRouteId_2(_0x168d32),_0x302775='<span\x20class=\x27routeId\x27>'+_0x6a669d+'\x20</span>\x20<span\x20class=\x27arrivalTime\x27>'+_0x15d876+_0x4b0753(0x9d);_0x302775+='<span\x20class=\x27arrivalTime_2\x27>('+_0xfec3a1+_0x4b0753(0xc8);var _0x8a1ea2=document['createElement'](_0x4b0753(0xb0));_0x8a1ea2[_0x4b0753(0xa5)][_0x4b0753(0xd1)](_0x4b0753(0xcd)),_0x8a1ea2['innerHTML']=_0x302775,_0x1dc1d9[_0x4b0753(0xbc)](_0x8a1ea2);}}function formatRouteId_2(_0x291484){var _0x1ac44c=_0x23f7,_0x4ca997=_0x291484,_0x5e974b='';switch(_0x291484){case'204000007':_0x4ca997=_0x1ac44c(0x9e),_0x5e974b=_0x1ac44c(0x90);break;case _0x1ac44c(0xac):_0x4ca997='30',_0x5e974b=_0x1ac44c(0x90);break;case'234000040':_0x4ca997=_0x1ac44c(0x9b),_0x5e974b=_0x1ac44c(0x90);break;case _0x1ac44c(0xca):_0x4ca997=_0x1ac44c(0xb6),_0x5e974b=_0x1ac44c(0xc2);break;case _0x1ac44c(0xce):_0x4ca997=_0x1ac44c(0xbe),_0x5e974b='#A00000';break;case _0x1ac44c(0xbf):_0x4ca997=_0x1ac44c(0x95),_0x5e974b='#A00000';break;case _0x1ac44c(0xa9):_0x4ca997=_0x1ac44c(0xc9),_0x5e974b=_0x1ac44c(0x90);break;case _0x1ac44c(0xb5):_0x4ca997=_0x1ac44c(0xa4),_0x5e974b=_0x1ac44c(0xc2);break;case _0x1ac44c(0xae):_0x4ca997=_0x1ac44c(0x9f),_0x5e974b='#A00000';break;case _0x1ac44c(0xa2):_0x4ca997='500-2N',_0x5e974b=_0x1ac44c(0xc2);break;case _0x1ac44c(0xad):_0x4ca997='100\x20(출근)',_0x5e974b=_0x1ac44c(0x90);break;case _0x1ac44c(0xcf):_0x4ca997='32',_0x5e974b=_0x1ac44c(0x90);break;}return _0x1ac44c(0x94)+_0x5e974b+'\x27>'+_0x4ca997+_0x1ac44c(0x98);}getBusArrivalInfo_2();
 
 
 
@@ -2771,17 +2746,6 @@ function prevMove() {
   }
 }
 
-nextBtn.addEventListener("click", () => {
-  nextMove();
-});
-
-prevBtn.addEventListener("click", () => {
-  prevMove();
-});
-
-window.addEventListener("resize", () => {
-  slideWidth = slide.clientWidth;
-});
 
 for (let i = 0; i < maxSlide; i++) {
   paginationItems[i].addEventListener("click", () => {
@@ -2815,32 +2779,6 @@ slide.addEventListener("mouseenter", () => {
 
 slide.addEventListener("mouseleave", () => {
   startAutoSlide();
-});
-
-let touchStartX;
-let touchEndX;
-let touchTimer;
-
-slide.addEventListener("touchstart", (e) => {
-  touchStartX = e.touches[0].clientX;
-  stopAutoSlide();
-});
-
-slide.addEventListener("touchmove", (e) => {
-  touchEndX = e.touches[0].clientX;
-});
-
-slide.addEventListener("touchend", () => {
-  clearTimeout(touchTimer);
-  const touchDifference = touchStartX - touchEndX;
-  if (touchDifference > 50) {
-    nextMove();
-  } else if (touchDifference < -50) {
-    prevMove();
-  }
-  touchTimer = setTimeout(() => {
-    startAutoSlide();
-  }, 2000);
 });
 
 
