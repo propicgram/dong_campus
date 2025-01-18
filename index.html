@@ -270,6 +270,12 @@ header {
       width: 100%;
       border-radius: 10px;
       background-color: #18171D;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .busarea:active {
+      transform: scale(0.95); /* 크기를 약간 줄임 */
+      background-color: #2A292F; /* 누를 때의 더 연한 배경색 */
     }
 
     .busicon {
@@ -322,6 +328,46 @@ header {
       width: 100%;
       text-align: right;
     }
+
+
+
+
+
+    .department {
+  margin: 0 auto;
+  max-width: 500px;
+  width: 90%;
+}
+
+.department-row {
+  display: flex;
+  flex-wrap: wrap; /* 항목이 줄 바꿈되도록 설정 */
+  gap: 10px; /* 항목 간 간격 */
+  justify-content: center; /* 가로 방향으로 중앙 정렬 */
+  align-items: center; /* 세로 방향으로 중앙 정렬 */
+}
+
+.deptItem {
+  background-color: #18171D; /* 기본 배경색 */
+  color: white;
+  text-align: left;
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 10px;
+  margin: 0px;
+  width: calc(45% - 0px); /* 2열로 배치, 각 항목의 너비를 50%로 설정 */
+  transition: transform 0.2s ease, background-color 0.2s ease; /* 배경색과 크기 변화를 부드럽게 */
+  display: flex;
+  justify-content: center; /* 텍스트도 중앙으로 정렬 */
+  align-items: center; /* 텍스트 세로 방향으로 중앙 정렬 */
+}
+
+.deptItem:active {
+  transform: scale(0.95); /* 클릭 시 크기 약간 줄임 */
+  background-color: #2A292F; /* 클릭 시 더 연한 배경색 */
+}
+
+
 
 
 
@@ -576,6 +622,20 @@ img.rotate {
     max-width: 500px;
 }
 
+a.deptItem {
+  text-decoration: none; /* 기본 밑줄 제거 */
+  color: white; /* 링크 텍스트 색상 */
+}
+
+a.deptItem:visited {
+  color: white; /* 방문 후에도 같은 색상 유지 */
+}
+
+a.deptItem:hover {
+  text-decoration: none; /* 마우스 올렸을 때 밑줄 제거 */
+  color: #ccc; /* 마우스 올렸을 때 색상 변경 (선택 사항) */
+}
+
 .info_modal {
     display: flex;
     justify-content: center;
@@ -690,14 +750,19 @@ img.rotate {
 
   .rhdwl{
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     width: 100%;
     color: rgb(241, 241, 241);
     font-size: 13px;
     border-radius: 10px;
     padding: 8px;
     background-color: #18171D;
+    transition: transform 0.2s ease, background-color 0.2s ease;
   }
+  .rhdwl:active {
+  transform: scale(0.95); /* 크기를 약간 줄임 */
+  background-color: #2A292F; /* 누를 때의 더 연한 배경색 */
+}
 
   .rhdwl th{
     font-size: 20px;
@@ -725,6 +790,12 @@ img.rotate {
     padding-top: 40px;
     padding-bottom: 0px;
     max-width: 500px;
+  }
+
+  .department_n{
+    color: rgb(241, 241, 241);
+    text-align: left;
+    margin-top: 30px;
   }
 
 
@@ -816,14 +887,21 @@ img.rotate {
         }
 
         .busInfo {
-          background-color: #18171D;
+          background-color: #18171D; /* 기본 배경색 */
+          color: white;
           text-align: left;
-            margin: 8px 0;
-            padding: 11px;
-            padding-left: 20px;
-            /* border: solid 1px #333333; */
-            border-radius: 10px;
+          margin: 8px 0;
+          padding: 11px;
+          padding-left: 20px;
+          border-radius: 10px;
+          transition: transform 0.2s ease, background-color 0.2s ease; /* 배경색과 크기 변화를 부드럽게 */
         }
+
+        .busInfo:active {
+          transform: scale(0.95); /* 크기를 약간 줄임 */
+          background-color: #2A292F; /* 누를 때의 더 연한 배경색 */
+        }
+
 
         .routeId {
           font-weight: bold;
@@ -878,11 +956,15 @@ img.rotate {
           padding: 10px;
           border-radius: 10px;
           width: 25px;
+          transition: transform 0.2s ease, background-color 0.2s ease;
         }
 
-        .icon-button > div > img:hover {
-          background-color: #333333;
+        .icon-button > div > img:active {
+          transform: scale(0.95); /* 크기를 약간 줄임 */
+          background-color: #2A292F; /* 누를 때의 더 연한 배경색 */
         }
+
+
 
 
 
@@ -1350,14 +1432,14 @@ li {
 
   <div class="slide slide_wrap">
     <div class="slide_item">
-      <h3><span class="touch_slide1">동서울대학교 정보 플랫폼</span></h3>
+      <h3><span class="touch_slide1">오늘의 학식</span></h3>
     </div>
     <div class="slide_item">
-      <h3><span class="touch_slide2">오늘의 학식</span></span></h3>
+      <h3><span class="touch_slide2">버스도착정보</span></span></h3>
     </div>
-    <div class="slide_item">
-      <h3><span class="touch_slide3">버스도착정보</span></span></h3>
-    </div>
+<!--     <div class="slide_item">
+      <h3><span class="touch_slide3"></span></span></h3>
+    </div> -->
     <ul class="slide_pagination"></ul>
   </div>
 
@@ -1407,7 +1489,7 @@ li {
 
     <div class="bus_container">
       <div>
-        <h3 class="webreload" style="margin-bottom: 7px;">🚍가천대역 출발</h3>
+        <h3 class="webreload" style="margin-bottom: 7px;">🚍가천대역 → 동서울대학교</h3>
       </div>
       <div>
         <img class="rotate" src="./web_img/reicon.gif" onclick="rotateImage(this)">
@@ -1417,7 +1499,7 @@ li {
 
     <div class="bus_container">
       <div>
-        <h3 class="webreload" style="margin-bottom: 7px;">🚍복정역 출발</h3>
+        <h3 class="webreload" style="margin-bottom: 7px;">🚍복정역(장지동) → 동서울대학교</h3>
       </div>
       <div>
         <img class="rotate" src="./web_img/reicon.gif" onclick="rotateImage(this)">
@@ -1498,6 +1580,70 @@ li {
 
   </div>
 </div>
+
+<div class="department">
+  <h3 class="department_n">⚙️공학계열</h3>
+  <div class="department-row">
+    <a href="https://dept.du.ac.kr/ae/Main.do" class="deptItem">항공기계과</a>
+    <a href="https://dept.du.ac.kr/mechauto/Main.do" class="deptItem">미래자동차학과</a>
+    <a href="https://dept.du.ac.kr/power/Main.do" class="deptItem">전기공학과</a>
+    <a href="https://dept.du.ac.kr/ee/Main.do" class="deptItem">컴퓨터전자과</a>
+    <a href="https://dept.du.ac.kr/ic/Main.do" class="deptItem">IT융합학과</a>
+    <a href="https://dept.du.ac.kr/computer/Main.do" class="deptItem">컴퓨터소프트웨어학과</a>
+    <a href="https://dept.du.ac.kr/archi/Main.do" class="deptItem">건축학과</a>
+    <a href="https://dept.du.ac.kr/info/Main.do" class="deptItem">컴퓨터정보과</a>
+    <a href="https://dept.du.ac.kr/dbc/Main.do" class="deptItem">디지털방송콘텐츠학과</a>
+    <a href="https://dept.du.ac.kr/dinter/Main.do" class="deptItem">실내디자인학과</a>
+    <a href="https://dept.du.ac.kr/game/Main.do" class="deptItem">게임콘텐츠과</a>
+    <a href="https://dept.du.ac.kr/cls/Main.do" class="deptItem">자유전공학과</a>
+    <a href="https://dept.du.ac.kr/smartdrone/Main.do" class="deptItem">스마트드론과</a>
+    <a href="https://dept.du.ac.kr/dhc/Main.do" class="deptItem">디지털헬스케어과</a>
+  </div>
+
+  <h3 class="department_n">🌿자연과학계열</h3>
+  <div class="department-row">
+    <a href="https://dept.du.ac.kr/food/Main.do" class="deptItem">호텔외식조리과</a>
+    <a href="https://dept.du.ac.kr/bakery/Main.do" class="deptItem">카페베이커리전공</a>
+    <a href="https://dept.du.ac.kr/health/Main.do" class="deptItem">보건의료행정과</a>
+  </div>
+
+  <h3 class="department_n">📚인문사회계열</h3>
+  <div class="department-row">
+    <a href="https://dept.du.ac.kr/tax/Main.do" class="deptItem">세무회계과</a>
+    <a href="https://dept.du.ac.kr/mkt/Main.do" class="deptItem">마케팅과</a>
+    <a href="https://dept.du.ac.kr/realty/Main.do" class="deptItem">도시계획부동산학과</a>
+    <a href="https://dept.du.ac.kr/hotel/Main.do" class="deptItem">호텔관광경영과</a>
+    <a href="https://dept.du.ac.kr/adong/Main.do" class="deptItem">아동보육과</a>
+    <a href="https://dept.du.ac.kr/silver/Main.do" class="deptItem">사회복지학과</a>
+    <a href="https://dept.du.ac.kr/aircrew/Main.do" class="deptItem">항공서비스학과</a>
+    <a href="https://dept.du.ac.kr/chinab/Main.do" class="deptItem">글로벌중국비즈니스과</a>
+    <a href="https://dept.du.ac.kr/swc/Main.do" class="deptItem">사회복지상담과</a>
+  </div>
+
+  <h3 class="department_n">🎨예체능계열</h3>
+  <div class="department-row">
+    <a href="https://dept.du.ac.kr/leisure/Main.do" class="deptItem">레저스포츠학과</a>
+    <a href="https://dongseouls.com/" class="deptItem">경호스포츠과</a>
+    <a href="https://dept.du.ac.kr/duid/Main.do" class="deptItem">산업디자인학과</a>
+    <a href="https://dept.du.ac.kr/vcd/Main.do" class="deptItem">시각디자인학과</a>
+    <a href="https://dept.du.ac.kr/fashion/Main.do" class="deptItem">패션디자인과</a>
+    <a href="https://dept.du.ac.kr/horojewel/Main.do" class="deptItem">주얼리디자인과</a>
+    <a href="https://dept.du.ac.kr/beauty/Main.do" class="deptItem">뷰티코디네이션과</a>
+    <a href="https://www.dsplay.co.kr/" class="deptItem">연기예술학과</a>
+    <a href="https://www.du-music.net/" class="deptItem">실용음악학과</a>
+    <a href="https://dept.du.ac.kr/creator/Main.do" class="deptItem">콘텐츠크리에이터과</a>
+    <a href="https://dept.du.ac.kr/entmg/Main.do" class="deptItem">엔터테인먼트경영과</a>
+    <a href="https://dept.du.ac.kr/kpop/Main.do" class="deptItem">K-POP과</a>
+    <a href="https://dept.du.ac.kr/mvgd/Main.do" class="deptItem">메타버스게임애니메이션과</a>
+    <a href="https://dept.du.ac.kr/mm/Main.do" class="deptItem">무대미술과</a>
+    <a href="https://dept.du.ac.kr/webtoon/Main.do" class="deptItem">웹툰과</a>
+  </div>
+</div>
+
+
+
+
+
 
 <div class="container_3">
   <h3 class="text_center">🎓학사안내</h3>
@@ -2667,9 +2813,7 @@ document.querySelector('.touch_slide1').addEventListener('click', function() { /
 document.querySelector('.touch_slide2').addEventListener('click', function() { // 슬라이드2
   window.location.href = "";
 });
-document.querySelector('.touch_slide3').addEventListener('click', function() { // 슬라이드3
-  window.location.href = "";
-});
+
 
 
 
@@ -2764,7 +2908,7 @@ let autoSlideInterval;
 function startAutoSlide() {
   autoSlideInterval = setInterval(() => {
     nextMove();
-  }, 3000);
+  }, 4000);
 }
 
 function stopAutoSlide() {
