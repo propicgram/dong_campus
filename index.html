@@ -99,9 +99,10 @@ header {
 }
 
 .other-elements {
-  margin-top: 5px;
-  position: absolute;
+  margin: 0 auto;
   right: 0;
+  width: 90%;
+  max-width: 500px;
 }
 
     body {
@@ -273,6 +274,10 @@ header {
       transition: transform 0.2s ease, background-color 0.2s ease;
     }
 
+    .busarea.animate {
+      animation: slideIn 0.5s ease-out;
+    }
+
     .busarea:active {
       transform: scale(0.95); /* 크기를 약간 줄임 */
       background-color: #2A292F; /* 누를 때의 더 연한 배경색 */
@@ -352,7 +357,7 @@ header {
   color: white;
   text-align: left;
   padding: 5px;
-  font-size: 14px;
+  font-size: 13px;
   border-radius: 10px;
   margin: 0px;
   width: calc(45% - 0px); /* 2열로 배치, 각 항목의 너비를 50%로 설정 */
@@ -495,10 +500,10 @@ li {
 }
 
 img.rotate {
-  margin-top: 20px;
+  margin-top: 18px;
   margin-left: 5px;
-    width: 20px;
-    transition: transform 1s ease-in-out;
+  width: 20px;
+  transition: transform 1s ease-in-out;
 }
 
 
@@ -623,17 +628,31 @@ img.rotate {
 }
 
 a.deptItem {
-  text-decoration: none; /* 기본 밑줄 제거 */
-  color: white; /* 링크 텍스트 색상 */
+  text-decoration: none;
+  color: white;
 }
 
 a.deptItem:visited {
-  color: white; /* 방문 후에도 같은 색상 유지 */
+  color: white;
 }
 
 a.deptItem:hover {
-  text-decoration: none; /* 마우스 올렸을 때 밑줄 제거 */
-  color: #ccc; /* 마우스 올렸을 때 색상 변경 (선택 사항) */
+  text-decoration: none;
+  color: #ccc;
+}
+
+a.rankItem {
+  text-decoration: none;
+  color: white;
+}
+
+a.rankItem:visited {
+  color: white;
+}
+
+a.rankItem:hover {
+  text-decoration: none;
+  color: #ccc;
 }
 
 .info_modal {
@@ -700,13 +719,11 @@ a.deptItem:hover {
     text-align: left;
     max-width: 500px;
     border-radius: 15px;
-    background: #121212;
+    background: #0D0E10;
     color: rgb(241, 241, 241);
     margin: auto; 
     padding: 20px;
     border: solid 1px #333333;
-    border-right: 4px solid #333333;
-    border-bottom: 4px solid #333333;
     width: 80%;
     position: absolute;
     left: 50%;
@@ -734,18 +751,10 @@ a.deptItem:hover {
       font-size: 17px;
       color: rgb(241, 241, 241);
       padding: 8px 12px;
-      border: solid 1px #333333;
-      border-right: 4px solid #333333;
-      border-bottom: 4px solid #333333;
       border-radius: 15px;
       cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      background-color: #121212;
-  }
-
-  .attendance-button:hover {
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
-    color: #333333;
+      background-color: #18171D;
+      border: solid 1px #292730;
   }
 
   .rhdwl{
@@ -769,6 +778,72 @@ a.deptItem:hover {
     text-align: left;
   }
 
+
+  .ranking{
+    color: white;
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    max-width: 500px;
+    align-items: center
+  }
+  .ranking_row{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 500px;
+    gap: 8px;
+  }
+  .top_row{
+    display: flex;
+    flex-wrap: wrap;
+    width: 92%;
+    margin: 0 auto;
+    max-width: 500px;
+    gap: 8px;
+    margin-bottom: 7px;
+  }
+  .rankItem{
+    background-color: #18171D;
+    color: white;
+    text-align: left;
+    padding: 5px;
+    padding-left: 13px;
+    font-size: 13px;
+    border-radius: 8px;
+    margin: 0px;
+    width: 100%;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+  }
+
+  .rankBlue{
+    color: rgb(122, 122, 236);
+    font-weight: bold;
+  }
+  .topItem{
+    background-color: #18171D;
+    color: white;
+    text-align: left;
+    padding: 5px;
+    padding-left: 13px;
+    font-size: 13px;
+    border-radius: 8px;
+    margin: 0px;
+    width: 100%;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+  }
+
+  .topBlue{
+    color: rgb(122, 122, 236);
+    font-weight: bold;
+  }
 
 
 
@@ -862,13 +937,11 @@ a.deptItem:hover {
 }
 
 #weather-info{
-  padding-left: 7px;
-  padding-top: 5px;
-  color: #333333;
+  color: #eeeeee;
   font-size: 13px;
   height: 20px;
-  overflow: hidden;
   max-width: 500px;
+  margin: 0;
 }
 
 
@@ -895,7 +968,20 @@ a.deptItem:hover {
           padding-left: 20px;
           border-radius: 10px;
           transition: transform 0.2s ease, background-color 0.2s ease; /* 배경색과 크기 변화를 부드럽게 */
+          animation: slideIn 0.5s ease-out;
+
         }
+
+        @keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
         .busInfo:active {
           transform: scale(0.95); /* 크기를 약간 줄임 */
@@ -1173,6 +1259,8 @@ li {
     margin-bottom: 10px;
   }
 
+
+
     @keyframes float {
         0% {
             transform: translateY(0);
@@ -1185,7 +1273,12 @@ li {
         }
     }
 
-
+.timer{
+  font-size: 13px;
+  padding-left: 5px;
+  width: 90%;
+  color: rgb(179, 179, 179);
+}
 
 
 @media only screen and (max-width: 600px) {
@@ -1194,7 +1287,7 @@ li {
   }
 
   header{
-    font-size: 9px;
+    font-size: 12px;
     width: 100%;
   }
 
@@ -1428,14 +1521,16 @@ li {
     </div>
   </header>
 
-
+  <div class="top_row">
+    <p class="topItem"><span class="rankBlue">📢&nbsp&nbsp</span>03-04(화) 1학기 개시</p>
+  </div>
 
   <div class="slide slide_wrap">
     <div class="slide_item">
       <h3><span class="touch_slide1">오늘의 학식</span></h3>
     </div>
     <div class="slide_item">
-      <h3><span class="touch_slide2">버스도착정보</span></span></h3>
+      <h3><span class="touch_slide2">버스 도착정보</span></span></h3>
     </div>
 <!--     <div class="slide_item">
       <h3><span class="touch_slide3"></span></span></h3>
@@ -1495,8 +1590,9 @@ li {
         <img class="rotate" src="./web_img/reicon.gif" onclick="rotateImage(this)">
       </div>
     </div>
+    <span class="timer" id="updateTime_1">0초 전 업데이트</span>
     <div id="busArrivalInfo"></div>
-
+    
     <div class="bus_container">
       <div>
         <h3 class="webreload" style="margin-bottom: 7px;">🚍복정역(장지동) → 동서울대학교</h3>
@@ -1505,7 +1601,9 @@ li {
         <img class="rotate" src="./web_img/reicon.gif" onclick="rotateImage(this)">
       </div>
     </div>
+    <span class="timer" id="updateTime_2">0초 전 업데이트</span>
     <div id="busArrivalInfo_2"></div>
+    
 
     <div class="bus_container">
       <div>
@@ -1515,6 +1613,7 @@ li {
         <img class="rotate" src="./web_img/reicon.gif" onclick="rotateImage(this)">
       </div>
     </div>
+    <span class="timer" id="updateTime_3">0초 전 업데이트</span>
 
     <div class="sectionarea3">
       <div class="busarea">
@@ -1638,6 +1737,15 @@ li {
     <a href="https://dept.du.ac.kr/mm/Main.do" class="deptItem">무대미술과</a>
     <a href="https://dept.du.ac.kr/webtoon/Main.do" class="deptItem">웹툰과</a>
   </div>
+</div>
+
+<h3 class="ranking">🔥인기메뉴</h3>
+<div class="ranking_row">
+  <p class="rankItem"><span class="rankBlue">1위&nbsp&nbsp</span>학식</p>
+  <p class="rankItem"><span class="rankBlue">2위&nbsp&nbsp</span> 출결조회</a>
+  <p class="rankItem"><span class="rankBlue">3위&nbsp&nbsp</span>포털</a>
+  <p class="rankItem"><span class="rankBlue">4위&nbsp&nbsp</span>LMS</p>
+  <p class="rankItem"><span class="rankBlue">5위&nbsp&nbsp</span>학사일정</p>
 </div>
 
 
@@ -2188,784 +2296,7 @@ li {
   <script src="web_content.js"></script>
   <script>
 
-
-  var contentArray = webContent.split('\n');
-  var contentHTML = '';
-
-  for (var i = 1; i < contentArray.length - 1; i++) {
-      var line = contentArray[i];
-
-      var truncatedLine = line.substring(0, line.length - 2);
-      contentHTML += '<tr><td>' + truncatedLine + '</td></tr>';
-  }
-  document.getElementById("content").innerHTML = contentHTML;
-
-  document.getElementById("content").addEventListener("click", function() {
-      window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=VYlDwaWjKSwAGszRXT2bcg%3d%3d&";
-  });
-
-
-
-
-  var hak_modal = document.getElementById("myModal");
-
-  var hak_btn1 = document.querySelector("#icon-button1");
-  hak_btn1.onclick = function() {
-    hak_modal.style.display = "block";
-  }
-
-
-
-  var closeBtn = document.getElementById("closeBtn");
-
-  closeBtn.onclick = function() {
-    hak_modal.style.display = "none";
-  }
-
-  window.onclick = function(event) {
-      if (event.target == hak_modal) {
-        hak_modal.style.display = "none";
-      }
-  }
-
-
-
-
-var calendarModal = document.getElementById("calendarModal");
-
-var calendarTitle = document.querySelector("#icon-button100");
-calendarTitle.onclick = function() {
-  calendarModal.style.display = "block";
-}
-
-
-
-
-var closeCalendarBtn = document.getElementById("closeCalendarBtn");
-closeCalendarBtn.onclick = function() {
-  calendarModal.style.display = "none";
-}
-
-
-window.onclick = function(event) {
-  if (event.target == calendarModal) {
-    calendarModal.style.display = "none";
-  }
-}
-
-
-
-function getCurrentTime() {
-  var now = new Date();
-  var hours = now.getHours();
-  var minutes = now.getMinutes();
-  return hours * 60 + minutes; 
-}
-
-
-function isWeekend() {
-  var now = new Date();
-  var day = now.getDay(); 
-  return day === 0 || day === 6; 
-}
-
-
-function calculateBusTime() {
-  var currentTime = getCurrentTime();
-  var busTimes = []; 
-
-  for (var i = 510; i <= 630; i += 10) {
-    busTimes.push(i);
-  }
-
-
-  var nextBusIndex = busTimes.findIndex(time => time > currentTime);
-  var closestBusTime = busTimes[nextBusIndex];
-
-
-  var hours = Math.floor(closestBusTime / 60);
-  var minutes = closestBusTime % 60;
-
-
-  var busTime1 = document.querySelector('.Bokjeong_time1 p:last-child');
-  var busTime2 = document.querySelector('.Bokjeong_time2 p:last-child');
-
-
-  if (nextBusIndex === -1 || closestBusTime > 630 || isWeekend()) {
-    busTime1.textContent = '08:30';
-    busTime2.textContent = '운행 종료';
-  } else {
-    busTime1.textContent = ('0' + hours).slice(-2) + ':' + ('0' + minutes).slice(-2);
-    
-
-    if (currentTime > closestBusTime) {
-        busTime2.textContent = '운행 종료';
-    } else {
-
-        var remainingTime = closestBusTime - currentTime;
-        if (remainingTime > 0) {
-            var hours = Math.floor(remainingTime / 60);
-            var minutes = remainingTime % 60;
-            var remainingTimeString = '';
-
-            if (hours > 0) {
-                remainingTimeString += hours + '시간 ';
-            }
-            if (minutes > 0) {
-                remainingTimeString += minutes + '분 ';
-            }
-
-            busTime2.textContent = remainingTimeString + '';
-        } else {
-            busTime2.textContent = '곧 도착';
-        }
-    }
-  }
-}
-
-
-calculateBusTime();
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-
-    var now = new Date();
-    var dayOfWeek = now.getDay();
-    var isWeekend = (dayOfWeek === 0 || dayOfWeek === 6);
-
-
-    if (isWeekend) {
-        document.querySelector('.Namyangju_time1 p:nth-child(2)').textContent = '08:00';
-        document.querySelector('.Guri_time1 p:nth-child(2)').textContent = '08:30';
-        document.querySelector('.Hanam_time1 p:nth-child(2)').textContent = '09:00';
-
-
-        document.querySelector('.Namyangju_time2 p').textContent = '운행 종료';
-        document.querySelector('.Guri_time2 p').textContent = '운행 종료';
-        document.querySelector('.Hanam_time2 p').textContent = '운행 종료';
-        return;
-    }
-
-
-    var nowHours = now.getHours();
-    var nowMinutes = now.getMinutes();
-    var nowTime = nowHours * 60 + nowMinutes;
-
-
-    var namyangjuTime1 = document.querySelector('.Namyangju_time1 p:nth-child(2)').textContent.split(':');
-    var namyangjuHours = parseInt(namyangjuTime1[0]);
-    var namyangjuMinutes = parseInt(namyangjuTime1[1]);
-    var namyangjuTime = namyangjuHours * 60 + namyangjuMinutes;
-
-    var guriTime1 = document.querySelector('.Guri_time1 p:nth-child(2)').textContent.split(':');
-    var guriHours = parseInt(guriTime1[0]);
-    var guriMinutes = parseInt(guriTime1[1]);
-    var guriTime = guriHours * 60 + guriMinutes;
-
-    var hanamTime1 = document.querySelector('.Hanam_time1 p:nth-child(2)').textContent.split(':');
-    var hanamHours = parseInt(hanamTime1[0]);
-    var hanamMinutes = parseInt(hanamTime1[1]);
-    var hanamTime = hanamHours * 60 + hanamMinutes;
-
-
-    if (nowTime < namyangjuTime) {
-        var remainingTime = namyangjuTime - nowTime;
-        var remainingHours = Math.floor(remainingTime / 60);
-        var remainingMinutes = remainingTime % 60;
-        if (remainingHours > 0) {
-            document.querySelector('.Namyangju_time2 p').textContent = remainingHours + "시간 " + remainingMinutes + "분";
-        } else {
-            document.querySelector('.Namyangju_time2 p').textContent = remainingMinutes + "분";
-        }
-    } else {
-        document.querySelector('.Namyangju_time2 p').textContent = '운행 종료';
-    }
-
-
-    if (nowTime < guriTime) {
-        var remainingTime = guriTime - nowTime;
-        var remainingHours = Math.floor(remainingTime / 60);
-        var remainingMinutes = remainingTime % 60;
-        if (remainingHours > 0) {
-            document.querySelector('.Guri_time2 p').textContent = remainingHours + "시간 " + remainingMinutes + "분";
-        } else {
-            document.querySelector('.Guri_time2 p').textContent = remainingMinutes + "분";
-        }
-    } else {
-        document.querySelector('.Guri_time2 p').textContent = '운행 종료';
-    }
-
-
-    if (nowTime < hanamTime) {
-        var remainingTime = hanamTime - nowTime;
-        var remainingHours = Math.floor(remainingTime / 60);
-        var remainingMinutes = remainingTime % 60;
-        if (remainingHours > 0) {
-            document.querySelector('.Hanam_time2 p').textContent = remainingHours + "시간 " + remainingMinutes + "분";
-        } else {
-            document.querySelector('.Hanam_time2 p').textContent = remainingMinutes + "분";
-        }
-    } else {
-        document.querySelector('.Hanam_time2 p').textContent = '운행 종료';
-    }
-});
-
-
-
-    var scrollToBottomButton2 = document.querySelector('#icon-button0');
-    scrollToBottomButton2.addEventListener('click', function() {
-        window.scrollTo(0, document.body.scrollHeight);
-    });
-
-
-document.querySelector('.cmap-close').onclick = function() {
-  document.getElementById('cmap-myModal').style.display = 'none';
-}
-
-
-window.onclick = function(event) {
-  if (event.target == document.getElementById('myModal')) {
-    document.getElementById('cmap-myModal').style.display = 'none';
-  }
-}
-
-
-
-let currentRotation = 0;
-
-function rotateImage(img) {
-    currentRotation += 360;
-    img.style.transform = `rotate(${currentRotation}deg)`;
-    setTimeout(function() {
-        location.reload();
-    }, 700); 
-}
-
-
-
-
-window.onload = function() {
-
-  document.body.style.opacity = 0;
-  setTimeout(function() {
-
-    document.body.style.opacity = 1;
-  }, 100);
-};
-
-
-
-
-var btn6Elements = document.getElementsByClassName("btn6");
-
-
-for (var i = 0; i < btn6Elements.length; i++) {
-    btn6Elements[i].addEventListener('click', openAttendanceModal);
-}
-
-
-function openAttendanceModal() {
-    document.getElementById('attendanceModal').style.display = 'block';
-}
-
-
-function closeAttendanceModal() {
-    document.getElementById('attendanceModal').style.display = 'none';
-}
-
-
-window.onclick = function(event) {
-    if (event.target == document.getElementById('attendanceModal')) {
-        closeAttendanceModal();
-    }
-}
-
-const attendanceButtons = document.getElementsByClassName('attendance-button');
-
-
-for (let i = 0; i < attendanceButtons.length; i++) {
-
-    attendanceButtons[i].addEventListener('click', function() {
-    window.open('https://portal.du.ac.kr');
-});
-}
-
-
-
-    function parseAndDisplayMenu(data) {
-
-        var lines = data.split('\n');
-
-        var html = '<table>';
-        html += '<thead><tr><th>날짜</th><th>메뉴</th></tr></thead>';
-        html += '<tbody>';
-
-        var currentDate = '';
-        var currentMenu = '';
-
-
-        lines.forEach(function(line) {
-            line = line.trim(); 
-            if (line.length > 0) {
-                if (line.match(str)) {
-
-                    if (currentDate !== '') {
-
-                        html += '<tr><td>' + currentDate + '</td><td><ul>' + currentMenu + '</ul></td></tr>';
-                    }
-
-                    currentDate = line;
-                    currentMenu = '';
-                } else {
-
-                    currentMenu += '<li>' + line + '</li>';
-                }
-            }
-        });
-
-
-        if (currentDate !== '' && currentMenu !== '') {
-            html += '<tr><td>' + currentDate + '</td><td><ul>' + currentMenu + '</ul></td></tr>';
-        }
-
-        html += '</tbody></table>';
-
-        return html;
-    }
-
-
-    document.getElementById("menuTable").innerHTML = parseAndDisplayMenu(tbodyData);
-
-
-
-
-
-function getTodayDate() {
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0');
-    return mm + '/' + dd;
-}
-
-
-function extractMenuByDate(data, targetDate) {
-    var lines = data.split('\n');
-    var menu = '';
-    var found = false;
-
-    for (var i = 0; i < lines.length; i++) {
-        if (lines[i].startsWith(targetDate)) {
-            found = true;
-        } else if (found && /^\d\d\/\d\d/.test(lines[i])) {
-            break;
-        }
-        if (found) {
-            menu += lines[i] + '\n';
-        }
-    }
-
-    return menu.trim();
-}
-
-
-
-
-
-var calendarData = `
-01-01(월)
-신정
-02-09(금) ~ 11(일)
-설연휴
-02-16(금)
-2023학년도 학위수여식
-02-22(목)
-입학식
-03-01(금)
-삼일절
-03-04(월)
-1학기 개시
-03-28(목)
-수업일수 1/4선
-04-02(화)
-학기개시 30일
-04-10(수)
-국회의원 선거
-04-22(월) ~ 26(금)
-중간고사
-04-25(목)
-수업일수 1/2선
-05-01(수)
-근로자의날
-05-02(목)
-학기개시 60일
-05-05(일)
-어린이날
-05-06(월)
-대체공휴일
-05-08(수) ~ 10(금)
-복전체전
-05-15(수)
-부처님오신날
-05-20(월) ~ 21(화)
-학생예비군
-05-30(목)
-수업일수 3/4선
-06-01(토)
-학기개시 90일
-06-06(목)
-현충일
-06-26(수)
-1학기 종강
-06-27(목)
-하계방학
-08-09(금)
-후기 학위수여
-08-15(목)
-광복절
-08-26(월)
-2학기 개시
-09-16(월) ~ 18(수)
-추석연휴
-09-24(화)
-수업일수 1/4선
-09-24(화)
-학기개시 30일
-10-02(수)
-개교기념일
-10-03(목)
-개천절
-10-09(수)
-한글날
-10-24(목)
-학기개시 60일
-10-24(목)
-수업일수 1/2선
-11-20(수)
-수업일수 3/4선
-11-23(토)
-학기개시 90일
-12-16(월)
-2학기 종강
-12-17(화)
-동계방학
-12-25(수)
-성탄절
-`;
-
-
-function parseCalendarData(data) {
-    const events = data.trim().split('\n');
-    const parsedEvents = [];
-    for (let i = 0; i < events.length; i += 2) {
-        const date = events[i];
-        const description = events[i+1];
-        parsedEvents.push({ date, description });
-    }
-    return parsedEvents;
-}
-
-
-function updateCalendarModal(events) {
-    const calendarBody = document.getElementById('calendarBody');
-    let html = '';
-    for (let event of events) {
-        html += `<tr>
-                    <td>${event.date}</td>
-                    <td>${event.description}</td>
-                </tr>`;
-    }
-    calendarBody.innerHTML = html;
-}
-
-
-const parsedEvents = parseCalendarData(calendarData);
-updateCalendarModal(parsedEvents);
-
-
-
-document.querySelector('#icon-button4').addEventListener('click', function() {
-  window.location.href = "https://portal.du.ac.kr/login.jsp";
-});
-document.querySelector('#icon-button2').addEventListener('click', function() {
-  window.location.href = "https://lms.du.ac.kr/login.php";
-});
-document.querySelector('#icon-button5').addEventListener('click', function() {
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=dbhyu4aXBhM9JSQ9FVFGUg%3d%3d&";
-});
-
-
-
-document.querySelector('#icon-button101').addEventListener('click', function() {
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=%2bCuO1viNG3oA4OC8CxJYJg%3d%3d&";
-});
-document.querySelector('#icon-button102').addEventListener('click', function() {
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=aZ%2bCFV3rkCXxn2YmJUm7Qg%3d%3d&";
-});
-document.querySelector('#icon-button103').addEventListener('click', function() {
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=fxlHsjubVTalTZEV27h0FA%3d%3d&";
-});
-document.querySelector('#icon-button104').addEventListener('click', function() {
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=fxlHsjubVTalTZEV27h0FA%3d%3d&";
-});
-document.querySelector('#icon-button105').addEventListener('click', function() {
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=g2jLoGsiMR3n3jBlLbWLpw%3d%3d&";
-});
-
-
-document.querySelector('#icon-button105').addEventListener('click', function() {
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=g2jLoGsiMR3n3jBlLbWLpw%3d%3d&";
-});
-document.querySelector('#icon-button106').addEventListener('click', function() {
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=g2jLoGsiMR3n3jBlLbWLpw%3d%3d&";
-});
-document.querySelector('#icon-button107').addEventListener('click', function() {
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=g2jLoGsiMR3n3jBlLbWLpw%3d%3d&";
-});
-document.querySelector('#icon-button108').addEventListener('click', function() {
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=ndTfMlfcorVznwKzBSpK1g%3d%3d&";
-});
-document.querySelector('#icon-button109').addEventListener('click', function() {
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=ndTfMlfcorVznwKzBSpK1g%3d%3d&";
-});
-document.querySelector('#icon-button110').addEventListener('click', function() {
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=zrUBv6HE%2fuNuCmtgpW4HzA%3d%3d&";
-});
-document.querySelector('#icon-button111').addEventListener('click', function() {
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=jGtgkYL3zRdkqwe9jNol2Q%3d%3d&";
-});
-
-
-document.querySelector('#icon-button112').addEventListener('click', function() {
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuord=5&submenuord=13&";
-});
-document.querySelector('#icon-button113').addEventListener('click', function() {
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuord=5&submenuord=17&";
-});
-document.querySelector('#icon-button114').addEventListener('click', function() {
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=3ZqNYgyaL4YCzismnO%2bZ6A%3d%3d&";
-});
-document.querySelector('#icon-button115').addEventListener('click', function() {
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuord=5&submenuord=41&";
-});
-document.querySelector('#icon-button116').addEventListener('click', function() {
-  window.location.href = "https://www.du.ac.kr/detail.do?menuUrl=VYlDwaWjKSwAGszRXT2bcg%3D%3D&board_seq=24075&row_num=1&pageNo=1&categoryid=&userpwd=";
-});
-document.querySelector('#icon-button117').addEventListener('click', function() {
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=mgephqOMYERCbwCnwyxbrg%3d%3d&";
-});
-
-
-document.querySelector('#icon-button118').addEventListener('click', function() {
-  window.location.href = "https://mail.du.ac.kr/mail/login";
-});
-document.querySelector('#icon-button119').addEventListener('click', function() {
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=LDuhG8qKuj0AZL5oCBQUYQ%3d%3d&";
-});
-document.querySelector('#icon-button120').addEventListener('click', function() {
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=0C4XuWq%2bb7eTLK7XIpfXOQ%3d%3d&";
-});
-document.querySelector('#icon-button121').addEventListener('click', function() {
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=u9%2b5PWy5e%2bP81sj%2fRoRr1Q%3d%3d&";
-});
-document.querySelector('#icon-button122').addEventListener('click', function() {
-  window.location.href = "https://dorm.du.ac.kr/dorm/Main.do";
-});
-document.querySelector('#icon-button123').addEventListener('click', function() {
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=sF2VWrsJ3JbYcT8w4SOj7w%3d%3d&";
-});
-
-
-document.querySelector('#icon-button124').addEventListener('click', function() {
-  window.location.href = "https://play.google.com/store/apps/details?id=com.keundoum.powerbox&hl=ko-KR";
-});
-document.querySelector('#icon-button125').addEventListener('click', function() {
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=%2bcwxrqXs%2fJtLSsDYJ0367Q%3d%3d&";
-});
-document.querySelector('#icon-button126').addEventListener('click', function() {
-  window.location.href = "https://www.du.ac.kr/submenu.do?menuUrl=Pq45DK2FRS9f8inD1oNqOA%3d%3d&";
-});
-document.querySelector('#icon-button127').addEventListener('click', function() {
-  window.location.href = "https://dudream.du.ac.kr/";
-});
-document.querySelector('#icon-button128').addEventListener('click', function() {
-  window.location.href = "https://dlibrary.du.ac.kr/";
-});
-document.querySelector('#icon-button129').addEventListener('click', function() {
-  window.location.href = "https://counsel.du.ac.kr/counsel/Main.do";
-});
-
-
-
-document.querySelector('#icon-button130').addEventListener('click', function() {
-  window.location.href = "https://www.isic.co.kr/du/duIndex.jsp";
-});
-document.querySelector('#icon-button131').addEventListener('click', function() {
-  window.location.href = "https://www.ygoon.com/";
-});
-
-
-
-
-document.querySelector('.touch_slide1').addEventListener('click', function() { // 슬라이드1
-  window.location.href = "";
-});
-document.querySelector('.touch_slide2').addEventListener('click', function() { // 슬라이드2
-  window.location.href = "";
-});
-
-
-
-
-document.getElementById('instagramIcon').addEventListener('click', function() {
-    window.location.href = 'https://www.instagram.com/dongseoul.university/';
-});
-
-document.getElementById('youtubeIcon').addEventListener('click', function() {
-    window.location.href = 'https://www.youtube.com/channel/UCBLac80saErri-wSn2N8JpQ';
-});
-
-
-
-
-(function(_0x3bff94,_0x18f70d){var _0x36e2dd=_0x23f7,_0x3564b6=_0x3bff94();while(!![]){try{var _0x19e3ee=parseInt(_0x36e2dd(0xc1))/0x1+-parseInt(_0x36e2dd(0x91))/0x2+parseInt(_0x36e2dd(0xb8))/0x3*(-parseInt(_0x36e2dd(0xb2))/0x4)+-parseInt(_0x36e2dd(0xab))/0x5*(-parseInt(_0x36e2dd(0x97))/0x6)+parseInt(_0x36e2dd(0xba))/0x7+parseInt(_0x36e2dd(0x9c))/0x8*(-parseInt(_0x36e2dd(0x8f))/0x9)+parseInt(_0x36e2dd(0xaa))/0xa*(parseInt(_0x36e2dd(0xc6))/0xb);if(_0x19e3ee===_0x18f70d)break;else _0x3564b6['push'](_0x3564b6['shift']());}catch(_0x3dfa04){_0x3564b6['push'](_0x3564b6['shift']());}}}(_0x305d,0x9cac7));function getBusArrivalInfo(){var _0x1658b4=_0x23f7,_0x246618=new XMLHttpRequest(),_0x2febfb=_0x1658b4(0xb1),_0x5e2664='nwaefISD6ee0vv94Hv+1FadsVRGtiqHOGQZlDS6mEPovUFla146hAPT6zLMjmsWR8TV6vfjeRj+irmYtXd5a7g==',_0x3bf9d4=0xc28cb15,_0x25ac98='?'+encodeURIComponent(_0x1658b4(0xcb))+'='+encodeURIComponent(_0x5e2664);_0x25ac98+='&'+encodeURIComponent('stationId')+'='+encodeURIComponent(_0x3bf9d4),_0x246618[_0x1658b4(0x93)]('GET',_0x2febfb+_0x25ac98),_0x246618[_0x1658b4(0xa6)]=function(){if(this['readyState']==0x4&&this['status']==0xc8){var _0x3d47e5=this['responseText'];displayBusArrivalTimes(_0x3d47e5);}},_0x246618[_0x1658b4(0xbb)]('');}function displayBusArrivalTimes(_0x150a79){var _0x3b475c=_0x23f7,_0x50296a=new DOMParser()[_0x3b475c(0xa1)](_0x150a79,_0x3b475c(0xa7)),_0xdb4854=_0x50296a[_0x3b475c(0x9a)](_0x3b475c(0xb3)),_0x417223=document[_0x3b475c(0xcc)]('busArrivalInfo');_0x417223[_0x3b475c(0xc5)]='';for(var _0x42de90=0x0;_0x42de90<_0xdb4854[_0x3b475c(0xc4)];_0x42de90++){var _0x527722=_0xdb4854[_0x42de90][_0x3b475c(0x9a)](_0x3b475c(0xb9))[0x0][_0x3b475c(0xa0)],_0x464368=_0xdb4854[_0x42de90][_0x3b475c(0x9a)]('predictTime1')[0x0][_0x3b475c(0xa0)],_0x289b2f=parseInt(_0xdb4854[_0x42de90][_0x3b475c(0x9a)](_0x3b475c(0xd2))[0x0][_0x3b475c(0xa0)]),_0x407e83=formatRouteId(_0x527722),_0x1ada24=_0x3b475c(0xaf)+_0x407e83+_0x3b475c(0xc3)+_0x464368+'분</span>\x20';_0x1ada24+=_0x3b475c(0x99)+_0x289b2f+_0x3b475c(0xc8);var _0x233465=document[_0x3b475c(0xd0)]('div');_0x233465[_0x3b475c(0xa5)]['add'](_0x3b475c(0xcd)),_0x233465[_0x3b475c(0xc5)]=_0x1ada24,_0x417223['appendChild'](_0x233465);}}function formatRouteId(_0xed374f){var _0x469aac=_0x23f7,_0x3bfd60=_0xed374f,_0x4b4324='';switch(_0xed374f){case'204000007':_0x3bfd60=_0x469aac(0x9e),_0x4b4324='green';break;case _0x469aac(0xac):_0x3bfd60='30',_0x4b4324=_0x469aac(0x90);break;case _0x469aac(0xbd):_0x3bfd60=_0x469aac(0x9b),_0x4b4324=_0x469aac(0x90);break;case'234000069':_0x3bfd60='1117',_0x4b4324=_0x469aac(0xc2);break;case _0x469aac(0xce):_0x3bfd60=_0x469aac(0xbe),_0x4b4324=_0x469aac(0xc2);break;case _0x469aac(0xbf):_0x3bfd60='500-1',_0x4b4324=_0x469aac(0xc2);break;case'234001609':_0x3bfd60=_0x469aac(0xb4),_0x4b4324=_0x469aac(0xc2);break;case'204000018':_0x3bfd60=_0x469aac(0xc9),_0x4b4324=_0x469aac(0x90);break;case'204000149':_0x3bfd60='반디1',_0x4b4324='#A00000';break;case _0x469aac(0xae):_0x3bfd60='반디1-1',_0x4b4324=_0x469aac(0xc2);break;case _0x469aac(0xa2):_0x3bfd60=_0x469aac(0xc7),_0x4b4324=_0x469aac(0xc2);break;case'204000083':_0x3bfd60='100\x20(출근)',_0x4b4324=_0x469aac(0x90);break;case _0x469aac(0xcf):_0x3bfd60='32',_0x4b4324='green';break;}return _0x469aac(0x94)+_0x4b4324+'\x27>'+_0x3bfd60+'</span>';}getBusArrivalInfo();function _0x305d(){var _0xd6416a=['text/xml','status','204000018','10lEOMIQ','1066905GIygFm','227000003','204000083','204000150','<span\x20class=\x27routeId\x27>','div','https://apis.data.go.kr/6410000/busarrivalservice/getBusArrivalList','164BXVbsQ','busArrivalList','500-1A','204000149','1117','nwaefISD6ee0vv94Hv+1FadsVRGtiqHOGQZlDS6mEPovUFla146hAPT6zLMjmsWR8TV6vfjeRj+irmYtXd5a7g==','44598GCABuu','routeId','5298335aNsurd','send','appendChild','234000040','500-2','234000079','responseText','77037IqvaDm','#A00000','\x20</span>\x20<span\x20class=\x27arrivalTime\x27>','length','innerHTML','9317473UunefA','500-2N','번째\x20전)</span>','100','234000069','serviceKey','getElementById','busInfo','234000075','234000009','createElement','add','locationNo1','21519dAdyxg','green','681264NeRyaF','predictTime1','open','<span\x20style=\x27color:','500-1','GET','18zoENLS','</span>','<span\x20class=\x27arrivalTime_2\x27>(','getElementsByTagName','119','2440bKMWAf','분</span>\x20','357','반디1-1','textContent','parseFromString','234001738','busArrivalInfo_2','반디1','classList','onreadystatechange'];_0x305d=function(){return _0xd6416a;};return _0x305d();}function getBusArrivalInfo_2(){var _0x14285d=_0x23f7,_0x8064e0=new XMLHttpRequest(),_0x2f775e=_0x14285d(0xb1),_0x4c2d91=_0x14285d(0xb7),_0x382110=0x754d5b9,_0x442caf='?'+encodeURIComponent(_0x14285d(0xcb))+'='+encodeURIComponent(_0x4c2d91);_0x442caf+='&'+encodeURIComponent('stationId')+'='+encodeURIComponent(_0x382110),_0x8064e0[_0x14285d(0x93)](_0x14285d(0x96),_0x2f775e+_0x442caf),_0x8064e0[_0x14285d(0xa6)]=function(){var _0x563eea=_0x14285d;if(this['readyState']==0x4&&this[_0x563eea(0xa8)]==0xc8){var _0x3b40f2=this[_0x563eea(0xc0)];displayBusArrivalTimes_2(_0x3b40f2);}},_0x8064e0[_0x14285d(0xbb)]('');}function _0x23f7(_0x1179c6,_0x2041ca){var _0x305db9=_0x305d();return _0x23f7=function(_0x23f72d,_0x38c9b1){_0x23f72d=_0x23f72d-0x8f;var _0x2f7ce7=_0x305db9[_0x23f72d];return _0x2f7ce7;},_0x23f7(_0x1179c6,_0x2041ca);}function displayBusArrivalTimes_2(_0x146250){var _0x4b0753=_0x23f7,_0x126399=new DOMParser()['parseFromString'](_0x146250,'text/xml'),_0x2c17f4=_0x126399[_0x4b0753(0x9a)]('busArrivalList'),_0x1dc1d9=document[_0x4b0753(0xcc)](_0x4b0753(0xa3));_0x1dc1d9['innerHTML']='';for(var _0x57037d=0x0;_0x57037d<_0x2c17f4['length'];_0x57037d++){var _0x168d32=_0x2c17f4[_0x57037d][_0x4b0753(0x9a)](_0x4b0753(0xb9))[0x0]['textContent'],_0x15d876=_0x2c17f4[_0x57037d][_0x4b0753(0x9a)](_0x4b0753(0x92))[0x0][_0x4b0753(0xa0)],_0xfec3a1=parseInt(_0x2c17f4[_0x57037d][_0x4b0753(0x9a)]('locationNo1')[0x0][_0x4b0753(0xa0)]),_0x6a669d=formatRouteId_2(_0x168d32),_0x302775='<span\x20class=\x27routeId\x27>'+_0x6a669d+'\x20</span>\x20<span\x20class=\x27arrivalTime\x27>'+_0x15d876+_0x4b0753(0x9d);_0x302775+='<span\x20class=\x27arrivalTime_2\x27>('+_0xfec3a1+_0x4b0753(0xc8);var _0x8a1ea2=document['createElement'](_0x4b0753(0xb0));_0x8a1ea2[_0x4b0753(0xa5)][_0x4b0753(0xd1)](_0x4b0753(0xcd)),_0x8a1ea2['innerHTML']=_0x302775,_0x1dc1d9[_0x4b0753(0xbc)](_0x8a1ea2);}}function formatRouteId_2(_0x291484){var _0x1ac44c=_0x23f7,_0x4ca997=_0x291484,_0x5e974b='';switch(_0x291484){case'204000007':_0x4ca997=_0x1ac44c(0x9e),_0x5e974b=_0x1ac44c(0x90);break;case _0x1ac44c(0xac):_0x4ca997='30',_0x5e974b=_0x1ac44c(0x90);break;case'234000040':_0x4ca997=_0x1ac44c(0x9b),_0x5e974b=_0x1ac44c(0x90);break;case _0x1ac44c(0xca):_0x4ca997=_0x1ac44c(0xb6),_0x5e974b=_0x1ac44c(0xc2);break;case _0x1ac44c(0xce):_0x4ca997=_0x1ac44c(0xbe),_0x5e974b='#A00000';break;case _0x1ac44c(0xbf):_0x4ca997=_0x1ac44c(0x95),_0x5e974b='#A00000';break;case _0x1ac44c(0xa9):_0x4ca997=_0x1ac44c(0xc9),_0x5e974b=_0x1ac44c(0x90);break;case _0x1ac44c(0xb5):_0x4ca997=_0x1ac44c(0xa4),_0x5e974b=_0x1ac44c(0xc2);break;case _0x1ac44c(0xae):_0x4ca997=_0x1ac44c(0x9f),_0x5e974b='#A00000';break;case _0x1ac44c(0xa2):_0x4ca997='500-2N',_0x5e974b=_0x1ac44c(0xc2);break;case _0x1ac44c(0xad):_0x4ca997='100\x20(출근)',_0x5e974b=_0x1ac44c(0x90);break;case _0x1ac44c(0xcf):_0x4ca997='32',_0x5e974b=_0x1ac44c(0x90);break;}return _0x1ac44c(0x94)+_0x5e974b+'\x27>'+_0x4ca997+_0x1ac44c(0x98);}getBusArrivalInfo_2();
-
-
-
-
-
-const slide = document.querySelector(".slide");
-let slideWidth = slide.clientWidth;
-const prevBtn = document.querySelector(".slide_prev_button");
-const nextBtn = document.querySelector(".slide_next_button");
-const slideItems = document.querySelectorAll(".slide_item");
-const maxSlide = slideItems.length;
-let currSlide = 1;
-const pagination = document.querySelector(".slide_pagination");
-for (let i = 0; i < maxSlide; i++) {
-  if (i === 0) pagination.innerHTML += `<li class="active">•</li>`;
-  else pagination.innerHTML += `<li>•</li>`;
-}
-const paginationItems = document.querySelectorAll(".slide_pagination > li");
-
-function nextMove() {
-  currSlide++;
-  if (currSlide <= maxSlide) {
-    const offset = slideWidth * (currSlide - 1);
-    slideItems.forEach((i) => {
-      i.setAttribute("style", `left: ${-offset}px`);
-    });
-    paginationItems.forEach((i) => i.classList.remove("active"));
-    paginationItems[currSlide - 1].classList.add("active");
-  } else {
-    currSlide = 1;
-    slideItems.forEach((i) => {
-      i.setAttribute("style", `left: 0px`);
-    });
-    paginationItems.forEach((i) => i.classList.remove("active"));
-    paginationItems[currSlide - 1].classList.add("active");
-  }
-  clearInterval(autoSlideInterval);
-  startAutoSlide();
-}
-
-
-function prevMove() {
-  currSlide--;
-  if (currSlide > 0) {
-    const offset = slideWidth * (currSlide - 1);
-    slideItems.forEach((i) => {
-      i.setAttribute("style", `left: ${-offset}px`);
-    });
-    paginationItems.forEach((i) => i.classList.remove("active"));
-    paginationItems[currSlide - 1].classList.add("active");
-  } else {
-    currSlide = maxSlide;
-    const offset = slideWidth * (currSlide - 1);
-    slideItems.forEach((i) => {
-      i.setAttribute("style", `left: ${-offset}px`);
-    });
-    paginationItems.forEach((i) => i.classList.remove("active"));
-    paginationItems[currSlide - 1].classList.add("active");
-  }
-}
-
-
-for (let i = 0; i < maxSlide; i++) {
-  paginationItems[i].addEventListener("click", () => {
-    currSlide = i + 1;
-    const offset = slideWidth * (currSlide - 1);
-    slideItems.forEach((i) => {
-      i.setAttribute("style", `left: ${-offset}px`);
-    });
-    paginationItems.forEach((i) => i.classList.remove("active"));
-    paginationItems[currSlide - 1].classList.add("active");
-  });
-}
-
-let autoSlideInterval;
-
-function startAutoSlide() {
-  autoSlideInterval = setInterval(() => {
-    nextMove();
-  }, 4000);
-}
-
-function stopAutoSlide() {
-  clearInterval(autoSlideInterval);
-}
-
-startAutoSlide();
-
-slide.addEventListener("mouseenter", () => {
-  stopAutoSlide();
-});
-
-slide.addEventListener("mouseleave", () => {
-  startAutoSlide();
-});
-
-
-
-
-
-
-
-
-
-function appdownmodal_isAndroidApp() {
-  var userAgent = navigator.userAgent.toLowerCase();
-  return userAgent.includes("android") && userAgent.includes("webview");
-}
-
-
-var appdownmodal_modal = document.getElementById("appdownmodal_Modal");
-
-
-function appdownmodal_showModal() {
-  appdownmodal_modal.style.display = "block";
-}
-
-
-function appdownmodal_closeModal() {
-  appdownmodal_modal.style.display = "none";
-  localStorage.setItem("appdownmodal_modalClosed", "true");
-}
-
-
-if (!appdownmodal_isAndroidApp()) {
-  var appdownmodal_modalClosed = localStorage.getItem("appdownmodal_modalClosed");
-  if (!appdownmodal_modalClosed) {
-    setTimeout(appdownmodal_showModal, 1000);
-  }
-}
-
-var appdownmodal_downloadButton = document.getElementById("appdownmodal_downloadButton");
-appdownmodal_downloadButton.onclick = function() {
-  window.location.href = "https://play.google.com/store/apps/details?id=com.dong_campus&pcampaignid=web_share";
-}
-
-
+var _0x1cc069=_0x20a4;(function(_0x207154,_0x570ae9){var _0x258534=_0x20a4,_0x4baab8=_0x207154();while(!![]){try{var _0x260bc1=parseInt(_0x258534(0x1be))/0x1*(-parseInt(_0x258534(0x1e6))/0x2)+parseInt(_0x258534(0x19a))/0x3+parseInt(_0x258534(0x1c8))/0x4*(-parseInt(_0x258534(0x1ac))/0x5)+parseInt(_0x258534(0x1a3))/0x6+-parseInt(_0x258534(0x243))/0x7+-parseInt(_0x258534(0x242))/0x8+parseInt(_0x258534(0x1da))/0x9;if(_0x260bc1===_0x570ae9)break;else _0x4baab8['push'](_0x4baab8['shift']());}catch(_0x1b0279){_0x4baab8['push'](_0x4baab8['shift']());}}}(_0x6c42,0x85819));var contentArray=webContent[_0x1cc069(0x1f9)]('\x0a'),contentHTML='';for(var i=0x1;i<contentArray[_0x1cc069(0x1cf)]-0x1;i++){var line=contentArray[i],truncatedLine=line['substring'](0x0,line[_0x1cc069(0x1cf)]-0x2);contentHTML+=_0x1cc069(0x259)+truncatedLine+_0x1cc069(0x212);}document['getElementById'](_0x1cc069(0x20f))[_0x1cc069(0x1a6)]=contentHTML,document[_0x1cc069(0x1f6)]('content')[_0x1cc069(0x26c)]('click',function(){var _0x5142b9=_0x1cc069;window['location'][_0x5142b9(0x22d)]=_0x5142b9(0x23e);});function _0x20a4(_0x1253d3,_0x43763f){var _0x6c42f0=_0x6c42();return _0x20a4=function(_0x20a4c8,_0x403c48){_0x20a4c8=_0x20a4c8-0x18c;var _0x165510=_0x6c42f0[_0x20a4c8];return _0x165510;},_0x20a4(_0x1253d3,_0x43763f);}var hak_modal=document['getElementById'](_0x1cc069(0x20b)),hak_btn1=document['querySelector']('#icon-button1');hak_btn1[_0x1cc069(0x21c)]=function(){var _0x3ba7c4=_0x1cc069;hak_modal[_0x3ba7c4(0x18e)][_0x3ba7c4(0x207)]=_0x3ba7c4(0x202);};var closeBtn=document[_0x1cc069(0x1f6)](_0x1cc069(0x1a4));closeBtn[_0x1cc069(0x21c)]=function(){var _0x3c0ac6=_0x1cc069;hak_modal[_0x3c0ac6(0x18e)][_0x3c0ac6(0x207)]=_0x3c0ac6(0x217);},window[_0x1cc069(0x21c)]=function(_0x480fba){var _0x1df02f=_0x1cc069;_0x480fba[_0x1df02f(0x1b5)]==hak_modal&&(hak_modal[_0x1df02f(0x18e)][_0x1df02f(0x207)]=_0x1df02f(0x217));};var calendarModal=document['getElementById']('calendarModal'),calendarTitle=document[_0x1cc069(0x1cb)](_0x1cc069(0x22e));calendarTitle[_0x1cc069(0x21c)]=function(){var _0x1d083a=_0x1cc069;calendarModal[_0x1d083a(0x18e)][_0x1d083a(0x207)]=_0x1d083a(0x202);};var closeCalendarBtn=document[_0x1cc069(0x1f6)](_0x1cc069(0x218));closeCalendarBtn[_0x1cc069(0x21c)]=function(){var _0x33d396=_0x1cc069;calendarModal[_0x33d396(0x18e)][_0x33d396(0x207)]=_0x33d396(0x217);},window[_0x1cc069(0x21c)]=function(_0x238556){var _0x779eb2=_0x1cc069;_0x238556[_0x779eb2(0x1b5)]==calendarModal&&(calendarModal[_0x779eb2(0x18e)][_0x779eb2(0x207)]=_0x779eb2(0x217));};function getCurrentTime(){var _0x1bbaff=_0x1cc069,_0x38e3ee=new Date(),_0x2ad920=_0x38e3ee['getHours'](),_0x5db2be=_0x38e3ee[_0x1bbaff(0x203)]();return _0x2ad920*0x3c+_0x5db2be;}function isWeekend(){var _0x4907a6=_0x1cc069,_0x1756e6=new Date(),_0x1d9097=_0x1756e6[_0x4907a6(0x1dd)]();return _0x1d9097===0x0||_0x1d9097===0x6;}function calculateBusTime(){var _0xa8d9e=_0x1cc069,_0x567102=getCurrentTime(),_0x1a2365=[];for(var _0x562ac8=0x1fe;_0x562ac8<=0x276;_0x562ac8+=0xa){_0x1a2365[_0xa8d9e(0x201)](_0x562ac8);}var _0x1ed215=_0x1a2365[_0xa8d9e(0x253)](_0x1e7683=>_0x1e7683>_0x567102),_0x18eaf7=_0x1a2365[_0x1ed215],_0x1e4695=Math['floor'](_0x18eaf7/0x3c),_0x184aad=_0x18eaf7%0x3c,_0x24969a=document[_0xa8d9e(0x1cb)](_0xa8d9e(0x21f)),_0x17b096=document[_0xa8d9e(0x1cb)](_0xa8d9e(0x1af));if(_0x1ed215===-0x1||_0x18eaf7>0x276||isWeekend())_0x24969a['textContent']=_0xa8d9e(0x206),_0x17b096[_0xa8d9e(0x1c5)]=_0xa8d9e(0x1a9);else{_0x24969a[_0xa8d9e(0x1c5)]=('0'+_0x1e4695)['slice'](-0x2)+':'+('0'+_0x184aad)[_0xa8d9e(0x1df)](-0x2);if(_0x567102>_0x18eaf7)_0x17b096['textContent']=_0xa8d9e(0x1a9);else{var _0x352b56=_0x18eaf7-_0x567102;if(_0x352b56>0x0){var _0x1e4695=Math[_0xa8d9e(0x20d)](_0x352b56/0x3c),_0x184aad=_0x352b56%0x3c,_0x1dec7d='';_0x1e4695>0x0&&(_0x1dec7d+=_0x1e4695+_0xa8d9e(0x1a8)),_0x184aad>0x0&&(_0x1dec7d+=_0x184aad+'분\x20'),_0x17b096[_0xa8d9e(0x1c5)]=_0x1dec7d+'';}else _0x17b096[_0xa8d9e(0x1c5)]=_0xa8d9e(0x25a);}}}function _0x6c42(){var _0x38c47c=['left:\x200px','myModal','https://www.du.ac.kr/submenu.do?menuUrl=sF2VWrsJ3JbYcT8w4SOj7w%3d%3d&','floor','createElement','content','119','234000079','</td></tr>','234000075','startsWith','#icon-button2','#icon-button105','none','closeCalendarBtn','234000069','responseText','updateTime_2','onclick','getMonth','#icon-button124','.Bokjeong_time1\x20p:last-child','https://www.du.ac.kr/submenu.do?menuUrl=g2jLoGsiMR3n3jBlLbWLpw%3d%3d&','204000083','padStart','.Hanam_time2\x20p','https://www.du.ac.kr/detail.do?menuUrl=VYlDwaWjKSwAGszRXT2bcg%3D%3D&board_seq=24075&row_num=1&pageNo=1&categoryid=&userpwd=','status','left:\x20','#icon-button126','locationNo1','https://www.du.ac.kr/submenu.do?menuUrl=%2bCuO1viNG3oA4OC8CxJYJg%3d%3d&','https://www.instagram.com/dongseoul.university/','#icon-button0','#icon-button101','href','#icon-button100','https://apis.data.go.kr/6410000/busarrivalservice/getBusArrivalList','#icon-button110','https://portal.du.ac.kr/login.jsp','instagramIcon','#icon-button114','.touch_slide2','1117','appendChild','forEach','attendanceModal','분</span>\x20','send','green','https://www.du.ac.kr/submenu.do?menuUrl=Pq45DK2FRS9f8inD1oNqOA%3d%3d&','https://www.du.ac.kr/submenu.do?menuUrl=mgephqOMYERCbwCnwyxbrg%3d%3d&','https://www.du.ac.kr/submenu.do?menuUrl=VYlDwaWjKSwAGszRXT2bcg%3d%3d&','cmap-myModal','234001738','includes','8069536NYKdnQ','916160oxfhSD','classList','https://www.ygoon.com/','500-1A','https://www.isic.co.kr/du/duIndex.jsp','204000149','https://www.du.ac.kr/submenu.do?menuUrl=aZ%2bCFV3rkCXxn2YmJUm7Qg%3d%3d&','https://www.du.ac.kr/submenu.do?menuUrl=jGtgkYL3zRdkqwe9jNol2Q%3d%3d&','204000007','204000018','#icon-button112','onload','busArrivalInfo_2','nwaefISD6ee0vv94Hv+1FadsVRGtiqHOGQZlDS6mEPovUFla146hAPT6zLMjmsWR8TV6vfjeRj+irmYtXd5a7g==','#icon-button104','busInfo','findIndex','100\x20(출근)','https://lms.du.ac.kr/login.php','description','updateTime_3','match','<tr><td>','곧\x20도착','#icon-button115','#icon-button117','.busarea','반디1','https://www.du.ac.kr/submenu.do?menuUrl=dbhyu4aXBhM9JSQ9FVFGUg%3d%3d&','https://www.youtube.com/channel/UCBLac80saErri-wSn2N8JpQ','querySelectorAll','</span>','attendance-button','https://dlibrary.du.ac.kr/','.cmap-close','https://counsel.du.ac.kr/counsel/Main.do','#icon-button5','https://www.du.ac.kr/submenu.do?menuUrl=3ZqNYgyaL4YCzismnO%2bZ6A%3d%3d&','#icon-button121','<span\x20class=\x27arrivalTime_2\x27>(','#icon-button4','addEventListener','.slide_next_button','.Guri_time2\x20p','https://mail.du.ac.kr/mail/login','https://www.du.ac.kr/submenu.do?menuUrl=zrUBv6HE%2fuNuCmtgpW4HzA%3d%3d&','#icon-button113','GET','style','.touch_slide1','.Hanam_time1\x20p:nth-child(2)','.Namyangju_time2\x20p','#icon-button108','#icon-button131','https://www.du.ac.kr/submenu.do?menuord=4&submenuord=13&','#icon-button130','https://play.google.com/store/apps/details?id=com.dong_campus&pcampaignid=web_share','remove','transform','<span>현재\x20버스\x20도착정보가\x20없습니다.</span>','886356JkYuQZ','204000150','body','.slide','500-1','red','#icon-button128','<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','https://www.du.ac.kr/submenu.do?menuUrl=aI4A%2bH2x9eItZ%2ft2pXFHhg%3d%3d&','2643684jAvyFQ','closeBtn','357','innerHTML','#icon-button119','시간\x20','운행\x20종료','setAttribute','https://portal.du.ac.kr','10MrsyeL','mouseenter','500-2','.Bokjeong_time2\x20p:last-child','open','https://dudream.du.ac.kr/','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','.slide_item','#icon-button102','target','predictTime1','234000040','09:00','add','offsetWidth','#icon-button116','deg)','<span\x20style=\x27color:','905971hrCSuM','반디1-1','text/xml','234000009','<tbody>','<thead><tr><th>날짜</th><th>메뉴</th></tr></thead>','routeId','textContent','clientWidth','rotate(','287948CPXbzH','08:00','번째\x20전)</span>','querySelector','opacity','https://www.du.ac.kr/submenu.do?menuUrl=fxlHsjubVTalTZEV27h0FA%3d%3d&','#icon-button129','length','https://www.du.ac.kr/submenu.do?menuUrl=LDuhG8qKuj0AZL5oCBQUYQ%3d%3d&','appdownmodal_downloadButton','.Namyangju_time1\x20p:nth-child(2)','.slide_pagination','youtubeIcon','scrollHeight','\x20</span>\x20<span\x20class=\x27arrivalTime\x27>','updateTime_1','onreadystatechange','#icon-button125','18002628ucLsPc','</tbody></table>','userAgent','getDay','</ul></td></tr>','slice','serviceKey','초\x20전\x20업데이트','trim','getElementsByTagName','.Guri_time1\x20p:nth-child(2)','location','2dMMnnp','btn6','readyState','.slide_pagination\x20>\x20li','#icon-button109','animate','100','setItem','<span\x20class=\x27routeId\x27>','getElementsByClassName','getHours','busArrivalInfo','date','</td><td><ul>','#icon-button106','div','getElementById','227000003','active','split','stationId','appdownmodal_modalClosed','https://www.du.ac.kr/submenu.do?menuUrl=ndTfMlfcorVznwKzBSpK1g%3d%3d&','https://www.du.ac.kr/submenu.do?menuUrl=0C4XuWq%2bb7eTLK7XIpfXOQ%3d%3d&','<table>','busArrivalList','#icon-button118','push','block','getMinutes','click','#icon-button120','08:30','display','parseFromString','500-2N'];_0x6c42=function(){return _0x38c47c;};return _0x6c42();}calculateBusTime(),document['addEventListener']('DOMContentLoaded',function(){var _0x20ee2b=_0x1cc069,_0x13c644=new Date(),_0x4153d5=_0x13c644[_0x20ee2b(0x1dd)](),_0x2ecf78=_0x4153d5===0x0||_0x4153d5===0x6;if(_0x2ecf78){document[_0x20ee2b(0x1cb)](_0x20ee2b(0x1d2))['textContent']=_0x20ee2b(0x1c9),document[_0x20ee2b(0x1cb)](_0x20ee2b(0x1e4))[_0x20ee2b(0x1c5)]='08:30',document[_0x20ee2b(0x1cb)](_0x20ee2b(0x190))['textContent']=_0x20ee2b(0x1b8),document[_0x20ee2b(0x1cb)](_0x20ee2b(0x191))[_0x20ee2b(0x1c5)]=_0x20ee2b(0x1a9),document[_0x20ee2b(0x1cb)](_0x20ee2b(0x26e))[_0x20ee2b(0x1c5)]=_0x20ee2b(0x1a9),document[_0x20ee2b(0x1cb)](_0x20ee2b(0x223))[_0x20ee2b(0x1c5)]=_0x20ee2b(0x1a9);return;}var _0x401116=_0x13c644[_0x20ee2b(0x1f0)](),_0x3b3e04=_0x13c644[_0x20ee2b(0x203)](),_0x43b80b=_0x401116*0x3c+_0x3b3e04,_0x3d3cad=document[_0x20ee2b(0x1cb)](_0x20ee2b(0x1d2))['textContent'][_0x20ee2b(0x1f9)](':'),_0x5d251e=parseInt(_0x3d3cad[0x0]),_0x8ede3a=parseInt(_0x3d3cad[0x1]),_0x3723c4=_0x5d251e*0x3c+_0x8ede3a,_0x12e6b2=document[_0x20ee2b(0x1cb)](_0x20ee2b(0x1e4))[_0x20ee2b(0x1c5)][_0x20ee2b(0x1f9)](':'),_0xf2d4d6=parseInt(_0x12e6b2[0x0]),_0x4855e1=parseInt(_0x12e6b2[0x1]),_0x570637=_0xf2d4d6*0x3c+_0x4855e1,_0x2cf570=document[_0x20ee2b(0x1cb)](_0x20ee2b(0x190))['textContent']['split'](':'),_0x3fb9b1=parseInt(_0x2cf570[0x0]),_0x431b76=parseInt(_0x2cf570[0x1]),_0x53dd15=_0x3fb9b1*0x3c+_0x431b76;if(_0x43b80b<_0x3723c4){var _0x1135a0=_0x3723c4-_0x43b80b,_0x4c4b88=Math[_0x20ee2b(0x20d)](_0x1135a0/0x3c),_0x3a95ed=_0x1135a0%0x3c;_0x4c4b88>0x0?document[_0x20ee2b(0x1cb)](_0x20ee2b(0x191))[_0x20ee2b(0x1c5)]=_0x4c4b88+_0x20ee2b(0x1a8)+_0x3a95ed+'분':document[_0x20ee2b(0x1cb)](_0x20ee2b(0x191))[_0x20ee2b(0x1c5)]=_0x3a95ed+'분';}else document['querySelector'](_0x20ee2b(0x191))[_0x20ee2b(0x1c5)]=_0x20ee2b(0x1a9);if(_0x43b80b<_0x570637){var _0x1135a0=_0x570637-_0x43b80b,_0x4c4b88=Math[_0x20ee2b(0x20d)](_0x1135a0/0x3c),_0x3a95ed=_0x1135a0%0x3c;_0x4c4b88>0x0?document[_0x20ee2b(0x1cb)](_0x20ee2b(0x26e))[_0x20ee2b(0x1c5)]=_0x4c4b88+'시간\x20'+_0x3a95ed+'분':document[_0x20ee2b(0x1cb)](_0x20ee2b(0x26e))['textContent']=_0x3a95ed+'분';}else document[_0x20ee2b(0x1cb)]('.Guri_time2\x20p')[_0x20ee2b(0x1c5)]=_0x20ee2b(0x1a9);if(_0x43b80b<_0x53dd15){var _0x1135a0=_0x53dd15-_0x43b80b,_0x4c4b88=Math[_0x20ee2b(0x20d)](_0x1135a0/0x3c),_0x3a95ed=_0x1135a0%0x3c;_0x4c4b88>0x0?document[_0x20ee2b(0x1cb)](_0x20ee2b(0x223))[_0x20ee2b(0x1c5)]=_0x4c4b88+_0x20ee2b(0x1a8)+_0x3a95ed+'분':document[_0x20ee2b(0x1cb)](_0x20ee2b(0x223))['textContent']=_0x3a95ed+'분';}else document[_0x20ee2b(0x1cb)]('.Hanam_time2\x20p')['textContent']=_0x20ee2b(0x1a9);});var scrollToBottomButton2=document[_0x1cc069(0x1cb)](_0x1cc069(0x22b));scrollToBottomButton2[_0x1cc069(0x26c)]('click',function(){var _0x372c07=_0x1cc069;window['scrollTo'](0x0,document[_0x372c07(0x19c)][_0x372c07(0x1d5)]);}),document[_0x1cc069(0x1cb)](_0x1cc069(0x265))['onclick']=function(){var _0x4f75ca=_0x1cc069;document[_0x4f75ca(0x1f6)](_0x4f75ca(0x23f))[_0x4f75ca(0x18e)][_0x4f75ca(0x207)]=_0x4f75ca(0x217);},window[_0x1cc069(0x21c)]=function(_0x416749){var _0x39504c=_0x1cc069;_0x416749['target']==document[_0x39504c(0x1f6)](_0x39504c(0x20b))&&(document[_0x39504c(0x1f6)](_0x39504c(0x23f))['style'][_0x39504c(0x207)]=_0x39504c(0x217));};let currentRotation=0x0;function rotateImage(_0x2d63ac){var _0x3de5e1=_0x1cc069;currentRotation+=0x168,_0x2d63ac[_0x3de5e1(0x18e)][_0x3de5e1(0x198)]=_0x3de5e1(0x1c7)+currentRotation+_0x3de5e1(0x1bc),updateTime_1=0x0,updateTime_2=0x0,updateTime_3=0x0,setTimeout(function(){var _0x448d39=_0x3de5e1;getBusArrivalInfo(),getBusArrivalInfo_2(),calculateBusTime();var _0xd8b164=document['querySelectorAll'](_0x448d39(0x25d));_0xd8b164['forEach'](function(_0x3556fd){var _0x1376ae=_0x448d39;_0x3556fd[_0x1376ae(0x244)][_0x1376ae(0x197)](_0x1376ae(0x1eb)),void _0x3556fd[_0x1376ae(0x1ba)],_0x3556fd['classList'][_0x1376ae(0x1b9)]('animate');});},0x1f4);}window[_0x1cc069(0x24e)]=function(){var _0x18486d=_0x1cc069;document['body'][_0x18486d(0x18e)]['opacity']=0x0,setTimeout(function(){var _0x598b19=_0x18486d;document[_0x598b19(0x19c)][_0x598b19(0x18e)][_0x598b19(0x1cc)]=0x1;},0x64);};var btn6Elements=document[_0x1cc069(0x1ef)](_0x1cc069(0x1e7));for(var i=0x0;i<btn6Elements[_0x1cc069(0x1cf)];i++){btn6Elements[i][_0x1cc069(0x26c)]('click',openAttendanceModal);}function openAttendanceModal(){var _0x50f673=_0x1cc069;document[_0x50f673(0x1f6)](_0x50f673(0x238))[_0x50f673(0x18e)]['display']=_0x50f673(0x202);}function closeAttendanceModal(){var _0xe6bff4=_0x1cc069;document[_0xe6bff4(0x1f6)]('attendanceModal')[_0xe6bff4(0x18e)][_0xe6bff4(0x207)]=_0xe6bff4(0x217);}window[_0x1cc069(0x21c)]=function(_0x2217b1){var _0x407246=_0x1cc069;_0x2217b1[_0x407246(0x1b5)]==document[_0x407246(0x1f6)](_0x407246(0x238))&&closeAttendanceModal();};const attendanceButtons=document[_0x1cc069(0x1ef)](_0x1cc069(0x263));for(let i=0x0;i<attendanceButtons[_0x1cc069(0x1cf)];i++){attendanceButtons[i][_0x1cc069(0x26c)](_0x1cc069(0x204),function(){var _0x1dec98=_0x1cc069;window[_0x1dec98(0x1b0)](_0x1dec98(0x1ab));});}function parseAndDisplayMenu(_0x19eea6){var _0x389d56=_0x1cc069,_0x33bddc=_0x19eea6[_0x389d56(0x1f9)]('\x0a'),_0x3870ff=_0x389d56(0x1fe);_0x3870ff+=_0x389d56(0x1c3),_0x3870ff+=_0x389d56(0x1c2);var _0x2e19f8='',_0x397fb8='';return _0x33bddc[_0x389d56(0x237)](function(_0xe3c91d){var _0x34b0ca=_0x389d56;_0xe3c91d=_0xe3c91d[_0x34b0ca(0x1e2)](),_0xe3c91d['length']>0x0&&(_0xe3c91d[_0x34b0ca(0x258)](str)?(_0x2e19f8!==''&&(_0x3870ff+=_0x34b0ca(0x259)+_0x2e19f8+_0x34b0ca(0x1f3)+_0x397fb8+_0x34b0ca(0x1de)),_0x2e19f8=_0xe3c91d,_0x397fb8=''):_0x397fb8+='<li>'+_0xe3c91d+'</li>');}),_0x2e19f8!==''&&_0x397fb8!==''&&(_0x3870ff+=_0x389d56(0x259)+_0x2e19f8+_0x389d56(0x1f3)+_0x397fb8+'</ul></td></tr>'),_0x3870ff+=_0x389d56(0x1db),_0x3870ff;}document['getElementById']('menuTable')['innerHTML']=parseAndDisplayMenu(tbodyData);function getTodayDate(){var _0xac7205=_0x1cc069,_0x88e93=new Date(),_0x4967bd=String(_0x88e93['getDate']())[_0xac7205(0x222)](0x2,'0'),_0x3cb30a=String(_0x88e93[_0xac7205(0x21d)]()+0x1)[_0xac7205(0x222)](0x2,'0');return _0x3cb30a+'/'+_0x4967bd;}function extractMenuByDate(_0x44c548,_0x24a544){var _0x3e4df6=_0x1cc069,_0x5d917c=_0x44c548[_0x3e4df6(0x1f9)]('\x0a'),_0x1ef354='',_0x48cad0=![];for(var _0x46fbb7=0x0;_0x46fbb7<_0x5d917c[_0x3e4df6(0x1cf)];_0x46fbb7++){if(_0x5d917c[_0x46fbb7][_0x3e4df6(0x214)](_0x24a544))_0x48cad0=!![];else{if(_0x48cad0&&/^\d\d\/\d\d/['test'](_0x5d917c[_0x46fbb7]))break;}_0x48cad0&&(_0x1ef354+=_0x5d917c[_0x46fbb7]+'\x0a');}return _0x1ef354[_0x3e4df6(0x1e2)]();}var calendarData='\x0a\x0a\x20\x20\x20\x2001-01(수)\x0a\x20\x20\x20\x20신정\x0a\x20\x20\x20\x2001-28(화)\x20~\x2030(목)\x0a\x20\x20\x20\x20설연휴\x0a\x20\x20\x20\x2002-14(금)\x0a\x20\x20\x20\x20학위수여식\x0a\x20\x20\x20\x2002-20(목)\x0a\x20\x20\x20\x20입학식\x0a\x20\x20\x20\x2003-01(토)\x0a\x20\x20\x20\x20삼일절\x0a\x20\x20\x20\x2003-03(월)\x0a\x20\x20\x20\x20대체공휴일\x0a\x20\x20\x20\x2003-04(화)\x0a\x20\x20\x20\x201학기\x20개시\x0a\x20\x20\x20\x2003-28(금)\x0a\x20\x20\x20\x20수업일수\x201/4선\x0a\x20\x20\x20\x2004-02(수)\x0a\x20\x20\x20\x20학기개시\x2030일\x0a\x20\x20\x20\x2005-01(목)\x0a\x20\x20\x20\x20근로자의날\x0a\x20\x20\x20\x2005-02(금)\x0a\x20\x20\x20\x20학기개시\x2060일\x0a\x20\x20\x20\x2005-05(월)\x0a\x20\x20\x20\x20어린이날,\x20부처님오신날\x0a\x20\x20\x20\x2005-06(화)\x0a\x20\x20\x20\x20대체공휴일\x0a\x20\x20\x20\x2005-14(수)\x20~\x2016(금)\x0a\x20\x20\x20\x20복정체전(예정)\x0a\x20\x20\x20\x2005-29(목)\x0a\x20\x20\x20\x20수업일수\x203/4선\x0a\x20\x20\x20\x2006-01(일)\x0a\x20\x20\x20\x20학기개시\x2090일\x0a\x20\x20\x20\x2006-06(금)\x0a\x20\x20\x20\x20현충일\x0a\x20\x20\x20\x2006-25(수)\x0a\x20\x20\x20\x201학기\x20종강\x0a\x20\x20\x20\x2006-26(목)\x0a\x20\x20\x20\x20하계방학\x0a\x20\x20\x20\x2008-08(금)\x0a\x20\x20\x20\x20후기\x20학위수여\x0a\x20\x20\x20\x2008-15(금)\x0a\x20\x20\x20\x20광복절\x0a\x20\x20\x20\x2008-25(월)\x0a\x20\x20\x20\x202학기\x20개시\x20\x20\x0a\x20\x20\x20\x2009-18(목)\x0a\x20\x20\x20\x20수업일수\x201/4선\x0a\x20\x20\x20\x2009-24(수)\x0a\x20\x20\x20\x20학기개시\x2030일\x0a\x20\x20\x20\x2010-02(목)\x0a\x20\x20\x20\x20개교기념일\x0a\x20\x20\x20\x2010-03(금)\x0a\x20\x20\x20\x20개천절\x0a\x20\x20\x20\x2010-05(일)\x20~\x2007(화)\x0a\x20\x20\x20\x20추석연휴\x0a\x20\x20\x20\x2010-08(수)\x0a\x20\x20\x20\x20대체공휴일\x0a\x20\x20\x20\x2010-09(목)\x0a\x20\x20\x20\x20한글날\x0a\x20\x20\x20\x2010-23(목)\x0a\x20\x20\x20\x20학기개시\x2060일,\x20수업일수\x201/2선\x0a\x20\x20\x20\x2011-19(수)\x0a\x20\x20\x20\x20수업일수\x203/4선\x0a\x20\x20\x20\x2011-22(토)\x0a\x20\x20\x20\x20학기개시\x2090일\x0a\x20\x20\x20\x2012-15(월)\x0a\x20\x20\x20\x202학기\x20종강\x0a\x20\x20\x20\x2012-16(화)\x0a\x20\x20\x20\x20동계방학\x0a\x20\x20\x20\x2012-25(목)\x0a\x20\x20\x20\x20성탄절\x0a';function parseCalendarData(_0x499ab1){var _0x9db9a3=_0x1cc069;const _0x57d04d=_0x499ab1[_0x9db9a3(0x1e2)]()[_0x9db9a3(0x1f9)]('\x0a'),_0x50534d=[];for(let _0xeba48=0x0;_0xeba48<_0x57d04d[_0x9db9a3(0x1cf)];_0xeba48+=0x2){const _0x431830=_0x57d04d[_0xeba48],_0x237af1=_0x57d04d[_0xeba48+0x1];_0x50534d['push']({'date':_0x431830,'description':_0x237af1});}return _0x50534d;}function updateCalendarModal(_0x5b6da6){var _0x523bdd=_0x1cc069;const _0x383623=document['getElementById']('calendarBody');let _0x527a30='';for(let _0x203a36 of _0x5b6da6){_0x527a30+=_0x523bdd(0x1a1)+_0x203a36[_0x523bdd(0x1f2)]+_0x523bdd(0x1b2)+_0x203a36[_0x523bdd(0x256)]+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>';}_0x383623[_0x523bdd(0x1a6)]=_0x527a30;}const parsedEvents=parseCalendarData(calendarData);updateCalendarModal(parsedEvents),document[_0x1cc069(0x1cb)](_0x1cc069(0x26b))[_0x1cc069(0x26c)]('click',function(){var _0x531a63=_0x1cc069;window['location']['href']=_0x531a63(0x231);}),document[_0x1cc069(0x1cb)](_0x1cc069(0x215))[_0x1cc069(0x26c)](_0x1cc069(0x204),function(){var _0x54d816=_0x1cc069;window[_0x54d816(0x1e5)]['href']=_0x54d816(0x255);}),document[_0x1cc069(0x1cb)](_0x1cc069(0x267))['addEventListener'](_0x1cc069(0x204),function(){var _0x4b6fe2=_0x1cc069;window[_0x4b6fe2(0x1e5)]['href']=_0x4b6fe2(0x25f);}),document[_0x1cc069(0x1cb)](_0x1cc069(0x22c))[_0x1cc069(0x26c)]('click',function(){var _0x22ecaa=_0x1cc069;window[_0x22ecaa(0x1e5)][_0x22ecaa(0x22d)]=_0x22ecaa(0x229);}),document[_0x1cc069(0x1cb)](_0x1cc069(0x1b4))[_0x1cc069(0x26c)](_0x1cc069(0x204),function(){var _0x5cebfb=_0x1cc069;window[_0x5cebfb(0x1e5)]['href']=_0x5cebfb(0x249);}),document['querySelector']('#icon-button103')[_0x1cc069(0x26c)](_0x1cc069(0x204),function(){var _0x2ef19e=_0x1cc069;window[_0x2ef19e(0x1e5)][_0x2ef19e(0x22d)]=_0x2ef19e(0x1cd);}),document[_0x1cc069(0x1cb)](_0x1cc069(0x251))[_0x1cc069(0x26c)](_0x1cc069(0x204),function(){var _0x53d545=_0x1cc069;window['location']['href']=_0x53d545(0x1cd);}),document[_0x1cc069(0x1cb)]('#icon-button105')[_0x1cc069(0x26c)](_0x1cc069(0x204),function(){var _0x36d7b7=_0x1cc069;window[_0x36d7b7(0x1e5)][_0x36d7b7(0x22d)]=_0x36d7b7(0x220);}),document[_0x1cc069(0x1cb)](_0x1cc069(0x216))[_0x1cc069(0x26c)]('click',function(){var _0x3b389f=_0x1cc069;window[_0x3b389f(0x1e5)][_0x3b389f(0x22d)]='https://www.du.ac.kr/submenu.do?menuUrl=g2jLoGsiMR3n3jBlLbWLpw%3d%3d&';}),document[_0x1cc069(0x1cb)](_0x1cc069(0x1f4))[_0x1cc069(0x26c)](_0x1cc069(0x204),function(){var _0x178578=_0x1cc069;window[_0x178578(0x1e5)][_0x178578(0x22d)]=_0x178578(0x220);}),document[_0x1cc069(0x1cb)]('#icon-button107')[_0x1cc069(0x26c)]('click',function(){var _0x22a01f=_0x1cc069;window[_0x22a01f(0x1e5)][_0x22a01f(0x22d)]=_0x22a01f(0x220);}),document['querySelector'](_0x1cc069(0x192))[_0x1cc069(0x26c)](_0x1cc069(0x204),function(){var _0xa6b13a=_0x1cc069;window[_0xa6b13a(0x1e5)][_0xa6b13a(0x22d)]=_0xa6b13a(0x1fc);}),document[_0x1cc069(0x1cb)](_0x1cc069(0x1ea))[_0x1cc069(0x26c)](_0x1cc069(0x204),function(){var _0x10670a=_0x1cc069;window[_0x10670a(0x1e5)][_0x10670a(0x22d)]=_0x10670a(0x1fc);}),document[_0x1cc069(0x1cb)](_0x1cc069(0x230))[_0x1cc069(0x26c)]('click',function(){var _0x56a55c=_0x1cc069;window[_0x56a55c(0x1e5)][_0x56a55c(0x22d)]=_0x56a55c(0x270);}),document[_0x1cc069(0x1cb)]('#icon-button111')[_0x1cc069(0x26c)]('click',function(){var _0x1e9717=_0x1cc069;window[_0x1e9717(0x1e5)][_0x1e9717(0x22d)]=_0x1e9717(0x24a);}),document[_0x1cc069(0x1cb)](_0x1cc069(0x24d))['addEventListener'](_0x1cc069(0x204),function(){var _0x5088dd=_0x1cc069;window['location'][_0x5088dd(0x22d)]=_0x5088dd(0x194);}),document[_0x1cc069(0x1cb)](_0x1cc069(0x18c))[_0x1cc069(0x26c)](_0x1cc069(0x204),function(){var _0x16bc8e=_0x1cc069;window[_0x16bc8e(0x1e5)][_0x16bc8e(0x22d)]='https://www.du.ac.kr/submenu.do?menuord=4&submenuord=18&';}),document[_0x1cc069(0x1cb)](_0x1cc069(0x233))[_0x1cc069(0x26c)](_0x1cc069(0x204),function(){var _0x3eada3=_0x1cc069;window[_0x3eada3(0x1e5)][_0x3eada3(0x22d)]=_0x3eada3(0x268);}),document[_0x1cc069(0x1cb)](_0x1cc069(0x25b))['addEventListener'](_0x1cc069(0x204),function(){var _0x312049=_0x1cc069;window[_0x312049(0x1e5)]['href']=_0x312049(0x1a2);}),document['querySelector'](_0x1cc069(0x1bb))['addEventListener'](_0x1cc069(0x204),function(){var _0x25ae7f=_0x1cc069;window['location'][_0x25ae7f(0x22d)]=_0x25ae7f(0x224);}),document['querySelector'](_0x1cc069(0x25c))[_0x1cc069(0x26c)](_0x1cc069(0x204),function(){var _0x539d47=_0x1cc069;window[_0x539d47(0x1e5)][_0x539d47(0x22d)]=_0x539d47(0x23d);}),document[_0x1cc069(0x1cb)](_0x1cc069(0x200))['addEventListener'](_0x1cc069(0x204),function(){var _0x53406f=_0x1cc069;window['location'][_0x53406f(0x22d)]=_0x53406f(0x26f);}),document['querySelector'](_0x1cc069(0x1a7))['addEventListener'](_0x1cc069(0x204),function(){var _0x3edd03=_0x1cc069;window[_0x3edd03(0x1e5)]['href']=_0x3edd03(0x1d0);}),document[_0x1cc069(0x1cb)](_0x1cc069(0x205))[_0x1cc069(0x26c)]('click',function(){var _0x2bfba8=_0x1cc069;window[_0x2bfba8(0x1e5)]['href']=_0x2bfba8(0x1fd);}),document[_0x1cc069(0x1cb)](_0x1cc069(0x269))[_0x1cc069(0x26c)](_0x1cc069(0x204),function(){var _0x306df0=_0x1cc069;window[_0x306df0(0x1e5)][_0x306df0(0x22d)]='https://www.du.ac.kr/submenu.do?menuUrl=u9%2b5PWy5e%2bP81sj%2fRoRr1Q%3d%3d&';}),document[_0x1cc069(0x1cb)]('#icon-button122')['addEventListener']('click',function(){var _0x40cda9=_0x1cc069;window[_0x40cda9(0x1e5)][_0x40cda9(0x22d)]='https://dorm.du.ac.kr/dorm/Main.do';}),document['querySelector']('#icon-button123')['addEventListener'](_0x1cc069(0x204),function(){var _0x3509d0=_0x1cc069;window['location'][_0x3509d0(0x22d)]=_0x3509d0(0x20c);}),document[_0x1cc069(0x1cb)](_0x1cc069(0x21e))[_0x1cc069(0x26c)](_0x1cc069(0x204),function(){var _0xb339a6=_0x1cc069;window[_0xb339a6(0x1e5)][_0xb339a6(0x22d)]='https://play.google.com/store/apps/details?id=com.keundoum.powerbox&hl=ko-KR';}),document[_0x1cc069(0x1cb)](_0x1cc069(0x1d9))[_0x1cc069(0x26c)](_0x1cc069(0x204),function(){var _0x3f802a=_0x1cc069;window[_0x3f802a(0x1e5)]['href']='https://www.du.ac.kr/submenu.do?menuUrl=%2bcwxrqXs%2fJtLSsDYJ0367Q%3d%3d&';}),document[_0x1cc069(0x1cb)](_0x1cc069(0x227))[_0x1cc069(0x26c)](_0x1cc069(0x204),function(){var _0xd50822=_0x1cc069;window['location']['href']=_0xd50822(0x23c);}),document[_0x1cc069(0x1cb)]('#icon-button127')[_0x1cc069(0x26c)]('click',function(){var _0xcbe424=_0x1cc069;window[_0xcbe424(0x1e5)][_0xcbe424(0x22d)]=_0xcbe424(0x1b1);}),document['querySelector'](_0x1cc069(0x1a0))[_0x1cc069(0x26c)]('click',function(){var _0x45241d=_0x1cc069;window[_0x45241d(0x1e5)][_0x45241d(0x22d)]=_0x45241d(0x264);}),document['querySelector'](_0x1cc069(0x1ce))[_0x1cc069(0x26c)](_0x1cc069(0x204),function(){var _0x22c6c8=_0x1cc069;window[_0x22c6c8(0x1e5)][_0x22c6c8(0x22d)]=_0x22c6c8(0x266);}),document['querySelector'](_0x1cc069(0x195))[_0x1cc069(0x26c)]('click',function(){var _0x50e61a=_0x1cc069;window[_0x50e61a(0x1e5)]['href']=_0x50e61a(0x247);}),document[_0x1cc069(0x1cb)](_0x1cc069(0x193))[_0x1cc069(0x26c)](_0x1cc069(0x204),function(){var _0x5dcc6f=_0x1cc069;window['location'][_0x5dcc6f(0x22d)]=_0x5dcc6f(0x245);}),document[_0x1cc069(0x1cb)](_0x1cc069(0x18f))[_0x1cc069(0x26c)](_0x1cc069(0x204),function(){var _0x44ae19=_0x1cc069;window[_0x44ae19(0x1e5)]['href']='';}),document[_0x1cc069(0x1cb)](_0x1cc069(0x234))[_0x1cc069(0x26c)]('click',function(){var _0x5b3094=_0x1cc069;window[_0x5b3094(0x1e5)][_0x5b3094(0x22d)]='';}),document['getElementById'](_0x1cc069(0x232))[_0x1cc069(0x26c)](_0x1cc069(0x204),function(){var _0x1164cc=_0x1cc069;window['location'][_0x1164cc(0x22d)]=_0x1164cc(0x22a);}),document['getElementById'](_0x1cc069(0x1d4))[_0x1cc069(0x26c)](_0x1cc069(0x204),function(){var _0x54cf81=_0x1cc069;window['location'][_0x54cf81(0x22d)]=_0x54cf81(0x260);});function getBusArrivalInfo(){var _0x3cdc1c=_0x1cc069,_0x1b192f=new XMLHttpRequest(),_0x543aa1=_0x3cdc1c(0x22f),_0x317bbb=_0x3cdc1c(0x250),_0x57ecfe=0xc28cb15,_0x220ef5='?'+encodeURIComponent(_0x3cdc1c(0x1e0))+'='+encodeURIComponent(_0x317bbb);_0x220ef5+='&'+encodeURIComponent(_0x3cdc1c(0x1fa))+'='+encodeURIComponent(_0x57ecfe),_0x1b192f[_0x3cdc1c(0x1b0)]('GET',_0x543aa1+_0x220ef5),_0x1b192f[_0x3cdc1c(0x1d8)]=function(){var _0x76506f=_0x3cdc1c;if(this[_0x76506f(0x1e8)]==0x4&&this[_0x76506f(0x225)]==0xc8){var _0x2d6639=this[_0x76506f(0x21a)];displayBusArrivalTimes(_0x2d6639);}},_0x1b192f[_0x3cdc1c(0x23a)]('');}function displayBusArrivalTimes(_0x555ff4){var _0x3d1d59=_0x1cc069,_0x2bdd55=new DOMParser()[_0x3d1d59(0x208)](_0x555ff4,_0x3d1d59(0x1c0)),_0x58f36a=_0x2bdd55[_0x3d1d59(0x1e3)](_0x3d1d59(0x1ff)),_0x4be7e1=document[_0x3d1d59(0x1f6)](_0x3d1d59(0x1f1));_0x4be7e1[_0x3d1d59(0x1a6)]='';if(_0x58f36a[_0x3d1d59(0x1cf)]===0x0){var _0x5b58bc=document[_0x3d1d59(0x20e)]('div');_0x5b58bc[_0x3d1d59(0x244)][_0x3d1d59(0x1b9)](_0x3d1d59(0x252)),_0x5b58bc[_0x3d1d59(0x1a6)]=_0x3d1d59(0x199),_0x4be7e1['appendChild'](_0x5b58bc);return;}for(var _0x258f16=0x0;_0x258f16<_0x58f36a['length'];_0x258f16++){var _0x3d8de4=_0x58f36a[_0x258f16][_0x3d1d59(0x1e3)](_0x3d1d59(0x1c4))[0x0][_0x3d1d59(0x1c5)],_0xdbebb7=_0x58f36a[_0x258f16][_0x3d1d59(0x1e3)](_0x3d1d59(0x1b6))[0x0][_0x3d1d59(0x1c5)],_0x35c808=parseInt(_0x58f36a[_0x258f16][_0x3d1d59(0x1e3)](_0x3d1d59(0x228))[0x0][_0x3d1d59(0x1c5)]),_0x3c58bc=formatRouteId(_0x3d8de4),_0x4d3557='<span\x20class=\x27routeId\x27>'+_0x3c58bc+_0x3d1d59(0x1d6)+_0xdbebb7+_0x3d1d59(0x239);_0x4d3557+=_0x3d1d59(0x26a)+_0x35c808+'번째\x20전)</span>';var _0x11deef=document[_0x3d1d59(0x20e)]('div');_0x11deef[_0x3d1d59(0x244)][_0x3d1d59(0x1b9)](_0x3d1d59(0x252)),_0x11deef['innerHTML']=_0x4d3557,_0x4be7e1[_0x3d1d59(0x236)](_0x11deef);}}function formatRouteId(_0x349c53){var _0x4bc9b6=_0x1cc069,_0x1f3257=_0x349c53,_0x2eb3fe='';switch(_0x349c53){case _0x4bc9b6(0x24b):_0x1f3257=_0x4bc9b6(0x1a5),_0x2eb3fe=_0x4bc9b6(0x23b);break;case _0x4bc9b6(0x1f7):_0x1f3257='30',_0x2eb3fe=_0x4bc9b6(0x23b);break;case'234000040':_0x1f3257=_0x4bc9b6(0x210),_0x2eb3fe=_0x4bc9b6(0x23b);break;case'234000069':_0x1f3257=_0x4bc9b6(0x235),_0x2eb3fe=_0x4bc9b6(0x19f);break;case'234000075':_0x1f3257='500-2',_0x2eb3fe=_0x4bc9b6(0x19f);break;case'234000079':_0x1f3257='500-1',_0x2eb3fe=_0x4bc9b6(0x19f);break;case'234001609':_0x1f3257=_0x4bc9b6(0x246),_0x2eb3fe=_0x4bc9b6(0x19f);break;case _0x4bc9b6(0x24c):_0x1f3257=_0x4bc9b6(0x1ec),_0x2eb3fe=_0x4bc9b6(0x23b);break;case'204000149':_0x1f3257=_0x4bc9b6(0x25e),_0x2eb3fe=_0x4bc9b6(0x19f);break;case _0x4bc9b6(0x19b):_0x1f3257=_0x4bc9b6(0x1bf),_0x2eb3fe='red';break;case _0x4bc9b6(0x240):_0x1f3257=_0x4bc9b6(0x209),_0x2eb3fe=_0x4bc9b6(0x19f);break;case _0x4bc9b6(0x221):_0x1f3257=_0x4bc9b6(0x254),_0x2eb3fe=_0x4bc9b6(0x23b);break;case _0x4bc9b6(0x1c1):_0x1f3257='32',_0x2eb3fe='green';break;}return _0x4bc9b6(0x1bd)+_0x2eb3fe+'\x27>'+_0x1f3257+'</span>';}getBusArrivalInfo();function getBusArrivalInfo_2(){var _0xa1ed2f=_0x1cc069,_0x9f69a9=new XMLHttpRequest(),_0x29e741=_0xa1ed2f(0x22f),_0x270228=_0xa1ed2f(0x250),_0x47766f=0x754d5b9,_0x921a7='?'+encodeURIComponent('serviceKey')+'='+encodeURIComponent(_0x270228);_0x921a7+='&'+encodeURIComponent(_0xa1ed2f(0x1fa))+'='+encodeURIComponent(_0x47766f),_0x9f69a9[_0xa1ed2f(0x1b0)](_0xa1ed2f(0x18d),_0x29e741+_0x921a7),_0x9f69a9[_0xa1ed2f(0x1d8)]=function(){var _0x97af26=_0xa1ed2f;if(this[_0x97af26(0x1e8)]==0x4&&this[_0x97af26(0x225)]==0xc8){var _0x2bc923=this['responseText'];displayBusArrivalTimes_2(_0x2bc923);}},_0x9f69a9[_0xa1ed2f(0x23a)]('');}function displayBusArrivalTimes_2(_0x2946c9){var _0x5b3c95=_0x1cc069,_0x4e932c=new DOMParser()['parseFromString'](_0x2946c9,_0x5b3c95(0x1c0)),_0x365306=_0x4e932c['getElementsByTagName']('busArrivalList'),_0x1aa332=document[_0x5b3c95(0x1f6)](_0x5b3c95(0x24f));_0x1aa332[_0x5b3c95(0x1a6)]='';if(_0x365306[_0x5b3c95(0x1cf)]===0x0){var _0x27a683=document[_0x5b3c95(0x20e)](_0x5b3c95(0x1f5));_0x27a683[_0x5b3c95(0x244)][_0x5b3c95(0x1b9)]('busInfo'),_0x27a683[_0x5b3c95(0x1a6)]=_0x5b3c95(0x199),_0x1aa332[_0x5b3c95(0x236)](_0x27a683);return;}for(var _0x3c32f1=0x0;_0x3c32f1<_0x365306[_0x5b3c95(0x1cf)];_0x3c32f1++){var _0x4e8621=_0x365306[_0x3c32f1][_0x5b3c95(0x1e3)](_0x5b3c95(0x1c4))[0x0][_0x5b3c95(0x1c5)],_0x444c33=_0x365306[_0x3c32f1]['getElementsByTagName']('predictTime1')[0x0][_0x5b3c95(0x1c5)],_0x27469b=parseInt(_0x365306[_0x3c32f1][_0x5b3c95(0x1e3)](_0x5b3c95(0x228))[0x0][_0x5b3c95(0x1c5)]),_0x264383=formatRouteId_2(_0x4e8621),_0x494ac0=_0x5b3c95(0x1ee)+_0x264383+'\x20</span>\x20<span\x20class=\x27arrivalTime\x27>'+_0x444c33+'분</span>\x20';_0x494ac0+=_0x5b3c95(0x26a)+_0x27469b+_0x5b3c95(0x1ca);var _0x1a3743=document[_0x5b3c95(0x20e)](_0x5b3c95(0x1f5));_0x1a3743[_0x5b3c95(0x244)]['add']('busInfo'),_0x1a3743[_0x5b3c95(0x1a6)]=_0x494ac0,_0x1aa332[_0x5b3c95(0x236)](_0x1a3743);}}function formatRouteId_2(_0x5d4361){var _0x183077=_0x1cc069,_0x1e5b7a=_0x5d4361,_0x3e270a='';switch(_0x5d4361){case _0x183077(0x24b):_0x1e5b7a=_0x183077(0x1a5),_0x3e270a='green';break;case _0x183077(0x1f7):_0x1e5b7a='30',_0x3e270a=_0x183077(0x23b);break;case _0x183077(0x1b7):_0x1e5b7a='119',_0x3e270a=_0x183077(0x23b);break;case _0x183077(0x219):_0x1e5b7a=_0x183077(0x235),_0x3e270a=_0x183077(0x19f);break;case _0x183077(0x213):_0x1e5b7a=_0x183077(0x1ae),_0x3e270a=_0x183077(0x19f);break;case _0x183077(0x211):_0x1e5b7a=_0x183077(0x19e),_0x3e270a=_0x183077(0x19f);break;case _0x183077(0x24c):_0x1e5b7a=_0x183077(0x1ec),_0x3e270a=_0x183077(0x23b);break;case _0x183077(0x248):_0x1e5b7a='반디1',_0x3e270a=_0x183077(0x19f);break;case _0x183077(0x19b):_0x1e5b7a='반디1-1',_0x3e270a=_0x183077(0x19f);break;case _0x183077(0x240):_0x1e5b7a=_0x183077(0x209),_0x3e270a=_0x183077(0x19f);break;case _0x183077(0x221):_0x1e5b7a=_0x183077(0x254),_0x3e270a='green';break;case _0x183077(0x1c1):_0x1e5b7a='32',_0x3e270a=_0x183077(0x23b);break;}return _0x183077(0x1bd)+_0x3e270a+'\x27>'+_0x1e5b7a+_0x183077(0x262);}getBusArrivalInfo_2();const slide=document['querySelector'](_0x1cc069(0x19d));let slideWidth=slide[_0x1cc069(0x1c6)];const prevBtn=document[_0x1cc069(0x1cb)]('.slide_prev_button'),nextBtn=document[_0x1cc069(0x1cb)](_0x1cc069(0x26d)),slideItems=document['querySelectorAll'](_0x1cc069(0x1b3)),maxSlide=slideItems[_0x1cc069(0x1cf)];let currSlide=0x1;const pagination=document[_0x1cc069(0x1cb)](_0x1cc069(0x1d3));for(let i=0x0;i<maxSlide;i++){if(i===0x0)pagination['innerHTML']+='<li\x20class=\x22active\x22>•</li>';else pagination[_0x1cc069(0x1a6)]+='<li>•</li>';}const paginationItems=document[_0x1cc069(0x261)](_0x1cc069(0x1e9));function nextMove(){var _0x57a35f=_0x1cc069;currSlide++;if(currSlide<=maxSlide){const _0x58c72c=slideWidth*(currSlide-0x1);slideItems['forEach'](_0x684cbd=>{var _0x3bb4c3=_0x20a4;_0x684cbd[_0x3bb4c3(0x1aa)](_0x3bb4c3(0x18e),_0x3bb4c3(0x226)+-_0x58c72c+'px');}),paginationItems['forEach'](_0x864892=>_0x864892[_0x57a35f(0x244)]['remove'](_0x57a35f(0x1f8))),paginationItems[currSlide-0x1][_0x57a35f(0x244)][_0x57a35f(0x1b9)](_0x57a35f(0x1f8));}else currSlide=0x1,slideItems[_0x57a35f(0x237)](_0x18af01=>{var _0xc741b4=_0x57a35f;_0x18af01[_0xc741b4(0x1aa)](_0xc741b4(0x18e),_0xc741b4(0x20a));}),paginationItems[_0x57a35f(0x237)](_0x31cad3=>_0x31cad3[_0x57a35f(0x244)]['remove'](_0x57a35f(0x1f8))),paginationItems[currSlide-0x1][_0x57a35f(0x244)][_0x57a35f(0x1b9)](_0x57a35f(0x1f8));clearInterval(autoSlideInterval),startAutoSlide();}function prevMove(){var _0x147b01=_0x1cc069;currSlide--;if(currSlide>0x0){const _0x42f430=slideWidth*(currSlide-0x1);slideItems['forEach'](_0x48e9cc=>{var _0x403066=_0x20a4;_0x48e9cc[_0x403066(0x1aa)](_0x403066(0x18e),'left:\x20'+-_0x42f430+'px');}),paginationItems[_0x147b01(0x237)](_0x3c4d8b=>_0x3c4d8b[_0x147b01(0x244)]['remove']('active')),paginationItems[currSlide-0x1][_0x147b01(0x244)]['add'](_0x147b01(0x1f8));}else{currSlide=maxSlide;const _0x2901af=slideWidth*(currSlide-0x1);slideItems[_0x147b01(0x237)](_0x162105=>{var _0x4375eb=_0x147b01;_0x162105[_0x4375eb(0x1aa)](_0x4375eb(0x18e),_0x4375eb(0x226)+-_0x2901af+'px');}),paginationItems[_0x147b01(0x237)](_0x55bcda=>_0x55bcda[_0x147b01(0x244)][_0x147b01(0x197)](_0x147b01(0x1f8))),paginationItems[currSlide-0x1]['classList']['add'](_0x147b01(0x1f8));}}for(let i=0x0;i<maxSlide;i++){paginationItems[i][_0x1cc069(0x26c)](_0x1cc069(0x204),()=>{var _0x2a9154=_0x1cc069;currSlide=i+0x1;const _0x49679c=slideWidth*(currSlide-0x1);slideItems[_0x2a9154(0x237)](_0xef78a6=>{var _0x273aa4=_0x2a9154;_0xef78a6[_0x273aa4(0x1aa)](_0x273aa4(0x18e),_0x273aa4(0x226)+-_0x49679c+'px');}),paginationItems['forEach'](_0x12ba53=>_0x12ba53[_0x2a9154(0x244)][_0x2a9154(0x197)](_0x2a9154(0x1f8))),paginationItems[currSlide-0x1]['classList']['add'](_0x2a9154(0x1f8));});}let autoSlideInterval;function startAutoSlide(){autoSlideInterval=setInterval(()=>{nextMove();},0xfa0);}function stopAutoSlide(){clearInterval(autoSlideInterval);}startAutoSlide(),slide['addEventListener'](_0x1cc069(0x1ad),()=>{stopAutoSlide();}),slide[_0x1cc069(0x26c)]('mouseleave',()=>{startAutoSlide();});function appdownmodal_isAndroidApp(){var _0x4cd084=_0x1cc069,_0xa17f99=navigator[_0x4cd084(0x1dc)]['toLowerCase']();return _0xa17f99[_0x4cd084(0x241)]('android')&&_0xa17f99[_0x4cd084(0x241)]('webview');}var appdownmodal_modal=document[_0x1cc069(0x1f6)]('appdownmodal_Modal');function appdownmodal_showModal(){var _0xdcccc6=_0x1cc069;appdownmodal_modal[_0xdcccc6(0x18e)][_0xdcccc6(0x207)]='block';}function appdownmodal_closeModal(){var _0x36ec59=_0x1cc069;appdownmodal_modal['style'][_0x36ec59(0x207)]=_0x36ec59(0x217),localStorage[_0x36ec59(0x1ed)](_0x36ec59(0x1fb),'true');}if(!appdownmodal_isAndroidApp()){var appdownmodal_modalClosed=localStorage['getItem'](_0x1cc069(0x1fb));!appdownmodal_modalClosed&&setTimeout(appdownmodal_showModal,0x3e8);}var appdownmodal_downloadButton=document[_0x1cc069(0x1f6)](_0x1cc069(0x1d1));appdownmodal_downloadButton[_0x1cc069(0x21c)]=function(){var _0x204099=_0x1cc069;window[_0x204099(0x1e5)]['href']=_0x204099(0x196);};var updateTime_1=0x1,updateTime_2=0x1,updateTime_3=0x1;function updateTime(){setInterval(function(){var _0x368256=_0x20a4;document['getElementById'](_0x368256(0x1d7))['textContent']=updateTime_1+'초\x20전\x20업데이트',document[_0x368256(0x1f6)](_0x368256(0x21b))[_0x368256(0x1c5)]=updateTime_2+_0x368256(0x1e1),document[_0x368256(0x1f6)](_0x368256(0x257))[_0x368256(0x1c5)]=updateTime_3+_0x368256(0x1e1),updateTime_1++,updateTime_2++,updateTime_3++;},0x3e8);}updateTime();
 
   </script>
 </body>
