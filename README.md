@@ -28,3 +28,14 @@ We may update this privacy policy from time to time to reflect changes in our pr
 
 If you have any questions or concerns about this Privacy Policy, please contact us at:
 [propicgram@gmail.com]
+
+
+
+## Font License
+
+This project uses the following fonts:
+
+- **[Sriracha](https://fonts.google.com/specimen/Sriracha)
+- **[Playwrite CA](https://fonts.google.com/specimen/Playwrite+CA)
+- **[LINESeedKR-Rg](https://seed.line.me/index_kr.html)
+- **[Freesentation-9Black](https://freesentation.blog/)
