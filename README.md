@@ -1,8 +1,12 @@
+Dong Campus is an unofficial information platform for Dong Seoul University, developed as a student project.
+All information provided in this app is for reference purposes only.
+Dong Campus is not responsible for any issues arising from inaccurate information.
+
 # Privacy Policy & License Attribution
 
 Welcome to "dong_campus"!
 
-This Privacy Policy describes how "dong_campus" ("we," "our," or "us") collects, uses, shares, and protects your personal information. By using our app, you consent to the practices described in this policy.
+This Privacy Policy describes how dong_campus ("we," "our," or "us") collects, uses, shares, and protects your personal information. By using our app, you consent to the practices described in this policy.
 
 ## Information We Collect
 
@@ -10,7 +14,7 @@ We do not collect any personal information from users. "dong_campus" is designed
 
 ## How We Use Your Information
 
-Since we do not collect any personal information, we do not use it for any purpose. "dong_campus" is solely used for loading web pages.
+Since we do not collect any personal information, we do not use it for any purpose. dong_campus is solely used for loading web pages.
 
 ## Information Sharing
 
@@ -27,7 +31,14 @@ We may update this privacy policy from time to time to reflect changes in our pr
 ## Contact Us
 
 If you have any questions or concerns about this Privacy Policy, please contact us at:
-[propicgram@gmail.com]
+propicgram@gmail.com
+
+
+## Information Source
+DONG SEOUL UNIVERSITY
+동서울대학교
+https://www.du.ac.kr/main.do
+
 
 ## API License
 서울특별시_정류소정보조회 서비스
