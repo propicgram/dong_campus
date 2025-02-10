@@ -1,4 +1,4 @@
-# Privacy Policy
+# Privacy Policy & License Attribution
 
 Welcome to "dong_campus"!
 
