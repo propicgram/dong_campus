@@ -29,7 +29,9 @@ We may update this privacy policy from time to time to reflect changes in our pr
 If you have any questions or concerns about this Privacy Policy, please contact us at:
 [propicgram@gmail.com]
 
-
+## API License
+서울특별시_정류소정보조회 서비스
+https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15000303
 
 ## Font License
 
@@ -39,3 +41,5 @@ This project uses the following fonts:
 - **[Playwrite CA](https://fonts.google.com/specimen/Playwrite+CA)
 - **[LINESeedKR-Rg](https://seed.line.me/index_kr.html)
 - **[Freesentation-9Black](https://freesentation.blog/)
+
+
