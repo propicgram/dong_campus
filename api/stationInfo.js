@@ -1,1 +1,39 @@
-const _0x1f80ff=_0x4e01;function _0x4e01(_0x4be1f5,_0x236a35){const _0x38bbb=_0x38bb();return _0x4e01=function(_0x4e01e4,_0x2b530b){_0x4e01e4=_0x4e01e4-0xea;let _0x1685df=_0x38bbb[_0x4e01e4];return _0x1685df;},_0x4e01(_0x4be1f5,_0x236a35);}(function(_0x9e9fa5,_0x3a400e){const _0x202e58=_0x4e01,_0x317cd2=_0x9e9fa5();while(!![]){try{const _0x55d62a=parseInt(_0x202e58(0xea))/0x1*(-parseInt(_0x202e58(0xf1))/0x2)+-parseInt(_0x202e58(0xf9))/0x3+parseInt(_0x202e58(0xfa))/0x4*(-parseInt(_0x202e58(0xef))/0x5)+-parseInt(_0x202e58(0xeb))/0x6+parseInt(_0x202e58(0xf7))/0x7*(parseInt(_0x202e58(0xf8))/0x8)+-parseInt(_0x202e58(0xfb))/0x9+-parseInt(_0x202e58(0xf6))/0xa*(-parseInt(_0x202e58(0xfe))/0xb);if(_0x55d62a===_0x3a400e)break;else _0x317cd2['push'](_0x317cd2['shift']());}catch(_0x437204){_0x317cd2['push'](_0x317cd2['shift']());}}}(_0x38bb,0x507db));const fetch=require('node-fetch');function _0x38bb(){const _0x51a219=['http://ws.bus.go.kr/api/rest/stationinfo/getStationByUid','status','105038VEiAaF','81966kNhtvP','query','error','send','2525dKhcPc','exports','10hCOCLt','API\x20Error:\x20','Access-Control-Allow-Origin','p9WN6F1fuaAWWF6La1kR1IT2KYm9YL59XaiEGfg9gM5VClMGZrWF5jkoEsf3IqcGT2i1y5uun4v5LmZuwH5nGw==','arsId','1030dUnXCW','10591pkevqn','208iqMoQE','1656576ejoNoi','3856juZfDY','3679245forlDO','12121','statusText','243177kGftJa'];_0x38bb=function(){return _0x51a219;};return _0x38bb();}module[_0x1f80ff(0xf0)]=async function handler(_0x5325a9,_0x57504c){const _0x210520=_0x1f80ff,_0x3f1fb0=_0x210520(0xff),_0x4bb7e8=_0x210520(0xf4),_0x161446=_0x5325a9[_0x210520(0xec)][_0x210520(0xf5)]||_0x210520(0xfc);try{const _0x378b6b=await fetch(_0x3f1fb0+'?serviceKey='+_0x4bb7e8+'&arsId='+_0x161446);if(!_0x378b6b['ok'])throw new Error(_0x210520(0xf2)+_0x378b6b['status']+'\x20'+_0x378b6b[_0x210520(0xfd)]);const _0x174cda=await _0x378b6b['text']();_0x57504c['setHeader'](_0x210520(0xf3),'*'),_0x57504c['status'](0xc8)[_0x210520(0xee)](_0x174cda);}catch(_0x556f33){console[_0x210520(0xed)]('Server\x20Error:',_0x556f33),_0x57504c[_0x210520(0x100)](0x1f4)['json']({'error':_0x556f33['message']});}};
+const fetch = require('node-fetch');
+
+let cacheData = null;
+let cacheTimestamp = 0;
+
+module.exports = async function handler(req, res) {
+    const now = Date.now();
+
+    // 60초 동안 캐시된 데이터 사용
+    if (cacheData && now - cacheTimestamp < 60000) {
+        console.log('Serving cached data');
+        res.setHeader('Cache-Control', 'public, max-age=60');
+        return res.status(200).send(cacheData);
+    }
+
+    try {
+        const apiUrl = 'http://ws.bus.go.kr/api/rest/stationinfo/getStationByUid';
+        const serviceKey = process.env.SEOUL_BUS_API_KEY;
+        const arsId = req.query.arsId || '12121';
+
+        const response = await fetch(`${apiUrl}?serviceKey=${encodeURIComponent(serviceKey)}&arsId=${arsId}`);
+        if (!response.ok) throw new Error('Failed to fetch data from external API');
+
+        const data = await response.text();
+
+        // 캐시 저장
+        cacheData = data;
+        cacheTimestamp = now;
+
+        // 클라이언트 캐시 설정 (60초 캐시)
+        res.setHeader('Cache-Control', 'public, max-age=60');
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        res.status(200).send(data);
+
+    } catch (error) {
+        console.error('Error fetching API:', error);
+        res.status(500).json({ error: error.message });
+    }
+};
