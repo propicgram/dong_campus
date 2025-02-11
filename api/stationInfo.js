@@ -15,7 +15,7 @@ module.exports = async function handler(req, res) {
     try {
         const apiUrl = 'http://ws.bus.go.kr/api/rest/stationinfo/getStationByUid';
         const serviceKey = process.env.SEOUL_BUS_API_KEY;
-        const arsId = req.query.arsId || '12121';
+        const arsId = req.query.arsId;
 
         // 외부 API 호출
         console.log('Fetching new data from external API');
