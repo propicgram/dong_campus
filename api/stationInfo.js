@@ -6,8 +6,8 @@ let cacheTimestamp = 0;
 module.exports = async function handler(req, res) {
     const now = Date.now();
 
-    // 60초 동안 캐시된 데이터 사용
-    if (cacheData && now - cacheTimestamp < 60000) {
+    // 30초 동안 캐시된 데이터 사용
+    if (cacheData && now - cacheTimestamp < 30000) {
         console.log('Serving cached data');
         res.setHeader('Cache-Control', 'public, max-age=60');
         return res.status(200).send(cacheData);
