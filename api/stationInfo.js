@@ -9,7 +9,7 @@ module.exports = async function handler(req, res) {
     // 30초 동안 캐시된 데이터 사용
     if (cacheData && now - cacheTimestamp < 30000) {
         console.log('Serving cached data');
-        res.setHeader('Cache-Control', 'public, max-age=60');
+        res.setHeader('Cache-Control', 'public, max-age=30');
         return res.status(200).send(cacheData);
     }
 
