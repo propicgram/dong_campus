@@ -39,6 +39,9 @@ DONG SEOUL UNIVERSITY
 동서울대학교
 https://www.du.ac.kr/main.do
 
+## CCTV Source
+경기도교통정보센터
+https://gits.gg.go.kr/web/trafficInfo/webMapInfo.do?opt=3
 
 ## API License
 서울특별시_정류소정보조회 서비스
