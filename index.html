@@ -882,13 +882,33 @@ a.rankItem:hover {
   }
 
 
-
+  .text-container {
+      text-align: center;
+      margin-top: 1px;
+  }
 
   .underfont{
     font-size: 11px;
     color: #7c7c7c;
   }
 
+
+
+
+  .iframe-container {
+    position: relative;
+    width: 100%;  /* 부모 요소에 맞춤 */
+    max-width: 500px; /* 최대 크기 제한 */
+    aspect-ratio: 7 / 5; /* 16:9 비율 유지 */
+    margin: 0 auto; /* 가로 중앙 정렬 */
+}
+
+
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
 
 
   .text_center{
@@ -1693,7 +1713,6 @@ li {
     <p class="topItem"><span class="rankBlue">📢&nbsp&nbsp</span>02-24(월) ~ 02-28(금) 수강신청</p>
   </div>
 
-
   <div class="slide slide_wrap">
     <div class="slide_item" id="slide_item_0">
       <h3>오늘의 학식</h3>
@@ -1960,6 +1979,14 @@ li {
   <p class="rankItem" id="onlydong_content3">😻삼색이맵</p>
 </div>
 
+<h3 class="onlydong">🖥️동서울대사거리 실시간 CCTV</h3>
+<div class="iframe-container">
+  <iframe src="https://cctvsec.ktict.co.kr:8082/koroad01206vod/L090030.mp4?wmsAuthSign=c2VydmVyX3RpbWU9Mi8yMS8yMDI1IDExOjU0OjAwIEFNJmhhc2hfdmFsdWU9Z0VBSnFnQmFmdEhmMXlMVGdOYWZaZz09JnZhbGlkbWludXRlcz0xMjAmaWQ9NjAyMDQ=&nimblesessionid=979898"
+  allowfullscreen></iframe>
+</div>
+<div class="text-container">
+  <span class="underfont">경찰청UTIS-성남시 제공<br>실제 상황과 5~10분정도 차이가 날 수 있습니다.</span>
+</div>
 
 
 
