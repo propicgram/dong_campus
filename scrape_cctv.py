@@ -27,8 +27,8 @@ def get_cctv_video_url():
     driver.get(url)
 
     try:
-        # ✅ WebDriverWait을 사용하여 요소가 나타날 때까지 대기
-        video_element = WebDriverWait(driver, 15).until(
+        # ✅ WebDriverWait을 사용하여 요소가 나타날 때까지 대기 (기존 15초 → 20초로 늘림)
+        video_element = WebDriverWait(driver, 20).until(
             EC.presence_of_element_located((By.ID, "vid_html5_api"))
         )
 
