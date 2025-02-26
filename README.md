@@ -97,5 +97,6 @@ This project uses the following fonts:
 - **[Playwrite CA](https://fonts.google.com/specimen/Playwrite+CA)
 - **[LINESeedKR-Rg](https://seed.line.me/index_kr.html)
 - **[Freesentation-9Black](https://freesentation.blog/)
+- **[PretendardVariable](https://cactus.tistory.com/306)
 
 
