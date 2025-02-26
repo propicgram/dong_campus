@@ -1,5 +1,3 @@
-const fetch = require('node-fetch');
-
 module.exports = async function handler(req, res) {
     try {
         const apiUrl = 'http://ws.bus.go.kr/api/rest/stationinfo/getStationByUid';
