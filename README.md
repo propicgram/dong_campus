@@ -38,21 +38,6 @@ Dong Campus는 개인정보를 저장하지 않으므로, 별도의 보안 조�
 
 ---
 
-## 📖 정보 출처
-- **동서울대학교(Dong Seoul University)**  
-  🔗 [https://www.du.ac.kr/main.do](https://www.du.ac.kr/main.do)
-
-## 🎥 CCTV 정보 출처
-- **도시교통정보센터**
-
----
-
-✅ **Dong Campus는 사용자의 개인정보를 수집하지 않습니다.**  
-✅ **우리는 오직 웹페이지 로딩 기능만 제공합니다.**  
-✅ **사용자의 프라이버시는 최우선으로 보호됩니다.**  
-
----
-
 
 # Privacy Policy & License Attribution
 
