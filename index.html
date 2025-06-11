@@ -86,7 +86,6 @@
 
     body, button {
       font-family: 'PretendardVariable';
-      font-weight: 500;
     }
 
 header {
@@ -110,7 +109,7 @@ header {
 }
 
 body {
-  background: url('./back4.png') no-repeat center center fixed;
+  background: url('./back5.png') no-repeat center center fixed;
   background-size: cover;
   margin: 0;
   padding: 0;
@@ -245,6 +244,11 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25); /* 살짝 외곽 강조 */
       display: flex;
       flex-wrap: wrap; 
       justify-content: center; 
+        border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
     }
 
     .sectionarea3 p {
@@ -254,7 +258,7 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25); /* 살짝 외곽 강조 */
     .sectionarea3 > .busarea {
       display: flex;
       align-items: center;
-      margin-bottom: 10px;
+      margin-bottom: 3px;
     }
 
 
@@ -272,21 +276,7 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25); /* 살짝 외곽 강조 */
       height: 50px;
       color: white;
       width: 100%;
-  border-radius: 18px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
       transition: transform 0.2s ease, background-color 0.2s ease;
-    }
-
-    .busarea.animate {
-      animation: slideIn 0.5s ease-out;
-    }
-
-    .busarea:active {
-      transform: scale(0.95);
-      background-color: #2A292F;
     }
 
     .busicon {
@@ -827,25 +817,24 @@ a.rankItem:hover {
       border: solid 1px #29273077;
   }
 
-  .rhdwl{
-    margin: 0 auto;
-    width: 100%;
-    max-width: 500px;
-    color: white;
-    font-size: 13px;
-    border-radius: 10px;
-    padding: 8px;
+.rhdwl {
+  margin: 15px auto;
+  width: calc(100% - 30px); /* 좌우 margin 합쳐서 뺌 */
+  max-width: 500px;
+  box-sizing: border-box;   /* 필수! */
+
+  font-size: 12px;
+  color: white;
   border-radius: 18px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  padding: 8px 15px;
+
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.18);
-    transition: transform 0.2s ease, background-color 0.2s ease;
-  }
-  .rhdwl:active {
-  transform: scale(0.95); /* 크기를 약간 줄임 */
-  background-color: #2A292F; /* 누를 때의 더 연한 배경색 */
 }
+
 
   .rhdwl th{
     font-size: 20px;
@@ -1100,23 +1089,30 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
             max-width: 500px;
             width: 100%;
             text-align:center;
+
+              border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
         }
   #busArrivalInfo_2 {
     margin: 3px 10px 5px 10px;
             max-width: 500px;
             width: 100%;
             text-align:center;
-        }
 
-        .busInfo {
-  border-radius: 18px;
+              border-radius: 18px;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .busInfo {
     color: white;
     text-align: left;
-    margin: 8px 0;
+    margin: 2px 0;
     padding: 11px;
     padding-top: 5px;
     padding-bottom: 4px;
@@ -1139,11 +1135,6 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
         transform: translateX(0);
     }
 }
-
-        .busInfo:active {
-          transform: scale(0.95); /* 크기를 약간 줄임 */
-          background-color: #2A292F; /* 누를 때의 더 연한 배경색 */
-        }
 
 
         .routeId {
@@ -1212,10 +1203,6 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
           border: 1px solid rgba(255, 255, 255, 0.18);
         }
 
-        .icon-button > div > img:active {
-          transform: scale(0.95); /* 크기를 약간 줄임 */
-          background-color: #2A292F; /* 누를 때의 더 연한 배경색 */
-        }
 
 
 
@@ -1233,7 +1220,7 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
   position: relative;
   width: 100%;
   max-width: 450px;
-  margin: 5px 20px 0px 20px;
+  margin: 5px 12px 0px 12px;
   padding: 4px;
   border-radius: 12px;
   backdrop-filter: blur(20px);
@@ -1262,10 +1249,6 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25); /* 살짝 외곽 강조 */
   transition: color 0.3s ease;
 }
 
-.bus_button.active {
-  color: #ffffff;
-  font-weight: 600;
-}
 
 
 /* 강조선 */
@@ -1835,6 +1818,7 @@ li {
     font-size: 14px;
   }
 }
+
 
 
   </style>
