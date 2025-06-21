@@ -86,6 +86,7 @@
 
     body, button {
       font-family: 'PretendardVariable';
+      font-weight: 500;
     }
 
 header {
@@ -97,6 +98,7 @@ header {
   margin: 0 auto;
   display: flex;
   justify-content: center; 
+  padding-bottom: 10px;
   align-items: center;
   max-width: 500px;
 }
@@ -108,12 +110,11 @@ header {
   max-width: 500px;
 }
 
-body {
-  background: url('./back5.png') no-repeat center center fixed;
-  background-size: cover;
-  margin: 0;
-  padding: 0;
-}
+    body {
+      background: #0D0E10;
+      margin: 0;
+      padding: 0;
+    }
 
     .no-drag {
         -webkit-touch-callout: none;
@@ -180,9 +181,8 @@ body {
 
     .container > div {
       padding: 0px;
-      color: rgba(255, 255, 255, 0.95); /* 거의 흰색에 가까움 */
-text-shadow: 0 0 3px rgba(0, 0, 0, 0.25); /* 살짝 외곽 강조 */
-
+      border: 0px solid #ddd;
+      color: rgb(241, 241, 241);
       
     }
 
@@ -244,11 +244,6 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25); /* 살짝 외곽 강조 */
       display: flex;
       flex-wrap: wrap; 
       justify-content: center; 
-        border-radius: 18px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
     }
 
     .sectionarea3 p {
@@ -258,7 +253,7 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25); /* 살짝 외곽 강조 */
     .sectionarea3 > .busarea {
       display: flex;
       align-items: center;
-      margin-bottom: 3px;
+      margin-bottom: 10px;
     }
 
 
@@ -268,15 +263,25 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25); /* 살짝 외곽 강조 */
 
     .station_name {
       font-size: 13px;
-      
     }
 
     .busarea{
       padding-left: 0px;
       height: 50px;
-      color: white;
+      color: rgb(241, 241, 241);
       width: 100%;
+      border-radius: 10px;
+      background-color: #18171D;
       transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .busarea.animate {
+      animation: slideIn 0.5s ease-out;
+    }
+
+    .busarea:active {
+      transform: scale(0.95);
+      background-color: #2A292F;
     }
 
     .busicon {
@@ -493,10 +498,7 @@ table {
 thead {
     background-color: rgba(255, 255, 255, 0);
     border-radius: 50px;
-    color: rgba(255, 255, 255, 0.95); /* 거의 흰색에 가까움 */
-font-weight: 600;
-text-shadow: 0 0 3px rgba(0, 0, 0, 0.25); /* 살짝 외곽 강조 */
-
+    color: rgb(241, 241, 241);
 }
 
 thead th {
@@ -505,9 +507,8 @@ thead th {
 }
 
 tbody td {
-    padding: 9px 5px 9px 5px;
-    border-bottom: 1px solid rgba(82, 82, 82, 0.1);
-
+    padding: 15px 5px 15px 5px;
+    border-bottom: 1px solid #333333;
 }
 
 ul {
@@ -680,7 +681,7 @@ img.rotate {
 
 
 .separator {
-    border-bottom: 1px solid #ffffff00;
+    border-bottom: 1px solid #333333;
     padding-top: 23px;
     width: 85%;
     margin: 0 auto;
@@ -817,23 +818,21 @@ a.rankItem:hover {
       border: solid 1px #29273077;
   }
 
-.rhdwl {
-  margin: 15px auto;
-  width: calc(100% - 30px); /* 좌우 margin 합쳐서 뺌 */
-  max-width: 500px;
-  box-sizing: border-box;   /* 필수! */
-
-  font-size: 12px;
-  color: white;
-  border-radius: 18px;
-  padding: 8px 15px;
-
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  .rhdwl{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+    color: rgb(241, 241, 241);
+    font-size: 13px;
+    border-radius: 10px;
+    padding: 8px;
+    background-color: #17171c00;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+  .rhdwl:active {
+  transform: scale(0.95); /* 크기를 약간 줄임 */
+  background-color: #2A292F; /* 누를 때의 더 연한 배경색 */
 }
-
 
   .rhdwl th{
     font-size: 20px;
@@ -846,9 +845,7 @@ a.rankItem:hover {
   }
 
   .insights{
-    color: rgba(255, 255, 255, 0.95);
-text-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
-
+    color: white;
     display: flex;
     width: 90%;
     margin: 0 auto;
@@ -859,9 +856,7 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
   }
 
   .ranking{
-    color: rgba(255, 255, 255, 0.95);
-text-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
-
+    color: white;
     display: flex;
     width: 90%;
     margin: 0 auto;
@@ -879,9 +874,7 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
     gap: 8px;
   }
   .onlydong{
-    color: rgba(255, 255, 255, 0.95); /* 거의 흰색에 가까움 */
-text-shadow: 0 0 3px rgba(0, 0, 0, 0.25); /* 살짝 외곽 강조 */
-
+    color: white;
     display: flex;
     width: 90%;
     margin: 0 auto;
@@ -908,14 +901,10 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25); /* 살짝 외곽 강조 */
     margin-bottom: 7px;
   }
   .rankItem{
-  border-radius: 18px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+    background-color: #18171D;
     color: white;
     text-align: left;
-    padding: 9px;
+    padding: 5px;
     padding-left: 13px;
     font-size: 13px;
     border-radius: 8px;
@@ -954,8 +943,6 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25); /* 살짝 외곽 강조 */
   .text-container {
       text-align: center;
       margin-top: 1px;
-      font-size: 13px;
-      color: white;
   }
 
   .underfont{
@@ -984,9 +971,7 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25); /* 살짝 외곽 강조 */
 
   .text_center{
     width: 90%;
-    color: rgba(255, 255, 255, 0.95);
-text-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
-
+    color: rgb(241, 241, 241);
     text-align: left;
     margin: 0 auto;
     padding-top: 35px;
@@ -995,8 +980,7 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
   }
   .text_center2{
     width: 90%;
-    color: rgba(255, 255, 255, 0.95);
-text-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+    color: rgb(241, 241, 241);
     text-align: left;
     margin: 0 auto;
     padding-top: 40px;
@@ -1088,30 +1072,19 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
             max-width: 500px;
             width: 100%;
             text-align:center;
-
-              border-radius: 18px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
         }
   #busArrivalInfo_2 {
     margin: 3px 10px 5px 10px;
             max-width: 500px;
             width: 100%;
             text-align:center;
-
-              border-radius: 18px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
         }
 
         .busInfo {
+    background-color: #18171D;
     color: white;
     text-align: left;
-    margin: 2px 0;
+    margin: 8px 0;
     padding: 11px;
     padding-top: 5px;
     padding-bottom: 4px;
@@ -1134,6 +1107,11 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
         transform: translateX(0);
     }
 }
+
+        .busInfo:active {
+          transform: scale(0.95); /* 크기를 약간 줄임 */
+          background-color: #2A292F; /* 누를 때의 더 연한 배경색 */
+        }
 
 
         .routeId {
@@ -1194,14 +1172,12 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
           border-radius: 10px;
           width: 25px;
           transition: transform 0.2s ease, background-color 0.2s ease;
-
-          background: none;
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
-          border: 1px solid rgba(255, 255, 255, 0.18);
         }
 
+        .icon-button > div > img:active {
+          transform: scale(0.95); /* 크기를 약간 줄임 */
+          background-color: #2A292F; /* 누를 때의 더 연한 배경색 */
+        }
 
 
 
@@ -1213,57 +1189,50 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
 
 
 
-/* 컨테이너 */
+/* 버튼을 감싸는 컨테이너 */
 .button-container {
-  display: flex;
-  position: relative;
-  width: 100%;
-  max-width: 450px;
-  margin: 5px 12px 0px 12px;
-  padding: 4px;
-  border-radius: 12px;
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-width: 450px; /* 원하는 버튼 너비 */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3); /* 기본 연한 회색 선 */
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
-
-/* 각 버튼 */
+/* 버튼 스타일 */
 .bus_button {
-  flex: 1;
-  height: 40px;
-  border: none;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.95); /* 거의 흰색에 가까움 */
-text-shadow: 0 0 3px rgba(0, 0, 0, 0.25); /* 살짝 외곽 강조 */
-
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-  position: relative;
-  transition: color 0.3s ease;
+    -webkit-tap-highlight-color: transparent; /* 터치 잔상 제거 (iOS, Android) */
+    outline: none; /* 클릭 시 기본 외곽선 제거 */
+    user-select: none; /* 텍스트 선택 방지 */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    color: white;
+    background-color: #0D0E10;
+    width: 50%;
+    height: 45px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+    z-index: 2; /* 강조선보다 위에 표시 */
 }
 
-
-
-/* 강조선 */
+/* 선택된 버튼 밑줄 (강조선) */
 .underline {
-  position: absolute;
-  bottom: 1px;
-  left: 8px;
-  width: calc(50% - 8px); /* 패딩 보정 */
-  height: 3px;
-  border-radius: 2px;
-  background: rgba(255, 255, 255, 0.8);
-  transition: transform 0.3s ease-in-out;
-  z-index: 1;
+    position: absolute;
+    bottom: -2px; /* 기본 회색 선과 겹치도록 배치 */
+    left: 0;
+    width: 50%;
+    height: 3px;
+    background-color: white; /* 강조선 색상 */
+    transition: transform 0.3s ease-in-out;
+    z-index: 3; /* 버튼보다 위에 표시 */
 }
-
-
 
 
 
@@ -1552,13 +1521,7 @@ li {
   .blog-card {
       display: flex;
       align-items: center;
-      
-  border-radius: 18px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-
+      background: #18171D;
       border-radius: 8px;
       overflow: hidden;
       transition: transform 0.2s;
@@ -1620,8 +1583,7 @@ li {
   font-size: 13px;
   padding-left: 5px;
   width: 90%;
-  color: 	#8880c2;
-
+  color: rgb(179, 179, 179);
 }
 
 
@@ -1819,7 +1781,6 @@ li {
 }
 
 
-
   </style>
 </head>
 <body class="no-drag">
@@ -1833,7 +1794,17 @@ li {
     <p class="topItem"><span class="rankBlue">📢&nbsp&nbsp</span>03-04 개강</p>
   </div> -->
 
+  <div class="slide slide_wrap">
+    <div class="slide_item" id="slide_item_0">
+      <h3>오늘의 학식</h3>
+    </div>
+    <div class="slide_item" id="slide_item_1">
+      <h3>실시간 버스 도착정보</h3>
+    </div>
 
+<!--     <div class="slide_item">
+      <h3><span class="touch_slide3"></span></span></h3>
+    </div> -->
     <ul class="slide_pagination"></ul>
   </div>
 
@@ -2017,17 +1988,6 @@ li {
 
       <span class="underfont" id="bustime_Info"><strong>🕒 통학버스 상세 시간표/탑승장소 확인하기</strong></span>
       <span class="underfont">통학버스는 실시간이 아닌 시간표 시간이며 실제와 다를 수 있습니다.</span>
-    </div>
-  </div>
-
-<table class="rhdwl">
-  <thead>
-      <tr>
-          <th>📢공지사항</th>
-      </tr>
-  </thead>
-    <tbody id="content" class="xpenfl"></tbody>
-</table>
 
       <h3 class="onlydong">🖥️동서울대사거리 CCTV</h3>
       <div class="iframe-container">
@@ -2042,9 +2002,113 @@ li {
         <span class="underfont">경찰청 도시교통정보센터 제공</span>
       </div>
 
+      
+    </div>
+  </div>
+
+<table class="rhdwl">
+  <thead>
+      <tr>
+          <th>📢공지사항</th>
+      </tr>
+  </thead>
+    <tbody id="content" class="xpenfl"></tbody>
+</table>
+
 <h3 class="insights">📰동캠퍼스 Insights</h3>
 <div class="blog-preview" id="blog-container"></div>
 
+
+<div class="slide_banner">
+  <h3>안드로이드 앱 다운로드</h3>
+  <div class="icon" style="background-image: url('./web_img/logo.png');"></div>
+</div>
+
+<!-- <div class="department">
+  <h3 class="department_n">🎓학생처</h3>
+  <div class="department-row">
+    <a href="https://www.du.ac.kr/submenu.do?menuUrl=3BIcGXcPSWvta7Cj144vZQ%3d%3d&" class="deptItem">학생서비스과</a>
+    <a href="https://www.du.ac.kr/submenu.do?menuUrl=3BIcGXcPSWvta7Cj144vZQ%3d%3d&" class="deptItem">학생생활상담센터</a>
+    <a href="https://www.du.ac.kr/submenu.do?menuUrl=3BIcGXcPSWvta7Cj144vZQ%3d%3d&" class="deptItem">장애학생지원센터</a>
+    <a href="https://www.du.ac.kr/submenu.do?menuUrl=3BIcGXcPSWvta7Cj144vZQ%3d%3d&" class="deptItem">학산관</a>
+    <a href="https://www.du.ac.kr/submenu.do?menuUrl=3BIcGXcPSWvta7Cj144vZQ%3d%3d&" class="deptItem">인권센터</a>
+  </div>
+
+  <h3 class="department_n">📚교무처</h3>
+  <div class="department-row">
+    <a href="https://www.du.ac.kr/submenu.do?menuUrl=I7NIJjU%2f7Wm1%2bvf%2fYOHbCw%3d%3d&" class="deptItem">학사운영과</a>
+    <a href="https://www.du.ac.kr/submenu.do?menuUrl=I7NIJjU%2f7Wm1%2bvf%2fYOHbCw%3d%3d&" class="deptItem">교육혁신지원센터</a>
+    <a href="https://www.du.ac.kr/submenu.do?menuUrl=I7NIJjU%2f7Wm1%2bvf%2fYOHbCw%3d%3d&" class="deptItem">교양교육센터</a>
+    <a href="https://www.du.ac.kr/submenu.do?menuUrl=I7NIJjU%2f7Wm1%2bvf%2fYOHbCw%3d%3d&" class="deptItem">학사학위지원센터</a>
+    <a href="https://www.du.ac.kr/submenu.do?menuUrl=I7NIJjU%2f7Wm1%2bvf%2fYOHbCw%3d%3d&" class="deptItem">교수학습지원센터</a>
+    <a href="https://www.du.ac.kr/submenu.do?menuUrl=I7NIJjU%2f7Wm1%2bvf%2fYOHbCw%3d%3d&" class="deptItem">원격교육지원센터</a>
+  </div> -->
+
+<!--   <h3 class="department_n">🗂️사무국</h3>
+  <div class="department-row">
+    <a href="https://www.du.ac.kr/submenu.do?menuUrl=x8uFAYWiKBpwybdXSnINjQ%3d%3d&" class="deptItem">행정지원과</a>
+    <a href="https://www.du.ac.kr/submenu.do?menuUrl=x8uFAYWiKBpwybdXSnINjQ%3d%3d&" class="deptItem">경리과</a>
+    <a href="https://www.du.ac.kr/submenu.do?menuUrl=x8uFAYWiKBpwybdXSnINjQ%3d%3d&" class="deptItem">관리과</a>
+  </div> -->
+
+
+<!--   <h3 class="department_n">⚙️공학계열</h3>
+  <div class="department-row">
+    <a href="https://dept.du.ac.kr/ae/Main.do" class="deptItem">항공기계과</a>
+    <a href="https://dept.du.ac.kr/mechauto/Main.do" class="deptItem">미래자동차학과</a>
+    <a href="https://dept.du.ac.kr/power/Main.do" class="deptItem">전기공학과</a>
+    <a href="https://dept.du.ac.kr/ee/Main.do" class="deptItem">컴퓨터전자과</a>
+    <a href="https://dept.du.ac.kr/ic/Main.do" class="deptItem">IT융합학과</a>
+    <a href="https://dept.du.ac.kr/computer/Main.do" class="deptItem">컴퓨터소프트웨어학과</a>
+    <a href="https://dept.du.ac.kr/archi/Main.do" class="deptItem">건축학과</a>
+    <a href="https://dept.du.ac.kr/info/Main.do" class="deptItem">컴퓨터정보과</a>
+    <a href="https://dept.du.ac.kr/dbc/Main.do" class="deptItem">디지털방송콘텐츠학과</a>
+    <a href="https://dept.du.ac.kr/dinter/Main.do" class="deptItem">실내디자인학과</a>
+    <a href="https://dept.du.ac.kr/game/Main.do" class="deptItem">게임콘텐츠과</a>
+    <a href="https://dept.du.ac.kr/cls/Main.do" class="deptItem">자유전공학과</a>
+    <a href="https://dept.du.ac.kr/smartdrone/Main.do" class="deptItem">스마트드론과</a>
+    <a href="https://dept.du.ac.kr/dhc/Main.do" class="deptItem">디지털헬스케어과</a>
+  </div>
+
+  <h3 class="department_n">🌿자연과학계열</h3>
+  <div class="department-row">
+    <a href="https://dept.du.ac.kr/food/Main.do" class="deptItem">호텔외식조리과</a>
+    <a href="https://dept.du.ac.kr/bakery/Main.do" class="deptItem">카페베이커리전공</a>
+    <a href="https://dept.du.ac.kr/health/Main.do" class="deptItem">보건의료행정과</a>
+  </div>
+
+  <h3 class="department_n">📚인문사회계열</h3>
+  <div class="department-row">
+    <a href="https://dept.du.ac.kr/tax/Main.do" class="deptItem">세무회계과</a>
+    <a href="https://dept.du.ac.kr/mkt/Main.do" class="deptItem">마케팅과</a>
+    <a href="https://dept.du.ac.kr/realty/Main.do" class="deptItem">도시계획부동산학과</a>
+    <a href="https://dept.du.ac.kr/hotel/Main.do" class="deptItem">호텔관광경영과</a>
+    <a href="https://dept.du.ac.kr/adong/Main.do" class="deptItem">아동보육과</a>
+    <a href="https://dept.du.ac.kr/silver/Main.do" class="deptItem">사회복지학과</a>
+    <a href="https://dept.du.ac.kr/aircrew/Main.do" class="deptItem">항공서비스학과</a>
+    <a href="https://dept.du.ac.kr/chinab/Main.do" class="deptItem">글로벌중국비즈니스과</a>
+    <a href="https://dept.du.ac.kr/swc/Main.do" class="deptItem">사회복지상담과</a>
+  </div>
+
+  <h3 class="department_n">🎨예체능계열</h3>
+  <div class="department-row">
+    <a href="https://dept.du.ac.kr/leisure/Main.do" class="deptItem">레저스포츠학과</a>
+    <a href="https://dongseouls.com/" class="deptItem">경호스포츠과</a>
+    <a href="https://dept.du.ac.kr/duid/Main.do" class="deptItem">산업디자인학과</a>
+    <a href="https://dept.du.ac.kr/vcd/Main.do" class="deptItem">시각디자인학과</a>
+    <a href="https://dept.du.ac.kr/fashion/Main.do" class="deptItem">패션디자인과</a>
+    <a href="https://dept.du.ac.kr/horojewel/Main.do" class="deptItem">주얼리디자인과</a>
+    <a href="https://dept.du.ac.kr/beauty/Main.do" class="deptItem">뷰티코디네이션과</a>
+    <a href="https://www.dsplay.co.kr/" class="deptItem">연기예술학과</a>
+    <a href="https://www.du-music.net/" class="deptItem">실용음악학과</a>
+    <a href="https://dept.du.ac.kr/creator/Main.do" class="deptItem">콘텐츠크리에이터과</a>
+    <a href="https://dept.du.ac.kr/entmg/Main.do" class="deptItem">엔터테인먼트경영과</a>
+    <a href="https://dept.du.ac.kr/kpop/Main.do" class="deptItem">K-POP과</a>
+    <a href="https://dept.du.ac.kr/mvgd/Main.do" class="deptItem">메타버스게임애니메이션과</a>
+    <a href="https://dept.du.ac.kr/mm/Main.do" class="deptItem">무대미술과</a>
+    <a href="https://dept.du.ac.kr/webtoon/Main.do" class="deptItem">웹툰과</a>
+  </div>
+</div> -->
 
 <h3 class="ranking">🔥인기메뉴</h3>
 <div class="ranking_row">
@@ -2635,7 +2699,9 @@ li {
   <script src="web_content.js"></script>
   <script>
 
-var _0xe889b=_0x1b98;(function(_0x14ed6d,_0x1b8116){var _0x3f141e=_0x1b98,_0x1a19a2=_0x14ed6d();while(!![]){try{var _0xd1800=-parseInt(_0x3f141e(0x219))/0x1+-parseInt(_0x3f141e(0x195))/0x2*(-parseInt(_0x3f141e(0x19c))/0x3)+-parseInt(_0x3f141e(0x20a))/0x4+-parseInt(_0x3f141e(0x1c0))/0x5+-parseInt(_0x3f141e(0x189))/0x6*(-parseInt(_0x3f141e(0x1b1))/0x7)+-parseInt(_0x3f141e(0x207))/0x8+parseInt(_0x3f141e(0x150))/0x9;if(_0xd1800===_0x1b8116)break;else _0x1a19a2['push'](_0x1a19a2['shift']());}catch(_0x5b345e){_0x1a19a2['push'](_0x1a19a2['shift']());}}}(_0x4c6c,0x2040b));function _0x4c6c(){var _0x245166=['#icon-button122','getDate','https://www.du.ac.kr/submenu.do?menuUrl=0C4XuWq%2bb7eTLK7XIpfXOQ%3d%3d&','floor','active-left','.New2_time2\x20p','youtubeIcon','transform','https://www.du.ac.kr/submenu.do?menuUrl=ndTfMlfcorVznwKzBSpK1g%3d%3d&','<tbody>','https://portal.du.ac.kr/login.jsp','cmap-myModal','link','#icon-button131','itemList','content','500-1A','.Bokjeong_time2\x20p:last-child','https://www.instagram.com/dongseoul.university/','</span>','#icon-button106','https://www.du.ac.kr/submenu.do?menuUrl=FVSAIXUG6YtJXlzIdX83%2fA%3d%3d&','https://www.ygoon.com/','textContent','href','animate','getMinutes','https://www.du.ac.kr/submenu.do?menuUrl=%2bcwxrqXs%2fJtLSsDYJ0367Q%3d%3d&','getElementsByTagName','https://www.du.ac.kr/submenu.do?menuUrl=jGtgkYL3zRdkqwe9jNol2Q%3d%3d&','getElementsByClassName','userAgent','instagramIcon','.New1_time2\x20p','https://www.du.ac.kr/submenu.do?menuord=4&submenuord=13&','#icon-button102','active-right','getDay','#icon-button127','location','error','push','<span\x20class=\x27arrivalTime_2\x27>','transform\x200.7s\x20ease-in-out','appdownmodal_downloadButton','303','https://grade-calculator-flax.vercel.app/','rotating','\x22\x20target=\x22_blank\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22','https://www.du.ac.kr/submenu.do?menuUrl=sF2VWrsJ3JbYcT8w4SOj7w%3d%3d&','#icon-button100','<thead><tr><th>날짜</th><th>메뉴</th></tr></thead>','<tr><td>','https://www.youtube.com/channel/UCBLac80saErri-wSn2N8JpQ','target','updateTime_3','<span\x20style=\x27color:\x20#5ecd4f;\x27>','transitionend','btn6','blog-container','closeBtn','contains','.New2_time1\x20p:nth-child(2)','<span\x20style=\x27color:\x20#4f79cd;\x27>','302','blog-posts.json','trim','https://www.du.ac.kr/submenu.do?menuUrl=%2bCuO1viNG3oA4OC8CxJYJg%3d%3d&','https://www.du.ac.kr/submenu.do?menuUrl=dbhyu4aXBhM9JSQ9FVFGUg%3d%3d&','813672lGNymo','querySelector','toLowerCase','852616czVfEz','#icon-button112','date','removeEventListener','calendarBody','08:35','출발대기','4425','length','updateTime_1','test','#icon-button4','</tbody></table>','getMonth','display','182212uvCPFf','#icon-button201','schoolBtn','onclick','status','https://dorm.du.ac.kr/dorm/Main.do','send','attendanceModal','appendChild','translateX(100%)','transition','#icon-button118','getItem','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','#icon-button128','addEventListener','https://www.isic.co.kr/du/duIndex.jsp','08:00','findIndex','bus_name2','반디1','getElementById','rotate(0deg)','500-2N','slice','https://play.google.com/store/apps/details?id=com.keundoum.powerbox&hl=ko-KR','<span\x20style=\x27color:\x20#cd4f4f;\x27>','<span\x20class=\x27arrivalTime\x27>','🚍복정역(장지동)\x20→\x20동서울대학교','시간\x20','includes','GET','#icon-button110','.Hanam_time1\x20p:nth-child(2)','#icon-button114','appdownmodal_modalClosed','운행종료','#icon-button200','homeBtn','body','busArrivalInfo_2','arsId','description','\x20</span>','https://counsel.du.ac.kr/counsel/Main.do','myModal','div','452','#icon-button130','#icon-button107','replace','.New3_time2\x20p','6126687oTJbgh','webview','09:00','match','none','https://www.du.ac.kr/submenu.do?menuUrl=g2jLoGsiMR3n3jBlLbWLpw%3d%3d&','#icon-button121','#icon-button1','getHours','style','rotate(360deg)','#icon-button0','onlydong_content2','.New3_time1\x20p:nth-child(2)','split','</ul></td></tr>','https://www.du.ac.kr/detail.do?menuUrl=VYlDwaWjKSwAGszRXT2bcg%3D%3D&board_seq=24075&row_num=1&pageNo=1&categoryid=&userpwd=','DOMContentLoaded','busInfo','분\x20전\x20','text/xml','image','https://samsaek-map.vercel.app/','menuTable','offsetWidth','true','\x22\x20alt=\x22Blog\x20Image\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22content\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h3>','.underline','https://play.google.com/store/apps/details?id=com.dong_campus&pcampaignid=web_share','#onlydong_content1','초\x20전\x20업데이트','classList','sort','357','.Namyangju_time2\x20p','#icon-button119','open','$1분','09:05','https://www.du.ac.kr/resources/DSU/file/wireless_lan(android).pdf','\x0a\x0a\x20\x20\x20\x2001-01(수)\x0a\x20\x20\x20\x20신정\x0a\x20\x20\x20\x2001-28(화)\x20~\x2030(목)\x0a\x20\x20\x20\x20설연휴\x0a\x20\x20\x20\x2002-14(금)\x0a\x20\x20\x20\x20학위수여식\x0a\x20\x20\x20\x2002-20(목)\x0a\x20\x20\x20\x20입학식\x0a\x20\x20\x20\x2003-01(토)\x0a\x20\x20\x20\x20삼일절\x0a\x20\x20\x20\x2003-03(월)\x0a\x20\x20\x20\x20대체공휴일\x0a\x20\x20\x20\x2003-04(화)\x0a\x20\x20\x20\x201학기\x20개시\x0a\x20\x20\x20\x2003-28(금)\x0a\x20\x20\x20\x20수업일수\x201/4선\x0a\x20\x20\x20\x2004-02(수)\x0a\x20\x20\x20\x20학기개시\x2030일\x0a\x20\x20\x20\x2005-01(목)\x0a\x20\x20\x20\x20근로자의날\x0a\x20\x20\x20\x2005-02(금)\x0a\x20\x20\x20\x20학기개시\x2060일\x0a\x20\x20\x20\x2005-05(월)\x0a\x20\x20\x20\x20어린이날,\x20부처님오신날\x0a\x20\x20\x20\x2005-06(화)\x0a\x20\x20\x20\x20대체공휴일\x0a\x20\x20\x20\x2005-14(수)\x20~\x2016(금)\x0a\x20\x20\x20\x20복정체전(예정)\x0a\x20\x20\x20\x2005-29(목)\x0a\x20\x20\x20\x20수업일수\x203/4선\x0a\x20\x20\x20\x2006-01(일)\x0a\x20\x20\x20\x20학기개시\x2090일\x0a\x20\x20\x20\x2006-06(금)\x0a\x20\x20\x20\x20현충일\x0a\x20\x20\x20\x2006-25(수)\x0a\x20\x20\x20\x201학기\x20종강\x0a\x20\x20\x20\x2006-26(목)\x0a\x20\x20\x20\x20하계방학\x0a\x20\x20\x20\x2008-08(금)\x0a\x20\x20\x20\x20후기\x20학위수여\x0a\x20\x20\x20\x2008-15(금)\x0a\x20\x20\x20\x20광복절\x0a\x20\x20\x20\x2008-25(월)\x0a\x20\x20\x20\x202학기\x20개시\x20\x20\x0a\x20\x20\x20\x2009-18(목)\x0a\x20\x20\x20\x20수업일수\x201/4선\x0a\x20\x20\x20\x2009-24(수)\x0a\x20\x20\x20\x20학기개시\x2030일\x0a\x20\x20\x20\x2010-02(목)\x0a\x20\x20\x20\x20개교기념일\x0a\x20\x20\x20\x2010-03(금)\x0a\x20\x20\x20\x20개천절\x0a\x20\x20\x20\x2010-05(일)\x20~\x2007(화)\x0a\x20\x20\x20\x20추석연휴\x0a\x20\x20\x20\x2010-08(수)\x0a\x20\x20\x20\x20대체공휴일\x0a\x20\x20\x20\x2010-09(목)\x0a\x20\x20\x20\x20한글날\x0a\x20\x20\x20\x2010-23(목)\x0a\x20\x20\x20\x20학기개시\x2060일,\x20수업일수\x201/2선\x0a\x20\x20\x20\x2011-19(수)\x0a\x20\x20\x20\x20수업일수\x203/4선\x0a\x20\x20\x20\x2011-22(토)\x0a\x20\x20\x20\x20학기개시\x2090일\x0a\x20\x20\x20\x2012-15(월)\x0a\x20\x20\x20\x202학기\x20종강\x0a\x20\x20\x20\x2012-16(화)\x0a\x20\x20\x20\x20동계방학\x0a\x20\x20\x20\x2012-25(목)\x0a\x20\x20\x20\x20성탄절\x0a','onreadystatechange','https://www.du.ac.kr/submenu.do?menuUrl=u9%2b5PWy5e%2bP81sj%2fRoRr1Q%3d%3d&','분\x20전','#icon-button103','onload','<span\x20class=\x27routeId\x27>','translateX(0%)','#icon-button126','반디1-1','onlydong_content3','https://lms.du.ac.kr/login.php','.New1_time1\x20p:nth-child(2)','readyState','$1\x20','json','add','66306FtGMQk','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22blog-card\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20href=\x22','title','500-1','remove','https://www.du.ac.kr/resources/DSU/file/wireless_lan(iphone).pdf','closeCalendarBtn','#icon-button105','곧\x20도착','#icon-button104','<span>현재\x20버스\x20도착정보가\x20없습니다.</span>','calendarModal','2ZQGFFJ','scrollTo','rtNm','createElement','parseFromString','.Guri_time1\x20p:nth-child(2)','https://mail.du.ac.kr/mail/login','22011kNeHxX','substring','</td><td><ul>','forEach','innerHTML','<li>','appdownmodal_Modal','block','bustime_Info','innerText','opacity','.Guri_time2\x20p','https://www.du.ac.kr/submenu.do?menuord=4&submenuord=18&','#icon-button5','#icon-button115','</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p><a\x20href=\x22','android','https://www.du.ac.kr/submenu.do?menuUrl=fxlHsjubVTalTZEV27h0FA%3d%3d&','.cmap-close','.Bokjeong_time1\x20p:last-child','padStart','21oVMAJs','https://www.du.ac.kr/submenu.do?menuUrl=VYlDwaWjKSwAGszRXT2bcg%3d%3d&','</li>','.Hanam_time2\x20p','블로그\x20데이터를\x20불러오는\x20중\x20오류\x20발생:','운행\x20종료','#icon-button109','busArrivalInfo','119','https://www.du.ac.kr/submenu.do?menuUrl=LDuhG8qKuj0AZL5oCBQUYQ%3d%3d&','422','🚍동서울대학교\x20→\x20복정역','startsWith','arrmsg1','click','460255lAWbyf','#icon-button116'];_0x4c6c=function(){return _0x245166;};return _0x4c6c();}var contentArray=webContent[_0xe889b(0x15e)]('\x0a'),contentHTML='';for(var i=0x1;i<contentArray[_0xe889b(0x212)]-0x1;i++){var line=contentArray[i],truncatedLine=line[_0xe889b(0x19d)](0x0,line['length']-0x2);contentHTML+=_0xe889b(0x1f6)+truncatedLine+'</td></tr>';}document[_0xe889b(0x22e)](_0xe889b(0x1d1))[_0xe889b(0x1a0)]=contentHTML,document[_0xe889b(0x22e)](_0xe889b(0x1d1))[_0xe889b(0x228)](_0xe889b(0x1bf),function(){var _0x3a3d07=_0xe889b;window[_0x3a3d07(0x1e9)][_0x3a3d07(0x1da)]=_0x3a3d07(0x1b2);});var gang_modal=document['getElementById'](_0xe889b(0x1cd)),gang_btn=document[_0xe889b(0x208)](_0xe889b(0x16d));gang_btn[_0xe889b(0x21c)]=function(){var _0x2f4eeb=_0xe889b;gang_modal[_0x2f4eeb(0x159)][_0x2f4eeb(0x218)]=_0x2f4eeb(0x1a3);};var hak_modal=document['getElementById']('myModal'),hak_btn=document[_0xe889b(0x208)](_0xe889b(0x157));hak_btn['onclick']=function(){var _0x5d3a6e=_0xe889b;hak_modal[_0x5d3a6e(0x159)][_0x5d3a6e(0x218)]=_0x5d3a6e(0x1a3);};var closeBtn=document[_0xe889b(0x22e)](_0xe889b(0x1fe));closeBtn[_0xe889b(0x21c)]=function(){var _0x7641a9=_0xe889b;hak_modal[_0x7641a9(0x159)][_0x7641a9(0x218)]=_0x7641a9(0x154);},window[_0xe889b(0x21c)]=function(_0x1a24f9){var _0x14c0dd=_0xe889b;_0x1a24f9['target']==hak_modal&&(hak_modal[_0x14c0dd(0x159)][_0x14c0dd(0x218)]=_0x14c0dd(0x154));};var calendarModal=document[_0xe889b(0x22e)](_0xe889b(0x194)),calendarTitle=document[_0xe889b(0x208)](_0xe889b(0x1f4));calendarTitle[_0xe889b(0x21c)]=function(){var _0x261149=_0xe889b;calendarModal[_0x261149(0x159)]['display']=_0x261149(0x1a3);};var closeCalendarBtn=document[_0xe889b(0x22e)](_0xe889b(0x18f));closeCalendarBtn[_0xe889b(0x21c)]=function(){var _0x50975b=_0xe889b;calendarModal[_0x50975b(0x159)][_0x50975b(0x218)]=_0x50975b(0x154);},window[_0xe889b(0x21c)]=function(_0x14f68d){var _0x371460=_0xe889b;_0x14f68d[_0x371460(0x1f8)]==calendarModal&&(calendarModal[_0x371460(0x159)]['display']='none');};function getCurrentTime(){var _0xe1b7e0=_0xe889b,_0x46f765=new Date(),_0x13d0a4=_0x46f765['getHours'](),_0x1e5b16=_0x46f765[_0xe1b7e0(0x1dc)]();return _0x13d0a4*0x3c+_0x1e5b16;}function isWeekend(){var _0x552e6e=_0xe889b,_0x403a4d=new Date(),_0x2a3b0f=_0x403a4d[_0x552e6e(0x1e7)]();return _0x2a3b0f===0x0||_0x2a3b0f===0x6;}function calculateBusTime(){var _0x465efd=_0xe889b,_0x3116da=getCurrentTime(),_0x45506a=[];for(var _0x1b6e8d=0x1fe;_0x1b6e8d<=0x285;_0x1b6e8d+=0xf){_0x45506a[_0x465efd(0x1eb)](_0x1b6e8d);}var _0xb6e3ad=_0x45506a[_0x465efd(0x22b)](_0x15de91=>_0x15de91>_0x3116da),_0x5346b=_0x45506a[_0xb6e3ad],_0xbb8ec6=Math['floor'](_0x5346b/0x3c),_0x557ef7=_0x5346b%0x3c,_0x3ee276=document[_0x465efd(0x208)](_0x465efd(0x1af)),_0x3a9b87=document['querySelector'](_0x465efd(0x1d3));if(_0xb6e3ad===-0x1||_0x5346b>0x276||isWeekend())_0x3ee276['textContent']='08:30',_0x3a9b87[_0x465efd(0x1d9)]=_0x465efd(0x1b6);else{_0x3ee276['textContent']=('0'+_0xbb8ec6)[_0x465efd(0x231)](-0x2)+':'+('0'+_0x557ef7)['slice'](-0x2);if(_0x3116da>_0x5346b)_0x3a9b87['textContent']='운행\x20종료';else{var _0x50ccb9=_0x5346b-_0x3116da;if(_0x50ccb9>0x0){var _0xbb8ec6=Math['floor'](_0x50ccb9/0x3c),_0x557ef7=_0x50ccb9%0x3c,_0x40494f='';_0xbb8ec6>0x0&&(_0x40494f+=_0xbb8ec6+_0x465efd(0x139)),_0x557ef7>0x0&&(_0x40494f+=_0x557ef7+_0x465efd(0x163)),_0x3a9b87[_0x465efd(0x1d9)]=_0x40494f+'';}else _0x3a9b87[_0x465efd(0x1d9)]=_0x465efd(0x191);}}}calculateBusTime(),document[_0xe889b(0x228)](_0xe889b(0x161),function(){var _0x472440=_0xe889b,_0x12ebce=new Date(),_0x2712c8=_0x12ebce[_0x472440(0x1e7)](),_0x41bcca=_0x2712c8===0x0||_0x2712c8===0x6;if(_0x41bcca){document['querySelector']('.Namyangju_time1\x20p:nth-child(2)')[_0x472440(0x1d9)]=_0x472440(0x22a),document['querySelector'](_0x472440(0x19a))[_0x472440(0x1d9)]='08:30',document[_0x472440(0x208)]('.Hanam_time1\x20p:nth-child(2)')[_0x472440(0x1d9)]=_0x472440(0x152),document[_0x472440(0x208)](_0x472440(0x184))[_0x472440(0x1d9)]=_0x472440(0x20f),document[_0x472440(0x208)](_0x472440(0x200))[_0x472440(0x1d9)]=_0x472440(0x176),document['querySelector']('.New3_time1\x20p:nth-child(2)')[_0x472440(0x1d9)]='09:15',document[_0x472440(0x208)](_0x472440(0x172))[_0x472440(0x1d9)]=_0x472440(0x1b6),document[_0x472440(0x208)]('.Guri_time2\x20p')[_0x472440(0x1d9)]=_0x472440(0x1b6),document[_0x472440(0x208)](_0x472440(0x1b4))[_0x472440(0x1d9)]=_0x472440(0x1b6),document[_0x472440(0x208)](_0x472440(0x1e3))[_0x472440(0x1d9)]=_0x472440(0x1b6),document[_0x472440(0x208)](_0x472440(0x1c7))[_0x472440(0x1d9)]=_0x472440(0x1b6),document[_0x472440(0x208)](_0x472440(0x14f))[_0x472440(0x1d9)]=_0x472440(0x1b6);return;}var _0x5dfd50=_0x12ebce[_0x472440(0x158)](),_0x3db618=_0x12ebce[_0x472440(0x1dc)](),_0x167505=_0x5dfd50*0x3c+_0x3db618,_0x3785e9=document[_0x472440(0x208)]('.Namyangju_time1\x20p:nth-child(2)')['textContent']['split'](':'),_0x4c18f8=parseInt(_0x3785e9[0x0]),_0x4c9f2b=parseInt(_0x3785e9[0x1]),_0x3ea727=_0x4c18f8*0x3c+_0x4c9f2b,_0x2d7352=document[_0x472440(0x208)]('.Guri_time1\x20p:nth-child(2)')[_0x472440(0x1d9)][_0x472440(0x15e)](':'),_0x41bffb=parseInt(_0x2d7352[0x0]),_0x150100=parseInt(_0x2d7352[0x1]),_0x4ad83b=_0x41bffb*0x3c+_0x150100,_0x358b75=document[_0x472440(0x208)](_0x472440(0x13d))[_0x472440(0x1d9)][_0x472440(0x15e)](':'),_0x1d3fba=parseInt(_0x358b75[0x0]),_0x50ffb5=parseInt(_0x358b75[0x1]),_0x51fe84=_0x1d3fba*0x3c+_0x50ffb5,_0x416596=document['querySelector']('.New1_time1\x20p:nth-child(2)')[_0x472440(0x1d9)]['split'](':'),_0x2acf94=parseInt(_0x416596[0x0]),_0x1b1d75=parseInt(_0x416596[0x1]),_0x20f8e7=_0x2acf94*0x3c+_0x1b1d75,_0x42b60d=document[_0x472440(0x208)](_0x472440(0x200))['textContent'][_0x472440(0x15e)](':'),_0x4fe93f=parseInt(_0x42b60d[0x0]),_0x2f4db0=parseInt(_0x42b60d[0x1]),_0x17f59f=_0x4fe93f*0x3c+_0x2f4db0,_0x4bd3e2=document[_0x472440(0x208)](_0x472440(0x15d))[_0x472440(0x1d9)]['split'](':'),_0x26c917=parseInt(_0x4bd3e2[0x0]),_0x3b35b8=parseInt(_0x4bd3e2[0x1]),_0x84858c=_0x26c917*0x3c+_0x3b35b8;if(_0x167505<_0x3ea727){var _0x4e7cbd=_0x3ea727-_0x167505,_0xd1290a=Math[_0x472440(0x1c5)](_0x4e7cbd/0x3c),_0x10da44=_0x4e7cbd%0x3c;_0xd1290a>0x0?document[_0x472440(0x208)]('.Namyangju_time2\x20p')[_0x472440(0x1d9)]=_0xd1290a+_0x472440(0x139)+_0x10da44+_0x472440(0x17b):document[_0x472440(0x208)]('.Namyangju_time2\x20p')[_0x472440(0x1d9)]=_0x10da44+_0x472440(0x17b);}else document[_0x472440(0x208)](_0x472440(0x172))[_0x472440(0x1d9)]='운행\x20종료';if(_0x167505<_0x4ad83b){var _0x4e7cbd=_0x4ad83b-_0x167505,_0xd1290a=Math[_0x472440(0x1c5)](_0x4e7cbd/0x3c),_0x10da44=_0x4e7cbd%0x3c;_0xd1290a>0x0?document[_0x472440(0x208)]('.Guri_time2\x20p')['textContent']=_0xd1290a+_0x472440(0x139)+_0x10da44+_0x472440(0x17b):document[_0x472440(0x208)](_0x472440(0x1a7))[_0x472440(0x1d9)]=_0x10da44+_0x472440(0x17b);}else document[_0x472440(0x208)](_0x472440(0x1a7))[_0x472440(0x1d9)]='운행\x20종료';if(_0x167505<_0x51fe84){var _0x4e7cbd=_0x51fe84-_0x167505,_0xd1290a=Math[_0x472440(0x1c5)](_0x4e7cbd/0x3c),_0x10da44=_0x4e7cbd%0x3c;_0xd1290a>0x0?document[_0x472440(0x208)]('.Hanam_time2\x20p')['textContent']=_0xd1290a+'시간\x20'+_0x10da44+_0x472440(0x17b):document[_0x472440(0x208)](_0x472440(0x1b4))[_0x472440(0x1d9)]=_0x10da44+_0x472440(0x17b);}else document[_0x472440(0x208)](_0x472440(0x1b4))['textContent']=_0x472440(0x1b6);if(_0x167505<_0x20f8e7){var _0x4e7cbd=_0x20f8e7-_0x167505,_0xd1290a=Math[_0x472440(0x1c5)](_0x4e7cbd/0x3c),_0x10da44=_0x4e7cbd%0x3c;_0xd1290a>0x0?document[_0x472440(0x208)](_0x472440(0x1e3))[_0x472440(0x1d9)]=_0xd1290a+_0x472440(0x139)+_0x10da44+_0x472440(0x17b):document['querySelector'](_0x472440(0x1e3))[_0x472440(0x1d9)]=_0x10da44+_0x472440(0x17b);}else document['querySelector'](_0x472440(0x1e3))['textContent']=_0x472440(0x1b6);if(_0x167505<_0x17f59f){var _0x4e7cbd=_0x17f59f-_0x167505,_0xd1290a=Math[_0x472440(0x1c5)](_0x4e7cbd/0x3c),_0x10da44=_0x4e7cbd%0x3c;_0xd1290a>0x0?document['querySelector'](_0x472440(0x1c7))[_0x472440(0x1d9)]=_0xd1290a+_0x472440(0x139)+_0x10da44+_0x472440(0x17b):document['querySelector'](_0x472440(0x1c7))[_0x472440(0x1d9)]=_0x10da44+_0x472440(0x17b);}else document[_0x472440(0x208)](_0x472440(0x1c7))[_0x472440(0x1d9)]=_0x472440(0x1b6);if(_0x167505<_0x84858c){var _0x4e7cbd=_0x84858c-_0x167505,_0xd1290a=Math[_0x472440(0x1c5)](_0x4e7cbd/0x3c),_0x10da44=_0x4e7cbd%0x3c;_0xd1290a>0x0?document[_0x472440(0x208)]('.New3_time2\x20p')[_0x472440(0x1d9)]=_0xd1290a+_0x472440(0x139)+_0x10da44+_0x472440(0x17b):document[_0x472440(0x208)](_0x472440(0x14f))['textContent']=_0x10da44+'분\x20전';}else document[_0x472440(0x208)]('.New3_time2\x20p')[_0x472440(0x1d9)]=_0x472440(0x1b6);});var scrollToBottomButton2=document[_0xe889b(0x208)](_0xe889b(0x15b));scrollToBottomButton2[_0xe889b(0x228)]('click',function(){var _0x5f2958=_0xe889b;window[_0x5f2958(0x196)](0x0,document[_0x5f2958(0x143)]['scrollHeight']-0x442);}),document[_0xe889b(0x208)](_0xe889b(0x1ae))['onclick']=function(){var _0x12fb66=_0xe889b;document[_0x12fb66(0x22e)]('cmap-myModal')[_0x12fb66(0x159)]['display']=_0x12fb66(0x154);},window[_0xe889b(0x21c)]=function(_0x465c71){var _0xc5ae21=_0xe889b;_0x465c71[_0xc5ae21(0x1f8)]==document[_0xc5ae21(0x22e)](_0xc5ae21(0x149))&&(document[_0xc5ae21(0x22e)](_0xc5ae21(0x1cd))[_0xc5ae21(0x159)]['display']=_0xc5ae21(0x154));};function rotateImage(_0x56f3fa){var _0x3ea98b=_0xe889b;if(_0x56f3fa[_0x3ea98b(0x16f)][_0x3ea98b(0x1ff)]('rotating'))return;_0x56f3fa[_0x3ea98b(0x16f)][_0x3ea98b(0x188)](_0x3ea98b(0x1f1)),_0x56f3fa[_0x3ea98b(0x159)][_0x3ea98b(0x223)]=_0x3ea98b(0x1ed),_0x56f3fa[_0x3ea98b(0x159)][_0x3ea98b(0x1c9)]=_0x3ea98b(0x15a),_0x56f3fa[_0x3ea98b(0x228)](_0x3ea98b(0x1fb),function _0x5a0e2b(){var _0x3bac46=_0x3ea98b;_0x56f3fa[_0x3bac46(0x159)][_0x3bac46(0x223)]='none',_0x56f3fa['style'][_0x3bac46(0x1c9)]=_0x3bac46(0x22f),_0x56f3fa[_0x3bac46(0x16f)][_0x3bac46(0x18d)]('rotating'),_0x56f3fa[_0x3bac46(0x20d)](_0x3bac46(0x1fb),_0x5a0e2b);}),updateTime_1=0x0,updateTime_2=0x0,updateTime_3=0x0,getBusArrivalInfo(),getBusArrivalInfo_2(),setTimeout(function(){var _0x413b90=_0x3ea98b;calculateBusTime();var _0x5110eb=document['querySelectorAll']('.busarea');_0x5110eb[_0x413b90(0x19f)](function(_0x5903f7){var _0x395ffd=_0x413b90;_0x5903f7[_0x395ffd(0x16f)]['remove']('animate'),void _0x5903f7[_0x395ffd(0x168)],_0x5903f7[_0x395ffd(0x16f)][_0x395ffd(0x188)](_0x395ffd(0x1db));});},0x2bc);}function rotate_button(){updateTime_1=0x0,updateTime_2=0x0,updateTime_3=0x0,getBusArrivalInfo(),getBusArrivalInfo_2(),setTimeout(function(){calculateBusTime();},0xc8);}window[_0xe889b(0x17d)]=function(){var _0x38a5b4=_0xe889b;document[_0x38a5b4(0x143)][_0x38a5b4(0x159)][_0x38a5b4(0x1a6)]=0x0,setTimeout(function(){var _0x54b915=_0x38a5b4;document[_0x54b915(0x143)]['style']['opacity']=0x1;},0x64);};var btn6Elements=document['getElementsByClassName'](_0xe889b(0x1fc));for(var i=0x0;i<btn6Elements[_0xe889b(0x212)];i++){btn6Elements[i][_0xe889b(0x228)](_0xe889b(0x1bf),openAttendanceModal);}function openAttendanceModal(){var _0x55881e=_0xe889b;document[_0x55881e(0x22e)](_0x55881e(0x220))[_0x55881e(0x159)][_0x55881e(0x218)]=_0x55881e(0x1a3);}function closeAttendanceModal(){var _0x557477=_0xe889b;document[_0x557477(0x22e)](_0x557477(0x220))[_0x557477(0x159)]['display']=_0x557477(0x154);}window[_0xe889b(0x21c)]=function(_0x3daac6){var _0x360c68=_0xe889b;_0x3daac6[_0x360c68(0x1f8)]==document['getElementById']('attendanceModal')&&closeAttendanceModal();};const attendanceButtons=document[_0xe889b(0x1e0)]('attendance-button');function _0x1b98(_0x5dc291,_0x5bb3e7){var _0x4c6c2d=_0x4c6c();return _0x1b98=function(_0x1b981c,_0x55d3c7){_0x1b981c=_0x1b981c-0x139;var _0x46d967=_0x4c6c2d[_0x1b981c];return _0x46d967;},_0x1b98(_0x5dc291,_0x5bb3e7);}for(let i=0x0;i<attendanceButtons[_0xe889b(0x212)];i++){attendanceButtons[i]['addEventListener'](_0xe889b(0x1bf),function(){var _0xc27563=_0xe889b;window[_0xc27563(0x174)]('https://portal.du.ac.kr');});}function parseAndDisplayMenu(_0x3a35d5){var _0x1e3ade=_0xe889b,_0x1c9f98=_0x3a35d5[_0x1e3ade(0x15e)]('\x0a'),_0x1145c5='<table>';_0x1145c5+=_0x1e3ade(0x1f5),_0x1145c5+=_0x1e3ade(0x1cb);var _0x297e92='',_0x477774='';return _0x1c9f98[_0x1e3ade(0x19f)](function(_0x2df82a){var _0x54982d=_0x1e3ade;_0x2df82a=_0x2df82a[_0x54982d(0x204)](),_0x2df82a[_0x54982d(0x212)]>0x0&&(_0x2df82a[_0x54982d(0x153)](str)?(_0x297e92!==''&&(_0x1145c5+=_0x54982d(0x1f6)+_0x297e92+_0x54982d(0x19e)+_0x477774+_0x54982d(0x15f)),_0x297e92=_0x2df82a,_0x477774=''):_0x477774+=_0x54982d(0x1a1)+_0x2df82a+_0x54982d(0x1b3));}),_0x297e92!==''&&_0x477774!==''&&(_0x1145c5+=_0x1e3ade(0x1f6)+_0x297e92+_0x1e3ade(0x19e)+_0x477774+_0x1e3ade(0x15f)),_0x1145c5+=_0x1e3ade(0x216),_0x1145c5;}document[_0xe889b(0x22e)](_0xe889b(0x167))['innerHTML']=parseAndDisplayMenu(tbodyData);function getTodayDate(){var _0x17dece=_0xe889b,_0x374fb7=new Date(),_0x52a465=String(_0x374fb7[_0x17dece(0x1c3)]())[_0x17dece(0x1b0)](0x2,'0'),_0x372318=String(_0x374fb7[_0x17dece(0x217)]()+0x1)[_0x17dece(0x1b0)](0x2,'0');return _0x372318+'/'+_0x52a465;}function extractMenuByDate(_0x4cb653,_0x2c7c20){var _0x5e3371=_0xe889b,_0x126314=_0x4cb653[_0x5e3371(0x15e)]('\x0a'),_0x22a777='',_0x17be39=![];for(var _0x441c93=0x0;_0x441c93<_0x126314[_0x5e3371(0x212)];_0x441c93++){if(_0x126314[_0x441c93][_0x5e3371(0x1bd)](_0x2c7c20))_0x17be39=!![];else{if(_0x17be39&&/^\d\d\/\d\d/[_0x5e3371(0x214)](_0x126314[_0x441c93]))break;}_0x17be39&&(_0x22a777+=_0x126314[_0x441c93]+'\x0a');}return _0x22a777[_0x5e3371(0x204)]();}var calendarData=_0xe889b(0x178);function parseCalendarData(_0x3d7de1){var _0x49de9b=_0xe889b;const _0x2bd429=_0x3d7de1[_0x49de9b(0x204)]()[_0x49de9b(0x15e)]('\x0a'),_0x37c5e7=[];for(let _0x1a87af=0x0;_0x1a87af<_0x2bd429[_0x49de9b(0x212)];_0x1a87af+=0x2){const _0x260da1=_0x2bd429[_0x1a87af],_0x41bc12=_0x2bd429[_0x1a87af+0x1];_0x37c5e7[_0x49de9b(0x1eb)]({'date':_0x260da1,'description':_0x41bc12});}return _0x37c5e7;}function updateCalendarModal(_0x47c519){var _0x128f85=_0xe889b;const _0x45b5b6=document[_0x128f85(0x22e)](_0x128f85(0x20e));let _0x40db0e='';for(let _0x4f8c8a of _0x47c519){_0x40db0e+='<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>'+_0x4f8c8a[_0x128f85(0x20c)]+_0x128f85(0x226)+_0x4f8c8a[_0x128f85(0x146)]+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>';}_0x45b5b6[_0x128f85(0x1a0)]=_0x40db0e;}const parsedEvents=parseCalendarData(calendarData);updateCalendarModal(parsedEvents),document[_0xe889b(0x208)](_0xe889b(0x215))[_0xe889b(0x228)](_0xe889b(0x1bf),function(){var _0x4f5768=_0xe889b;window[_0x4f5768(0x1e9)][_0x4f5768(0x1da)]=_0x4f5768(0x1cc);}),document[_0xe889b(0x208)]('#icon-button2')[_0xe889b(0x228)]('click',function(){var _0x5d02d3=_0xe889b;window[_0x5d02d3(0x1e9)]['href']=_0x5d02d3(0x183);}),document[_0xe889b(0x208)](_0xe889b(0x1a9))[_0xe889b(0x228)](_0xe889b(0x1bf),function(){var _0x4680fc=_0xe889b;window['location']['href']=_0x4680fc(0x206);}),document['querySelector']('#icon-button101')[_0xe889b(0x228)](_0xe889b(0x1bf),function(){var _0x113fcf=_0xe889b;window[_0x113fcf(0x1e9)][_0x113fcf(0x1da)]=_0x113fcf(0x205);}),document['querySelector'](_0xe889b(0x1e5))['addEventListener'](_0xe889b(0x1bf),function(){var _0x14b9a0=_0xe889b;window[_0x14b9a0(0x1e9)]['href']='https://www.du.ac.kr/submenu.do?menuUrl=aZ%2bCFV3rkCXxn2YmJUm7Qg%3d%3d&';}),document[_0xe889b(0x208)](_0xe889b(0x17c))['addEventListener'](_0xe889b(0x1bf),function(){var _0x587508=_0xe889b;window[_0x587508(0x1e9)]['href']='https://www.du.ac.kr/submenu.do?menuUrl=fxlHsjubVTalTZEV27h0FA%3d%3d&';}),document[_0xe889b(0x208)](_0xe889b(0x192))['addEventListener'](_0xe889b(0x1bf),function(){var _0x778971=_0xe889b;window[_0x778971(0x1e9)][_0x778971(0x1da)]=_0x778971(0x1ad);}),document[_0xe889b(0x208)]('#icon-button105')['addEventListener'](_0xe889b(0x1bf),function(){var _0x3e327a=_0xe889b;window[_0x3e327a(0x1e9)][_0x3e327a(0x1da)]=_0x3e327a(0x155);}),document['querySelector'](_0xe889b(0x190))['addEventListener'](_0xe889b(0x1bf),function(){var _0x2b1daf=_0xe889b;window['location'][_0x2b1daf(0x1da)]=_0x2b1daf(0x155);}),document['querySelector'](_0xe889b(0x1d6))[_0xe889b(0x228)](_0xe889b(0x1bf),function(){var _0x70c790=_0xe889b;window[_0x70c790(0x1e9)][_0x70c790(0x1da)]=_0x70c790(0x155);}),document['querySelector'](_0xe889b(0x14d))[_0xe889b(0x228)](_0xe889b(0x1bf),function(){var _0x4cff98=_0xe889b;window['location'][_0x4cff98(0x1da)]=_0x4cff98(0x155);}),document[_0xe889b(0x208)]('#icon-button108')[_0xe889b(0x228)]('click',function(){var _0x17d57f=_0xe889b;window[_0x17d57f(0x1e9)]['href']=_0x17d57f(0x1ca);}),document[_0xe889b(0x208)](_0xe889b(0x1b7))[_0xe889b(0x228)](_0xe889b(0x1bf),function(){var _0x10103e=_0xe889b;window[_0x10103e(0x1e9)][_0x10103e(0x1da)]='https://www.du.ac.kr/submenu.do?menuUrl=ndTfMlfcorVznwKzBSpK1g%3d%3d&';}),document['querySelector'](_0xe889b(0x13c))[_0xe889b(0x228)](_0xe889b(0x1bf),function(){var _0x3261bd=_0xe889b;window['location'][_0x3261bd(0x1da)]='https://www.du.ac.kr/submenu.do?menuUrl=zrUBv6HE%2fuNuCmtgpW4HzA%3d%3d&';}),document[_0xe889b(0x208)]('#icon-button111')[_0xe889b(0x228)](_0xe889b(0x1bf),function(){var _0x10a2df=_0xe889b;window[_0x10a2df(0x1e9)][_0x10a2df(0x1da)]=_0x10a2df(0x1df);}),document['querySelector'](_0xe889b(0x20b))[_0xe889b(0x228)](_0xe889b(0x1bf),function(){var _0x1d6b35=_0xe889b;window[_0x1d6b35(0x1e9)][_0x1d6b35(0x1da)]=_0x1d6b35(0x1e4);}),document['querySelector']('#icon-button113')[_0xe889b(0x228)]('click',function(){var _0x427dc7=_0xe889b;window[_0x427dc7(0x1e9)][_0x427dc7(0x1da)]=_0x427dc7(0x1a8);}),document[_0xe889b(0x208)](_0xe889b(0x13e))[_0xe889b(0x228)](_0xe889b(0x1bf),function(){var _0x2432a4=_0xe889b;window[_0x2432a4(0x1e9)][_0x2432a4(0x1da)]='https://www.du.ac.kr/submenu.do?menuUrl=3ZqNYgyaL4YCzismnO%2bZ6A%3d%3d&';}),document[_0xe889b(0x208)](_0xe889b(0x1aa))[_0xe889b(0x228)](_0xe889b(0x1bf),function(){var _0x1c3978=_0xe889b;window[_0x1c3978(0x1e9)][_0x1c3978(0x1da)]='https://www.du.ac.kr/submenu.do?menuUrl=aI4A%2bH2x9eItZ%2ft2pXFHhg%3d%3d&';}),document['querySelector'](_0xe889b(0x1c1))['addEventListener'](_0xe889b(0x1bf),function(){var _0x3ed525=_0xe889b;window[_0x3ed525(0x1e9)][_0x3ed525(0x1da)]=_0x3ed525(0x160);}),document['querySelector']('#icon-button117')['addEventListener'](_0xe889b(0x1bf),function(){var _0x51f140=_0xe889b;window[_0x51f140(0x1e9)]['href']='https://www.du.ac.kr/submenu.do?menuUrl=mgephqOMYERCbwCnwyxbrg%3d%3d&';}),document[_0xe889b(0x208)](_0xe889b(0x224))[_0xe889b(0x228)](_0xe889b(0x1bf),function(){var _0x2f09a1=_0xe889b;window['location'][_0x2f09a1(0x1da)]=_0x2f09a1(0x19b);}),document[_0xe889b(0x208)](_0xe889b(0x173))[_0xe889b(0x228)](_0xe889b(0x1bf),function(){var _0x12f33d=_0xe889b;window[_0x12f33d(0x1e9)][_0x12f33d(0x1da)]=_0x12f33d(0x1ba);}),document[_0xe889b(0x208)]('#icon-button120')[_0xe889b(0x228)](_0xe889b(0x1bf),function(){var _0x5a77f7=_0xe889b;window[_0x5a77f7(0x1e9)][_0x5a77f7(0x1da)]=_0x5a77f7(0x1c4);}),document['querySelector'](_0xe889b(0x156))[_0xe889b(0x228)]('click',function(){var _0x3df55b=_0xe889b;window[_0x3df55b(0x1e9)][_0x3df55b(0x1da)]=_0x3df55b(0x17a);}),document[_0xe889b(0x208)](_0xe889b(0x1c2))[_0xe889b(0x228)](_0xe889b(0x1bf),function(){var _0x2d97f9=_0xe889b;window[_0x2d97f9(0x1e9)]['href']=_0x2d97f9(0x21e);}),document[_0xe889b(0x208)]('#icon-button123')[_0xe889b(0x228)]('click',function(){var _0xd3c0d0=_0xe889b;window[_0xd3c0d0(0x1e9)][_0xd3c0d0(0x1da)]=_0xd3c0d0(0x1f3);}),document['querySelector']('#icon-button124')[_0xe889b(0x228)](_0xe889b(0x1bf),function(){var _0x5a8871=_0xe889b;window[_0x5a8871(0x1e9)][_0x5a8871(0x1da)]=_0x5a8871(0x232);}),document[_0xe889b(0x208)]('#icon-button125')['addEventListener']('click',function(){var _0x44b3f3=_0xe889b;window['location'][_0x44b3f3(0x1da)]=_0x44b3f3(0x1dd);}),document['querySelector'](_0xe889b(0x180))[_0xe889b(0x228)](_0xe889b(0x1bf),function(){var _0x5524ea=_0xe889b;window[_0x5524ea(0x1e9)][_0x5524ea(0x1da)]='https://www.du.ac.kr/submenu.do?menuUrl=Pq45DK2FRS9f8inD1oNqOA%3d%3d&';}),document[_0xe889b(0x208)](_0xe889b(0x1e8))['addEventListener'](_0xe889b(0x1bf),function(){var _0x227b6a=_0xe889b;window[_0x227b6a(0x1e9)][_0x227b6a(0x1da)]='https://dudream.du.ac.kr/';}),document[_0xe889b(0x208)](_0xe889b(0x227))[_0xe889b(0x228)]('click',function(){window['location']['href']='https://dlibrary.du.ac.kr/';}),document[_0xe889b(0x208)]('#icon-button129')[_0xe889b(0x228)](_0xe889b(0x1bf),function(){var _0x106a10=_0xe889b;window[_0x106a10(0x1e9)][_0x106a10(0x1da)]=_0x106a10(0x148);}),document[_0xe889b(0x208)](_0xe889b(0x141))[_0xe889b(0x228)]('click',function(){var _0x577560=_0xe889b;window['location'][_0x577560(0x1da)]=_0x577560(0x177);}),document[_0xe889b(0x208)](_0xe889b(0x21a))['addEventListener'](_0xe889b(0x1bf),function(){var _0x1dd20d=_0xe889b;window[_0x1dd20d(0x1e9)][_0x1dd20d(0x1da)]=_0x1dd20d(0x18e);}),document[_0xe889b(0x208)](_0xe889b(0x14c))['addEventListener'](_0xe889b(0x1bf),function(){var _0xe5a51f=_0xe889b;window['location'][_0xe5a51f(0x1da)]=_0xe5a51f(0x229);}),document['querySelector'](_0xe889b(0x1cf))[_0xe889b(0x228)](_0xe889b(0x1bf),function(){var _0x270b03=_0xe889b;window['location'][_0x270b03(0x1da)]=_0x270b03(0x1d8);}),document[_0xe889b(0x22e)](_0xe889b(0x1e2))[_0xe889b(0x228)](_0xe889b(0x1bf),function(){var _0x301942=_0xe889b;window[_0x301942(0x1e9)][_0x301942(0x1da)]=_0x301942(0x1d4);}),document[_0xe889b(0x22e)](_0xe889b(0x1c8))[_0xe889b(0x228)](_0xe889b(0x1bf),function(){var _0x421c8e=_0xe889b;window[_0x421c8e(0x1e9)][_0x421c8e(0x1da)]=_0x421c8e(0x1f7);}),document[_0xe889b(0x22e)](_0xe889b(0x1a4))[_0xe889b(0x228)](_0xe889b(0x1bf),function(){var _0x7f080c=_0xe889b;window[_0x7f080c(0x1e9)][_0x7f080c(0x1da)]=_0x7f080c(0x1d7);}),document[_0xe889b(0x22e)](_0xe889b(0x142))['addEventListener'](_0xe889b(0x1bf),function(){var _0x5ae802=_0xe889b;station_variable_1=0xbbc2,station_variable_2=0xbbc1,document[_0x5ae802(0x22e)]('bus_name1')[_0x5ae802(0x1a5)]='🚍동서울대학교\x20→\x20가천대역',document[_0x5ae802(0x22e)]('bus_name2')[_0x5ae802(0x1a5)]=_0x5ae802(0x1bc),rotate_button();}),document[_0xe889b(0x22e)](_0xe889b(0x21b))[_0xe889b(0x228)](_0xe889b(0x1bf),function(){var _0x57ef28=_0xe889b;station_variable_1=0xbb93,station_variable_2=0x5f14,document[_0x57ef28(0x22e)]('bus_name1')[_0x57ef28(0x1a5)]='🚍가천대역\x20→\x20동서울대학교',document['getElementById'](_0x57ef28(0x22c))[_0x57ef28(0x1a5)]=_0x57ef28(0x235),rotate_button();});var station_variable_1=0xbb93,station_variable_2=0x5f14;function getBusArrivalInfo(){var _0x33e402=_0xe889b,_0xdd6d57=new XMLHttpRequest(),_0x3a89f2='/api/stationInfo',_0x251f22=station_variable_1,_0x1402fb='?'+encodeURIComponent(_0x33e402(0x145))+'='+encodeURIComponent(_0x251f22);_0xdd6d57[_0x33e402(0x174)](_0x33e402(0x13b),_0x3a89f2+_0x1402fb),_0xdd6d57[_0x33e402(0x179)]=function(){var _0x567fa4=_0x33e402;if(this['readyState']==0x4&&this[_0x567fa4(0x21d)]==0xc8){var _0x348306=this['responseText'];displayBusArrivalTimes(_0x348306);}},_0xdd6d57[_0x33e402(0x21f)]('');}function displayBusArrivalTimes(_0x6868cd){var _0x587be2=_0xe889b,_0x5851d3=new DOMParser()[_0x587be2(0x199)](_0x6868cd,_0x587be2(0x164)),_0x5e1b03=_0x5851d3[_0x587be2(0x1de)](_0x587be2(0x1d0)),_0x1b0a88=document['getElementById'](_0x587be2(0x1b8));_0x1b0a88[_0x587be2(0x1a0)]='';var _0x3a0c50=![];for(var _0x47e2c7=0x0;_0x47e2c7<_0x5e1b03[_0x587be2(0x212)];_0x47e2c7++){var _0xabd9ba=_0x5e1b03[_0x47e2c7][_0x587be2(0x1de)](_0x587be2(0x197))[0x0]?.['textContent']||null,_0xf982f3=_0x5e1b03[_0x47e2c7][_0x587be2(0x1de)](_0x587be2(0x1be))[0x0]?.[_0x587be2(0x1d9)]||null,_0x59ae61=_0x5e1b03[_0x47e2c7][_0x587be2(0x1de)]('arrmsg2')[0x0]?.[_0x587be2(0x1d9)]||null;if(!_0xabd9ba||!_0xf982f3||_0xf982f3[_0x587be2(0x13a)](_0x587be2(0x140))||_0xf982f3[_0x587be2(0x13a)](_0x587be2(0x210)))continue;_0xabd9ba=_0xabd9ba[_0x587be2(0x14e)](/([0-9\-A-Za-z]+)[가-힣]+$/,'$1');[_0x587be2(0x202),_0x587be2(0x1ef),_0x587be2(0x1bb),'452'][_0x587be2(0x13a)](_0xabd9ba)&&(_0xabd9ba='<span\x20style=\x27color:\x20#4f79cd;\x27>'+_0xabd9ba+_0x587be2(0x1d5));[_0x587be2(0x211),'100',_0x587be2(0x1b9),'30','32',_0x587be2(0x171)][_0x587be2(0x13a)](_0xabd9ba)&&(_0xabd9ba=_0x587be2(0x1fa)+_0xabd9ba+_0x587be2(0x1d5));['1117','500-1A',_0x587be2(0x18c),_0x587be2(0x230),'500-2',_0x587be2(0x22d),'반디1-1'][_0x587be2(0x13a)](_0xabd9ba)&&(_0xabd9ba=_0x587be2(0x233)+_0xabd9ba+_0x587be2(0x1d5));_0xf982f3=_0xf982f3[_0x587be2(0x14e)](/(\d+)초\s*/,'')[_0x587be2(0x14e)](/(\d+)분후/,'$1분'),_0x59ae61=_0x59ae61[_0x587be2(0x14e)](/(\d+)초\s*/,'')[_0x587be2(0x14e)](/(\d+)분후/,_0x587be2(0x175)),_0x3a0c50=!![];var _0x12fcaa=_0x587be2(0x17e)+_0xabd9ba+'\x20</span>';_0xf982f3&&(_0x12fcaa+=_0x587be2(0x234)+_0xf982f3[_0x587be2(0x14e)](/(\d+분)/,_0x587be2(0x186))+_0x587be2(0x1d5));_0x59ae61&&(_0x12fcaa+=_0x587be2(0x1ec)+_0x59ae61['replace'](/(\d+분)/,_0x587be2(0x186))+_0x587be2(0x1d5));var _0x1c6cae=document[_0x587be2(0x198)]('div');_0x1c6cae['classList'][_0x587be2(0x188)](_0x587be2(0x162)),_0x1c6cae['innerHTML']=_0x12fcaa,_0x1b0a88['appendChild'](_0x1c6cae);}if(!_0x3a0c50){var _0x40c6b7=document[_0x587be2(0x198)]('div');_0x40c6b7[_0x587be2(0x16f)][_0x587be2(0x188)]('busInfo'),_0x40c6b7[_0x587be2(0x1a0)]=_0x587be2(0x193),_0x1b0a88[_0x587be2(0x221)](_0x40c6b7);}}function getBusArrivalInfo_2(){var _0x2998ca=_0xe889b,_0x3fc1be=new XMLHttpRequest(),_0x41a7a0='/api/stationInfo',_0x55fb38=station_variable_2,_0x3cb2cd='?'+encodeURIComponent('arsId')+'='+encodeURIComponent(_0x55fb38);_0x3fc1be[_0x2998ca(0x174)](_0x2998ca(0x13b),_0x41a7a0+_0x3cb2cd),_0x3fc1be[_0x2998ca(0x179)]=function(){var _0x12f62f=_0x2998ca;if(this[_0x12f62f(0x185)]==0x4&&this['status']==0xc8){var _0x5393cf=this['responseText'];displayBusArrivalTimes_2(_0x5393cf);}},_0x3fc1be[_0x2998ca(0x21f)]('');}function displayBusArrivalTimes_2(_0x25849f){var _0x50fbda=_0xe889b,_0x33f21a=new DOMParser()['parseFromString'](_0x25849f,_0x50fbda(0x164)),_0x1f0f76=_0x33f21a[_0x50fbda(0x1de)]('itemList'),_0x190662=document[_0x50fbda(0x22e)](_0x50fbda(0x144));_0x190662[_0x50fbda(0x1a0)]='';var _0x372b19=![];for(var _0xee215e=0x0;_0xee215e<_0x1f0f76[_0x50fbda(0x212)];_0xee215e++){var _0x22659d=_0x1f0f76[_0xee215e][_0x50fbda(0x1de)](_0x50fbda(0x197))[0x0]?.['textContent']||null,_0x171bf0=_0x1f0f76[_0xee215e][_0x50fbda(0x1de)](_0x50fbda(0x1be))[0x0]?.[_0x50fbda(0x1d9)]||null,_0x15c069=_0x1f0f76[_0xee215e][_0x50fbda(0x1de)]('arrmsg2')[0x0]?.[_0x50fbda(0x1d9)]||null;if(!_0x22659d||!_0x171bf0||_0x171bf0[_0x50fbda(0x13a)](_0x50fbda(0x140))||_0x171bf0['includes'](_0x50fbda(0x210)))continue;_0x22659d=_0x22659d[_0x50fbda(0x14e)](/([0-9\-A-Za-z]+)[가-힣]+$/,'$1');[_0x50fbda(0x202),_0x50fbda(0x1ef),_0x50fbda(0x1bb),_0x50fbda(0x14b)][_0x50fbda(0x13a)](_0x22659d)&&(_0x22659d=_0x50fbda(0x201)+_0x22659d+_0x50fbda(0x1d5));[_0x50fbda(0x211),'100',_0x50fbda(0x1b9),'30','32',_0x50fbda(0x171)]['includes'](_0x22659d)&&(_0x22659d='<span\x20style=\x27color:\x20#5ecd4f;\x27>'+_0x22659d+_0x50fbda(0x1d5));['1117',_0x50fbda(0x1d2),_0x50fbda(0x18c),'500-2N','500-2',_0x50fbda(0x22d),_0x50fbda(0x181)][_0x50fbda(0x13a)](_0x22659d)&&(_0x22659d='<span\x20style=\x27color:\x20#cd4f4f;\x27>'+_0x22659d+_0x50fbda(0x1d5));_0x171bf0=_0x171bf0['replace'](/(\d+)초\s*/,'')[_0x50fbda(0x14e)](/(\d+)분후/,_0x50fbda(0x175)),_0x15c069=_0x15c069['replace'](/(\d+)초\s*/,'')[_0x50fbda(0x14e)](/(\d+)분후/,_0x50fbda(0x175));var _0x53ed16=_0x50fbda(0x17e)+_0x22659d+_0x50fbda(0x147);_0x372b19=!![];_0x171bf0&&(_0x53ed16+=_0x50fbda(0x234)+_0x171bf0[_0x50fbda(0x14e)](/(\d+분)/,_0x50fbda(0x186))+_0x50fbda(0x1d5));_0x15c069&&(_0x53ed16+='<span\x20class=\x27arrivalTime_2\x27>'+_0x15c069['replace'](/(\d+분)/,_0x50fbda(0x186))+_0x50fbda(0x1d5));var _0x2f7672=document['createElement'](_0x50fbda(0x14a));_0x2f7672[_0x50fbda(0x16f)]['add'](_0x50fbda(0x162)),_0x2f7672[_0x50fbda(0x1a0)]=_0x53ed16,_0x190662[_0x50fbda(0x221)](_0x2f7672);}if(!_0x372b19){var _0x282d49=document[_0x50fbda(0x198)](_0x50fbda(0x14a));_0x282d49[_0x50fbda(0x16f)][_0x50fbda(0x188)]('busInfo'),_0x282d49[_0x50fbda(0x1a0)]=_0x50fbda(0x193),_0x190662[_0x50fbda(0x221)](_0x282d49);}}getBusArrivalInfo(),getBusArrivalInfo_2();function appdownmodal_isAndroidApp(){var _0x4af87b=_0xe889b,_0xd74df3=navigator[_0x4af87b(0x1e1)][_0x4af87b(0x209)]();return _0xd74df3[_0x4af87b(0x13a)](_0x4af87b(0x1ac))&&_0xd74df3[_0x4af87b(0x13a)](_0x4af87b(0x151));}var appdownmodal_modal=document[_0xe889b(0x22e)](_0xe889b(0x1a2));function appdownmodal_showModal(){var _0x355d00=_0xe889b;appdownmodal_modal[_0x355d00(0x159)]['display']='block';}function appdownmodal_closeModal(){var _0x2dad23=_0xe889b;appdownmodal_modal[_0x2dad23(0x159)][_0x2dad23(0x218)]=_0x2dad23(0x154),localStorage['setItem']('appdownmodal_modalClosed',_0x2dad23(0x169));}if(!appdownmodal_isAndroidApp()){var appdownmodal_modalClosed=localStorage[_0xe889b(0x225)](_0xe889b(0x13f));!appdownmodal_modalClosed&&setTimeout(appdownmodal_showModal,0x3e8);}var appdownmodal_downloadButton=document[_0xe889b(0x22e)](_0xe889b(0x1ee));appdownmodal_downloadButton['onclick']=function(){var _0x4e3520=_0xe889b;window[_0x4e3520(0x1e9)]['href']=_0x4e3520(0x16c);};var updateTime_1=0x1,updateTime_2=0x1,updateTime_3=0x1;function updateTime(){setInterval(function(){var _0x32d302=_0x1b98;document[_0x32d302(0x22e)](_0x32d302(0x213))[_0x32d302(0x1d9)]=updateTime_1+'초\x20전\x20업데이트',document[_0x32d302(0x22e)]('updateTime_2')[_0x32d302(0x1d9)]=updateTime_2+'초\x20전\x20업데이트',document['getElementById'](_0x32d302(0x1f9))[_0x32d302(0x1d9)]=updateTime_3+_0x32d302(0x16e),updateTime_1++,updateTime_2++,updateTime_3++;},0x3e8);}updateTime(),document[_0xe889b(0x22e)](_0xe889b(0x15c))[_0xe889b(0x228)](_0xe889b(0x1bf),function(){var _0x3bc7cd=_0xe889b;window['location'][_0x3bc7cd(0x1da)]=_0x3bc7cd(0x1f0);}),document['getElementById'](_0xe889b(0x182))['addEventListener']('click',function(){var _0x6de372=_0xe889b;window[_0x6de372(0x1e9)][_0x6de372(0x1da)]=_0x6de372(0x166);});const schoolBtn=document[_0xe889b(0x22e)]('schoolBtn'),homeBtn=document['getElementById'](_0xe889b(0x142));schoolBtn[_0xe889b(0x16f)][_0xe889b(0x188)](_0xe889b(0x1c6)),schoolBtn[_0xe889b(0x228)](_0xe889b(0x1bf),()=>applyGradient(schoolBtn,'active-left')),homeBtn['addEventListener'](_0xe889b(0x1bf),()=>applyGradient(homeBtn,'active-right'));function applyGradient(_0x2f5997,_0x2762e4){var _0x196d76=_0xe889b;schoolBtn[_0x196d76(0x16f)]['remove']('active-left',_0x196d76(0x1e6)),homeBtn['classList'][_0x196d76(0x18d)](_0x196d76(0x1c6),_0x196d76(0x1e6)),_0x2f5997['classList'][_0x196d76(0x188)](_0x2762e4);}async function loadBlogPosts(){var _0xbd212c=_0xe889b;try{const _0x2506ed=await fetch(_0xbd212c(0x203)),_0x378b9c=await _0x2506ed[_0xbd212c(0x187)]();_0x378b9c[_0xbd212c(0x170)]((_0x12fb86,_0x1b1580)=>new Date(_0x1b1580[_0xbd212c(0x20c)])-new Date(_0x12fb86[_0xbd212c(0x20c)]));let _0x415429='';_0x378b9c[_0xbd212c(0x19f)](_0x42e68c=>{var _0x41d22a=_0xbd212c;_0x415429+=_0x41d22a(0x18a)+_0x42e68c[_0x41d22a(0x1ce)]+_0x41d22a(0x1f2)+_0x42e68c[_0x41d22a(0x165)]+_0x41d22a(0x16a)+_0x42e68c[_0x41d22a(0x18b)]+_0x41d22a(0x1ab)+_0x42e68c[_0x41d22a(0x1ce)]+'\x22\x20target=\x22_blank\x22>자세히\x20보기\x20→</a></p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20';}),document[_0xbd212c(0x22e)](_0xbd212c(0x1fd))[_0xbd212c(0x1a0)]=_0x415429;}catch(_0x574891){console[_0xbd212c(0x1ea)](_0xbd212c(0x1b5),_0x574891);}}loadBlogPosts();const btnSchool=document[_0xe889b(0x22e)]('schoolBtn'),btnHome=document['getElementById'](_0xe889b(0x142)),underlineIndicator=document['querySelector'](_0xe889b(0x16b));underlineIndicator[_0xe889b(0x159)][_0xe889b(0x1c9)]=_0xe889b(0x17f),btnSchool[_0xe889b(0x228)]('click',function(){var _0x7c694e=_0xe889b;underlineIndicator[_0x7c694e(0x159)][_0x7c694e(0x1c9)]=_0x7c694e(0x17f);}),btnHome[_0xe889b(0x228)](_0xe889b(0x1bf),function(){var _0x333e6d=_0xe889b;underlineIndicator[_0x333e6d(0x159)]['transform']=_0x333e6d(0x222);});
+
+var _0x5b5b6a=_0x4f86;function _0x1808(){var _0x4fc8df=['.New1_time2\x20p','link','date','.underline','<li\x20class=\x22active\x22>•</li>','운행\x20종료','09:00','500-2N','반디1','.Namyangju_time1\x20p:nth-child(2)','translateX(0%)','busArrivalInfo','responseText','$1분','26yChjeb','innerHTML','text/xml','#icon-button130','onreadystatechange','<span>현재\x20버스\x20도착정보가\x20없습니다.</span>','290680KhTXFc','08:00','myModal','none','$1\x20','#icon-button201','<tr><td>','classList','appdownmodal_downloadButton','left:\x200px','#icon-button128','44HULxAi','sort','blog-posts.json','replace','substring','#icon-button114','rotating','description','instagramIcon','303','https://www.du.ac.kr/submenu.do?menuUrl=3ZqNYgyaL4YCzismnO%2bZ6A%3d%3d&','left:\x20','https://www.du.ac.kr/submenu.do?menuUrl=u9%2b5PWy5e%2bP81sj%2fRoRr1Q%3d%3d&','.slide_pagination\x20>\x20li','attendanceModal','블로그\x20데이터를\x20불러오는\x20중\x20오류\x20발생:','.slide_next_button','status','href','schoolBtn','length','push','#icon-button101','200kBJuin','#icon-button2','trim','GET','getDay','busInfo','remove','https://portal.du.ac.kr','homeBtn','12tiCcRQ','slice','<span\x20class=\x27arrivalTime_2\x27>','body','getElementsByClassName','parseFromString','bus_name2','https://www.instagram.com/dongseoul.university/','\x22\x20target=\x22_blank\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22','#icon-button107','https://www.du.ac.kr/submenu.do?menuUrl=g2jLoGsiMR3n3jBlLbWLpw%3d%3d&','#icon-button126','#icon-button0','active-left','updateTime_2','.New3_time2\x20p','1100385IoBMfA','08:30','active','<span\x20class=\x27routeId\x27>','08:35','5054cnKDVt','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22blog-card\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20href=\x22','운행종료','scrollHeight','#icon-button118','.Hanam_time1\x20p:nth-child(2)','match','</ul></td></tr>','</td></tr>','4425','https://www.du.ac.kr/submenu.do?menuord=4&submenuord=18&','#icon-button108','readyState','click','#icon-button109','#icon-button102','.New2_time1\x20p:nth-child(2)','<span\x20style=\x27color:\x20#5ecd4f;\x27>','.Guri_time2\x20p','</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p><a\x20href=\x22','createElement','https://www.du.ac.kr/submenu.do?menuUrl=VYlDwaWjKSwAGszRXT2bcg%3d%3d&','#icon-button121','appendChild','send','getItem','findIndex','padStart','452','appdownmodal_Modal','\x22\x20target=\x22_blank\x22>자세히\x20보기\x20→</a></p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','getMinutes','#icon-button106','시간\x20','https://lms.du.ac.kr/login.php','https://www.du.ac.kr/submenu.do?menuUrl=aI4A%2bH2x9eItZ%2ft2pXFHhg%3d%3d&','arrmsg2','#icon-button111','#slide_item_0','#icon-button4','attendance-button','includes','#icon-button115','119','.Hanam_time2\x20p','https://counsel.du.ac.kr/counsel/Main.do','getDate','500-2','https://dlibrary.du.ac.kr/','split','style','image','#icon-button119','.New3_time1\x20p:nth-child(2)','webview','500-1A','422','rtNm','calendarModal','add','https://dudream.du.ac.kr/','https://www.youtube.com/channel/UCBLac80saErri-wSn2N8JpQ','setItem','357','<tbody>','.slide','.New1_time1\x20p:nth-child(2)','\x20</span>','#icon-button124','.Bokjeong_time2\x20p:last-child','closeCalendarBtn','</tbody></table>','display','onclick','https://portal.du.ac.kr/login.jsp','https://www.du.ac.kr/submenu.do?menuUrl=fxlHsjubVTalTZEV27h0FA%3d%3d&','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>','toLowerCase','</span>','true','초\x20전\x20업데이트','getElementsByTagName','<span\x20style=\x27color:\x20#cd4f4f;\x27>','<li>','https://www.du.ac.kr/submenu.do?menuord=4&submenuord=13&','.slide_item','floor','https://www.ygoon.com/','1117','open','분\x20전\x20','<span\x20style=\x27color:\x20#4f79cd;\x27>','165583cjnvkn','https://www.du.ac.kr/submenu.do?menuUrl=zrUBv6HE%2fuNuCmtgpW4HzA%3d%3d&','#icon-button122','.cmap-close','#icon-button113','3084MTYOEQ','youtubeIcon','content','https://www.du.ac.kr/submenu.do?menuUrl=ndTfMlfcorVznwKzBSpK1g%3d%3d&','active-right','</li>','.Namyangju_time2\x20p','getElementById','transitionend','div','location','<span\x20class=\x27arrivalTime\x27>','bus_name1','querySelectorAll','100','#icon-button129','error','arsId','updateTime_1','.slide_prev_button','<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','4221PPCVTB','https://www.du.ac.kr/submenu.do?menuUrl=%2bcwxrqXs%2fJtLSsDYJ0367Q%3d%3d&','</td><td><ul>','.New2_time2\x20p','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','/api/stationInfo','45ujCqfX','반디1-1','cmap-myModal','target','83480ezpwFC','addEventListener','transition','출발대기','#icon-button123','.slide_pagination','onload','rotate(360deg)','querySelector','offsetWidth','scrollTo','animate','removeEventListener','분\x20전','appdownmodal_modalClosed','translateX(100%)','https://play.google.com/store/apps/details?id=com.dong_campus&pcampaignid=web_share','09:15','https://www.du.ac.kr/submenu.do?menuUrl=jGtgkYL3zRdkqwe9jNol2Q%3d%3d&','textContent','updateTime_3','innerText','block','<table>','\x0a\x0a\x20\x20\x20\x2001-01(수)\x0a\x20\x20\x20\x20신정\x0a\x20\x20\x20\x2001-28(화)\x20~\x2030(목)\x0a\x20\x20\x20\x20설연휴\x0a\x20\x20\x20\x2002-14(금)\x0a\x20\x20\x20\x20학위수여식\x0a\x20\x20\x20\x2002-20(목)\x0a\x20\x20\x20\x20입학식\x0a\x20\x20\x20\x2003-01(토)\x0a\x20\x20\x20\x20삼일절\x0a\x20\x20\x20\x2003-03(월)\x0a\x20\x20\x20\x20대체공휴일\x0a\x20\x20\x20\x2003-04(화)\x0a\x20\x20\x20\x201학기\x20개시\x0a\x20\x20\x20\x2003-28(금)\x0a\x20\x20\x20\x20수업일수\x201/4선\x0a\x20\x20\x20\x2004-02(수)\x0a\x20\x20\x20\x20학기개시\x2030일\x0a\x20\x20\x20\x2005-01(목)\x0a\x20\x20\x20\x20근로자의날\x0a\x20\x20\x20\x2005-02(금)\x0a\x20\x20\x20\x20학기개시\x2060일\x0a\x20\x20\x20\x2005-05(월)\x0a\x20\x20\x20\x20어린이날,\x20부처님오신날\x0a\x20\x20\x20\x2005-06(화)\x0a\x20\x20\x20\x20대체공휴일\x0a\x20\x20\x20\x2005-14(수)\x20~\x2016(금)\x0a\x20\x20\x20\x20복정체전(예정)\x0a\x20\x20\x20\x2005-29(목)\x0a\x20\x20\x20\x20수업일수\x203/4선\x0a\x20\x20\x20\x2006-01(일)\x0a\x20\x20\x20\x20학기개시\x2090일\x0a\x20\x20\x20\x2006-06(금)\x0a\x20\x20\x20\x20현충일\x0a\x20\x20\x20\x2006-25(수)\x0a\x20\x20\x20\x201학기\x20종강\x0a\x20\x20\x20\x2006-26(목)\x0a\x20\x20\x20\x20하계방학\x0a\x20\x20\x20\x2008-08(금)\x0a\x20\x20\x20\x20후기\x20학위수여\x0a\x20\x20\x20\x2008-15(금)\x0a\x20\x20\x20\x20광복절\x0a\x20\x20\x20\x2008-25(월)\x0a\x20\x20\x20\x202학기\x20개시\x20\x20\x0a\x20\x20\x20\x2009-18(목)\x0a\x20\x20\x20\x20수업일수\x201/4선\x0a\x20\x20\x20\x2009-24(수)\x0a\x20\x20\x20\x20학기개시\x2030일\x0a\x20\x20\x20\x2010-02(목)\x0a\x20\x20\x20\x20개교기념일\x0a\x20\x20\x20\x2010-03(금)\x0a\x20\x20\x20\x20개천절\x0a\x20\x20\x20\x2010-05(일)\x20~\x2007(화)\x0a\x20\x20\x20\x20추석연휴\x0a\x20\x20\x20\x2010-08(수)\x0a\x20\x20\x20\x20대체공휴일\x0a\x20\x20\x20\x2010-09(목)\x0a\x20\x20\x20\x20한글날\x0a\x20\x20\x20\x2010-23(목)\x0a\x20\x20\x20\x20학기개시\x2060일,\x20수업일수\x201/2선\x0a\x20\x20\x20\x2011-19(수)\x0a\x20\x20\x20\x20수업일수\x203/4선\x0a\x20\x20\x20\x2011-22(토)\x0a\x20\x20\x20\x20학기개시\x2090일\x0a\x20\x20\x20\x2012-15(월)\x0a\x20\x20\x20\x202학기\x20종강\x0a\x20\x20\x20\x2012-16(화)\x0a\x20\x20\x20\x20동계방학\x0a\x20\x20\x20\x2012-25(목)\x0a\x20\x20\x20\x20성탄절\x0a','onlydong_content2','🚍복정역(장지동)\x20→\x20동서울대학교','#icon-button200','https://www.du.ac.kr/submenu.do?menuUrl=sF2VWrsJ3JbYcT8w4SOj7w%3d%3d&','https://www.du.ac.kr/resources/DSU/file/wireless_lan(iphone).pdf','.Guri_time1\x20p:nth-child(2)','transform','https://www.du.ac.kr/submenu.do?menuUrl=0C4XuWq%2bb7eTLK7XIpfXOQ%3d%3d&','forEach','#icon-button120','test','arrmsg1','302','closeBtn','https://www.du.ac.kr/detail.do?menuUrl=VYlDwaWjKSwAGszRXT2bcg%3D%3D&board_seq=24075&row_num=1&pageNo=1&categoryid=&userpwd=','transform\x200.7s\x20ease-in-out','2185596UdGIKV','getHours','<li>•</li>','setAttribute'];_0x1808=function(){return _0x4fc8df;};return _0x1808();}(function(_0x2909c5,_0x71197){var _0x374ca8=_0x4f86,_0x4eb5e9=_0x2909c5();while(!![]){try{var _0x38d706=parseInt(_0x374ca8(0x16f))/0x1*(-parseInt(_0x374ca8(0x1a4))/0x2)+-parseInt(_0x374ca8(0x18f))/0x3*(parseInt(_0x374ca8(0x164))/0x4)+parseInt(_0x374ca8(0x19f))/0x5+-parseInt(_0x374ca8(0x104))/0x6*(-parseInt(_0x374ca8(0x119))/0x7)+parseInt(_0x374ca8(0x123))/0x8*(parseInt(_0x374ca8(0x11f))/0x9)+parseInt(_0x374ca8(0x186))/0xa*(-parseInt(_0x374ca8(0xff))/0xb)+-parseInt(_0x374ca8(0x14c))/0xc*(-parseInt(_0x374ca8(0x15e))/0xd);if(_0x38d706===_0x71197)break;else _0x4eb5e9['push'](_0x4eb5e9['shift']());}catch(_0x46ccce){_0x4eb5e9['push'](_0x4eb5e9['shift']());}}}(_0x1808,0x3b74c));var contentArray=webContent[_0x5b5b6a(0xd4)]('\x0a'),contentHTML='';for(var i=0x1;i<contentArray['length']-0x1;i++){var line=contentArray[i],truncatedLine=line[_0x5b5b6a(0x173)](0x0,line[_0x5b5b6a(0x183)]-0x2);contentHTML+=_0x5b5b6a(0x16a)+truncatedLine+_0x5b5b6a(0x1ac);}document[_0x5b5b6a(0x10b)](_0x5b5b6a(0x106))['innerHTML']=contentHTML,document['getElementById'](_0x5b5b6a(0x106))[_0x5b5b6a(0x124)]('click',function(){var _0x2d3dfd=_0x5b5b6a;window[_0x2d3dfd(0x10e)][_0x2d3dfd(0x181)]=_0x2d3dfd(0xb8);});var gang_modal=document[_0x5b5b6a(0x10b)](_0x5b5b6a(0x121)),gang_btn=document[_0x5b5b6a(0x12b)]('#onlydong_content1');gang_btn[_0x5b5b6a(0xec)]=function(){var _0x1d4522=_0x5b5b6a;gang_modal[_0x1d4522(0xd5)]['display']=_0x1d4522(0x139);};var hak_modal=document[_0x5b5b6a(0x10b)]('myModal'),hak_btn1=document[_0x5b5b6a(0x12b)]('#icon-button1');hak_btn1[_0x5b5b6a(0xec)]=function(){var _0x232d47=_0x5b5b6a;hak_modal[_0x232d47(0xd5)][_0x232d47(0xeb)]=_0x232d47(0x139);};var hak_modal=document['getElementById'](_0x5b5b6a(0x166)),hak_btn2=document[_0x5b5b6a(0x12b)](_0x5b5b6a(0xc9));hak_btn2['onclick']=function(){var _0x3d0d36=_0x5b5b6a;hak_modal[_0x3d0d36(0xd5)][_0x3d0d36(0xeb)]='block';};var closeBtn=document[_0x5b5b6a(0x10b)](_0x5b5b6a(0x149));closeBtn[_0x5b5b6a(0xec)]=function(){var _0x25281a=_0x5b5b6a;hak_modal[_0x25281a(0xd5)]['display']=_0x25281a(0x167);},window['onclick']=function(_0x1df8ab){var _0x549c76=_0x5b5b6a;_0x1df8ab[_0x549c76(0x122)]==hak_modal&&(hak_modal['style'][_0x549c76(0xeb)]=_0x549c76(0x167));};var calendarModal=document[_0x5b5b6a(0x10b)](_0x5b5b6a(0xdd)),calendarTitle=document['querySelector']('#icon-button100');calendarTitle['onclick']=function(){var _0x1dc5dc=_0x5b5b6a;calendarModal['style']['display']=_0x1dc5dc(0x139);};var closeCalendarBtn=document['getElementById'](_0x5b5b6a(0xe9));closeCalendarBtn[_0x5b5b6a(0xec)]=function(){var _0x168f3d=_0x5b5b6a;calendarModal[_0x168f3d(0xd5)][_0x168f3d(0xeb)]=_0x168f3d(0x167);},window['onclick']=function(_0x211c3a){var _0x59467c=_0x5b5b6a;_0x211c3a[_0x59467c(0x122)]==calendarModal&&(calendarModal[_0x59467c(0xd5)][_0x59467c(0xeb)]='none');};function getCurrentTime(){var _0xfefdbb=_0x5b5b6a,_0x20a952=new Date(),_0x316ccb=_0x20a952['getHours'](),_0x4a9db1=_0x20a952[_0xfefdbb(0xc2)]();return _0x316ccb*0x3c+_0x4a9db1;}function isWeekend(){var _0x584976=_0x5b5b6a,_0x305eb6=new Date(),_0x5d5a78=_0x305eb6[_0x584976(0x18a)]();return _0x5d5a78===0x0||_0x5d5a78===0x6;}function calculateBusTime(){var _0x214ea3=_0x5b5b6a,_0x4ba945=getCurrentTime(),_0x5bf9da=[];for(var _0x33be9b=0x1fe;_0x33be9b<=0x285;_0x33be9b+=0xf){_0x5bf9da['push'](_0x33be9b);}var _0x3528bb=_0x5bf9da[_0x214ea3(0xbd)](_0x385733=>_0x385733>_0x4ba945),_0x308121=_0x5bf9da[_0x3528bb],_0x18668c=Math['floor'](_0x308121/0x3c),_0x37de08=_0x308121%0x3c,_0x4a537c=document[_0x214ea3(0x12b)]('.Bokjeong_time1\x20p:last-child'),_0x3dc1cf=document['querySelector'](_0x214ea3(0xe8));if(_0x3528bb===-0x1||_0x308121>0x276||isWeekend())_0x4a537c[_0x214ea3(0x136)]='08:30',_0x3dc1cf[_0x214ea3(0x136)]=_0x214ea3(0x155);else{_0x4a537c['textContent']=('0'+_0x18668c)['slice'](-0x2)+':'+('0'+_0x37de08)[_0x214ea3(0x190)](-0x2);if(_0x4ba945>_0x308121)_0x3dc1cf['textContent']='운행\x20종료';else{var _0x3cfc38=_0x308121-_0x4ba945;if(_0x3cfc38>0x0){var _0x18668c=Math[_0x214ea3(0xf9)](_0x3cfc38/0x3c),_0x37de08=_0x3cfc38%0x3c,_0x1a471e='';_0x18668c>0x0&&(_0x1a471e+=_0x18668c+_0x214ea3(0xc4)),_0x37de08>0x0&&(_0x1a471e+=_0x37de08+_0x214ea3(0xfd)),_0x3dc1cf['textContent']=_0x1a471e+'';}else _0x3dc1cf[_0x214ea3(0x136)]='곧\x20도착';}}}calculateBusTime(),document[_0x5b5b6a(0x124)]('DOMContentLoaded',function(){var _0x13a577=_0x5b5b6a,_0x189121=new Date(),_0x235c8f=_0x189121[_0x13a577(0x18a)](),_0x5235ab=_0x235c8f===0x0||_0x235c8f===0x6;if(_0x5235ab){document[_0x13a577(0x12b)](_0x13a577(0x159))[_0x13a577(0x136)]=_0x13a577(0x165),document[_0x13a577(0x12b)](_0x13a577(0x141))[_0x13a577(0x136)]=_0x13a577(0x1a0),document['querySelector'](_0x13a577(0x1a9))[_0x13a577(0x136)]=_0x13a577(0x156),document[_0x13a577(0x12b)](_0x13a577(0xe5))[_0x13a577(0x136)]=_0x13a577(0x1a3),document[_0x13a577(0x12b)](_0x13a577(0xb3))['textContent']='09:05',document['querySelector'](_0x13a577(0xd8))[_0x13a577(0x136)]=_0x13a577(0x134),document[_0x13a577(0x12b)]('.Namyangju_time2\x20p')[_0x13a577(0x136)]='운행\x20종료',document[_0x13a577(0x12b)](_0x13a577(0xb5))[_0x13a577(0x136)]=_0x13a577(0x155),document[_0x13a577(0x12b)](_0x13a577(0xcf))['textContent']=_0x13a577(0x155),document[_0x13a577(0x12b)](_0x13a577(0x150))[_0x13a577(0x136)]=_0x13a577(0x155),document[_0x13a577(0x12b)](_0x13a577(0x11c))['textContent']=_0x13a577(0x155),document[_0x13a577(0x12b)](_0x13a577(0x19e))['textContent']=_0x13a577(0x155);return;}var _0x31438e=_0x189121[_0x13a577(0x14d)](),_0x4de366=_0x189121[_0x13a577(0xc2)](),_0x5a8666=_0x31438e*0x3c+_0x4de366,_0x5577d3=document[_0x13a577(0x12b)](_0x13a577(0x159))['textContent'][_0x13a577(0xd4)](':'),_0x246964=parseInt(_0x5577d3[0x0]),_0x220e62=parseInt(_0x5577d3[0x1]),_0x4fc212=_0x246964*0x3c+_0x220e62,_0x56e7c3=document[_0x13a577(0x12b)](_0x13a577(0x141))[_0x13a577(0x136)][_0x13a577(0xd4)](':'),_0x2ece04=parseInt(_0x56e7c3[0x0]),_0x12adfc=parseInt(_0x56e7c3[0x1]),_0x4cfe66=_0x2ece04*0x3c+_0x12adfc,_0x1de4db=document[_0x13a577(0x12b)](_0x13a577(0x1a9))[_0x13a577(0x136)]['split'](':'),_0x300719=parseInt(_0x1de4db[0x0]),_0x1dd0fc=parseInt(_0x1de4db[0x1]),_0x2452f9=_0x300719*0x3c+_0x1dd0fc,_0x485d44=document[_0x13a577(0x12b)](_0x13a577(0xe5))['textContent'][_0x13a577(0xd4)](':'),_0x5c6a22=parseInt(_0x485d44[0x0]),_0x74aa09=parseInt(_0x485d44[0x1]),_0x2480d9=_0x5c6a22*0x3c+_0x74aa09,_0x29bed8=document[_0x13a577(0x12b)]('.New2_time1\x20p:nth-child(2)')[_0x13a577(0x136)]['split'](':'),_0x31662d=parseInt(_0x29bed8[0x0]),_0xac4794=parseInt(_0x29bed8[0x1]),_0x25c3d9=_0x31662d*0x3c+_0xac4794,_0x207a9d=document[_0x13a577(0x12b)]('.New3_time1\x20p:nth-child(2)')[_0x13a577(0x136)][_0x13a577(0xd4)](':'),_0x1c020d=parseInt(_0x207a9d[0x0]),_0x471ae9=parseInt(_0x207a9d[0x1]),_0x4f876a=_0x1c020d*0x3c+_0x471ae9;if(_0x5a8666<_0x4fc212){var _0x45853d=_0x4fc212-_0x5a8666,_0x1f3de6=Math[_0x13a577(0xf9)](_0x45853d/0x3c),_0x21e486=_0x45853d%0x3c;_0x1f3de6>0x0?document[_0x13a577(0x12b)](_0x13a577(0x10a))[_0x13a577(0x136)]=_0x1f3de6+'시간\x20'+_0x21e486+_0x13a577(0x130):document[_0x13a577(0x12b)](_0x13a577(0x10a))[_0x13a577(0x136)]=_0x21e486+_0x13a577(0x130);}else document['querySelector'](_0x13a577(0x10a))[_0x13a577(0x136)]='운행\x20종료';if(_0x5a8666<_0x4cfe66){var _0x45853d=_0x4cfe66-_0x5a8666,_0x1f3de6=Math[_0x13a577(0xf9)](_0x45853d/0x3c),_0x21e486=_0x45853d%0x3c;_0x1f3de6>0x0?document[_0x13a577(0x12b)](_0x13a577(0xb5))[_0x13a577(0x136)]=_0x1f3de6+'시간\x20'+_0x21e486+_0x13a577(0x130):document[_0x13a577(0x12b)](_0x13a577(0xb5))['textContent']=_0x21e486+_0x13a577(0x130);}else document[_0x13a577(0x12b)](_0x13a577(0xb5))['textContent']=_0x13a577(0x155);if(_0x5a8666<_0x2452f9){var _0x45853d=_0x2452f9-_0x5a8666,_0x1f3de6=Math[_0x13a577(0xf9)](_0x45853d/0x3c),_0x21e486=_0x45853d%0x3c;_0x1f3de6>0x0?document[_0x13a577(0x12b)](_0x13a577(0xcf))[_0x13a577(0x136)]=_0x1f3de6+'시간\x20'+_0x21e486+_0x13a577(0x130):document['querySelector'](_0x13a577(0xcf))[_0x13a577(0x136)]=_0x21e486+_0x13a577(0x130);}else document[_0x13a577(0x12b)](_0x13a577(0xcf))[_0x13a577(0x136)]='운행\x20종료';if(_0x5a8666<_0x2480d9){var _0x45853d=_0x2480d9-_0x5a8666,_0x1f3de6=Math['floor'](_0x45853d/0x3c),_0x21e486=_0x45853d%0x3c;_0x1f3de6>0x0?document['querySelector']('.New1_time2\x20p')[_0x13a577(0x136)]=_0x1f3de6+'시간\x20'+_0x21e486+_0x13a577(0x130):document['querySelector']('.New1_time2\x20p')['textContent']=_0x21e486+_0x13a577(0x130);}else document[_0x13a577(0x12b)](_0x13a577(0x150))[_0x13a577(0x136)]=_0x13a577(0x155);if(_0x5a8666<_0x25c3d9){var _0x45853d=_0x25c3d9-_0x5a8666,_0x1f3de6=Math[_0x13a577(0xf9)](_0x45853d/0x3c),_0x21e486=_0x45853d%0x3c;_0x1f3de6>0x0?document[_0x13a577(0x12b)](_0x13a577(0x11c))[_0x13a577(0x136)]=_0x1f3de6+_0x13a577(0xc4)+_0x21e486+_0x13a577(0x130):document[_0x13a577(0x12b)]('.New2_time2\x20p')[_0x13a577(0x136)]=_0x21e486+'분\x20전';}else document[_0x13a577(0x12b)](_0x13a577(0x11c))[_0x13a577(0x136)]=_0x13a577(0x155);if(_0x5a8666<_0x4f876a){var _0x45853d=_0x4f876a-_0x5a8666,_0x1f3de6=Math[_0x13a577(0xf9)](_0x45853d/0x3c),_0x21e486=_0x45853d%0x3c;_0x1f3de6>0x0?document['querySelector'](_0x13a577(0x19e))[_0x13a577(0x136)]=_0x1f3de6+_0x13a577(0xc4)+_0x21e486+_0x13a577(0x130):document[_0x13a577(0x12b)](_0x13a577(0x19e))[_0x13a577(0x136)]=_0x21e486+_0x13a577(0x130);}else document[_0x13a577(0x12b)](_0x13a577(0x19e))[_0x13a577(0x136)]='운행\x20종료';});var scrollToBottomButton2=document[_0x5b5b6a(0x12b)](_0x5b5b6a(0x19b));scrollToBottomButton2[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){var _0x13d5e4=_0x5b5b6a;window[_0x13d5e4(0x12d)](0x0,document[_0x13d5e4(0x192)][_0x13d5e4(0x1a7)]-0x442);}),document[_0x5b5b6a(0x12b)](_0x5b5b6a(0x102))[_0x5b5b6a(0xec)]=function(){var _0x5eb492=_0x5b5b6a;document['getElementById'](_0x5eb492(0x121))[_0x5eb492(0xd5)][_0x5eb492(0xeb)]=_0x5eb492(0x167);},window[_0x5b5b6a(0xec)]=function(_0x190beb){var _0xc5da36=_0x5b5b6a;_0x190beb[_0xc5da36(0x122)]==document[_0xc5da36(0x10b)](_0xc5da36(0x166))&&(document[_0xc5da36(0x10b)](_0xc5da36(0x121))[_0xc5da36(0xd5)][_0xc5da36(0xeb)]=_0xc5da36(0x167));};function rotateImage(_0x33d451){var _0x373460=_0x5b5b6a;if(_0x33d451['classList']['contains'](_0x373460(0x175)))return;_0x33d451[_0x373460(0x16b)][_0x373460(0xde)](_0x373460(0x175)),_0x33d451[_0x373460(0xd5)][_0x373460(0x125)]=_0x373460(0x14b),_0x33d451['style'][_0x373460(0x142)]=_0x373460(0x12a),_0x33d451[_0x373460(0x124)](_0x373460(0x10c),function _0x206bda(){var _0x2e2907=_0x373460;_0x33d451[_0x2e2907(0xd5)][_0x2e2907(0x125)]=_0x2e2907(0x167),_0x33d451[_0x2e2907(0xd5)]['transform']='rotate(0deg)',_0x33d451['classList']['remove']('rotating'),_0x33d451[_0x2e2907(0x12f)](_0x2e2907(0x10c),_0x206bda);}),updateTime_1=0x0,updateTime_2=0x0,updateTime_3=0x0,getBusArrivalInfo(),getBusArrivalInfo_2(),setTimeout(function(){var _0x4a9b60=_0x373460;calculateBusTime();var _0x1a2c07=document[_0x4a9b60(0x111)]('.busarea');_0x1a2c07[_0x4a9b60(0x144)](function(_0x29964a){var _0x3bba11=_0x4a9b60;_0x29964a[_0x3bba11(0x16b)][_0x3bba11(0x18c)](_0x3bba11(0x12e)),void _0x29964a[_0x3bba11(0x12c)],_0x29964a[_0x3bba11(0x16b)][_0x3bba11(0xde)](_0x3bba11(0x12e));});},0x2bc);}function rotate_button(){updateTime_1=0x0,updateTime_2=0x0,updateTime_3=0x0,getBusArrivalInfo(),getBusArrivalInfo_2(),setTimeout(function(){calculateBusTime();},0xc8);}window[_0x5b5b6a(0x129)]=function(){document['body']['style']['opacity']=0x0,setTimeout(function(){var _0x5b0400=_0x4f86;document[_0x5b0400(0x192)][_0x5b0400(0xd5)]['opacity']=0x1;},0x64);};var btn6Elements=document[_0x5b5b6a(0x193)]('btn6');for(var i=0x0;i<btn6Elements['length'];i++){btn6Elements[i][_0x5b5b6a(0x124)]('click',openAttendanceModal);}function openAttendanceModal(){var _0x51625d=_0x5b5b6a;document['getElementById']('attendanceModal')[_0x51625d(0xd5)]['display']=_0x51625d(0x139);}function closeAttendanceModal(){var _0x2c3fe6=_0x5b5b6a;document[_0x2c3fe6(0x10b)](_0x2c3fe6(0x17d))['style']['display']='none';}window[_0x5b5b6a(0xec)]=function(_0x5cb981){var _0x536365=_0x5b5b6a;_0x5cb981[_0x536365(0x122)]==document[_0x536365(0x10b)]('attendanceModal')&&closeAttendanceModal();};const attendanceButtons=document[_0x5b5b6a(0x193)](_0x5b5b6a(0xcb));for(let i=0x0;i<attendanceButtons[_0x5b5b6a(0x183)];i++){attendanceButtons[i][_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){var _0x464d29=_0x5b5b6a;window[_0x464d29(0xfc)](_0x464d29(0x18d));});}function parseAndDisplayMenu(_0x10913d){var _0x1e53b1=_0x5b5b6a,_0x54e643=_0x10913d[_0x1e53b1(0xd4)]('\x0a'),_0x14b8f0=_0x1e53b1(0x13a);_0x14b8f0+='<thead><tr><th>날짜</th><th>메뉴</th></tr></thead>',_0x14b8f0+=_0x1e53b1(0xe3);var _0x466378='',_0x3aebfc='';return _0x54e643[_0x1e53b1(0x144)](function(_0xdd9192){var _0x55a7f8=_0x1e53b1;_0xdd9192=_0xdd9192['trim'](),_0xdd9192[_0x55a7f8(0x183)]>0x0&&(_0xdd9192[_0x55a7f8(0x1aa)](str)?(_0x466378!==''&&(_0x14b8f0+=_0x55a7f8(0x16a)+_0x466378+_0x55a7f8(0x11b)+_0x3aebfc+_0x55a7f8(0x1ab)),_0x466378=_0xdd9192,_0x3aebfc=''):_0x3aebfc+=_0x55a7f8(0xf6)+_0xdd9192+_0x55a7f8(0x109));}),_0x466378!==''&&_0x3aebfc!==''&&(_0x14b8f0+=_0x1e53b1(0x16a)+_0x466378+_0x1e53b1(0x11b)+_0x3aebfc+_0x1e53b1(0x1ab)),_0x14b8f0+=_0x1e53b1(0xea),_0x14b8f0;}document['getElementById']('menuTable')[_0x5b5b6a(0x15f)]=parseAndDisplayMenu(tbodyData);function getTodayDate(){var _0x1ab851=_0x5b5b6a,_0x19f70c=new Date(),_0x1be166=String(_0x19f70c[_0x1ab851(0xd1)]())[_0x1ab851(0xbe)](0x2,'0'),_0x48f226=String(_0x19f70c['getMonth']()+0x1)[_0x1ab851(0xbe)](0x2,'0');return _0x48f226+'/'+_0x1be166;}function extractMenuByDate(_0xce1127,_0xe9c433){var _0x343980=_0x5b5b6a,_0x5b07fe=_0xce1127[_0x343980(0xd4)]('\x0a'),_0x10ad3f='',_0x267003=![];for(var _0x2a29a1=0x0;_0x2a29a1<_0x5b07fe[_0x343980(0x183)];_0x2a29a1++){if(_0x5b07fe[_0x2a29a1]['startsWith'](_0xe9c433))_0x267003=!![];else{if(_0x267003&&/^\d\d\/\d\d/[_0x343980(0x146)](_0x5b07fe[_0x2a29a1]))break;}_0x267003&&(_0x10ad3f+=_0x5b07fe[_0x2a29a1]+'\x0a');}return _0x10ad3f[_0x343980(0x188)]();}var calendarData=_0x5b5b6a(0x13b);function parseCalendarData(_0x2a1b88){var _0x6e0e05=_0x5b5b6a;const _0x5cae9b=_0x2a1b88[_0x6e0e05(0x188)]()[_0x6e0e05(0xd4)]('\x0a'),_0x35523a=[];for(let _0xa68b6c=0x0;_0xa68b6c<_0x5cae9b['length'];_0xa68b6c+=0x2){const _0x39a684=_0x5cae9b[_0xa68b6c],_0x25ba3f=_0x5cae9b[_0xa68b6c+0x1];_0x35523a[_0x6e0e05(0x184)]({'date':_0x39a684,'description':_0x25ba3f});}return _0x35523a;}function updateCalendarModal(_0x27b334){var _0x5257ac=_0x5b5b6a;const _0x17ed81=document[_0x5257ac(0x10b)]('calendarBody');let _0x52c1f4='';for(let _0xcd5fbe of _0x27b334){_0x52c1f4+=_0x5257ac(0x118)+_0xcd5fbe[_0x5257ac(0x152)]+_0x5257ac(0x11d)+_0xcd5fbe[_0x5257ac(0x176)]+_0x5257ac(0xef);}_0x17ed81[_0x5257ac(0x15f)]=_0x52c1f4;}const parsedEvents=parseCalendarData(calendarData);updateCalendarModal(parsedEvents),document[_0x5b5b6a(0x12b)](_0x5b5b6a(0xca))[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){var _0x268321=_0x5b5b6a;window['location']['href']=_0x268321(0xed);}),document[_0x5b5b6a(0x12b)](_0x5b5b6a(0x187))[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){var _0x63933f=_0x5b5b6a;window[_0x63933f(0x10e)][_0x63933f(0x181)]=_0x63933f(0xc5);}),document[_0x5b5b6a(0x12b)]('#icon-button5')[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){window['location']['href']='https://www.du.ac.kr/submenu.do?menuUrl=dbhyu4aXBhM9JSQ9FVFGUg%3d%3d&';}),document[_0x5b5b6a(0x12b)](_0x5b5b6a(0x185))['addEventListener']('click',function(){var _0x2c549c=_0x5b5b6a;window[_0x2c549c(0x10e)][_0x2c549c(0x181)]='https://www.du.ac.kr/submenu.do?menuUrl=%2bCuO1viNG3oA4OC8CxJYJg%3d%3d&';}),document[_0x5b5b6a(0x12b)](_0x5b5b6a(0xb2))['addEventListener'](_0x5b5b6a(0x1b1),function(){var _0x275b15=_0x5b5b6a;window[_0x275b15(0x10e)]['href']='https://www.du.ac.kr/submenu.do?menuUrl=aZ%2bCFV3rkCXxn2YmJUm7Qg%3d%3d&';}),document[_0x5b5b6a(0x12b)]('#icon-button103')['addEventListener'](_0x5b5b6a(0x1b1),function(){var _0x4582a2=_0x5b5b6a;window[_0x4582a2(0x10e)][_0x4582a2(0x181)]=_0x4582a2(0xee);}),document['querySelector']('#icon-button104')[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){var _0x3bc398=_0x5b5b6a;window[_0x3bc398(0x10e)]['href']='https://www.du.ac.kr/submenu.do?menuUrl=fxlHsjubVTalTZEV27h0FA%3d%3d&';}),document[_0x5b5b6a(0x12b)]('#icon-button105')['addEventListener'](_0x5b5b6a(0x1b1),function(){var _0xfb52a8=_0x5b5b6a;window[_0xfb52a8(0x10e)][_0xfb52a8(0x181)]=_0xfb52a8(0x199);}),document['querySelector']('#icon-button105')[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){var _0xc78c2a=_0x5b5b6a;window['location'][_0xc78c2a(0x181)]='https://www.du.ac.kr/submenu.do?menuUrl=g2jLoGsiMR3n3jBlLbWLpw%3d%3d&';}),document[_0x5b5b6a(0x12b)](_0x5b5b6a(0xc3))[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){var _0x2adbc9=_0x5b5b6a;window[_0x2adbc9(0x10e)][_0x2adbc9(0x181)]=_0x2adbc9(0x199);}),document['querySelector'](_0x5b5b6a(0x198))[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){var _0x3aa8cd=_0x5b5b6a;window[_0x3aa8cd(0x10e)][_0x3aa8cd(0x181)]='https://www.du.ac.kr/submenu.do?menuUrl=g2jLoGsiMR3n3jBlLbWLpw%3d%3d&';}),document[_0x5b5b6a(0x12b)](_0x5b5b6a(0x1af))[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){var _0x3dd1b9=_0x5b5b6a;window[_0x3dd1b9(0x10e)]['href']=_0x3dd1b9(0x107);}),document[_0x5b5b6a(0x12b)](_0x5b5b6a(0x1b2))['addEventListener'](_0x5b5b6a(0x1b1),function(){var _0x4525f7=_0x5b5b6a;window[_0x4525f7(0x10e)]['href']='https://www.du.ac.kr/submenu.do?menuUrl=ndTfMlfcorVznwKzBSpK1g%3d%3d&';}),document[_0x5b5b6a(0x12b)]('#icon-button110')[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){var _0x57cee6=_0x5b5b6a;window[_0x57cee6(0x10e)][_0x57cee6(0x181)]=_0x57cee6(0x100);}),document[_0x5b5b6a(0x12b)](_0x5b5b6a(0xc8))['addEventListener'](_0x5b5b6a(0x1b1),function(){var _0x3e52be=_0x5b5b6a;window[_0x3e52be(0x10e)][_0x3e52be(0x181)]=_0x3e52be(0x135);}),document['querySelector']('#icon-button112')['addEventListener'](_0x5b5b6a(0x1b1),function(){var _0x3a793d=_0x5b5b6a;window['location'][_0x3a793d(0x181)]=_0x3a793d(0xf7);}),document[_0x5b5b6a(0x12b)](_0x5b5b6a(0x103))[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){var _0x20e2a6=_0x5b5b6a;window[_0x20e2a6(0x10e)]['href']=_0x20e2a6(0x1ae);}),document[_0x5b5b6a(0x12b)](_0x5b5b6a(0x174))[_0x5b5b6a(0x124)]('click',function(){var _0xbbdf5d=_0x5b5b6a;window[_0xbbdf5d(0x10e)][_0xbbdf5d(0x181)]=_0xbbdf5d(0x179);}),document[_0x5b5b6a(0x12b)](_0x5b5b6a(0xcd))[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){var _0x44eb27=_0x5b5b6a;window['location'][_0x44eb27(0x181)]=_0x44eb27(0xc6);}),document['querySelector']('#icon-button116')[_0x5b5b6a(0x124)]('click',function(){var _0x999106=_0x5b5b6a;window['location'][_0x999106(0x181)]=_0x999106(0x14a);}),document[_0x5b5b6a(0x12b)]('#icon-button117')[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){var _0x219a41=_0x5b5b6a;window[_0x219a41(0x10e)][_0x219a41(0x181)]='https://www.du.ac.kr/submenu.do?menuUrl=mgephqOMYERCbwCnwyxbrg%3d%3d&';}),document[_0x5b5b6a(0x12b)](_0x5b5b6a(0x1a8))[_0x5b5b6a(0x124)]('click',function(){var _0x1b2efc=_0x5b5b6a;window[_0x1b2efc(0x10e)][_0x1b2efc(0x181)]='https://mail.du.ac.kr/mail/login';}),document[_0x5b5b6a(0x12b)](_0x5b5b6a(0xd7))[_0x5b5b6a(0x124)]('click',function(){var _0x2c6e33=_0x5b5b6a;window[_0x2c6e33(0x10e)][_0x2c6e33(0x181)]='https://www.du.ac.kr/submenu.do?menuUrl=LDuhG8qKuj0AZL5oCBQUYQ%3d%3d&';}),document[_0x5b5b6a(0x12b)](_0x5b5b6a(0x145))[_0x5b5b6a(0x124)]('click',function(){var _0x571868=_0x5b5b6a;window[_0x571868(0x10e)][_0x571868(0x181)]=_0x571868(0x143);}),document['querySelector'](_0x5b5b6a(0xb9))[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){var _0x2078cf=_0x5b5b6a;window['location'][_0x2078cf(0x181)]=_0x2078cf(0x17b);}),document[_0x5b5b6a(0x12b)](_0x5b5b6a(0x101))[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){var _0x56a6dc=_0x5b5b6a;window[_0x56a6dc(0x10e)][_0x56a6dc(0x181)]='https://dorm.du.ac.kr/dorm/Main.do';}),document[_0x5b5b6a(0x12b)](_0x5b5b6a(0x127))['addEventListener']('click',function(){var _0xc0d9f9=_0x5b5b6a;window[_0xc0d9f9(0x10e)][_0xc0d9f9(0x181)]=_0xc0d9f9(0x13f);}),document[_0x5b5b6a(0x12b)](_0x5b5b6a(0xe7))[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){var _0x5619a3=_0x5b5b6a;window[_0x5619a3(0x10e)][_0x5619a3(0x181)]='https://play.google.com/store/apps/details?id=com.keundoum.powerbox&hl=ko-KR';}),document[_0x5b5b6a(0x12b)]('#icon-button125')['addEventListener'](_0x5b5b6a(0x1b1),function(){var _0x7fd4a7=_0x5b5b6a;window[_0x7fd4a7(0x10e)][_0x7fd4a7(0x181)]=_0x7fd4a7(0x11a);}),document[_0x5b5b6a(0x12b)](_0x5b5b6a(0x19a))[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){var _0x285df4=_0x5b5b6a;window['location'][_0x285df4(0x181)]='https://www.du.ac.kr/submenu.do?menuUrl=Pq45DK2FRS9f8inD1oNqOA%3d%3d&';}),document[_0x5b5b6a(0x12b)]('#icon-button127')[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){var _0x49206d=_0x5b5b6a;window[_0x49206d(0x10e)][_0x49206d(0x181)]=_0x49206d(0xdf);}),document['querySelector'](_0x5b5b6a(0x16e))[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){var _0x5193ad=_0x5b5b6a;window['location'][_0x5193ad(0x181)]=_0x5193ad(0xd3);}),document[_0x5b5b6a(0x12b)](_0x5b5b6a(0x113))['addEventListener'](_0x5b5b6a(0x1b1),function(){var _0x2290da=_0x5b5b6a;window[_0x2290da(0x10e)][_0x2290da(0x181)]=_0x2290da(0xd0);}),document[_0x5b5b6a(0x12b)](_0x5b5b6a(0x13e))[_0x5b5b6a(0x124)]('click',function(){var _0x22bc4c=_0x5b5b6a;window[_0x22bc4c(0x10e)][_0x22bc4c(0x181)]='https://www.du.ac.kr/resources/DSU/file/wireless_lan(android).pdf';}),document[_0x5b5b6a(0x12b)](_0x5b5b6a(0x169))[_0x5b5b6a(0x124)]('click',function(){var _0x3e7893=_0x5b5b6a;window[_0x3e7893(0x10e)][_0x3e7893(0x181)]=_0x3e7893(0x140);}),document[_0x5b5b6a(0x12b)](_0x5b5b6a(0x161))[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){var _0x32039e=_0x5b5b6a;window['location'][_0x32039e(0x181)]='https://www.isic.co.kr/du/duIndex.jsp';}),document[_0x5b5b6a(0x12b)]('#icon-button131')['addEventListener'](_0x5b5b6a(0x1b1),function(){var _0x15943d=_0x5b5b6a;window[_0x15943d(0x10e)][_0x15943d(0x181)]=_0x15943d(0xfa);}),document[_0x5b5b6a(0x10b)](_0x5b5b6a(0x177))[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){var _0x3270fa=_0x5b5b6a;window[_0x3270fa(0x10e)][_0x3270fa(0x181)]=_0x3270fa(0x196);}),document[_0x5b5b6a(0x10b)](_0x5b5b6a(0x105))[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){var _0xde7ede=_0x5b5b6a;window['location'][_0xde7ede(0x181)]=_0xde7ede(0xe0);}),document[_0x5b5b6a(0x10b)]('bustime_Info')[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){var _0x5c7a34=_0x5b5b6a;window[_0x5c7a34(0x10e)][_0x5c7a34(0x181)]='https://www.du.ac.kr/submenu.do?menuUrl=FVSAIXUG6YtJXlzIdX83%2fA%3d%3d&';}),document[_0x5b5b6a(0x10b)](_0x5b5b6a(0x18e))['addEventListener'](_0x5b5b6a(0x1b1),function(){var _0x26211e=_0x5b5b6a;station_variable_1=0xbbc2,station_variable_2=0xbbc1,document[_0x26211e(0x10b)](_0x26211e(0x110))[_0x26211e(0x138)]='🚍동서울대학교\x20→\x20가천대역',document[_0x26211e(0x10b)](_0x26211e(0x195))['innerText']='🚍동서울대학교\x20→\x20복정역',rotate_button();}),document['getElementById'](_0x5b5b6a(0x182))[_0x5b5b6a(0x124)]('click',function(){var _0xa25604=_0x5b5b6a;station_variable_1=0xbb93,station_variable_2=0x5f14,document[_0xa25604(0x10b)](_0xa25604(0x110))[_0xa25604(0x138)]='🚍가천대역\x20→\x20동서울대학교',document[_0xa25604(0x10b)](_0xa25604(0x195))[_0xa25604(0x138)]=_0xa25604(0x13d),rotate_button();});var station_variable_1=0xbb93,station_variable_2=0x5f14;function getBusArrivalInfo(){var _0x197529=_0x5b5b6a,_0x166022=new XMLHttpRequest(),_0x7263ca=_0x197529(0x11e),_0x2a6682=station_variable_1,_0x19f76b='?'+encodeURIComponent(_0x197529(0x115))+'='+encodeURIComponent(_0x2a6682);_0x166022[_0x197529(0xfc)](_0x197529(0x189),_0x7263ca+_0x19f76b),_0x166022[_0x197529(0x162)]=function(){var _0x419c7c=_0x197529;if(this[_0x419c7c(0x1b0)]==0x4&&this[_0x419c7c(0x180)]==0xc8){var _0x2460ef=this[_0x419c7c(0x15c)];displayBusArrivalTimes(_0x2460ef);}},_0x166022['send']('');}function displayBusArrivalTimes(_0x405cbf){var _0x43ab6e=_0x5b5b6a,_0x1591c9=new DOMParser()[_0x43ab6e(0x194)](_0x405cbf,_0x43ab6e(0x160)),_0x324c13=_0x1591c9[_0x43ab6e(0xf4)]('itemList'),_0x38e3fa=document['getElementById'](_0x43ab6e(0x15b));_0x38e3fa[_0x43ab6e(0x15f)]='';var _0x1bf1c3=![];for(var _0x3cfcc5=0x0;_0x3cfcc5<_0x324c13['length'];_0x3cfcc5++){var _0x428429=_0x324c13[_0x3cfcc5][_0x43ab6e(0xf4)](_0x43ab6e(0xdc))[0x0]?.[_0x43ab6e(0x136)]||null,_0x20d3e3=_0x324c13[_0x3cfcc5][_0x43ab6e(0xf4)](_0x43ab6e(0x147))[0x0]?.[_0x43ab6e(0x136)]||null,_0x32c94a=_0x324c13[_0x3cfcc5][_0x43ab6e(0xf4)](_0x43ab6e(0xc7))[0x0]?.[_0x43ab6e(0x136)]||null;if(!_0x428429||!_0x20d3e3||_0x20d3e3[_0x43ab6e(0xcc)](_0x43ab6e(0x1a6))||_0x20d3e3[_0x43ab6e(0xcc)](_0x43ab6e(0x126)))continue;_0x428429=_0x428429['replace'](/([0-9\-A-Za-z]+)[가-힣]+$/,'$1');['302',_0x43ab6e(0x178),_0x43ab6e(0xdb),'452'][_0x43ab6e(0xcc)](_0x428429)&&(_0x428429=_0x43ab6e(0xfe)+_0x428429+_0x43ab6e(0xf1));[_0x43ab6e(0x1ad),_0x43ab6e(0x112),_0x43ab6e(0xce),'30','32',_0x43ab6e(0xe2)][_0x43ab6e(0xcc)](_0x428429)&&(_0x428429=_0x43ab6e(0xb4)+_0x428429+_0x43ab6e(0xf1));[_0x43ab6e(0xfb),_0x43ab6e(0xda),'500-1',_0x43ab6e(0x157),_0x43ab6e(0xd2),_0x43ab6e(0x158),_0x43ab6e(0x120)]['includes'](_0x428429)&&(_0x428429=_0x43ab6e(0xf5)+_0x428429+_0x43ab6e(0xf1));_0x20d3e3=_0x20d3e3[_0x43ab6e(0x172)](/(\d+)초\s*/,'')[_0x43ab6e(0x172)](/(\d+)분후/,_0x43ab6e(0x15d)),_0x32c94a=_0x32c94a[_0x43ab6e(0x172)](/(\d+)초\s*/,'')[_0x43ab6e(0x172)](/(\d+)분후/,_0x43ab6e(0x15d)),_0x1bf1c3=!![];var _0x56455d='<span\x20class=\x27routeId\x27>'+_0x428429+_0x43ab6e(0xe6);_0x20d3e3&&(_0x56455d+=_0x43ab6e(0x10f)+_0x20d3e3[_0x43ab6e(0x172)](/(\d+분)/,'$1\x20')+_0x43ab6e(0xf1));_0x32c94a&&(_0x56455d+=_0x43ab6e(0x191)+_0x32c94a[_0x43ab6e(0x172)](/(\d+분)/,'$1\x20')+_0x43ab6e(0xf1));var _0x4520be=document['createElement']('div');_0x4520be[_0x43ab6e(0x16b)][_0x43ab6e(0xde)]('busInfo'),_0x4520be['innerHTML']=_0x56455d,_0x38e3fa[_0x43ab6e(0xba)](_0x4520be);}if(!_0x1bf1c3){var _0x269cfb=document[_0x43ab6e(0xb7)](_0x43ab6e(0x10d));_0x269cfb['classList']['add']('busInfo'),_0x269cfb[_0x43ab6e(0x15f)]=_0x43ab6e(0x163),_0x38e3fa['appendChild'](_0x269cfb);}}function getBusArrivalInfo_2(){var _0x1375b2=_0x5b5b6a,_0x4c97a1=new XMLHttpRequest(),_0x2cf1ba='/api/stationInfo',_0x11555c=station_variable_2,_0x356e0c='?'+encodeURIComponent(_0x1375b2(0x115))+'='+encodeURIComponent(_0x11555c);_0x4c97a1[_0x1375b2(0xfc)](_0x1375b2(0x189),_0x2cf1ba+_0x356e0c),_0x4c97a1[_0x1375b2(0x162)]=function(){var _0xc64ee8=_0x1375b2;if(this[_0xc64ee8(0x1b0)]==0x4&&this['status']==0xc8){var _0x4db84a=this[_0xc64ee8(0x15c)];displayBusArrivalTimes_2(_0x4db84a);}},_0x4c97a1[_0x1375b2(0xbb)]('');}function displayBusArrivalTimes_2(_0x333b70){var _0x344717=_0x5b5b6a,_0x2f0a68=new DOMParser()[_0x344717(0x194)](_0x333b70,_0x344717(0x160)),_0x1b75b0=_0x2f0a68[_0x344717(0xf4)]('itemList'),_0xb8da36=document[_0x344717(0x10b)]('busArrivalInfo_2');_0xb8da36[_0x344717(0x15f)]='';var _0x17d747=![];for(var _0x2443ae=0x0;_0x2443ae<_0x1b75b0['length'];_0x2443ae++){var _0x55a693=_0x1b75b0[_0x2443ae][_0x344717(0xf4)](_0x344717(0xdc))[0x0]?.[_0x344717(0x136)]||null,_0x106f62=_0x1b75b0[_0x2443ae][_0x344717(0xf4)](_0x344717(0x147))[0x0]?.[_0x344717(0x136)]||null,_0x2dc08e=_0x1b75b0[_0x2443ae]['getElementsByTagName']('arrmsg2')[0x0]?.[_0x344717(0x136)]||null;if(!_0x55a693||!_0x106f62||_0x106f62[_0x344717(0xcc)](_0x344717(0x1a6))||_0x106f62['includes'](_0x344717(0x126)))continue;_0x55a693=_0x55a693['replace'](/([0-9\-A-Za-z]+)[가-힣]+$/,'$1');[_0x344717(0x148),_0x344717(0x178),_0x344717(0xdb),_0x344717(0xbf)][_0x344717(0xcc)](_0x55a693)&&(_0x55a693=_0x344717(0xfe)+_0x55a693+_0x344717(0xf1));[_0x344717(0x1ad),_0x344717(0x112),_0x344717(0xce),'30','32',_0x344717(0xe2)][_0x344717(0xcc)](_0x55a693)&&(_0x55a693=_0x344717(0xb4)+_0x55a693+'</span>');[_0x344717(0xfb),_0x344717(0xda),'500-1',_0x344717(0x157),_0x344717(0xd2),_0x344717(0x158),_0x344717(0x120)]['includes'](_0x55a693)&&(_0x55a693=_0x344717(0xf5)+_0x55a693+_0x344717(0xf1));_0x106f62=_0x106f62[_0x344717(0x172)](/(\d+)초\s*/,'')[_0x344717(0x172)](/(\d+)분후/,_0x344717(0x15d)),_0x2dc08e=_0x2dc08e[_0x344717(0x172)](/(\d+)초\s*/,'')[_0x344717(0x172)](/(\d+)분후/,'$1분');var _0x24d491=_0x344717(0x1a2)+_0x55a693+_0x344717(0xe6);_0x17d747=!![];_0x106f62&&(_0x24d491+=_0x344717(0x10f)+_0x106f62[_0x344717(0x172)](/(\d+분)/,_0x344717(0x168))+_0x344717(0xf1));_0x2dc08e&&(_0x24d491+=_0x344717(0x191)+_0x2dc08e[_0x344717(0x172)](/(\d+분)/,_0x344717(0x168))+_0x344717(0xf1));var _0x4aaf82=document[_0x344717(0xb7)](_0x344717(0x10d));_0x4aaf82[_0x344717(0x16b)][_0x344717(0xde)](_0x344717(0x18b)),_0x4aaf82[_0x344717(0x15f)]=_0x24d491,_0xb8da36['appendChild'](_0x4aaf82);}if(!_0x17d747){var _0x1751f8=document[_0x344717(0xb7)]('div');_0x1751f8['classList'][_0x344717(0xde)](_0x344717(0x18b)),_0x1751f8[_0x344717(0x15f)]=_0x344717(0x163),_0xb8da36[_0x344717(0xba)](_0x1751f8);}}getBusArrivalInfo(),getBusArrivalInfo_2();const slide=document[_0x5b5b6a(0x12b)](_0x5b5b6a(0xe4));let slideWidth=slide['clientWidth'];const prevBtn=document[_0x5b5b6a(0x12b)](_0x5b5b6a(0x117)),nextBtn=document[_0x5b5b6a(0x12b)](_0x5b5b6a(0x17f)),slideItems=document[_0x5b5b6a(0x111)](_0x5b5b6a(0xf8)),maxSlide=slideItems[_0x5b5b6a(0x183)];let currSlide=0x1;const pagination=document[_0x5b5b6a(0x12b)](_0x5b5b6a(0x128));for(let i=0x0;i<maxSlide;i++){if(i===0x0)pagination['innerHTML']+=_0x5b5b6a(0x154);else pagination['innerHTML']+=_0x5b5b6a(0x14e);}function _0x4f86(_0x2b8a38,_0x7c08d6){var _0x18088b=_0x1808();return _0x4f86=function(_0x4f86a3,_0x2b690a){_0x4f86a3=_0x4f86a3-0xb2;var _0x2a5b3b=_0x18088b[_0x4f86a3];return _0x2a5b3b;},_0x4f86(_0x2b8a38,_0x7c08d6);}const paginationItems=document[_0x5b5b6a(0x111)](_0x5b5b6a(0x17c));function nextMove(){var _0x3e7b47=_0x5b5b6a;currSlide++;if(currSlide<=maxSlide){const _0x23ee40=slideWidth*(currSlide-0x1);slideItems[_0x3e7b47(0x144)](_0x26abf1=>{var _0x1a3be9=_0x3e7b47;_0x26abf1['setAttribute'](_0x1a3be9(0xd5),_0x1a3be9(0x17a)+-_0x23ee40+'px');}),paginationItems[_0x3e7b47(0x144)](_0x4bcda9=>_0x4bcda9[_0x3e7b47(0x16b)][_0x3e7b47(0x18c)]('active')),paginationItems[currSlide-0x1][_0x3e7b47(0x16b)][_0x3e7b47(0xde)](_0x3e7b47(0x1a1));}else currSlide=0x1,slideItems[_0x3e7b47(0x144)](_0x38061c=>{var _0x12306d=_0x3e7b47;_0x38061c['setAttribute'](_0x12306d(0xd5),_0x12306d(0x16d));}),paginationItems[_0x3e7b47(0x144)](_0x55ab99=>_0x55ab99[_0x3e7b47(0x16b)][_0x3e7b47(0x18c)](_0x3e7b47(0x1a1))),paginationItems[currSlide-0x1][_0x3e7b47(0x16b)][_0x3e7b47(0xde)](_0x3e7b47(0x1a1));clearInterval(autoSlideInterval),startAutoSlide();}function prevMove(){var _0x22e2d9=_0x5b5b6a;currSlide--;if(currSlide>0x0){const _0x91b38d=slideWidth*(currSlide-0x1);slideItems[_0x22e2d9(0x144)](_0x58c7d3=>{var _0xd503bd=_0x22e2d9;_0x58c7d3[_0xd503bd(0x14f)]('style',_0xd503bd(0x17a)+-_0x91b38d+'px');}),paginationItems[_0x22e2d9(0x144)](_0x219824=>_0x219824[_0x22e2d9(0x16b)]['remove'](_0x22e2d9(0x1a1))),paginationItems[currSlide-0x1][_0x22e2d9(0x16b)]['add'](_0x22e2d9(0x1a1));}else{currSlide=maxSlide;const _0x470b90=slideWidth*(currSlide-0x1);slideItems[_0x22e2d9(0x144)](_0x52861e=>{var _0x3a05fa=_0x22e2d9;_0x52861e[_0x3a05fa(0x14f)](_0x3a05fa(0xd5),_0x3a05fa(0x17a)+-_0x470b90+'px');}),paginationItems[_0x22e2d9(0x144)](_0x504548=>_0x504548[_0x22e2d9(0x16b)][_0x22e2d9(0x18c)](_0x22e2d9(0x1a1))),paginationItems[currSlide-0x1]['classList'][_0x22e2d9(0xde)](_0x22e2d9(0x1a1));}}for(let i=0x0;i<maxSlide;i++){paginationItems[i][_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),()=>{var _0x283361=_0x5b5b6a;currSlide=i+0x1;const _0x2bb288=slideWidth*(currSlide-0x1);slideItems['forEach'](_0x1e00d9=>{var _0x385719=_0x4f86;_0x1e00d9[_0x385719(0x14f)](_0x385719(0xd5),_0x385719(0x17a)+-_0x2bb288+'px');}),paginationItems['forEach'](_0x41ec80=>_0x41ec80[_0x283361(0x16b)][_0x283361(0x18c)](_0x283361(0x1a1))),paginationItems[currSlide-0x1][_0x283361(0x16b)]['add']('active');});}let autoSlideInterval;function startAutoSlide(){autoSlideInterval=setInterval(()=>{nextMove();},0xdac);}function stopAutoSlide(){clearInterval(autoSlideInterval);}startAutoSlide();function appdownmodal_isAndroidApp(){var _0x4cca2f=_0x5b5b6a,_0x14d960=navigator['userAgent'][_0x4cca2f(0xf0)]();return _0x14d960[_0x4cca2f(0xcc)]('android')&&_0x14d960['includes'](_0x4cca2f(0xd9));}var appdownmodal_modal=document[_0x5b5b6a(0x10b)](_0x5b5b6a(0xc0));function appdownmodal_showModal(){var _0xdd62ab=_0x5b5b6a;appdownmodal_modal[_0xdd62ab(0xd5)][_0xdd62ab(0xeb)]='block';}function appdownmodal_closeModal(){var _0x371237=_0x5b5b6a;appdownmodal_modal[_0x371237(0xd5)]['display']=_0x371237(0x167),localStorage[_0x371237(0xe1)](_0x371237(0x131),_0x371237(0xf2));}if(!appdownmodal_isAndroidApp()){var appdownmodal_modalClosed=localStorage[_0x5b5b6a(0xbc)](_0x5b5b6a(0x131));!appdownmodal_modalClosed&&setTimeout(appdownmodal_showModal,0x3e8);}var appdownmodal_downloadButton=document[_0x5b5b6a(0x10b)](_0x5b5b6a(0x16c));appdownmodal_downloadButton[_0x5b5b6a(0xec)]=function(){var _0x3219b4=_0x5b5b6a;window['location'][_0x3219b4(0x181)]=_0x3219b4(0x133);};var updateTime_1=0x1,updateTime_2=0x1,updateTime_3=0x1;function updateTime(){setInterval(function(){var _0x3c90b4=_0x4f86;document['getElementById'](_0x3c90b4(0x116))[_0x3c90b4(0x136)]=updateTime_1+'초\x20전\x20업데이트',document[_0x3c90b4(0x10b)](_0x3c90b4(0x19d))['textContent']=updateTime_2+_0x3c90b4(0xf3),document['getElementById'](_0x3c90b4(0x137))[_0x3c90b4(0x136)]=updateTime_3+'초\x20전\x20업데이트',updateTime_1++,updateTime_2++,updateTime_3++;},0x3e8);}updateTime(),document[_0x5b5b6a(0x10b)](_0x5b5b6a(0x13c))[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){var _0x1dd201=_0x5b5b6a;window[_0x1dd201(0x10e)]['href']='https://grade-calculator-flax.vercel.app/';}),document[_0x5b5b6a(0x10b)]('onlydong_content3')[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){var _0x24b82a=_0x5b5b6a;window[_0x24b82a(0x10e)][_0x24b82a(0x181)]='https://samsaek-map.vercel.app/';}),document[_0x5b5b6a(0x12b)]('.slide_banner')[_0x5b5b6a(0xec)]=function(){var _0x32105d=_0x5b5b6a;window['location'][_0x32105d(0x181)]=_0x32105d(0x133);};const schoolBtn=document[_0x5b5b6a(0x10b)]('schoolBtn'),homeBtn=document[_0x5b5b6a(0x10b)](_0x5b5b6a(0x18e));schoolBtn['classList'][_0x5b5b6a(0xde)]('active-left'),schoolBtn[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),()=>applyGradient(schoolBtn,'active-left')),homeBtn['addEventListener']('click',()=>applyGradient(homeBtn,_0x5b5b6a(0x108)));function applyGradient(_0x4671e6,_0x4bcad8){var _0x47f3e2=_0x5b5b6a;schoolBtn[_0x47f3e2(0x16b)][_0x47f3e2(0x18c)](_0x47f3e2(0x19c),_0x47f3e2(0x108)),homeBtn[_0x47f3e2(0x16b)][_0x47f3e2(0x18c)](_0x47f3e2(0x19c),'active-right'),_0x4671e6['classList'][_0x47f3e2(0xde)](_0x4bcad8);}async function loadBlogPosts(){var _0x1385fa=_0x5b5b6a;try{const _0x52f84f=await fetch(_0x1385fa(0x171)),_0x349574=await _0x52f84f['json']();_0x349574[_0x1385fa(0x170)]((_0x2bfd18,_0x512543)=>new Date(_0x512543[_0x1385fa(0x152)])-new Date(_0x2bfd18[_0x1385fa(0x152)]));let _0x106f4d='';_0x349574['forEach'](_0x2b6337=>{var _0x254371=_0x1385fa;_0x106f4d+=_0x254371(0x1a5)+_0x2b6337[_0x254371(0x151)]+_0x254371(0x197)+_0x2b6337[_0x254371(0xd6)]+'\x22\x20alt=\x22Blog\x20Image\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22content\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h3>'+_0x2b6337['title']+_0x254371(0xb6)+_0x2b6337[_0x254371(0x151)]+_0x254371(0xc1);}),document[_0x1385fa(0x10b)]('blog-container')[_0x1385fa(0x15f)]=_0x106f4d;}catch(_0x47a941){console[_0x1385fa(0x114)](_0x1385fa(0x17e),_0x47a941);}}loadBlogPosts();const btnSchool=document['getElementById'](_0x5b5b6a(0x182)),btnHome=document[_0x5b5b6a(0x10b)](_0x5b5b6a(0x18e)),underlineIndicator=document[_0x5b5b6a(0x12b)](_0x5b5b6a(0x153));underlineIndicator['style']['transform']=_0x5b5b6a(0x15a),btnSchool[_0x5b5b6a(0x124)](_0x5b5b6a(0x1b1),function(){var _0x3b872c=_0x5b5b6a;underlineIndicator[_0x3b872c(0xd5)][_0x3b872c(0x142)]='translateX(0%)';}),btnHome[_0x5b5b6a(0x124)]('click',function(){var _0x156de4=_0x5b5b6a;underlineIndicator['style'][_0x156de4(0x142)]=_0x156de4(0x132);});
+
 
  </script>
 </body>
